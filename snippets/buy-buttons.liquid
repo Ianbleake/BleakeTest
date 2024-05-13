@@ -66,6 +66,9 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
+        <label for="test">Texto Prueba</label>
+        <input type="text" id="test" name="propierties[Texto]">
+
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
