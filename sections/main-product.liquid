@@ -452,6 +452,8 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+
+
               {%- when 'form' -%}     
                   {% if template == 'product.producto-personalizable' %}
                     {% render 'perzonaliced_info' %}
@@ -459,6 +461,7 @@
                   {% if template == 'product.producto-personalizable-2' %}
                     {% render 'personalized_info2' %}
                   {% endif %}
+
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
