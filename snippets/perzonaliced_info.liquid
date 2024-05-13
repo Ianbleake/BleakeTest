@@ -1,0 +1,16 @@
+<div id="info-{{ section.id }}" role="status" class="hidden">
+  {% form 'product', product, id: product_form_id %}
+      <div style="height: 20px; width:100%; margin-bottom: 30px;">
+        <h2>Nombre:</h2>
+    </div>
+    <div style="border: 1px solid black; height: 50px; width: 100%">
+        <input type="text" style="height: 100%; width: 100%" name="properties[Nombre]">
+    </div>
+    <div style="height: 20px; width:100%; margin-bottom: 30px;">
+        <h2>Numero: </h2>
+    </div>
+    <div style="border: 1px solid black; height: 50px; width: 100%">
+        <input type="text" style="height: 100%; width: 100%" name="properties[Numero]">
+    </div>
+  {% endform %}
+</div>
