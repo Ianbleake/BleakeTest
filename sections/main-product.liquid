@@ -453,12 +453,6 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'form' -%}     
-                <p class="line-item-property__field">
-
-                <label for="campoPersonalizado">Campo personalizado</label>
-                
-                <input id="campoPersonalizado" type="text" name="properties[Campo personalizado]" form="product-form-{{ section.id }}"> </p>
-                
                   {% if template == 'product.producto-personalizable' %}
                     {% render 'perzonaliced_info' %}
                   {% endif %}
