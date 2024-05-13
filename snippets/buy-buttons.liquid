@@ -29,6 +29,9 @@
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
     >
+
+      <label>Texto prueba</label>
+      <input type="text" name="properties[Nombre]">
       
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <svg
@@ -65,9 +68,6 @@
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
-
-        <label for="test">Texto Prueba</label>
-        <input type="text" id="test" name="propierties[Texto]">
 
         <div class="product-form__buttons">
           {%- liquid
