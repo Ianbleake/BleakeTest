@@ -459,7 +459,16 @@
                     {% render 'perzonaliced_info' %}
                   {% endif %}
                   {% if template == 'product.producto-personalizable-2' %}
-                    {% render 'personalized_info2' %}
+                    <div>
+                      <button id="custombuton">Perzonalizar</button>
+                    </div>
+                    <div id="custominfo" class="hidden">
+                      {% render 'personalized_info2' %}
+                    </div>
+                    <script>
+                      var boton = document.querySelector('#custom');
+                      var contenedor = document.querySelector('#custominfo')
+                    </script>    
                   {% endif %}
 
               {%- when 'buy_buttons' -%}
