@@ -483,14 +483,14 @@
                   {% endif %}
                   {% if template == 'product.producto-personalizable-2' %}
                     <div>
-                      <button id="custombuton">Perzonalizar</button>
+                      <button id="personaliced">Perzonalizar</button>
                     </div>
-                    <div id="custominfo" class="hidden">
+                    <div id="personalicedinfo" class="hidden">
                       {% render 'personalized_info2' %}
                     </div>
                     <script>
-                      var boton = document.querySelector('#custombuton');
-                      var contenedor = document.querySelector('#custominfo');
+                      var boton = document.querySelector('#personaliced');
+                      var contenedor = document.querySelector('#personalicedinfo');
 
                       boton.addEventListener('click',function(){
                         contenedor.classList.remove('hidden');
