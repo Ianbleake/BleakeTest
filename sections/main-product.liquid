@@ -467,7 +467,11 @@
                     </div>
                     <script>
                       var boton = document.querySelector('#custom');
-                      var contenedor = document.querySelector('#custominfo')
+                      var contenedor = document.querySelector('#custominfo');
+
+                      boton.addEventListener('click',()=>{
+                        contenedor.classList.remove('hidden')
+                      })
                     </script>    
                   {% endif %}
 
