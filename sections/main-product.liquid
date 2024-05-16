@@ -482,21 +482,7 @@
                     {% render 'perzonaliced_info' %}
                   {% endif %}
                   {% if template == 'product.producto-personalizable-2' %}
-                    <div>
-                      <button class="pbutton" id="personaliced">Personalizar</button>
-                    </div>
-                    <div id="personalicedinfo" class="hidden">
-                      {% render 'personalized_info2' %}
-                    </div>
-                    <script>
-                      var boton = document.querySelector('#personaliced');
-                      var contenedor = document.querySelector('#personalicedinfo');
-
-                      boton.addEventListener('click',function(){
-                        contenedor.classList.remove('hidden');
-                        boton.classList.add('checked');
-                      });
-                    </script>    
+                    {% render 'personalized_info2' %}   
                   {% endif %}
 
               {%- when 'buy_buttons' -%}
