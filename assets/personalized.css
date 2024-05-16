@@ -20,10 +20,14 @@
   color: white;
 }
 
-.plabel{
-  
+.plabel {
+  width: 100%;
+  display: block;
+  font-size: 1.8rem;
+  letter-spacing: .04rem;
 }
 
-.pinput{
-
+.pinput {
+  width: 140px;
+  height: 40px;
 }
