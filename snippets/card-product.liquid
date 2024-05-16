@@ -114,7 +114,7 @@
               {% endif %}
             >
               <a
-                href="{{ card_product.url }}"
+                href="{% if settings.show_product_navigation %}{{ card_product.url | within: collection }}{% else %}{{ card_product.url }}{% endif %}" 
                 id="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}"
                 class="full-unstyled-link"
                 aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
@@ -151,7 +151,7 @@
             {% endif %}
           >
             <a
-              href="{{ card_product.url }}"
+              href="{% if settings.show_product_navigation %}{{ card_product.url | within: collection }}{% else %}{{ card_product.url }}{% endif %}" 
               id="CardLink-{{ section_id }}-{{ card_product.id }}"
               class="full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
@@ -472,7 +472,7 @@
                           {% if card_product == blank %}
                             role="link" aria-disabled="true"
                           {% else %}
-                            href="{{ card_product.url }}"
+                            href="{% if settings.show_product_navigation %}{{ card_product.url | within: collection }}{% else %}{{ card_product.url }}{% endif %}" 
                           {% endif %}
                           class="link product__view-details animate-arrow small-hide medium-hide"
                         >
