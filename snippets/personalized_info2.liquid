@@ -15,6 +15,7 @@
     var contenedor = document.querySelector('#personalicedinfo');
     var allElements = document.querySelectorAll('[role="presentation"]');
     var lastElement = allElements[allElements.length-1];
+    var firstElement = allElements[0];
     console.log(lastElement);
     boton.addEventListener('click', function() {
       contenedor.classList.toggle('hidden');
