@@ -9,6 +9,7 @@
   <input class="pinput" id="personalizednumber" maxlength="2" type="number" name="properties[Numero]" form="product-form-{{ section.id }}">
 </div>
 
+<script src="{{ 'media-gallery.js' |  asset_url }}"></script>
 <script>
   window.addEventListener('load',()=>{
     var boton = document.querySelector('#personaliced');
@@ -29,37 +30,6 @@
           console.log(lastMediaId);
       }
     });
-
-
-    function setActiveMedia(mediaId) {
-        const activeMedia =
-            this.elements.viewer.querySelector(`[data-media-id="${mediaId}"]`) ||
-            this.elements.viewer.querySelector('[data-media-id]');
-        if (!activeMedia) {
-            return;
-        }
-        this.elements.viewer.querySelectorAll('[data-media-id]').forEach((element) => {
-            element.classList.remove('is-active');
-        });
-        activeMedia?.classList?.add('is-active');
-
-        this.preventStickyHeader();
-        window.setTimeout(() => {
-            if (!this.mql.matches || this.elements.thumbnails) {
-                activeMedia.parentElement.scrollTo({ left: activeMedia.offsetLeft });
-            }
-            const activeMediaRect = activeMedia.getBoundingClientRect();
-            if (activeMediaRect.top > -0.5) return;
-            const top = activeMediaRect.top + window.scrollY;
-            window.scrollTo({ top: top, behavior: 'smooth' });
-        });
-        this.playActiveMedia(activeMedia);
-
-        if (!this.elements.thumbnails) return;
-        const activeThumbnail = this.elements.thumbnails.querySelector(`[data-target="${mediaId}"]`);
-        this.setActiveThumbnail(activeThumbnail);
-        this.announceLiveRegion(activeMedia, activeThumbnail.dataset.mediaPosition);
-    }
   });
 
   function updateField(inputSelector, outputSelector) {
