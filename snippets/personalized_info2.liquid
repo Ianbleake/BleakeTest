@@ -13,10 +13,21 @@
   var boton = document.querySelector('#personaliced');
   var contenedor = document.querySelector('#personalicedinfo');
 
-  boton.addEventListener('click',function(){
+  boton.addEventListener('click', function() {
+    // Toggle visibility of 'contenedor'
     contenedor.classList.toggle('hidden');
-    boton.classList.add('checked');
-  });
+    boton.classList.toggle('checked');
+
+    // Obtener el último elemento de la lista de imágenes
+    const allMedia = document.querySelectorAll('[data-media-id]');
+    if (allMedia.length > 0) {
+        const lastMediaElement = allMedia[allMedia.length - 1];
+        const lastMediaId = lastMediaElement.getAttribute('data-media-id');
+
+        // Llamar a setActiveMedia con el mediaId del último elemento
+        setActiveMedia(lastMediaId);
+    }
+});
 
   function updateField(inputSelector, outputSelector) {
     var inputElement = document.querySelector(inputSelector);
@@ -26,7 +37,7 @@
         outputElement.innerHTML = inputElement.value;
         console.log(inputElement.value);
     });
-}
-updateField('#personalizedname', '#suptext');
-updateField('#personalizednumber', '#supnum');
+  }
+  updateField('#personalizedname', '#suptext');
+  updateField('#personalizednumber', '#supnum');
 </script> 
