@@ -19,6 +19,9 @@
     boton.addEventListener('click', function() {
       contenedor.classList.toggle('hidden');
       boton.classList.toggle('checked');
+      allElements.forEach(function(element) {
+          element.classList.remove('is-active');
+      });
       lastElement.classList.add('is-active');
     });
   });
