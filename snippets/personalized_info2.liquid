@@ -13,7 +13,7 @@
   window.addEventListener('load',()=>{
     var boton = document.querySelector('#personaliced');
     var contenedor = document.querySelector('#personalicedinfo');
-    var allElements = document.querySelectorAll('[data-media-id]');
+    var allElements = document.querySelectorAll('[role="presentation"]');
     var lastElement = allElements[allElements.length-1];
     console.log(lastElement);
     boton.addEventListener('click', function() {
