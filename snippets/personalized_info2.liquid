@@ -17,5 +17,22 @@
     contenedor.classList.toggle('hidden');
     boton.classList.add('checked');
   });
+
+  var inputName = document.querySelector('#personalizedname');
+  var inputNumber = document.querySelector('#personalizednumber');
+  var name = [];
+  var number = [];
+
+  inputName.addEventListener('keyup', function(event){
+    var nameSpace = document.querySelector('#suptext');
+    name.append(String.fromCharCode(event.keyCode));
+    nameSpace.innerHTML(name);
+  });
+
+  inputNumber.addEventListener('keyup', function(event){
+    var numberSpace = document.querySelector('#supnum');
+    number.append(String.fromCharCode(event.keyCode));
+    numberSpace.innerHTML(number);
+  });
 </script> 
 
