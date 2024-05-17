@@ -14,7 +14,6 @@
   var contenedor = document.querySelector('#personalicedinfo');
 
   boton.addEventListener('click', function() {
-    // Toggle visibility of 'contenedor'
     contenedor.classList.toggle('hidden');
     boton.classList.toggle('checked');
 
@@ -26,6 +25,7 @@
 
         // Llamar a setActiveMedia con el mediaId del último elemento
         setActiveMedia(lastMediaId);
+        console.log(lastMediaId);
     }
 });
 
