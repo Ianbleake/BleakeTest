@@ -73,6 +73,7 @@
       -%}
     </span>
     {%- render 'loading-spinner' -%}
+    <!--Imagen principal-->
     <div class="product__media media media--transparent">
       {{
         media.preview_image
@@ -83,7 +84,13 @@
           sizes: sizes,
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
       }}
+      <div class="contSupText">
+        <p id="suptext" class="supText">Test</p>
+        <p id="supnum" class="supNum" >99</p>
+      </div>
     </div>
+    <!--Imagen principal-->
+
     <button
       class="product__media-toggle quick-add-hidden product__media-zoom-{{ section.settings.image_zoom }}"
       type="button"
