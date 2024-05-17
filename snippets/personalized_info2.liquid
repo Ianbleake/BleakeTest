@@ -19,14 +19,7 @@
     boton.addEventListener('click', function() {
       contenedor.classList.toggle('hidden');
       boton.classList.toggle('checked');
-      allElements.forEach(element => {
-        if(element == lastElement){
-          lastElement.classList.toggle('is-active')
-        }
-        else{
-          element.classList.remove('is-active')
-        }
-      });
+      lastElement.classList.toggle('is-active')
     });
   });
 
