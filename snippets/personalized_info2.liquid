@@ -10,24 +10,26 @@
 </div>
 
 <script>
-  var boton = document.querySelector('#personaliced');
-  var contenedor = document.querySelector('#personalicedinfo');
+  window.addEventListener('load'()=>{
+    var boton = document.querySelector('#personaliced');
+    var contenedor = document.querySelector('#personalicedinfo');
 
-  boton.addEventListener('click', function() {
-    contenedor.classList.toggle('hidden');
-    boton.classList.toggle('checked');
+    boton.addEventListener('click', function() {
+      contenedor.classList.toggle('hidden');
+      boton.classList.toggle('checked');
 
-    // Obtener el último elemento de la lista de imágenes
-    const allMedia = document.querySelectorAll('[data-media-id]');
-    if (allMedia.length > 0) {
-        const lastMediaElement = allMedia[allMedia.length - 1];
-        const lastMediaId = lastMediaElement.getAttribute('data-media-id');
+      // Obtener el último elemento de la lista de imágenes
+      const allMedia = document.querySelectorAll('[data-media-id]');
+      if (allMedia.length > 0) {
+          const lastMediaElement = allMedia[allMedia.length - 1];
+          const lastMediaId = lastMediaElement.getAttribute('data-media-id');
 
-        // Llamar a setActiveMedia con el mediaId del último elemento
-        setActiveMedia(lastMediaId);
-        console.log(lastMediaId);
-    }
-});
+          // Llamar a setActiveMedia con el mediaId del último elemento
+          setActiveMedia(lastMediaId);
+          console.log(lastMediaId);
+      }
+    });
+  });
 
   function updateField(inputSelector, outputSelector) {
     var inputElement = document.querySelector(inputSelector);
