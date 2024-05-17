@@ -17,17 +17,6 @@
     boton.addEventListener('click', function() {
       contenedor.classList.toggle('hidden');
       boton.classList.toggle('checked');
-
-      // Obtener el último elemento de la lista de imágenes
-      const allMedia = document.querySelectorAll('[data-media-id]');
-      if (allMedia.length > 0) {
-          const lastMediaElement = allMedia[allMedia.length - 1];
-          const lastMediaId = lastMediaElement.getAttribute('data-media-id');
-
-          // Llamar a setActiveMedia con el mediaId del último elemento
-          setActiveMedia(lastMediaId);
-          console.log(lastMediaId);
-      }
     });
   });
 
