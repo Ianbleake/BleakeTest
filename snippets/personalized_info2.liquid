@@ -26,15 +26,16 @@
   inputName.addEventListener('keyup', function(event){
     var nameSpace = document.querySelector('#suptext');
     name.push(String.fromCharCode(event.keyCode));
-    nameSpace.innerHTML(name);
-    console.log(name)
+    nameSpace.innerHTML = name.join('');  // Convertir el array en una cadena antes de asignar a innerHTML
+    console.log(name);
   });
 
   inputNumber.addEventListener('keyup', function(event){
     var numberSpace = document.querySelector('#supnum');
     number.push(String.fromCharCode(event.keyCode));
-    numberSpace.innerHTML(number);
+    numberSpace.innerHTML = number.join('');  // Convertir el array en una cadena antes de asignar a innerHTML
     console.log(number);
   });
+
 </script> 
 
