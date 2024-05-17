@@ -15,11 +15,11 @@
     var contenedor = document.querySelector('#personalicedinfo');
     var allElements = document.querySelectorAll('[data-media-id]');
     var lastElement = allElements[allElements.length-1];
-
+    console.log(lastElement);
     boton.addEventListener('click', function() {
       contenedor.classList.toggle('hidden');
       boton.classList.toggle('checked');
-      lastElement.classList.add('is-active')
+      lastElement.classList.add('is-active');
     });
   });
 
