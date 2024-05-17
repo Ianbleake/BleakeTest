@@ -32,10 +32,24 @@
   height: 40px;
 }
 
-.contSupText{
-
+.contSupText {
+  height: 350px !important;
+  width: 150px !important;
+  position: absolute !important;
+  top: 95px !important;
+  left: 40% !important;
 }
 
-.supText{
+.supText {
   color: white;
+  font-size: 60px;
+  letter-spacing: 10px;
+  margin: 0px;
+}
+
+.supNum {
+  color: white;
+  font-size: 150px;
+  margin: 0px;
+  line-height: 174px;
 }
