@@ -25,14 +25,14 @@
 
   inputName.addEventListener('keyup', function(event){
     var nameSpace = document.querySelector('#suptext');
-    name.append(String.fromCharCode(event.keyCode));
+    name.push(String.fromCharCode(event.keyCode));
     nameSpace.innerHTML(name);
     console.log(name)
   });
 
   inputNumber.addEventListener('keyup', function(event){
     var numberSpace = document.querySelector('#supnum');
-    number.append(String.fromCharCode(event.keyCode));
+    number.push(String.fromCharCode(event.keyCode));
     numberSpace.innerHTML(number);
     console.log(number);
   });
