@@ -15,7 +15,7 @@
     var contenedor = document.querySelector('#personalicedinfo');
     var allElements = document.querySelectorAll('[data-media-id]');
     var lastElement = allElements[allElements.length-1];
-    const lastId = lastElement.getAttribute('data-media-id');
+    const lastId = lastElement.getAttribute('class');
     console.log(lastId);
 
     boton.addEventListener('click', function() {
