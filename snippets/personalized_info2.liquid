@@ -18,24 +18,35 @@
     boton.classList.add('checked');
   });
 
-  var inputName = document.querySelector('#personalizedname');
-  var inputNumber = document.querySelector('#personalizednumber');
-  var name = [];
-  var number = [];
+var inputName = document.querySelector('#personalizedname');
+var inputNumber = document.querySelector('#personalizednumber');
+var names = [];
+var numbers = [];
 
-  inputName.addEventListener('keyup', function(event){
+inputName.addEventListener('keyup', function(event) {
     var nameSpace = document.querySelector('#suptext');
-    name.push(String.fromCharCode(event.keyCode));
-    nameSpace.innerHTML = name.join('');  // Convertir el array en una cadena antes de asignar a innerHTML
-    console.log(name);
-  });
+    // Verificar si la tecla presionada es una letra
+    if (event.key.length === 1) {
+        names.push(event.key);
+    } else if (event.key === 'Backspace') {
+        names.pop();
+    }
+    nameSpace.innerHTML = names.join('');  // Convertir el array en una cadena antes de asignar a innerHTML
+    console.log(names);
+});
 
-  inputNumber.addEventListener('keyup', function(event){
+inputNumber.addEventListener('keyup', function(event) {
     var numberSpace = document.querySelector('#supnum');
-    number.push(String.fromCharCode(event.keyCode));
-    numberSpace.innerHTML = number.join('');  // Convertir el array en una cadena antes de asignar a innerHTML
-    console.log(number);
-  });
+    // Verificar si la tecla presionada es un número
+    if (!isNaN(event.key) && event.key.length === 1) {
+        numbers.push(event.key);
+    } else if (event.key === 'Backspace') {
+        numbers.pop();
+    }
+    numberSpace.innerHTML = numbers.join('');  // Convertir el array en una cadena antes de asignar a innerHTML
+    console.log(numbers);
+});
+
 
 </script> 
 
