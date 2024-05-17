@@ -18,22 +18,18 @@
     boton.classList.add('checked');
   });
 
-  var inputName = document.querySelector('#personalizedname');
-var inputNumber = document.querySelector('#personalizednumber');
+  function updateField(inputSelector, outputSelector) {
+    var inputElement = document.querySelector(inputSelector);
+    var outputElement = document.querySelector(outputSelector);
 
-inputName.addEventListener('input', function(event) {
-    var nameSpace = document.querySelector('#suptext');
-    var currentValue = inputName.value;
-    nameSpace.innerHTML = currentValue;  // Asigna el valor actual del input a innerHTML
-    console.log(currentValue);
-});
+    inputElement.addEventListener('input', function() {
+        outputElement.innerHTML = inputElement.value;
+        console.log(inputElement.value);
+    });
+}
+updateField('#personalizedname', '#suptext');
+updateField('#personalizednumber', '#supnum');
 
-inputNumber.addEventListener('input', function(event) {
-    var numberSpace = document.querySelector('#supnum');
-    var currentValue = inputNumber.value;
-    numberSpace.innerHTML = currentValue;  // Asigna el valor actual del input a innerHTML
-    console.log(currentValue);
-});
 
 
 
