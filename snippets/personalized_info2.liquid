@@ -18,34 +18,23 @@
     boton.classList.add('checked');
   });
 
-var inputName = document.querySelector('#personalizedname');
+  var inputName = document.querySelector('#personalizedname');
 var inputNumber = document.querySelector('#personalizednumber');
-var names = [];
-var numbers = [];
 
-inputName.addEventListener('keyup', function(event) {
+inputName.addEventListener('input', function(event) {
     var nameSpace = document.querySelector('#suptext');
-    // Verificar si la tecla presionada es una letra
-    if (event.key.length === 1) {
-        names.push(event.key);
-    } else if (event.key === 'Backspace') {
-        names.pop();
-    }
-    nameSpace.innerHTML = names.join('');  // Convertir el array en una cadena antes de asignar a innerHTML
-    console.log(names);
+    var currentValue = inputName.value;
+    nameSpace.innerHTML = currentValue;  // Asigna el valor actual del input a innerHTML
+    console.log(currentValue);
 });
 
-inputNumber.addEventListener('keyup', function(event) {
+inputNumber.addEventListener('input', function(event) {
     var numberSpace = document.querySelector('#supnum');
-    // Verificar si la tecla presionada es un número
-    if (!isNaN(event.key) && event.key.length === 1) {
-        numbers.push(event.key);
-    } else if (event.key === 'Backspace') {
-        numbers.pop();
-    }
-    numberSpace.innerHTML = numbers.join('');  // Convertir el array en una cadena antes de asignar a innerHTML
-    console.log(numbers);
+    var currentValue = inputNumber.value;
+    numberSpace.innerHTML = currentValue;  // Asigna el valor actual del input a innerHTML
+    console.log(currentValue);
 });
+
 
 
 </script> 
