@@ -258,7 +258,7 @@
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
           <account-icon>
             {%- if customer -%}
-              <h1>{{ customer.first_name }}</h1>
+              <h1 class="username">{{ customer.first_name }}</h1>
             {%- else -%}
               {% render 'icon-account' %}
             {%- endif -%}
