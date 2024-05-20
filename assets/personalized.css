@@ -33,20 +33,21 @@
 }
 
 .contSupText {
-  height: 350px !important;
-  width: 150px !important;
-  position: absolute !important;
-  top: 95px !important;
-  left: 40% !important;
+  height: 350px!important;
+  width: 238px!important;
+  position: absolute!important;
+  top: 95px!important;
+  left: 33%!important;
 }
 
 .supText {
-  color: white;
+  color: #fff;
   font-size: 60px;
   letter-spacing: 10px;
-  margin: 0px;
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
 }
-
 .supNum {
   color: #fff;
   font-size: 150px;
@@ -57,4 +58,5 @@
   height: 100%;
   width: 100%;
   top: 108px;
+  overflow: hidden;
 }
