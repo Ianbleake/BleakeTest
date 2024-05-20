@@ -25,6 +25,10 @@
       });
       lastElement.classList.add('is-active');
     });
+    boton.addEventListener('click',()=>{
+      lastElement.classList.remove('is-active');
+      firstElement.classList.add('is-active');
+    })
   });
 
   function updateField(inputSelector, outputSelector) {
