@@ -1213,7 +1213,6 @@ renderProductInfo() {
       const volumeNote = document.getElementById(`Volume-Note-${this.dataset.section}`);
 
       if (custominfoSourse && custominfoDestination) {
-        console.log("Render");
         custominfoDestination.innerHTML = custominfoSourse.innerHTML;
         if(this.currentVariant.title.includes('Personalizada')){
           custominfoDestination.classList.remove('hidden');
