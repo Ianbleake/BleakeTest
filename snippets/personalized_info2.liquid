@@ -5,6 +5,7 @@
 </div>
 
 <div id="jugadores" class="hidden">
+  {{ product.metafields.custom.jugador }}
   <select class="plyselect" name="properties[Jugador]" id="plylist">
     {% for player in product.metafields.custom.jugador.list %}
       <option value="{{ player.value }}">{{ player.value }}</option>
