@@ -7,9 +7,9 @@
 <div id="jugadores" class="hidden">
   {% assign variable = product.metafields.custom.jugador %}
   {% for item in variable %}
-    {{ item }}
+    <h1>Item {{ forloop.index }}: {{ item.value }} </h1>
   {% endfor %}
-  <select class="plyselect" name="properties[Jugador]" id="plylist">
+  <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
 
   </select>
 </div>
