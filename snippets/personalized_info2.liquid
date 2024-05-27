@@ -5,7 +5,8 @@
 </div>
 
 <div id="jugadores" class="hidden">
-  {% assign json_string = product.metafields.custom.jugadores.nombre %}
+  {% assign json_string = product.metafields.custom.jugadores %}
+  {{ json_string }}
   {% assign json_string_no_brackets = json_string | remove: '[' | remove: ']' %}
   {% assign lista_valores = json_string_no_brackets | split: '","' %}
   <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
