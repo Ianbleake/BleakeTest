@@ -8,7 +8,7 @@
   <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
 
       {% for valor in shop.metaobjects.jugadores.values %}
-        <option value="{{ valor.nombre }}">{{ valor.nombre }}</option>
+        <option value="{{ valor.nombre }}">{{ valor.nombre }}-{{ valor.numero }}</option>
       {% else %}
         <option value="">No hay valores en la lista.</option>
       {% endfor %}
