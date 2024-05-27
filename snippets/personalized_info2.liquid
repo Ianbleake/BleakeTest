@@ -29,6 +29,7 @@
     var lastElement = allElements[allElements.length-1];
     var firstElement = allElements[0];
     console.log(lastElement);
+
     boton.addEventListener('click', function() {
       contenedor.classList.toggle('hidden');
       boton.classList.toggle('checked');
@@ -38,15 +39,22 @@
         btnply.classList.toggle('checked');
       }
 
-
       allElements.forEach(function(element) {
           element.classList.remove('is-active');
       });
       lastElement.classList.add('is-active');
     });
+
+
     btnply.addEventListener('click',()=>{
       contplay.classList.toggle('hidden');
       btnply.classList.toggle('checked');
+
+      if (!contenedor.classList.contains('hidden')) {
+        contplay.classList.toggle('hidden');
+        btnply.classList.toggle('checked');
+      }
+
     });
   });
 
