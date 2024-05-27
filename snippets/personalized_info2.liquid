@@ -9,6 +9,7 @@
   {{ variable }}
   <select class="plyselect" name="properties[Jugador]" id="plylist">
     {% for item in variable %}
+      {{ item }}
       <option value="{{ item  }}">{{ item }}</option>
     {% endfor %}
   </select>
