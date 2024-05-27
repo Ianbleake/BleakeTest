@@ -6,6 +6,7 @@
 
 <div id="jugadores" class="hidden">
   {% assign variable = product.metafields.custom.jugador %}
+  {{ variable }}
   {% for item in variable %}
     <h1>Item {{ forloop.index }}: {{ item.value }} </h1>
   {% else %}
