@@ -8,6 +8,8 @@
   {% assign variable = product.metafields.custom.jugador %}
   {% for item in variable %}
     <h1>Item {{ forloop.index }}: {{ item.value }} </h1>
+  {% else %}
+    {{ esto no jala }}
   {% endfor %}
   <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
 
