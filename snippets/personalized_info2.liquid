@@ -9,9 +9,11 @@
   {{ json_string }}
   {% assign json_string_no_brackets = json_string | remove: '[' | remove: ']' %}
   {% assign lista_valores = json_string_no_brackets | split: '","' %}
+
+
   <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
       {% if lista_valores != blank %}
-          {% for valor in lista_valores %}
+          {% for item in shop.metaobjects.jugadores.nombre %}
             {% assign valor_limpio = valor | remove: '"' %}
             <option value="{{ valor_limpio }}">{{ valor_limpio }}</option>
           {% endfor %}
