@@ -5,13 +5,18 @@
 </div>
 
 <div id="jugadores" class="hidden">
-  {% assign variable = product.metafields.custom.jugador.values %}
-  {{ variable }}
-  {% for item in variable %}
-    <h1>Item {{ forloop.index }}: {{ item.value }} </h1>
+  {% assign lista_valores = product.metafields.custom.jugador %}
+
+  {% if lista_valores != blank %}
+    <ul>
+      {% for valor in lista_valores %}
+        <li>{{ valor }}</li>
+      {% endfor %}
+    </ul>
   {% else %}
-    <h1>Esto no jala</h1>
-  {% endfor %}
+    <p>No hay valores en la lista.</p>
+  {% endif %}
+  
   <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
 
   </select>
