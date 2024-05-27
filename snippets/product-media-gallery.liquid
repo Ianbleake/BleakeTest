@@ -127,6 +127,7 @@
                 <p id="suptext" class="supText"></p>
                 <p id="supnum" class="supNum" ></p>
               </div>
+              {% render 'personalized-image' %}
             {% endif %}
             <!--Cambio-->
           </li>
@@ -308,6 +309,9 @@
                 }}
               </button>
             </li>
+            {% if forloop.last %}
+              {% render 'perzonalized-preview' %}
+            {% endif %}
           {%- endunless -%}
         {%- endfor -%}
       </ul>
