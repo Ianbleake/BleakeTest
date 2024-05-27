@@ -5,9 +5,10 @@
 </div>
 
 <div id="jugadores" class="hidden">
-  {{ product.metafields.custom.jugador }}
+  {% assign variable = product.metafields.custom.jugador %}
+  {{ variable }}
   <select class="plyselect" name="properties[Jugador]" id="plylist">
-    {% for item in product.metafields.custom.jugador %}
+    {% for item in variable %}
       <option value="{{ item  }}">{{ item }}</option>
     {% endfor %}
   </select>
