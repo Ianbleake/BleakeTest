@@ -8,24 +8,17 @@
   {% assign json_string = product.metafields.custom.jugador %}
   {% assign json_string_no_brackets = json_string | remove: '[' | remove: ']' %}
   {% assign lista_valores = json_string_no_brackets | split: '","' %}
-  
-  <!-- Iterar sobre la lista y limpiar cada valor -->
-  {% if lista_valores != blank %}
-    <ul>
-      {% for valor in lista_valores %}
-        <!-- Eliminar comillas iniciales y finales de cada elemento -->
-        {% assign valor_limpio = valor | remove: '"' %}
-        <li>{{ valor_limpio }}</li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No hay valores en la lista.</p>
-  {% endif %}
-  
-  
-  
-  <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
 
+  <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
+      <!-- Iterar sobre la lista y limpiar cada valor -->
+      {% if lista_valores != blank %}
+          {% for valor in lista_valores %}
+            {% assign valor_limpio = valor | remove: '"' %}
+            <option value="{{ valor_limpio }}">{{ valor_limpio }}</option>
+          {% endfor %}
+      {% else %}
+        <option>No hay valores en la lista.</option>
+      {% endif %}
   </select>
 </div>
 
