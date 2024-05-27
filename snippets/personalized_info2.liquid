@@ -32,6 +32,12 @@
     boton.addEventListener('click', function() {
       contenedor.classList.toggle('hidden');
       boton.classList.toggle('checked');
+
+      if(!btnply.classList.contains('hidden')){
+        contplay.classList.toggle('hidden');
+        btnply.classList.toggle('checked');
+      }
+
       allElements.forEach(function(element) {
           element.classList.remove('is-active');
       });
@@ -40,6 +46,11 @@
     btnply.addEventListener('click',()=>{
       contplay.classList.toggle('hidden');
       btnply.classList.toggle('checked');
+
+      if(!boton.classList.contains('hidden')){
+        contenedor.classList.toggle('hidden');
+        boton.classList.toggle('checked');
+      }
     });
   });
 
