@@ -8,9 +8,7 @@
   {% assign json_string = product.metafields.custom.jugador %}
   {% assign json_string_no_brackets = json_string | remove: '[' | remove: ']' %}
   {% assign lista_valores = json_string_no_brackets | split: '","' %}
-
   <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
-      <!-- Iterar sobre la lista y limpiar cada valor -->
       {% if lista_valores != blank %}
           {% for valor in lista_valores %}
             {% assign valor_limpio = valor | remove: '"' %}
