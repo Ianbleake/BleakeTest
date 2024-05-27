@@ -33,7 +33,7 @@
       contenedor.classList.toggle('hidden');
       boton.classList.toggle('checked');
 
-      if(!btnply.classList.contains('hidden')){
+      if(btnply.classList.contains('hidden')){
         contplay.classList.toggle('hidden');
         btnply.classList.toggle('checked');
       }
@@ -46,11 +46,6 @@
     btnply.addEventListener('click',()=>{
       contplay.classList.toggle('hidden');
       btnply.classList.toggle('checked');
-
-      if(!boton.classList.contains('hidden')){
-        contenedor.classList.toggle('hidden');
-        boton.classList.toggle('checked');
-      }
     });
   });
 
