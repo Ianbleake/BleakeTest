@@ -5,9 +5,9 @@
 </div>
 
 <div id="jugadores" class="hidden">
-  {% assign lista_valores = product.metafields.custom.jugador %}
+  {% assign json_string = product.metafields.custom.jugador %}
 
-  {{ lista_valores }}
+  {% assign lista_valores = json_string | parse: 'json' %}
 
   {% if lista_valores != blank %}
     <ul>
