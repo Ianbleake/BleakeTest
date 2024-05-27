@@ -9,18 +9,19 @@
   {% assign json_string_no_brackets = json_string | remove: '[' | remove: ']' %}
   {% assign lista_valores = json_string_no_brackets | split: '","' %}
   
-  <!-- Eliminar comillas iniciales y finales de cada elemento -->
-  {% assign lista_valores = lista_valores | map: " replace: '\"', '' " %}
-  
+  <!-- Iterar sobre la lista y limpiar cada valor -->
   {% if lista_valores != blank %}
     <ul>
       {% for valor in lista_valores %}
-        <li>{{ valor }}</li>
+        <!-- Eliminar comillas iniciales y finales de cada elemento -->
+        {% assign valor_limpio = valor | remove: '"' %}
+        <li>{{ valor_limpio }}</li>
       {% endfor %}
     </ul>
   {% else %}
     <p>No hay valores en la lista.</p>
   {% endif %}
+  
   
   
   <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
