@@ -72,7 +72,9 @@
         customimage.classList.toggle('hidden');
       }
       images.forEach(function(element) {
-          if(element.id == selectplayer.value ){
+          if(!element.classList.contains('hidden')){
+            element.classList.toggle('hidden');
+          }else if(element.id == selectplayer.value ){
             element.classList.toggle('hidden');
           }
       });
