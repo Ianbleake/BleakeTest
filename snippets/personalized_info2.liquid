@@ -23,82 +23,71 @@
 </div>
 
 <script>
-  window.addEventListener('load',()=>{
-    let boton = document.querySelector('#personaliced');
-    let btnply = document.querySelector('#btnjugadores');
-    let contenedor = document.querySelector('#personalicedinfo');
-    let contplay = document.querySelector('#jugadores');
-    let allElements = document.querySelectorAll('[role="presentation"]');
-    let lastElement = allElements[allElements.length-1];
-    let firstElement = allElements[0];
-    let selectplayer = document.querySelector('#plylist');
-    let images = document.querySelectorAll('.playerimg');
-    let customimage = document.querySelector('#perzonalizedimage');
-    let context = document.querySelector('#context')
+window.addEventListener('load', () => {
+  const boton = document.querySelector('#personaliced');
+  const btnply = document.querySelector('#btnjugadores');
+  const contenedor = document.querySelector('#personalicedinfo');
+  const contplay = document.querySelector('#jugadores');
+  const allElements = document.querySelectorAll('[role="presentation"]');
+  const lastElement = allElements[allElements.length - 1];
+  const selectplayer = document.querySelector('#plylist');
+  const images = document.querySelectorAll('.playerimg');
+  const customimage = document.querySelector('#perzonalizedimage');
+  const context = document.querySelector('#context');
 
-    boton.addEventListener('click', function() {
-      contenedor.classList.toggle('hidden');
-      boton.classList.toggle('checked');
+  function toggleClass(element, className) {
+    element.classList.toggle(className);
+  }
 
-      if (!contplay.classList.contains('hidden')) {
-        contplay.classList.toggle('hidden');
-        btnply.classList.toggle('checked');
-      }
+  function hideElement(element) {
+    if (!element.classList.contains('hidden')) {
+      toggleClass(element, 'hidden');
+    }
+  }
 
-      allElements.forEach(function(element) {
-          element.classList.remove('is-active');
-      });
-      lastElement.classList.add('is-active');
+  function showElement(element) {
+    if (element.classList.contains('hidden')) {
+      toggleClass(element, 'hidden');
+    }
+  }
 
-      if(customimage.classList.contains('hidden')){
-        images.forEach(function(element) {
-          if(!element.classList.contains('hidden')){
-            element.classList.toggle('hidden');
-          }
-        });
-        customimage.classList.toggle('hidden');
-      }
+  function toggleContainer(mainContainer, mainButton, secondaryContainer, secondaryButton) {
+    toggleClass(mainContainer, 'hidden');
+    toggleClass(mainButton, 'checked');
 
-      if(context.classList.contains('hidden')){
-        context.classList.toggle('hidden');
-      }
-    });
+    if (!secondaryContainer.classList.contains('hidden')) {
+      toggleClass(secondaryContainer, 'hidden');
+      toggleClass(secondaryButton, 'checked');
+    }
 
+    allElements.forEach(element => element.classList.remove('is-active'));
+    lastElement.classList.add('is-active');
+  }
 
-    btnply.addEventListener('click',()=>{
-      contplay.classList.toggle('hidden');
-      btnply.classList.toggle('checked');
-
-      if (!contenedor.classList.contains('hidden')) {
-        contenedor.classList.toggle('hidden');
-        boton.classList.toggle('checked');
-      }
-
-      allElements.forEach(function(element) {
-          element.classList.remove('is-active');
-      });
-      lastElement.classList.add('is-active');
-    });
-
-    selectplayer.addEventListener('change',()=>{
-      if(!customimage.classList.contains('hidden')){
-        customimage.classList.toggle('hidden');
-      }
-      images.forEach(function(element) {
-          if(!element.classList.contains('hidden')){
-            element.classList.toggle('hidden');
-          }else if(element.id == selectplayer.value ){
-            element.classList.toggle('hidden');
-          }
-      });
-      if(!context.classList.contains('hidden')){
-        context.classList.toggle('hidden');
-      }
-
-    });
-
-
+  boton.addEventListener('click', () => {
+    toggleContainer(contenedor, boton, contplay, btnply);
+    hideElement(customimage);
+    images.forEach(hideElement);
+    showElement(customimage);
+    showElement(context);
   });
+
+  btnply.addEventListener('click', () => {
+    toggleContainer(contplay, btnply, contenedor, boton);
+  });
+
+  selectplayer.addEventListener('change', () => {
+    hideElement(customimage);
+    images.forEach(image => {
+      hideElement(image);
+      if (image.id === selectplayer.value) {
+        showElement(image);
+      }
+    });
+    hideElement(context);
+  });
+});
+
 
   function updateField(inputSelector, outputSelector) {
     let inputElement = document.querySelector(inputSelector);
