@@ -6,13 +6,11 @@
 
 <div id="jugadores" class="hidden">
   <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
-
       {% for valor in shop.metaobjects.jugadores.values %}
         <option value="{{ valor.nombre }}">{{ valor.nombre }}-{{ valor.numero }}</option>
       {% else %}
         <option value="">No hay valores en la lista.</option>
       {% endfor %}
-
   </select>
 </div>
 
@@ -25,14 +23,14 @@
 
 <script>
   window.addEventListener('load',()=>{
-    var boton = document.querySelector('#personaliced');
-    var btnply = document.querySelector('#btnjugadores');
-    var contenedor = document.querySelector('#personalicedinfo');
-    var contplay = document.querySelector('#jugadores');
-    var allElements = document.querySelectorAll('[role="presentation"]');
-    var lastElement = allElements[allElements.length-1];
-    var firstElement = allElements[0];
-    console.log(lastElement);
+    let boton = document.querySelector('#personaliced');
+    let btnply = document.querySelector('#btnjugadores');
+    let contenedor = document.querySelector('#personalicedinfo');
+    let contplay = document.querySelector('#jugadores');
+    let allElements = document.querySelectorAll('[role="presentation"]');
+    let lastElement = allElements[allElements.length-1];
+    let firstElement = allElements[0];
+    let selectplayer = document.querySelector('#plylist');
 
     boton.addEventListener('click', function() {
       contenedor.classList.toggle('hidden');
@@ -59,12 +57,22 @@
         boton.classList.toggle('checked');
       }
 
+      allElements.forEach(function(element) {
+          element.classList.remove('is-active');
+      });
+      lastElement.classList.add('is-active');
     });
+
+    selectplayer.addEventListener('change',()=>{
+      console.log(selectplayer.value);
+    });
+
+
   });
 
   function updateField(inputSelector, outputSelector) {
-    var inputElement = document.querySelector(inputSelector);
-    var outputElement = document.querySelector(outputSelector);
+    let inputElement = document.querySelector(inputSelector);
+    let outputElement = document.querySelector(outputSelector);
 
     inputElement.addEventListener('input', function() {
         outputElement.innerHTML = inputElement.value;
