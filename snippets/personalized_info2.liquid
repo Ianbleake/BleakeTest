@@ -34,6 +34,7 @@
     let selectplayer = document.querySelector('#plylist');
     let images = document.querySelectorAll('.playerimg');
     let customimage = document.querySelector('#perzonalizedimage');
+    let context = document.querySelector('#context')
 
     boton.addEventListener('click', function() {
       contenedor.classList.toggle('hidden');
@@ -57,6 +58,10 @@
         });
         customimage.classList.toggle('hidden');
       }
+
+      if(context.classList.contains('hidden')){
+        this.classList.toggle('hidden');
+      }
     });
 
 
@@ -76,7 +81,6 @@
     });
 
     selectplayer.addEventListener('change',()=>{
-      console.log(selectplayer.value);
       if(!customimage.classList.contains('hidden')){
         customimage.classList.toggle('hidden');
       }
@@ -87,6 +91,9 @@
             element.classList.toggle('hidden');
           }
       });
+      if(!context.classList.contains('hidden')){
+        this.classList.toggle('hidden');
+      }
 
     });
 
@@ -99,7 +106,6 @@
 
     inputElement.addEventListener('input', function() {
         outputElement.innerHTML = inputElement.value;
-        console.log(inputElement.value);
     });
   }
   updateField('#personalizedname', '#suptext');
