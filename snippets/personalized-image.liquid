@@ -2,7 +2,12 @@
   <img id="perzonalizedimage" class="personalizedimg" src="{{ 'personalized-jersey.webp' |  asset_url }}">
   
   {% for plyimg in shop.metaobjects.jugadores.values %}
-    <img id="{{ plyimg.nombre }}" class="playerimg hidden" src="{{ plyimg.imagen |  image_url  }}">
+    {% assign plycollection = plyimg.coleccion.value %}
+    {% for collection in product.collections %}
+      {% if collection.handle contains plycollection.handle %}
+        <img id="{{ plyimg.nombre }}" class="playerimg hidden" src="{{ plyimg.imagen |  image_url  }}">
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 
   <div id="context" class="contSupText hidden">
