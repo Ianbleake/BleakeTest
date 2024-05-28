@@ -122,7 +122,7 @@
               lazy_load: lazy_load
             %}
             <!--Cambio-->
-            {% if forloop.last %}
+            {% if forloop.last and template == 'product.producto-personalizable-2' %}
               {% render 'personalized-image' %}
             {% endif %}
             <!--Cambio-->
@@ -305,9 +305,11 @@
                 }}
               </button>
             </li>
-            {% if forloop.last %}
+            <!--Cambio-->
+            {% if forloop.last and template == 'product.producto-personalizable-2' %}
               {% render 'perzonalized-preview' %}
             {% endif %}
+            <!--Cambio-->
           {%- endunless -%}
         {%- endfor -%}
       </ul>
