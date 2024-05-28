@@ -2,7 +2,7 @@
   <img class="personalizedimg" src="{{ 'personalized-jersey.webp' |  asset_url }}">
   
   {% for plyimg in shop.metaobjects.jugadores.values %}
-    <img id="image-{{ forloop.index }}" class="hidden" src="{{ plyimg.imagen }}">
+    <img id="image-{{ forloop.index }}" class="hidden" src="{{ plyimg.imagen |  image_url  }}">
   {% endfor %}
 
   <div class="contSupText">
