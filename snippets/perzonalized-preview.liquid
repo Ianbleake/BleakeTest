@@ -14,6 +14,13 @@
               aria-controls="GalleryViewer-{{ section.id }}"
               aria-describedby="{{ thumbnail_id }}"
             >
-              <img src="{{ 'personalized-jersey.webp' |  asset_url }}">
+            {% for perimg in shop.metaobjects.playera_perosonalizable.values %}
+              {% assign percollection = perimg.coleccion.value %}
+              {% for collection in product.collections %}
+                {% if collection.handle contains percollection.handle %}
+                  <img id="perzonalizedimage" class="personalizedimg" src="{{ perimg.imagen |  image_url  }}">
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
             </button>
 </li>
