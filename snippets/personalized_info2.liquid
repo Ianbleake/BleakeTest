@@ -6,6 +6,7 @@
 
 <div id="jugadores" class="hidden">
   <select class="plyselect" name="properties[Jugador]" form="product-form-{{ section.id }}" id="plylist">
+    <option value="" selected >Seleccione una opcion</option>
       {% for valor in shop.metaobjects.jugadores.values %}
         <option value="{{ valor.nombre }}">{{ valor.nombre }}-{{ valor.numero }}</option>
       {% else %}
