@@ -50,6 +50,11 @@
       lastElement.classList.add('is-active');
 
       if(customimage.classList.contains('hidden')){
+        images.forEach(function(element) {
+          if(!element.classList.contains('hidden')){
+            element.classList.toggle('hidden');
+          }
+        });
         customimage.classList.toggle('hidden');
       }
     });
