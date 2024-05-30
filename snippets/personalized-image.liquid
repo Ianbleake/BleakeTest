@@ -8,7 +8,7 @@
     {% endfor %}
   {% endfor %}
   
-  {% for player in shop.metaobjects.jugadores.values %} 
+  {% for plyimg in shop.metaobjects.jugadores.values %} 
     {% assign plycollection = plyimg.coleccion.value %}
     {% for collection in product.collections %}
       {% if collection.handle contains plycollection.handle %}
