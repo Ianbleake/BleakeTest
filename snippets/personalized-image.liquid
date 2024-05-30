@@ -10,7 +10,14 @@
   
   {% for player in shop.metaobjects.jugadores.values %}
     {% for shirt in shop.metaobjects.playeras_numeradas.values %}
-       {{ shirt.jugador.value.nombre }}
+       {% assign shirtcolecttion = shirt.coleccion %}
+       {% for collection in product.collections %}
+        {% if shirtcolecttion.handle contains collection.handle %}
+          {% if player.nombre == shirt.jugador.value.nombre %}
+            <img id="{{ player.nombre }}" class="playerimg hidden" src="{{ shirt.imagen |  image_url  }}">
+          {% endif %}
+        {% endif %}
+       {% endfor %}
     {% endfor %}
   {% endfor %}
 
