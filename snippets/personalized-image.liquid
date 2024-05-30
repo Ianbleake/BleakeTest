@@ -10,7 +10,7 @@
   
   {% for player in shop.metaobjects.jugadores.values %} 
     {% for imagen in shop.metaobjects.playera_perosonalizable.values  %}
-      {{ imagen.referencia }}
+      {{ imagen.referencia.coleccion }}
     {% endfor %}
   {% endfor %}
 
