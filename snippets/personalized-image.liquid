@@ -8,12 +8,9 @@
     {% endfor %}
   {% endfor %}
   
-  {% for plyimg in shop.metaobjects.jugadores.values %}
-    {% assign plycollection = plyimg.coleccion.value %}
-    {% for collection in product.collections %}
-      {% if collection.handle contains plycollection.handle %}
-        <img id="{{ plyimg.nombre }}" class="playerimg hidden" src="{{ plyimg.imagen |  image_url  }}">
-      {% endif %}
+  {% for player in shop.metaobjects.jugadores.values %} 
+    {% for imagen in shop.metaobjects.playera_perosonalizable.values  %}
+      {{ imagen.referencia }}
     {% endfor %}
   {% endfor %}
 
