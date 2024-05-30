@@ -10,7 +10,7 @@
   
   {% for player in shop.metaobjects.jugadores.values %}
     {% for shirt in shop.metaobjects.playeras_numeradas.values %}
-      {{ shirt.jugador }}
+      jugador {{ forloop.index }}: {{ shirt.jugador }}
     {% endfor %}
   {% endfor %}
 
