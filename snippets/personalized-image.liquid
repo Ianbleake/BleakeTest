@@ -13,7 +13,7 @@
        {% assign shirtcolecttion = shirt.coleccion %}
        {% for collection in product.collections %}
         {% if shirtcolecttion.handle contains collection.handle %}
-          {% if player.nombre == shirt.jugador.value.nombre %}
+          {% if player.nombre contains shirt.jugador.value.nombre %}
             <img id="{{ player.nombre }}" class="playerimg hidden" src="{{ shirt.imagen |  image_url  }}">
           {% endif %}
         {% endif %}
