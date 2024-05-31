@@ -12,7 +12,7 @@
     {% for shirt in shop.metaobjects.playeras_numeradas.values %}
        {% assign shirtcolecttion = shirt.coleccion %}
        {% for collection in product.collections %}
-        <div>playera:{{ shirtcolecttion }}</div> <div>producto:{{ collection.handle }}</div>
+        <div>playera:{{ shirtcolecttion }}</div> <div>producto:{{ collection}}</div>
         {% if collection.handle  contains shirtcolecttion.handle %}
           test coleccion 2
           {% if player.nombre contains shirt.jugador.value.nombre %}
