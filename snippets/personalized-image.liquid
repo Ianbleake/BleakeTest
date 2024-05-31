@@ -12,11 +12,8 @@
     {% for shirt in shop.metaobjects.playeras_numeradas.values %}
        {% assign shirtcolecttion = shirt.coleccion.value %}
        {% for collection in product.collections %}
-        <div>playera:{{ shirtcolecttion }}</div> <div>producto:{{ collection.handle}}</div>
         {% if collection.handle  contains shirtcolecttion.handle %}
-          test coleccion 2
           {% if player.nombre contains shirt.jugador.value.nombre %}
-            test name
             <img id="{{ player.nombre }}" class="playerimg hidden" src="{{ shirt.imagen |  image_url  }}">
           {% endif %}
         {% endif %}
