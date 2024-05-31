@@ -41,7 +41,6 @@
 }
 
 .supText {
-  color: #fff;
   font-size: 60px;
   letter-spacing: 10px;
   margin: 0;
@@ -49,7 +48,6 @@
   overflow: hidden;
 }
 .supNum {
-  color: #fff;
   font-size: 150px;
   margin: 0;
   line-height: 174px;
