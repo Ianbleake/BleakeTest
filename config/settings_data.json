@@ -1,0 +1,43 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "current": {
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "currency_code_enabled": false,
+    "shipping_free": 1899,
+    "checkout_logo_image": "shopify:\/\/shop_images\/champion_red.png",
+    "checkout_logo_position": "left",
+    "checkout_input_background_color_mode": "white",
+    "checkout_accent_color": "#212442",
+    "checkout_button_color": "#ec1c24",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "menu_1": "footer",
+          "menu_2": "",
+          "instagram": "",
+          "facebook": "",
+          "youtube": "",
+          "description-subscription": "Suscríbete y disfruta de ofertas y promociones especiales, además entérate de los nuevos lanzamientos antes que nadie."
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}
