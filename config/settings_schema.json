@@ -121,5 +121,19 @@
         "default": 499
       }
     ]
+  },
+  {
+    "name": "Liga de Whatsapp",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Ingrese el Url proporcionado por whatsapp para la comunicacion con clientes. "
+      },
+      {
+        "type": "url",
+        "id": "whatsapp_url",
+        "label": "Whatsapp Url"
+      }
+    ]
   }
 ]
