@@ -1,0 +1,81 @@
+<div class="seccmarcas">
+  <div class="custom-container">
+    <h1 class="maintitle white">Nuestras Marcas</h1>
+    <div data-delay="4000" data-animation="slide" class="slidermarcas w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="true" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+      <div class="marcasmask w-slider-mask">
+        <div class="brandslide w-slide">
+          <a href="#" class="gridlink w-inline-block"><img  src="images/bio-Baby-logo.jpg" alt="" class="gridimg brand"></a>
+        </div>
+        <div class="brandslide w-slide">
+          <a href="#" class="gridlink w-inline-block"><img  src="images/Friso-logo.jpg" alt="" class="gridimg brand"></a>
+        </div>
+        <div class="brandslide w-slide">
+          <a href="#" class="gridlink w-inline-block"><img  src="images/baby_dove_logo.jpg" alt="" class="gridimg brand"></a>
+        </div>
+        <div class="brandslide w-slide">
+          <a href="#" class="gridlink w-inline-block"><img  src="images/PADN-Nutrition-logo.jpg" alt="" class="gridimg brand"></a>
+        </div>
+        <div class="brandslide w-slide">
+          <a href="#" class="gridlink w-inline-block"><img  src="images/Hair-Birth-Lab.jpg" alt="" class="gridimg brand"></a>
+        </div>
+        <div class="brandslide w-slide">
+          <a href="#" class="gridlink w-inline-block"><img  src="images/Shea-Moistyre-logo.jpg" alt="" class="gridimg brand"></a>
+        </div>
+      </div>
+      <div class="productsliderarrow w-slider-arrow-left">
+        <div class="w-icon-slider-left"></div>
+      </div>
+      <div class="productsliderarrow w-slider-arrow-right">
+        <div class="w-icon-slider-right"></div>
+      </div>
+      <div class="brandsnav w-slider-nav w-slider-nav-invert w-round"></div>
+    </div>
+    <div class="htmlmarcas w-embed">
+      <div class="owl-carousel marcasowl owl-theme" id="sync2">
+        <a href="#" class="gridlink w-inline-block"><img  src="images/bio-Baby-logo.jpg" alt="" class="gridimg brand"></a>
+        <a href="#" class="gridlink w-inline-block"><img  src="images/Friso-logo.jpg" alt="" class="gridimg brand"></a>
+        <a href="#" class="gridlink w-inline-block"><img  src="images/baby_dove_logo.jpg" alt="" class="gridimg brand"></a>
+        <a href="#" class="gridlink w-inline-block"><img  src="images/PADN-Nutrition-logo.jpg" alt="" class="gridimg brand"></a>
+        <a href="#" class="gridlink w-inline-block"><img  src="images/Hair-Birth-Lab.jpg" alt="" class="gridimg brand"></a>
+        <a href="#" class="gridlink w-inline-block"><img  src="images/Shea-Moistyre-logo.jpg" alt="" class="gridimg brand"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+   "name": "Carrusel de Marcas",
+   "class": "index-section",
+   "max_blocks": 10,
+   "blocks": [
+     {
+       "type": "image",
+       "name": "Banner",
+       "settings":  [
+         {
+           "type": "image_picker",
+           "id": "image-desktop-version",
+           "label": "Imagen para escritorio"
+         },
+         {
+           "type": "image_picker",
+           "id": "image-mobile-version",
+           "label": "Imagen para móvil"
+         },
+         {
+           "type": "url",
+           "id": "link",
+           "label": "URL"
+         }
+       ]
+     }
+   ],
+  "presets": [
+      {
+        "name": "Carrucel de Marcas",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

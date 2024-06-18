@@ -1,136 +1,59 @@
 <footer>
-  <div class="secc-footer">
-
-    <div class="custom-container footer">
-      <div id="gotopbtn" class="btntop"><img src="{{" top_arrow.svg" | asset_url}}" class="arrowtop"></div>
-      <div id="w-node-ab5e0d55-f5d9-cc4b-45c3-e463cabd1e93-beeb019d"
-        class="w-layout-layout quickstackfooter wf-layout-layout">
-
-
-        <div id="w-node-cfa5d3e8-e40d-24b8-d5e2-9d896ef77295-beeb019d" class="w-layout-cell firstcellfooter">
-
-          <a href="{{ routes.root_url }}" class="footerlogolink w-inline-block"><img
-              src="{{ section.settings.logo |  image_url }}"
-              alt="Logo champion" class="logofooter">
-          </a>
-
-
-          {% if section.settings.menu_1 != blank %}
-          <ul role="list" class="listafooter">
-            {% for link in section.settings.menu_1.links %}
-            {% if forloop.first %}
-            <li class="itemlista">
-              <h4 class="titlefooter">{{ section.settings.menu_1.title }}</h4>
-            </li>
-            <li class="itemlista">
-              <a href="{{ link.url }}" class="footerlink">{{ link.title }}</a>
-            </li>
-            {% else %}
-            <li class="itemlista">
-              <a href="{{ link.url }}" class="footerlink">{{ link.title }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
-          </ul>
-          {% endif %}
-
-
-
-          {% if section.settings.menu_2 != blank %}
-          <ul role="list" class="listafooter">
-            {% for link in section.settings.menu_2.links %}
-            {% if forloop.first %}
-            <li class="itemlista">
-              <h4 class="titlefooter">{{ section.settings.menu_2.title }}</h4>
-            </li>
-            <li class="itemlista">
-              <a href="{{ link.url }}" class="footerlink">{{ link.title }}</a>
-            </li>
-            {% else %}
-            <li class="itemlista">
-              <a href="{{ link.url }}" class="footerlink">{{ link.title }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
-          </ul>
-          {% endif %}
-
-
-        </div>
-
-
-
-        <div id="w-node-_70e3c3fb-c433-499e-f6b5-357d612b5044-beeb019d" class="w-layout-cell middlecellfooter">
-          <div class="socialcont mobile">
-            <a href="{{ section.settings.instagram }}" class="linksocial w-inline-block"><img src="{{"
-                instrgram_icon.svg" | asset_url}}"
-                alt="Instagram champion"
-                class="iconsocial"></a>
-            <a href="{{ section.settings.facebook }}" class="linksocial w-inline-block"><img src="{{" facebook_icon.svg"
-                | asset_url}}"
-                alt="Facebook champion"
-                class="iconsocial"></a>
-            <a href="{{ section.settings.youtube }}" class="linksocial w-inline-block"><img src="{{" youtube_icon.svg" |
-                asset_url}}"
-                alt="Youtube champion"
-                class="iconsocial"></a>
-          </div><img src="{{" ClubChampion_Logo_white.svg" | asset_url}}" alt="Unete al club Champion"
-            class="logoclubfooter">
-          <p class="txtclub">{{ section.settings.description-subscription }}</p>
-          <a href="{{ routes.account_register_url }}" class="ctared footer w-button">Suscribirme</a>
-        </div>
-
-
-
-        <div id="w-node-_03f99b7a-b6f6-ee36-4809-1a5366dc645d-beeb019d" class="w-layout-cell lastcellfooter">
-          <div class="contlogos-cert">
-            {% if section.settings.img_certificado_1 %}
-            <img src="{{ section.settings.img_certificado_1 |  image_url  }}" alt="Asociacion mexicana de venta online"
-              class="logoscertificaciones">
-            {% endif %}
-            {% if section.settings.img_certificado_2 %}
-            <img src="{{ section.settings.img_certificado_2 |  image_url  }}" alt="Asociacion mexicana de venta online"
-              class="logoscertificaciones">
-            {% endif %}
-          </div>
-          <ul role="list" class="listafooter">
-            <li class="itemlista">
-              <h4 class="titlefooter center">Tus pagos y compras 100% seguros</h4>
-            </li>
-            <li class="itemlista"><img src="{{ section.settings.logo_payment |  image_url  }}" alt="Metodos de pago"
-                class="logospagos"></li>
-          </ul>
-        </div>
-
-
-      </div>
-      <div class="socialcont final">
-        <a href="{{ section.settings.instagram }}" class="linksocial w-inline-block"><img src="{{" instrgram_icon.svg" |
-            asset_url}}" alt="Instagram"
-            class="iconsocial"></a>
-        <a href="{{ section.settings.facebook }}" class="linksocial w-inline-block"><img src="{{" facebook_icon.svg" |
-            asset_url}}" alt="Facebook"
-            class="iconsocial"></a>
-        <a href="{{ section.settings.youtube }}" class="linksocial w-inline-block"><img src="{{" youtube_icon.svg" |
-            asset_url}}" alt="Youtube"
-            class="iconsocial"></a>
-      </div>
-
-
-      <div id="w-node-_378afaf1-f9cd-f767-f97f-dca8f3c71c46-beeb019d"
-        class="w-layout-layout copyrsecc wf-layout-layout">
-        <div id="w-node-a4cfbc64-a3a8-b00f-d0fc-91c785c04252-beeb019d" class="w-layout-cell cellcopyright">
-          <div class="copyright">©2024  Hanesbrands Inc. Todos los derechos reservados. Developed by <a
-              href="https://www.kubodigital.mx" target="_blank" class="kdlink">KD</a>
+  <div class="customfooter">
+    <div class="custom-container">
+      <a href="#" class="linkfooterlogo w-inline-block"><img src="images/PADN-fullcolor.png"alt="" class="logofooter"></a>
+      <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b65-97130b61" class="w-layout-layout stackfooter wf-layout-layout">
+        <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b66-97130b61" class="w-layout-cell">
+          <h4 class="titlefooter">NEWSLETTER</h4>
+          <div class="linkfooter regular">Recibe promociones y descuentos especiales directamente en tu correo.</div>
+          <div class="formulario-news w-form">
+            <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get" class="newsform w-clearfix" data-wf-page-id="6667390ff463b82d886d3909" data-wf-element-id="a5f7fa89-a91d-90ee-415b-86a697130b6c"><input class="inputsuscriptor w-input" maxlength="256" name="Email-2" data-name="Email 2" placeholder="Ingresa tu correo aquí" type="email" id="Email-2" required=""><input type="submit" data-wait="Espera..." class="suscribir-btn w-button" value="Suscribirme"></form>
+            <div class="w-form-done"></div>
+            <div class="w-form-fail"></div>
           </div>
         </div>
-        <div id="w-node-_6b160bf2-c26e-f075-f365-237f2769cf18-beeb019d" class="w-layout-cell cellsocial">
-          <a href="{{ routes.root_url }}" class="footerlogolink final-footer w-inline-block"><img
-              src="{{ section.settings.logo |  image_url }}" alt="Logo Champion" class="logofooter"></a>
+        <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b71-97130b61" class="w-layout-cell">
+          <h4 class="titlefooter">CONTACTO</h4>
+          <ul role="list" class="fotoerlist">
+            <li class="itemlista">
+              <a href="mailto:padnnutrition@contact.mx?subject=Tienda%20en%20l%C3%ADnea%20PADN" class="linkfooter">padnnutrition@contact.mx</a>
+            </li>
+          </ul>
         </div>
+        <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b78-97130b61" class="w-layout-cell">
+          <h4 class="titlefooter">NOSOTROS</h4>
+          <ul role="list" class="fotoerlist">
+            <li class="itemlista">
+              <a href="#" class="linkfooter">Aviso de Privacidad</a>
+            </li>
+            <li class="itemlista">
+              <a href="#" class="linkfooter">Cambios y devoluciones</a>
+            </li>
+            <li class="itemlista">
+              <a href="#" class="linkfooter">Términos y condiciones</a>
+            </li>
+          </ul>
+        </div>
+        <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b85-97130b61" class="w-layout-cell">
+          <h4 class="titlefooter">MI CUENTA</h4>
+          <ul role="list" class="fotoerlist">
+            <li class="itemlista">
+              <a href="#" class="linkfooter">Registro</a>
+            </li>
+            <li class="itemlista">
+              <a href="#" class="linkfooter">Carrito</a>
+            </li>
+            <li class="itemlista">
+              <a href="#" class="linkfooter">Pedidos</a>
+            </li>
+            <li class="itemlista">
+              <a href="#" class="linkfooter">Direcciones</a>
+            </li>
+          </ul>
+        </div>
+      </div><img src="images/logos-pagos.png"alt="" class="pagosfooter">
+      <div class="copyrightfooter">© PADN · Todos los derechos reservados · Designed &amp; Developed <a href="https://www.kubodigital.mx" target="_blank" class="kdlink">Kubo Digital</a>
       </div>
-
-
     </div>
   </div>
 </footer>

@@ -1,0 +1,78 @@
+
+<div data-delay="4000" data-animation="slide" class="mainslider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="4" data-duration="500" data-infinite="true">
+  <div class="w-slider-mask">
+    <div class="slidehome w-slide">
+      <a href="#" class="linksliderhome w-inline-block"><img alt="" src="images/banner_web_1.jpg"  class="imgbannerhome"></a>
+    </div>
+    <div class="slidehome w-slide">
+      <a href="#" class="linksliderhome w-inline-block"><img alt="" src="images/banner_web_2.jpg"  class="imgbannerhome"></a>
+    </div>
+  </div>
+  <div class="arrowmainslider w-slider-arrow-left">
+    <div class="w-icon-slider-left"></div>
+  </div>
+  <div class="arrowmainslider w-slider-arrow-right">
+    <div class="w-icon-slider-right"></div>
+  </div>
+  <div class="mainslidenav w-slider-nav w-slider-nav-invert w-round"></div>
+</div>
+<div data-delay="4000" data-animation="slide" class="mainslider mobile w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="4" data-duration="500" data-infinite="true">
+  <div class="w-slider-mask">
+    <div class="slidehome w-slide">
+      <a href="#" class="linksliderhome w-inline-block"><img alt="" src="images/banner_web_2.jpg"  class="imgbannerhome"></a>
+    </div>
+    <div class="slidehome w-slide">
+      <a href="#" class="linksliderhome w-inline-block"><img alt="" src="images/banner_web_1.jpg"  class="imgbannerhome"></a>
+    </div>
+  </div>
+  <div class="arrowmainslider w-slider-arrow-left">
+    <div class="w-icon-slider-left"></div>
+  </div>
+  <div class="arrowmainslider w-slider-arrow-right">
+    <div class="w-icon-slider-right"></div>
+  </div>
+  <div class="mainslidenav w-slider-nav w-round"></div>
+</div>
+
+{% schema %}
+  {
+   "name": "Carrusel de Banners",
+   "class": "index-section",
+   "max_blocks": 10,
+   "blocks": [
+     {
+       "type": "image",
+       "name": "Banner",
+       "settings":  [
+         {
+           "type": "image_picker",
+           "id": "image-desktop-version",
+           "label": "Imagen para escritorio"
+         },
+         {
+           "type": "image_picker",
+           "id": "image-mobile-version",
+           "label": "Imagen para móvil"
+         },
+         {
+           "type": "url",
+           "id": "link",
+           "label": "URL"
+         }
+       ]
+     }
+   ],
+  "presets": [
+      {
+        "name": "Carrusel de Banners",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
