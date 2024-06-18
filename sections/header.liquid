@@ -47,7 +47,7 @@
 
           <div class="cont-contacto">
             <a href="{%  if customer %} {{ routes.account_url }} {%  else %} # {% endif %}" class="linknavicon hiddenmobile w-inline-block">
-              <img src=" {{ " account_icon.svg" | asset_url }} " alt="Usuario" class=" iconnavbar" data-ix="showloginmodal">
+              <img src=" {{ " account_icon.svg" | asset_url }} " alt="Usuario" class=" iconnavbar" {% unless customer %} data-ix="showloginmodal" {% endunless %}>
             </a>
             <a href="/pages/contact" class="linknavicon hiddenmobile w-inline-block">
               <img src="{{ "mail_icon.svg" | asset_url}} " alt="Contacto" class=" iconnavbar">
@@ -84,7 +84,7 @@
                             <div class="icondropsub w-icon-dropdown-toggle"></div>
                             <div>{{ childlink.title}}</div>
                           </div>
-                          <nav class="thirdleveldrop w-dropdown-list">
+                          <nav class="thirdleveldrop small w-dropdown-list">
                             {% for thirdchild in childlink.links %}
                               <a href="{{ thirdchild.url }}" class="sublinkmenudrop">{{ thirdchild.title }}</a>
                             {% endfor %}
@@ -142,7 +142,7 @@
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 5,
+  "max_blocks": 1,
   "blocks": [
     {
       "type": "text",
