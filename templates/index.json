@@ -1,198 +1,51 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
-    "banners_slide_JW7heY": {
+    "banners_slide_z6fF8d": {
       "type": "banners-slide",
-      "blocks": {
-        "image_jqgtzz": {
-          "type": "image",
-          "settings": {
-            "image-desktop-version": "shopify:\/\/shop_images\/banner_escritorio.jpg",
-            "image-mobile-version": "shopify:\/\/shop_images\/banner_mobile.jpg",
-            "link": "shopify:\/\/collections\/frontpage"
-          }
-        },
-        "image_Udpz4b": {
-          "type": "image",
-          "settings": {
-            "image-desktop-version": "shopify:\/\/shop_images\/banner_escritorio.jpg",
-            "image-mobile-version": "shopify:\/\/shop_images\/banner_mobile.jpg",
-            "link": "shopify:\/\/collections\/frontpage"
-          }
-        }
-      },
-      "block_order": [
-        "image_jqgtzz",
-        "image_Udpz4b"
-      ],
       "settings": {
       }
     },
-    "warranty_home_cbgexT": {
-      "type": "warranty-home",
+    "collection_tabs_tp7rAk": {
+      "type": "collection-tabs",
       "settings": {
       }
     },
-    "banners_grid_hDX4H3": {
-      "type": "banners-grid",
-      "blocks": {
-        "image_VNewjF": {
-          "type": "image",
-          "settings": {
-            "titulo_1": "Lo mas nuevo",
-            "card_link": "shopify:\/\/collections\/frontpage",
-            "image_1": "shopify:\/\/shop_images\/Bitmap.jpg",
-            "Title_C1": "Hombre",
-            "link_1": "shopify:\/\/collections\/frontpage",
-            "Title_C2": "Mujer",
-            "link_2": "shopify:\/\/collections\/frontpage",
-            "Title_C3": "Niños",
-            "link_3": "shopify:\/\/collections\/frontpage"
-          }
-        },
-        "image_dWMah7": {
-          "type": "image",
-          "settings": {
-            "titulo_1": "Lo mas nuevo",
-            "card_link": "shopify:\/\/collections\/frontpage",
-            "image_1": "shopify:\/\/shop_images\/Bitmap-2.jpg",
-            "Title_C1": "Hombre",
-            "link_1": "shopify:\/\/collections\/frontpage",
-            "Title_C2": "Mujer",
-            "link_2": "shopify:\/\/collections\/frontpage",
-            "Title_C3": "Niños",
-            "link_3": "shopify:\/\/collections\/frontpage"
-          }
-        },
-        "image_bYdeVn": {
-          "type": "image",
-          "settings": {
-            "titulo_1": "Lo mas nuevo",
-            "card_link": "shopify:\/\/collections\/frontpage",
-            "image_1": "shopify:\/\/shop_images\/Bitmap-3.jpg",
-            "Title_C1": "Hombre",
-            "link_1": "shopify:\/\/collections\/frontpage",
-            "Title_C2": "Mujer",
-            "link_2": "shopify:\/\/collections\/frontpage",
-            "Title_C3": "Niños",
-            "link_3": "shopify:\/\/collections\/frontpage"
-          }
-        }
-      },
-      "block_order": [
-        "image_VNewjF",
-        "image_dWMah7",
-        "image_bYdeVn"
-      ],
+    "brands_slide_hyjTTq": {
+      "type": "brands-slide",
       "settings": {
       }
     },
-    "carousel_collection_KHVg8V": {
-      "type": "carousel-collection",
-      "settings": {
-        "titulo": "Productos Recomendados",
-        "collection_1": "frontpage",
-        "range_prod_1": 12
-      }
-    },
-    "banners_grid_XxhaVz": {
-      "type": "banners-grid",
-      "blocks": {
-        "image_bHjJx9": {
-          "type": "image",
-          "settings": {
-            "titulo_1": "Lo mas nuevo",
-            "card_link": "",
-            "image_1": "shopify:\/\/shop_images\/Bitmap.jpg",
-            "Title_C1": "Hombre",
-            "link_1": "",
-            "Title_C2": "Mujer",
-            "link_2": "",
-            "Title_C3": "Niños",
-            "link_3": ""
-          }
-        },
-        "image_cdiqGe": {
-          "type": "image",
-          "settings": {
-            "titulo_1": "Lo mas nuevo",
-            "card_link": "",
-            "image_1": "shopify:\/\/shop_images\/Bitmap-2.jpg",
-            "Title_C1": "Hombre",
-            "link_1": "",
-            "Title_C2": "Mujer",
-            "link_2": "",
-            "Title_C3": "Niños",
-            "link_3": ""
-          }
-        },
-        "image_N8wW7j": {
-          "type": "image",
-          "settings": {
-            "titulo_1": "Lo mas nuevo",
-            "card_link": "",
-            "image_1": "shopify:\/\/shop_images\/Bitmap-3.jpg",
-            "Title_C1": "Hombre",
-            "link_1": "",
-            "Title_C2": "Mujer",
-            "link_2": "",
-            "Title_C3": "Niños",
-            "link_3": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_bHjJx9",
-        "image_cdiqGe",
-        "image_N8wW7j"
-      ],
+    "collage_LpwrBr": {
+      "type": "collage",
       "settings": {
       }
     },
-    "banner_secundary_slide_C7DHhX": {
-      "type": "banner-secundary-slide",
-      "blocks": {
-        "image_KBfhHr": {
-          "type": "image",
-          "settings": {
-            "image-desktop-version": "shopify:\/\/shop_images\/bannersmall.jpg",
-            "image-mobile-version": "shopify:\/\/shop_images\/secundario-small.jpg",
-            "link": "shopify:\/\/collections\/all"
-          }
-        }
-      },
-      "block_order": [
-        "image_KBfhHr"
-      ],
-      "settings": {
-      }
-    },
-    "video_7wKUzk": {
+    "video_C7VPHP": {
       "type": "video",
       "settings": {
-        "Titulo_video": "CHAMPION WHAT MOVES YOU™",
-        "Video_description": "Inspiramos a los campeones a romper sus propios límites y siempre alcanzar la victoria. #ChampionMX #ChampionWhatMovesYou",
-        "button_text": "Ver colección",
-        "button_link": "shopify:\/\/collections\/all",
-        "video-chanel": "shopifyvideo",
-        "Video_link": "https:\/\/www.youtube.com\/embed\/pbTrpJO8rrA?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=13",
-        "Video_link-2": "shopify:\/\/files\/videos\/video_ad.mov"
       }
     },
-    "newsletter_XbpfeP": {
-      "type": "newsletter",
+    "warranty_home_UbAANw": {
+      "type": "warranty-home",
       "settings": {
-        "News_description": "Entérate antes que nadie sobre lanzamientos de nuevos productos, colaboraciones, y promociones especiales - Obtén un 15% de DESCUENTO* en tu próxima compra."
       }
     }
   },
   "order": [
-    "banners_slide_JW7heY",
-    "warranty_home_cbgexT",
-    "banners_grid_hDX4H3",
-    "carousel_collection_KHVg8V",
-    "banners_grid_XxhaVz",
-    "banner_secundary_slide_C7DHhX",
-    "video_7wKUzk",
-    "newsletter_XbpfeP"
+    "banners_slide_z6fF8d",
+    "collection_tabs_tp7rAk",
+    "brands_slide_hyjTTq",
+    "collage_LpwrBr",
+    "video_C7VPHP",
+    "warranty_home_UbAANw"
   ]
 }
