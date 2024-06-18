@@ -11,6 +11,28 @@
   "sections": {
     "banners_slide_z6fF8d": {
       "type": "banners-slide",
+      "blocks": {
+        "image_MnCM9j": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/banner_web_1.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/banner_web_1.jpg",
+            "link": "shopify:\/\/collections\/all"
+          }
+        },
+        "image_YKV7wQ": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/banner_web_2.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/banner_web_2.jpg",
+            "link": "shopify:\/\/blogs\/news"
+          }
+        }
+      },
+      "block_order": [
+        "image_MnCM9j",
+        "image_YKV7wQ"
+      ],
       "settings": {
       }
     },
