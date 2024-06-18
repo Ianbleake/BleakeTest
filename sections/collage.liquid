@@ -1,27 +1,33 @@
 <div class="seccdestacados">
   <div class="custom-container">
     <h2 class="maintitle">Productos Destacados</h2>
-    <div id="w-node-c02690fb-4602-31ab-4b6e-14e9930881f0-886d3909" class="w-layout-layout stackdestacados wf-layout-layout">
+    <div id="w-node-c02690fb-4602-31ab-4b6e-14e9930881f0-886d3909"
+      class="w-layout-layout stackdestacados wf-layout-layout">
       <div id="w-node-c02690fb-4602-31ab-4b6e-14e9930881f1-886d3909" class="w-layout-cell cellbanner">
         <a href="#" class="linkdest w-inline-block">
-          <div class="vermas">VER MÁS</div><img src="images/banner_destacado.jpg"alt="" class="banenrdest">
+          <div class="vermas">VER MÁS</div><img src="{{ " images/banner_destacado.jpg" | asset_url }}"alt=""
+            class="banenrdest">
         </a>
       </div>
       <div id="w-node-c02690fb-4602-31ab-4b6e-14e9930881f2-886d3909" class="w-layout-cell cellbanner">
         <a href="#" class="linkdest w-inline-block">
-          <div class="vermas">VER MÁS</div><img src="images/banner_destacado.jpg"alt="" class="banenrdest">
+          <div class="vermas">VER MÁS</div><img src="{{ " images/banner_destacado.jpg" | asset_url }}"alt=""
+            class="banenrdest">
         </a>
       </div>
     </div>
-    <div id="w-node-be1e7d8c-4e3b-9656-5c03-baa8a0375018-886d3909" class="w-layout-layout stackdestacados wf-layout-layout">
+    <div id="w-node-be1e7d8c-4e3b-9656-5c03-baa8a0375018-886d3909"
+      class="w-layout-layout stackdestacados wf-layout-layout">
       <div id="w-node-be1e7d8c-4e3b-9656-5c03-baa8a0375019-886d3909" class="w-layout-cell cellbanner">
         <a href="#" class="linkdest w-inline-block">
-          <div class="vermas">VER MÁS</div><img src="images/banner_destacado.jpg"alt="" class="banenrdest">
+          <div class="vermas">VER MÁS</div><img src="{{ " images/banner_destacado.jpg" | asset_url }}"alt=""
+            class="banenrdest">
         </a>
       </div>
       <div id="w-node-be1e7d8c-4e3b-9656-5c03-baa8a037501e-886d3909" class="w-layout-cell cellbanner">
         <a href="#" class="linkdest w-inline-block">
-          <div class="vermas">VER MÁS</div><img src="images/banner_destacado.jpg"alt="" class="banenrdest">
+          <div class="vermas">VER MÁS</div><img src="{{ " images/banner_destacado.jpg" | asset_url }}"alt=""
+            class="banenrdest">
         </a>
       </div>
     </div>
@@ -29,38 +35,38 @@
 </div>
 
 {% schema %}
-  {
-   "name": "Categorias",
-   "class": "index-section",
-   "max_blocks": 10,
-   "blocks": [
-     {
-       "type": "image",
-       "name": "Banner",
-       "settings":  [
-         {
-           "type": "image_picker",
-           "id": "image-desktop-version",
-           "label": "Imagen para escritorio"
-         },
-         {
-           "type": "image_picker",
-           "id": "image-mobile-version",
-           "label": "Imagen para móvil"
-         },
-         {
-           "type": "url",
-           "id": "link",
-           "label": "URL"
-         }
-       ]
-     }
-   ],
-  "presets": [
-      {
-        "name": "Categorias",
-        "category": "Image"
-      }
-    ]
-  }
+{
+"name": "Categorias",
+"class": "index-section",
+"max_blocks": 10,
+"blocks": [
+{
+"type": "image",
+"name": "Banner",
+"settings": [
+{
+"type": "image_picker",
+"id": "image-desktop-version",
+"label": "Imagen para escritorio"
+},
+{
+"type": "image_picker",
+"id": "image-mobile-version",
+"label": "Imagen para móvil"
+},
+{
+"type": "url",
+"id": "link",
+"label": "URL"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Categorias",
+"category": "Image"
+}
+]
+}
 {% endschema %}

@@ -1,22 +1,27 @@
 <div class="seccgarantias">
   <div class="custom-container">
     <h2 class="maintitle">Compras fáciles y seguras</h2>
-    <div data-delay="4000" data-animation="cross" class="slidergarantias w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+    <div data-delay="4000" data-animation="cross" class="slidergarantias w-slider" data-autoplay="true"
+      data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0"
+      data-nav-spacing="3" data-duration="500" data-infinite="true">
       <div class="maskgarantias w-slider-mask">
         <div class="slideg w-slide">
-          <div class="infogarantia"><img width="35" src="images/iconb_pagos.svg" alt="" class="img-garantia">
+          <div class="infogarantia"><img width="35" src="{{ " images/iconb_pagos.svg" | asset_url }}" alt=""
+              class="img-garantia">
             <h3 class="titlegarantia">Paga con tarjeta o efectivo</h3>
             <div class="txtgarantia">Tenemos múltiples métodos de pago para tu comodidad.</div>
           </div>
         </div>
         <div class="slideg w-slide">
-          <div class="infogarantia"><img width="30" src="images/icon_envios.svg" alt="" class="img-garantia">
+          <div class="infogarantia"><img width="30" src="{{ " images/icon_envios.svg" | asset_url }}" alt=""
+              class="img-garantia">
             <h3 class="titlegarantia">Envíos gratis en productos seleccionados</h3>
             <div class="txtgarantia">Envíos seguros a todo México hasta la puerta de tu casa.</div>
           </div>
         </div>
         <div class="slideg w-slide">
-          <div class="infogarantia"><img width="35" src="images/icobn_seguridad.svg" alt="" class="img-garantia">
+          <div class="infogarantia"><img width="35" src="{{ " images/icobn_seguridad.svg" | asset_url }}" alt=""
+              class="img-garantia">
             <h3 class="titlegarantia">Compra protegida</h3>
             <div class="txtgarantia">Todos tus pagos son 100% seguros.</div>
           </div>
@@ -34,38 +39,38 @@
 </div>
 
 {% schema %}
-  {
-   "name": "Garantias",
-   "class": "index-section",
-   "max_blocks": 10,
-   "blocks": [
-     {
-       "type": "image",
-       "name": "Banner",
-       "settings":  [
-         {
-           "type": "image_picker",
-           "id": "image-desktop-version",
-           "label": "Imagen para escritorio"
-         },
-         {
-           "type": "image_picker",
-           "id": "image-mobile-version",
-           "label": "Imagen para móvil"
-         },
-         {
-           "type": "url",
-           "id": "link",
-           "label": "URL"
-         }
-       ]
-     }
-   ],
-  "presets": [
-      {
-        "name": "Garantias",
-        "category": "Image"
-      }
-    ]
-  }
+{
+"name": "Garantias",
+"class": "index-section",
+"max_blocks": 10,
+"blocks": [
+{
+"type": "image",
+"name": "Banner",
+"settings": [
+{
+"type": "image_picker",
+"id": "image-desktop-version",
+"label": "Imagen para escritorio"
+},
+{
+"type": "image_picker",
+"id": "image-mobile-version",
+"label": "Imagen para móvil"
+},
+{
+"type": "url",
+"id": "link",
+"label": "URL"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Garantias",
+"category": "Image"
+}
+]
+}
 {% endschema %}
