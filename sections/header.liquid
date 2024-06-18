@@ -13,184 +13,97 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
-{%  render 'login-popup' %}
+{% render 'login-popup' %}
 
 <header>
   <div class="customheader">
+
     <div class="top-banner">
       <div class="custom-container">
-        <a href="#" class="texto-topbanner">Envíos GRATIS en compras a partir de $1299 MXN</a>
+        {% for block in section.blocks %}
+          <a href="{{ block.settings.url }}" class="texto-topbanner">{{ block.settings.title }}</a>
+        {% endfor %}
       </div>
     </div>
+
     <div class="menunav-custom">
-      <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
-        role="banner" class="custom-navbar w-nav">
+      <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="custom-navbar w-nav">
         <div class="custom-container navbar">
+
           <div class="boton-menu w-nav-button">
             <div class="w-icon-nav-menu"></div>
           </div>
-          <a href="#" class="logonav w-nav-brand">
-            <img alt="somnistore logo" src="{{ " PADN-fullcolor.png" | asset_url }}" loading="eager" class="imglogo-nav">
+
+          <a href="{{ routes.root_url }}" class="logonav w-nav-brand">
+            <img src="{{ section.settings.logo |  image_url }}" alt="{{ section.settings.logo.alt }}" loading="eager" class="imglogo-nav">
           </a>
+
           <div class="buscador-custom w-form">
-            <form id="email-form" name="email-form" data-name="Email Form" method="get" class="formbuscador"
-              data-wf-page-id="6667390ff463b82d886d3909" data-wf-element-id="dbc1f7ba-4e00-327f-f8dc-751f383ffe66">
-              <input class="inputbuscador w-input" maxlength="256" name="Buscador-2" data-name="Buscador 2"
-                placeholder="Encuentra tu producto" type="text" id="Buscador-2"><input type="submit"
-                data-wait="Buscando.." class="btn-buscar w-button" value="Buscar">
+            <form action="{{ routes.search_url }}" method="get" role="search" class="formbuscador" data-wf-page-id="6667390ff463b82d886d3909" data-wf-element-id="dbc1f7ba-4e00-327f-f8dc-751f383ffe66">
+              <input class="inputbuscador w-input" maxlength="256" name="q"  placeholder="Encuentra tu producto" type="search" required >
+              <input type="submit" data-wait="Buscando.." class="btn-buscar w-button" value="Buscar">
             </form>
-            <div class="w-form-done">
-              <div>Thank you! Your submission has been received!</div>
-            </div>
-            <div class="w-form-fail">
-              <div>Oops! Something went wrong while submitting the form.</div>
-            </div>
           </div>
+
           <div class="cont-contacto">
-            <a href="#" class="linknavicon hiddenmobile w-inline-block"><img src="{{ " account_icon.svg" |
-                asset_url }}" alt="" class="iconnavbar" data-ix="showloginmodal"></a>
-            <a href="#" class="linknavicon hiddenmobile w-inline-block"><img src="{{ " mail_icon.svg" | asset_url
-                }}" alt="" class="iconnavbar"></a>
-            <a href="#" class="linknavicon w-inline-block"><img src="{{ " cart-icon.svg" | asset_url }}" alt=""
-                class="iconnavbar">
-              <div class="qtycart">12</div>
+            <a href="{%  if  %} {{ routes.account_url }} {%  else %} # {% endif %}" class="linknavicon hiddenmobile w-inline-block">
+              <img src=" {{ " account_icon.svg" | asset_url }} " alt="Usuario" class=" iconnavbar" data-ix="showloginmodal">
+            </a>
+            <a href="/pages/contact" class="linknavicon hiddenmobile w-inline-block">
+              <img src="{{ "mail_icon.svg" | asset_url}} " alt="Contacto" class=" iconnavbar">
+            </a>
+            <a href="#" class="linknavicon w-inline-block" id="cart-icon-btn" >
+              <img src="{{ " cart-icon.svg" | asset_url }}" alt="Carrito" class="iconnavbar">
+              <div class="qtycart" id="cart-icon-bubble">{{cart.item_count}}</div>
             </a>
           </div>
         </div>
+
         <nav role="navigation" class="custom-navigationmenu w-nav-menu">
+
           <div class="buscador-custom mobile w-form">
-            <form id="email-form" name="email-form" data-name="Email Form" method="get" class="formbuscador"
-              data-wf-page-id="6667390ff463b82d886d3909" data-wf-element-id="dbc1f7ba-4e00-327f-f8dc-751f383ffe7a">
-              <input class="inputbuscador w-input" maxlength="256" name="Buscador-2" data-name="Buscador 2"
-                placeholder="¿Qué estás buscando?" type="text" id="Buscador-2"><input type="submit"
-                data-wait="Please wait..." class="btn-buscar w-button" value="">
+            <form action="{{ routes.search_url }}" method="get" role="search" class="formbuscador" data-wf-page-id="6667390ff463b82d886d3909" data-wf-element-id="dbc1f7ba-4e00-327f-f8dc-751f383ffe66">
+              <input class="inputbuscador w-input" maxlength="256" name="q"  placeholder="Encuentra tu producto" type="search" required >
+              <input type="submit" data-wait="Buscando.." class="btn-buscar w-button" value="Buscar">
             </form>
-            <div class="w-form-done">
-              <div>Thank you! Your submission has been received!</div>
-            </div>
-            <div class="w-form-fail">
-              <div>Oops! Something went wrong while submitting the form.</div>
-            </div>
           </div>
-          <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-            <div class="menunav-link drop w-dropdown-toggle">
-              <div class="icondropmenu w-icon-dropdown-toggle"></div>
-              <div class="nombremenu">PADN Nutrition</div>
-            </div>
-            <nav class="megamenu-colecciones w-dropdown-list">
-              <a href="#" class="sublinkmenudrop">Wellness</a>
-              <a href="#" class="sublinkmenudrop">Performance</a>
-            </nav>
-          </div>
-          <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-            <div class="menunav-link drop w-dropdown-toggle">
-              <div class="icondropmenu w-icon-dropdown-toggle"></div>
-              <div class="nombremenu">HBL</div>
-            </div>
-            <nav class="megamenu-colecciones w-dropdown-list">
-              <a href="#" class="sublinkmenudrop">Hombre</a>
-              <a href="#" class="sublinkmenudrop">Mujer</a>
-              <a href="#" class="sublinkmenudrop">Romerox</a>
-            </nav>
-          </div>
-          <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-            <div class="menunav-link drop w-dropdown-toggle">
-              <div class="icondropmenu w-icon-dropdown-toggle"></div>
-              <div class="nombremenu">Bebés</div>
-            </div>
-            <nav class="megamenu-colecciones w-dropdown-list">
-              <div data-hover="true" data-delay="0" class="dropsub w-dropdown">
-                <div class="droptoglgesub w-dropdown-toggle">
-                  <div class="icondropsub w-icon-dropdown-toggle"></div>
-                  <div>Pañales</div>
+
+          {% if section.settings.menu != blank %}
+            {% for link in section.settings.menu.links %}
+              {% if link.links != blank %}
+                <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
+                  <div class="menunav-link drop w-dropdown-toggle">
+                    <div class="icondropmenu w-icon-dropdown-toggle"></div>
+                    <div class="nombremenu">{{ link.title }}</div>
+                  </div>
+                  <nav class="megamenu-colecciones w-dropdown-list">
+                    {% for childlink in link.links %}
+                      {% if childlink.links != blank %}
+                        <div data-hover="true" data-delay="0" class="dropsub w-dropdown">
+                          <div class="droptoglgesub w-dropdown-toggle">
+                            <div class="icondropsub w-icon-dropdown-toggle"></div>
+                            <div>{{ childlink.title}}</div>
+                          </div>
+                          <nav class="thirdleveldrop w-dropdown-list">
+                            {% for thirdchild in childlink.links %}
+                              <a href="{{ thirdchild.url }}" class="sublinkmenudrop">{{ thirdchild.title }}</a>
+                            {% endfor %}
+                          </nav>
+                        </div>
+                      {% else %}                        
+                        <a href="{{ childlink.url }}" class="sublinkmenudrop">{{ childlink.title }}</a>
+                      {% endif %}
+                    {% endfor %}
+                  </nav>
                 </div>
-                <nav class="thirdleveldrop w-dropdown-list">
-                  <a href="#" class="sublinkmenudrop">Bio Baby</a>
-                  <a href="#" class="sublinkmenudrop">BB Tips</a>
-                  <a href="#" class="sublinkmenudrop">Baby Pants</a>
-                  <a href="#" class="sublinkmenudrop">Chicolastic</a>
-                  <a href="#" class="sublinkmenudrop">Kiddies</a>
-                </nav>
-              </div>
-              <div data-hover="true" data-delay="0" class="dropsub w-dropdown">
-                <div class="droptoglgesub w-dropdown-toggle">
-                  <div class="icondropsub w-icon-dropdown-toggle"></div>
-                  <div>Higiene</div>
-                </div>
-                <nav class="thirdleveldrop small w-dropdown-list">
-                  <a href="#" class="sublinkmenudrop">Baby Dove</a>
-                </nav>
-              </div>
-              <div data-hover="true" data-delay="0" class="dropsub w-dropdown">
-                <div class="droptoglgesub w-dropdown-toggle">
-                  <div class="icondropsub w-icon-dropdown-toggle"></div>
-                  <div>Fórmula</div>
-                </div>
-                <nav class="thirdleveldrop small w-dropdown-list">
-                  <a href="#" class="sublinkmenudrop">Friso</a>
-                </nav>
-              </div>
-              <a href="#" class="sublinkmenudrop">Kits / Packs</a>
-            </nav>
-          </div>
-          <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-            <div class="menunav-link drop w-dropdown-toggle">
-              <div class="icondropmenu w-icon-dropdown-toggle"></div>
-              <div class="nombremenu">Cuidado Personal</div>
-            </div>
-            <nav class="megamenu-colecciones w-dropdown-list">
-              <a href="#" class="sublinkmenudrop">Mia / Fiore</a>
-              <a href="#" class="sublinkmenudrop">Panalab</a>
-              <a href="#" class="sublinkmenudrop">Gelcaps</a>
-              <a href="#" class="sublinkmenudrop">Advaita</a>
-            </nav>
-          </div>
-          <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-            <div class="menunav-link drop w-dropdown-toggle">
-              <div class="icondropmenu w-icon-dropdown-toggle"></div>
-              <div class="nombremenu">Cuidado Cabello</div>
-            </div>
-            <nav class="megamenu-colecciones w-dropdown-list">
-              <a href="#" class="sublinkmenudrop">Shea Moisture</a>
-              <a href="#" class="sublinkmenudrop">Nexxus</a>
-              <a href="#" class="sublinkmenudrop">HBL</a>
-              <a href="#" class="sublinkmenudrop">Aminoter</a>
-              <a href="#" class="sublinkmenudrop">Capillaceous</a>
-            </nav>
-          </div>
-          <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-            <div class="menunav-link drop w-dropdown-toggle">
-              <div class="icondropmenu w-icon-dropdown-toggle"></div>
-              <div class="nombremenu">Farmacia</div>
-            </div>
-            <nav class="megamenu-colecciones w-dropdown-list">
-              <a href="#" class="sublinkmenudrop">Gelcaps</a>
-              <a href="#" class="sublinkmenudrop">Carnot</a>
-              <a href="#" class="sublinkmenudrop">Advaita</a>
-              <a href="#" class="sublinkmenudrop">Quida</a>
-            </nav>
-          </div>
-          <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-            <div class="menunav-link drop w-dropdown-toggle">
-              <div class="icondropmenu w-icon-dropdown-toggle"></div>
-              <div class="nombremenu">Incontinencia</div>
-            </div>
-            <nav class="megamenu-colecciones w-dropdown-list">
-              <div data-hover="true" data-delay="0" class="dropsub w-dropdown">
-                <div class="droptoglgesub w-dropdown-toggle">
-                  <div class="icondropsub w-icon-dropdown-toggle"></div>
-                  <div>Affective</div>
-                </div>
-                <nav class="thirdleveldrop small w-dropdown-list">
-                  <a href="#" class="sublinkmenudrop">Liberty</a>
-                  <a href="#" class="sublinkmenudrop">Active</a>
-                </nav>
-              </div>
-            </nav>
-          </div>
-          <a href="/ofertas?_q=OFERTAS&amp;map=ft" class="menunav-link ofertas w-nav-link">OFERTAS</a>
-          <a href="/fale-conosco" class="menunav-link hiddendesk micuenta w-nav-link">Mi cuenta</a>
-          <a href="/fale-conosco" class="menunav-link hiddendesk contacto w-nav-link">Contacto</a>
+              {% else %}
+              <a href="{{ link.url }}" class="menunav-link {% if link.title contains 'OFERTAS'  %} ofertas {% endif %} w-nav-link">{{ link.title }}</a>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+
+          <a href="{{ routes.account_url }}" class="menunav-link hiddendesk micuenta w-nav-link">Mi cuenta</a>
+          <a href="/pages/contact" class="menunav-link hiddendesk contacto w-nav-link">Contacto</a>
         </nav>
       </div>
     </div>
@@ -198,8 +111,8 @@
 </header>
 
 {%- if request.page_type == 'index' -%}
-{% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
-<script type="application/ld+json">
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
+  <script type="application/ld+json">
     {
     "@context": "http://schema.org",
         "@type": "WebSite",
@@ -227,40 +140,35 @@
 {%- endif -%}
 {% schema %}
 {
-"name": "t:sections.header.name",
-"class": "section-header",
-"max_blocks": 5,
-"blocks": [
-{
-"type": "text",
-"name": "Anuncio",
-"settings": [
-{
-"type": "text",
-"id": "Anuncio_title",
-"default": "Conoce nuestras novedades",
-"label": "Anuncio Encabezado"
-},
-{
-"type": "url",
-"id": "Anuncio_link",
-"label": "Link del Anuncio"
-}
-]
-}
-],
-"settings": [
-{
-"type": "image_picker",
-"id": "logo",
-"label": "Logo de la marca"
-},{
-"type": "image_picker",
-"id": "logo_mobile",
-"label": "Logo Mobile"
-},
-{ "type": "link_list", "id": "menu", "default": "main-menu", "label": "Menu Principal" }
-
-]
+  "name": "t:sections.header.name",
+  "class": "section-header",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Anuncio",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Conoce nuestras novedades",
+          "label": "Anuncio Encabezado"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link del Anuncio"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo de la marca"
+    },
+    { "type": "link_list", "id": "menu", "default": "main-menu", "label": "Menu Principal" }
+  ]
 }
 {% endschema %}
