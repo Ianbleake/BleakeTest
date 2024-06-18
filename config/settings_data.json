@@ -20,6 +20,18 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "text_WpC6gx": {
+            "type": "text",
+            "settings": {
+              "title": "Envíos GRATIS en compras a partir de $1299 MXN",
+              "url": "shopify:\/\/collections\/all"
+            }
+          }
+        },
+        "block_order": [
+          "text_WpC6gx"
+        ],
         "settings": {
           "menu": "main-menu"
         }
