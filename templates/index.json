@@ -1,35 +1,198 @@
 {
   "sections": {
-    "featured_collection": {
-      "type": "featured-collection",
+    "banners_slide_JW7heY": {
+      "type": "banners-slide",
+      "blocks": {
+        "image_jqgtzz": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/banner_escritorio.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/banner_mobile.jpg",
+            "link": "shopify:\/\/collections\/frontpage"
+          }
+        },
+        "image_Udpz4b": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/banner_escritorio.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/banner_mobile.jpg",
+            "link": "shopify:\/\/collections\/frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "image_jqgtzz",
+        "image_Udpz4b"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+      }
+    },
+    "warranty_home_cbgexT": {
+      "type": "warranty-home",
+      "settings": {
+      }
+    },
+    "banners_grid_hDX4H3": {
+      "type": "banners-grid",
+      "blocks": {
+        "image_VNewjF": {
+          "type": "image",
+          "settings": {
+            "titulo_1": "Lo mas nuevo",
+            "card_link": "shopify:\/\/collections\/frontpage",
+            "image_1": "shopify:\/\/shop_images\/Bitmap.jpg",
+            "Title_C1": "Hombre",
+            "link_1": "shopify:\/\/collections\/frontpage",
+            "Title_C2": "Mujer",
+            "link_2": "shopify:\/\/collections\/frontpage",
+            "Title_C3": "Niños",
+            "link_3": "shopify:\/\/collections\/frontpage"
+          }
+        },
+        "image_dWMah7": {
+          "type": "image",
+          "settings": {
+            "titulo_1": "Lo mas nuevo",
+            "card_link": "shopify:\/\/collections\/frontpage",
+            "image_1": "shopify:\/\/shop_images\/Bitmap-2.jpg",
+            "Title_C1": "Hombre",
+            "link_1": "shopify:\/\/collections\/frontpage",
+            "Title_C2": "Mujer",
+            "link_2": "shopify:\/\/collections\/frontpage",
+            "Title_C3": "Niños",
+            "link_3": "shopify:\/\/collections\/frontpage"
+          }
+        },
+        "image_bYdeVn": {
+          "type": "image",
+          "settings": {
+            "titulo_1": "Lo mas nuevo",
+            "card_link": "shopify:\/\/collections\/frontpage",
+            "image_1": "shopify:\/\/shop_images\/Bitmap-3.jpg",
+            "Title_C1": "Hombre",
+            "link_1": "shopify:\/\/collections\/frontpage",
+            "Title_C2": "Mujer",
+            "link_2": "shopify:\/\/collections\/frontpage",
+            "Title_C3": "Niños",
+            "link_3": "shopify:\/\/collections\/frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "image_VNewjF",
+        "image_dWMah7",
+        "image_bYdeVn"
+      ],
+      "settings": {
+      }
+    },
+    "carousel_collection_KHVg8V": {
+      "type": "carousel-collection",
+      "settings": {
+        "titulo": "Productos Recomendados",
+        "collection_1": "frontpage",
+        "range_prod_1": 12
+      }
+    },
+    "banners_grid_XxhaVz": {
+      "type": "banners-grid",
+      "blocks": {
+        "image_bHjJx9": {
+          "type": "image",
+          "settings": {
+            "titulo_1": "Lo mas nuevo",
+            "card_link": "",
+            "image_1": "shopify:\/\/shop_images\/Bitmap.jpg",
+            "Title_C1": "Hombre",
+            "link_1": "",
+            "Title_C2": "Mujer",
+            "link_2": "",
+            "Title_C3": "Niños",
+            "link_3": ""
+          }
+        },
+        "image_cdiqGe": {
+          "type": "image",
+          "settings": {
+            "titulo_1": "Lo mas nuevo",
+            "card_link": "",
+            "image_1": "shopify:\/\/shop_images\/Bitmap-2.jpg",
+            "Title_C1": "Hombre",
+            "link_1": "",
+            "Title_C2": "Mujer",
+            "link_2": "",
+            "Title_C3": "Niños",
+            "link_3": ""
+          }
+        },
+        "image_N8wW7j": {
+          "type": "image",
+          "settings": {
+            "titulo_1": "Lo mas nuevo",
+            "card_link": "",
+            "image_1": "shopify:\/\/shop_images\/Bitmap-3.jpg",
+            "Title_C1": "Hombre",
+            "link_1": "",
+            "Title_C2": "Mujer",
+            "link_2": "",
+            "Title_C3": "Niños",
+            "link_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_bHjJx9",
+        "image_cdiqGe",
+        "image_N8wW7j"
+      ],
+      "settings": {
+      }
+    },
+    "banner_secundary_slide_C7DHhX": {
+      "type": "banner-secundary-slide",
+      "blocks": {
+        "image_KBfhHr": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/bannersmall.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/secundario-small.jpg",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "image_KBfhHr"
+      ],
+      "settings": {
+      }
+    },
+    "video_7wKUzk": {
+      "type": "video",
+      "settings": {
+        "Titulo_video": "CHAMPION WHAT MOVES YOU™",
+        "Video_description": "Inspiramos a los campeones a romper sus propios límites y siempre alcanzar la victoria. #ChampionMX #ChampionWhatMovesYou",
+        "button_text": "Ver colección",
+        "button_link": "shopify:\/\/collections\/all",
+        "video-chanel": "shopifyvideo",
+        "Video_link": "https:\/\/www.youtube.com\/embed\/pbTrpJO8rrA?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=13",
+        "Video_link-2": "shopify:\/\/files\/videos\/video_ad.mov"
+      }
+    },
+    "newsletter_XbpfeP": {
+      "type": "newsletter",
+      "settings": {
+        "News_description": "Entérate antes que nadie sobre lanzamientos de nuevos productos, colaboraciones, y promociones especiales - Obtén un 15% de DESCUENTO* en tu próxima compra."
       }
     }
   },
   "order": [
-    "featured_collection"
+    "banners_slide_JW7heY",
+    "warranty_home_cbgexT",
+    "banners_grid_hDX4H3",
+    "carousel_collection_KHVg8V",
+    "banners_grid_XxhaVz",
+    "banner_secundary_slide_C7DHhX",
+    "video_7wKUzk",
+    "newsletter_XbpfeP"
   ]
 }

@@ -4,13 +4,18 @@
   align-items: flex-end;
 }
 
+.totals *{
+  font-family: Figtree, sans-serif;
+}
+
 .totals > * {
   font-size: 1.6rem;
   margin: 0;
 }
 
 .totals > h2 {
-  font-size: calc(var(--font-heading-scale) * 1.6rem);
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .totals * {
@@ -21,16 +26,16 @@
   margin-left: 2rem;
 }
 
-.totals__total {
-  margin-top: .5rem;
-}
-
-.totals__total-value {
-  font-size: 1.8rem;
+.totals__subtotal-value {
+  font-size: 20px;
 }
 
 .cart__ctas + .totals {
   margin-top: 2rem;
+}
+
+.totals.envio {
+  margin-top: 20px;
 }
 
 @media all and (min-width: 750px) {

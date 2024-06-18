@@ -1,20 +1,4 @@
-{{ 'customer.css' | asset_url | stylesheet_tag }}
-
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-<div class="customer activate section-{{ section.id }}-padding">
+<div class="customer activate containermicuenta">
   <svg style="display: none">
     <symbol id="icon-error" viewBox="0 0 13 13">
       <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
@@ -23,16 +7,17 @@
       <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
     </symbol>
   </svg>
-  <h1>
-    {{ 'customer.activate_account.title' | t }}
-  </h1>
-  <p>
-    {{ 'customer.activate_account.subtext' | t }}
-  </p>
-  {%- form 'activate_customer_password' -%}
+  <div class="rowaccount crear w-row">
+    <div class="colizqform w-col w-col-6">
+      <div class="titlecontainer">
+        <h1 class="secctitle">{{ 'customer.activate_account.title' | t }}</h1>
+      </div>
+      <div class="loginform w-form">
+  {%- form 'activate_customer_password', class: 'contenidoformlog' -%}
     {%- if form.errors -%}
+      <div class="form-error-customer">
       <h2 class="form__message" tabindex="-1" autofocus>
-        <svg aria-hidden="true" focusable="false">
+        <svg aria-hidden="true" focusable="false" role="presentation">
           <use href="#icon-error" />
         </svg>
         {{ 'templates.contact.form.error_heading' | t }}
@@ -51,9 +36,10 @@
           </li>
         {%- endfor -%}
       </ul>
+      </div>
     {%- endif -%}
-
-    <div class="field">
+    <p class="txtlogin">{{ 'customer.activate_account.subtext' | t }}</p>    
+    <p class="txtlogin">{{ 'customer.activate_account.password' | t }}</p>
       <input
         type="password"
         name="customer[password]"
@@ -64,22 +50,17 @@
           aria-invalid="true"
           aria-describedby="password-error"
         {% endif %}
+        class="loginreg-field w-input" 
       >
-      <label for="password">
-        {{ 'customer.activate_account.password' | t }}
-      </label>
       {%- if form.errors contains 'password' -%}
         <small id="password-error" class="form__message">
-          <svg aria-hidden="true" focusable="false">
+          <svg aria-hidden="true" focusable="false" role="presentation">
             <use href="#icon-error" />
           </svg>
-          {{ form.errors.translated_fields.password | capitalize }}
-          {{ form.errors.messages.password }}
+          {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}
         </small>
       {%- endif -%}
-    </div>
-
-    <div class="field">
+      <p class="txtlogin"> {{ 'customer.activate_account.password_confirm' | t }}</p>
       <input
         type="password"
         name="customer[password_confirmation]"
@@ -90,58 +71,54 @@
           aria-invalid="true"
           aria-describedby="password_confirmation-error"
         {% endif %}
+        class="loginreg-field w-input" 
       >
-      <label for="password_confirmation">
-        {{ 'customer.activate_account.password_confirm' | t }}
-      </label>
       {%- if form.errors contains 'password_confirmation' -%}
         <small id="password_confirmation-error" class="form__message">
-          <svg aria-hidden="true" focusable="false">
+          <svg aria-hidden="true" focusable="false" role="presentation">
             <use href="#icon-error" />
           </svg>
-          {{ form.errors.translated_fields.password_confirmation | capitalize }}
-          {{ form.errors.messages.password_confirmation }}
+          {{ form.errors.translated_fields['password_confirmation'] | capitalize }} {{ form.errors.messages['password_confirmation'] }}
         </small>
       {%- endif -%}
-    </div>
 
-    <button>
+    <button class="loginpopbtn w-button">
       {{ 'customer.activate_account.submit' | t }}
     </button>
-    <button name="decline">
+    <button name="decline" class="frgtpassword">
       {{ 'customer.activate_account.cancel' | t }}
     </button>
   {%- endform -%}
+  </div>
+  </div>
+  <div class="colderlogin w-col w-col-6">
+    <div class="beneficios-tienda registro">
+      <div class="contgarantia logo micuenta"><img src="{{ "logo_garantia-champion.svg" |  asset_url }}"  alt="Garantías Champion" class="logogarntias"></div>
+      <div class="con4beneficios registro">
+        <div class="contgarantia registro"><img src="{{ "envios_icon.svg" |  asset_url }}"  class="icongarantias">
+          <p class="txtwarranty micuenta">Entrega el mismo día*</p>
+        </div>
+        <div class="contgarantia registro"><img src="{{ "devoluciones_icon.svg" |  asset_url }}"  class="icongarantias">
+          <p class="txtwarranty micuenta">Cambios y devoluciones GRATIS</p>
+        </div>
+        <div class="contgarantia registro"><img src="{{ "seguridad_icon.svg" |  asset_url }}"  class="icongarantias">
+          <p class="txtwarranty micuenta">Pagos 100% seguros</p>
+        </div>
+        <div class="contgarantia registro"><img src="{{ "msi_icon.svg" |  asset_url }}"  class="icongarantias">
+          <p class="txtwarranty micuenta">Tus compras Hasta en 12 MSI</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
 </div>
 
 {% schema %}
 {
   "name": "t:sections.main-activate-account.name",
   "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
   ]
 }
 {% endschema %}

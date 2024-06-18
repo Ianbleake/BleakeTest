@@ -2,7 +2,8 @@
   display: flex;
   position: relative;
   line-height: 1;
-  padding: 1.5rem 0;
+  padding: 10px 0;
+  border-top: 1px solid #d5d5d5;
 }
 
 .accordion .summary__title {
@@ -12,6 +13,8 @@
 
 .accordion .summary__title + .icon-caret {
   height: calc(var(--font-heading-scale) * 0.6rem);
+  top: auto;
+  bottom: 45%;
 }
 
 .accordion + .accordion {
@@ -20,13 +23,17 @@
 }
 
 .accordion {
-  margin-top: 2.5rem;
+  margin-top: 0;
   margin-bottom: 0;
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  /* border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08); */
 }
 
 .accordion__title {
+  font-weight:600;
+  font-family: Figtree, sans-serif;
+  font-size: 15px;
+  line-height: 23px;
   display: inline-block;
   max-width: calc(100% - 6rem);
   min-height: 1.6rem;

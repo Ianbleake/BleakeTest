@@ -3,13 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -20,18 +13,29 @@
           "settings": {
           }
         },
+        "custom_liquid_gKURXR": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"breaker\"><\/div>"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
+            "picker_type": "button"
           }
         },
-        "form_wAqKQi": {
-          "type": "form",
+        "popup_dp7Xmw": {
+          "type": "popup",
           "settings": {
-            "input_1": "",
-            "input_2": ""
+            "page": "guia-de-tallas",
+            "iconpop": "shopify:\/\/shop_images\/tallas_icon_38f9677a-2dc5-4ca8-9ab3-2079deb99b2a.svg"
+          }
+        },
+        "custom_liquid_AAPpqm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"breaker\"><\/div>"
           }
         },
         "quantity_selector": {
@@ -42,70 +46,82 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_dynamic_checkout": true
           }
         },
-        "description": {
-          "type": "description",
+        "custom_liquid_K8B3dE": {
+          "type": "custom_liquid",
           "settings": {
+            "custom_liquid": "<div class=\"btn-sizeinfo\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0621\/7292\/1992\/files\/enviosgratis.svg?v=1710877584\" class=\"inconsiechart\">\n<div class=\"titulovip-elements\">ENVÍOS GRATIS a partir de $ 1,899.ºº<\/div>\n<\/div>"
           }
         },
-        "share": {
+        "166ed5ab-3b89-40a1-a401-8c97f3723a3b": {
+          "type": "metodos_pago",
+          "settings": {
+            "logo_payment": "shopify:\/\/shop_images\/pagoslogosvip.png"
+          }
+        },
+        "0d09da6a-d4e1-482e-b038-8908678039f7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Descripción"
+          }
+        },
+        "share_zcjE4m": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
+        "custom_liquid_gKURXR",
         "variant_picker",
-        "form_wAqKQi",
+        "popup_dp7Xmw",
+        "custom_liquid_AAPpqm",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "share"
+        "custom_liquid_K8B3dE",
+        "166ed5ab-3b89-40a1-a401-8c97f3723a3b",
+        "0d09da6a-d4e1-482e-b038-8908678039f7",
+        "share_zcjE4m"
       ],
       "settings": {
-        "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
-        "media_size": "large",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "stacked",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "mobile_thumbnails": "hide",
         "hide_variants": true,
-        "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 12,
         "padding_bottom": 12
       }
     },
-    "related-products": {
-      "type": "related-products",
+    "banner_secundary_slide_DhD7ft": {
+      "type": "banner-secundary-slide",
+      "blocks": {
+        "image_UBg6Ln": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/bannersmall.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/secundario-small.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_UBg6Ln"
+      ],
       "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Productos Recomendados",
+        "products_to_show": 9
       }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "banner_secundary_slide_DhD7ft",
+    "product-recommendations"
   ]
 }

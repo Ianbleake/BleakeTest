@@ -8,7 +8,6 @@
             alt="{{ item.image.alt | escape }}"
             width="70"
             height="{{ 70 | divided_by: item.image.aspect_ratio | ceil }}"
-            loading="lazy"
           >
         </div>
       {%- endif -%}
@@ -44,7 +43,7 @@
             {%- endif -%}
           {%- endfor -%}
         </dl>
-        {%- if item.selling_plan_allocation != null -%}
+        {%- if item.selling_plan_allocation != nil -%}
           <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
         {%- endif -%}
       </div>
