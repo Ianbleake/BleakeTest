@@ -46,7 +46,7 @@
           </div>
 
           <div class="cont-contacto">
-            <a href="{%  if  %} {{ routes.account_url }} {%  else %} # {% endif %}" class="linknavicon hiddenmobile w-inline-block">
+            <a href="{%  if customer %} {{ routes.account_url }} {%  else %} # {% endif %}" class="linknavicon hiddenmobile w-inline-block">
               <img src=" {{ " account_icon.svg" | asset_url }} " alt="Usuario" class=" iconnavbar" data-ix="showloginmodal">
             </a>
             <a href="/pages/contact" class="linknavicon hiddenmobile w-inline-block">
