@@ -9,15 +9,45 @@
 */
 {
   "sections": {
+    "banners_slide_Ydhk6h": {
+      "type": "banners-slide",
+      "settings": {
+      }
+    },
+    "product_slide_H4txFr": {
+      "type": "product-slide",
+      "settings": {
+        "title": "¡Los más vendidos",
+        "collection_1": "",
+        "range_prod_1": 2
+      }
+    },
     "warranty_home_UbAANw": {
       "type": "warranty-home",
       "settings": {
         "tittle": "¡En <strong class=\"boldtitles\">bomuca<sup>®<\/sup><\/strong> celebramos tu <strong class=\"boldtitles\">bienestar<\/strong>!",
         "description": "Para nosotros nuestro trabajo está relacionado con la vida misma y es por eso que nos esforzamos en brindar productos de calidad para fomentar una nueva cultura para el bien social."
       }
+    },
+    "reviews_slide_pXcTL9": {
+      "type": "reviews-slide",
+      "settings": {
+        "title": "Clientes <strong class=\"boldtitles\">satisfechos<\/strong>"
+      }
+    },
+    "collage_blog_UfjgB9": {
+      "type": "collage-blog",
+      "settings": {
+        "title": "Con bomuca #LaSaludTeSigue",
+        "blog": ""
+      }
     }
   },
   "order": [
-    "warranty_home_UbAANw"
+    "banners_slide_Ydhk6h",
+    "product_slide_H4txFr",
+    "warranty_home_UbAANw",
+    "reviews_slide_pXcTL9",
+    "collage_blog_UfjgB9"
   ]
 }
