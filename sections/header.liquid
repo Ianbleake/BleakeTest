@@ -16,105 +16,113 @@
 <header>
   
 <div data-w-id="2db171a4-0b98-e6c0-8b40-f1930826e76a" class="navbar-logo-center">
-  <div class="topbanner">
-    <div class="custom-container">
-      <div data-delay="4000" data-animation="cross" class="topbannerslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="750" data-infinite="true">
-        <div class="masktop-slider w-slider-mask">
-          <div class="topslide w-slide">
-            <div class="continfotop-flex">
-              <a href="#" class="linktopbanner"><span class="colortopbanner">ENVÍOS GRATIS</span> en compras mayores a $699</a>
-            </div>
+
+  {% if section.blocks != blank %}
+    <div class="topbanner">
+      <div class="custom-container">
+        <div data-delay="4000" data-animation="cross" class="topbannerslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="750" data-infinite="true">
+          <div class="masktop-slider w-slider-mask">
+  
+            {% for block in section.blocks %}
+              <div class="topslide w-slide">
+                <div class="continfotop-flex">
+                  <a href="{{ block.settings.url }}" class="linktopbanner"><span class="colortopbanner">{{ block.settings.boldtitle }}</span>{{ block.settings.title }}</a>
+                </div>
+              </div>
+            {% endfor %}
           </div>
-          <div class="topslide w-slide">
-            <div class="continfotop-flex">
-              <a href="#" class="linktopbanner">Enviamos a toda la República Mexicana</a>
+  
+          {% if section.blocks.size > 1 %}
+            <div class="arrowtop-slider w-slider-arrow-left">
+              <div class="w-icon-slider-left"></div>
             </div>
-          </div>
+            <div class="arrowtop-slider w-slider-arrow-right">
+              <div class="w-icon-slider-right"></div>
+            </div>
+            <div class="topslidenav w-slider-nav"></div>
+          {% endif %}
+  
         </div>
-        <div class="arrowtop-slider w-slider-arrow-left">
-          <div class="w-icon-slider-left"></div>
-        </div>
-        <div class="arrowtop-slider w-slider-arrow-right">
-          <div class="w-icon-slider-right"></div>
-        </div>
-        <div class="topslidenav w-slider-nav"></div>
       </div>
     </div>
-  </div>
+  {% endif %}
+
+
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="custom-navbar w-nav">
     <div class="contnavitems">
+
       <div class="menu-button w-nav-button">
         <div class="w-icon-nav-menu"></div>
       </div>
+
+      
       <nav role="navigation" class="custom-navigationmenu w-nav-menu">
-        <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-          <div class="menunav-link drop w-dropdown-toggle">
-            <div class="icondropmenu w-icon-dropdown-toggle"></div>
-            <div>Productos</div>
+        {% if section.settings.menu != blank %}
+          
+          {% for link in section.settings.menu.links %}
+            {% if link.links != blank %}
+              <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
+                <div class="menunav-link drop w-dropdown-toggle">
+                  <div class="icondropmenu w-icon-dropdown-toggle"></div>
+                  <div>{{ link.title }}</div>
+                </div>
+                <nav class="dropdown-list w-dropdown-list">
+                  <ul role="list" class="listamenunav">
+                    {% for childlink in link.links %}
+                      <li class="itemlistmenu">
+                        <a href="{{ childlink.url }}" class="titlecatesubmenu">{{ childlink.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </nav>
+              </div>
+            {% else %}
+              <a href="{{ link.url }}" aria-current="page" class="menunav-link{%  if link.title contains 'ofertas'  %} ofertas {% endif %} w-nav-link">{{ link.title }}</a>
+            {% endif %}
+          {% endfor %}
+
+          <div class="extramenu-mobile"><img   src="{{ "icon_user.svg" | asset_url }}" alt="" class="icnomenu-mobile">
+            <a href="#" class="menunav-link w-nav-link">Mi cuenta</a>
           </div>
-          <nav class="dropdown-list w-dropdown-list">
-            <ul role="list" class="listamenunav">
-              <li class="itemlistmenu">
-                <a href="#" class="titlecatesubmenu">PLÁSTICO</a>
-              </li>
-              <li class="itemlistmenu">
-                <a href="#" class="titlecatesubmenu">FLEJE</a>
-              </li>
-              <li class="itemlistmenu">
-                <a href="#" class="titlecatesubmenu">ROLLO PLÁSTICO</a>
-              </li>
-              <li class="itemlistmenu">
-                <a href="#" class="titlecatesubmenu">ROLLO PLÁSTICO</a>
-              </li>
-              <li class="itemlistmenu">
-                <a href="#" class="titlecatesubmenu">ROLLO PLÁSTICO</a>
-              </li>
-              <li class="itemlistmenu">
-                <a href="#" class="titlecatesubmenu">ROLLO PLÁSTICO</a>
-              </li>
-              <li class="itemlistmenu">
-                <a href="#" class="titlecatesubmenu">ROLLO PLÁSTICO</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <a href="#" class="menunav-link ofertas w-nav-link">Ofertas</a>
-        <a href="index.html" aria-current="page" class="menunav-link w-nav-link w--current">Blog</a>
-        <div class="extramenu-mobile"><img   src="{{ "icon_user.svg" | asset_url }}" alt="" class="icnomenu-mobile">
-          <a href="#" class="menunav-link w-nav-link">Mi cuenta</a>
-        </div>
-        <div class="extramenu-mobile"><img   src="{{ "icon_mail.svg" | asset_url }}" alt="" class="icnomenu-mobile">
-          <a href="#" class="menunav-link w-nav-link">Mi cuenta</a>
-        </div>
+          <div class="extramenu-mobile"><img   src="{{ "icon_mail.svg" | asset_url }}" alt="" class="icnomenu-mobile">
+            <a href="#" class="menunav-link w-nav-link">Mi cuenta</a>
+          </div>
+        {% endif %}
       </nav>
-      <a href="#" class="logonav w-nav-brand"><img loading="eager" src="{{ "logo_sr_paquete.svg" | asset_url }}" alt="somnistore logo" class="imglogo-nav"></a>
+      
+
+      <a href="{{ routes.root_url }}" class="logonav w-nav-brand">
+        <img loading="eager" src="{{ section.settings.logo |  image_url }}" alt="sr paquete logo" class="imglogo-nav">
+      </a>
+
       <div class="cont-cartcontact">
-        <div class="linkicons-nav"><img   src="{{ "icon_search.svg" | asset_url }}" alt="" class="icononav" data-ix="show-buscador">
+        <div class="linkicons-nav">
+          <img src="{{ "icon_search.svg" | asset_url }}" alt="" class="icononav" data-ix="show-buscador">
           <div class="form-buscador w-form">
-            <form id="wf-form-" name="wf-form-" data-name="" method="get" class="busqueda-formcot" data-wf-page-id="667c5aedfac71ab99ad7c4e7" data-wf-element-id="1ec443c4-8749-2c4b-059c-a880a9e3e8f1">
-              <div class="close-buscador" data-ix="close-bsucador">X</div><input class="input-buscador w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="¿Qué estás buscando?" type="text" id="email-2"><input type="submit" data-wait="Buscando..." class="buscarbtn w-button" value="">
+            <form action="{{ routes.search_url }}" method="get" class="busqueda-formcot" role="search"  >
+              <div class="close-buscador" data-ix="close-bsucador">X</div>
+              <input class="input-buscador w-input" maxlength="256" name="q" placeholder="¿Qué estás buscando?" type="text" required >
+              <input type="submit" data-wait="Buscando..." class="buscarbtn w-button" value="">
             </form>
-            <div class="w-form-done"></div>
-            <div class="w-form-fail"></div>
           </div>
         </div>
-        <a href="contacto.html" class="linkicons-nav ocultomobile w-inline-block"><img loading="eager" src="{{ "icon_mail.svg" | asset_url }}" alt="" class="icononav"></a>
-        <a href="mi-cuenta.html" class="linkicons-nav ocultomobile w-inline-block"><img loading="eager" src="{{ "icon_user.svg" | asset_url }}" alt="" class="icononav"></a>
-        <div class="linkicons-nav"><img   src="{{ "icon_cart.svg" | asset_url }}" alt="" class="icononav">
+        <a href="/pages/contact" class="linkicons-nav ocultomobile w-inline-block">
+          <img loading="eager" src="{{ "icon_mail.svg" | asset_url }}" alt="contacto" class="icononav">
+        </a>
+        <a href="{{ routes.account_url }}" class="linkicons-nav ocultomobile w-inline-block">
+          <img loading="eager" src="{{ "icon_user.svg" | asset_url }}" alt="cuenta" class="icononav">
+        </a>
+        <a href="{{ routes.cart_url }}" class="linkicons-nav">
+          <img src="{{ "icon_cart.svg" | asset_url }}" alt="carrito" class="icononav">
           <div class="qtynumber">12</div>
-        </div>
+        </a>
       </div>
+
     </div>
   </div>
 </div>
   
 </header>
-
-<script>
- $('.tabmenu-2ndlevel').hover(function() {
-    $(this).click();
-  });
-</script>
 
 
 {%- if request.page_type == 'index' -%}
@@ -156,14 +164,19 @@
   "name": "Anuncio",
   "settings": [
       {
+        "type": "text",
+        "id": "boldtitle",
+        "label": "Encabezado",
+        "default": "ENVIOS GRATIS"
+      },{
       "type": "text",
-      "id": "Anuncio_title",
-      "default": "Conoce nuestras novedades",
-      "label": "Encabezado"
+      "id": "title",
+      "default": "en compras mayores a $699",
+      "label": "Mensaje"
       },
       {
       "type": "url",
-      "id": "Anuncio_link",
+      "id": "url",
       "label": "Url"
       }
     ]
