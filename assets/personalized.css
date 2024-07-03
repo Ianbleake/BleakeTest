@@ -1979,9 +1979,7 @@ textarea.w-select {
   margin-left: auto;
   margin-right: auto;
 }
-.w-nav-link.w--current {
-  color: #0082f3;
-}
+
 .w-nav-menu {
   position: relative;
   float: right;
@@ -2503,10 +2501,11 @@ textarea.w-select {
   color: var(--orange);
   text-decoration: none;
 }
-
+/*
 .menunav-link.w--current {
   color: var(--orange);
 }
+*/
 
 .menunav-link.ofertas {
   background-image: url('icon_oferta.svg');
