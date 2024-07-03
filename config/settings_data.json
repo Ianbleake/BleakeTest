@@ -21,17 +21,29 @@
       "header": {
         "type": "header",
         "blocks": {
-          "text_WpC6gx": {
+          "text_HWqVkf": {
             "type": "text",
             "settings": {
+              "boldtitle": "ENVIOS GRATIS",
+              "title": "en compras mayores a $699",
+              "url": ""
+            }
+          },
+          "text_ef9nC3": {
+            "type": "text",
+            "settings": {
+              "boldtitle": "",
+              "title": "Enviamos a toda la República Mexicana",
+              "url": ""
             }
           }
         },
         "block_order": [
-          "text_WpC6gx"
+          "text_HWqVkf",
+          "text_ef9nC3"
         ],
         "settings": {
-          "logo": "shopify:\/\/shop_images\/PADN-fullcolor.png",
+          "logo": "shopify:\/\/shop_images\/logo_sr_paquete.svg",
           "menu": "main-menu"
         }
       },
@@ -40,9 +52,20 @@
         "settings": {
           "menu_1": "footer",
           "menu_2": "",
+          "email": "",
+          "city_1": "",
+          "phone_1": "",
+          "address_1": "",
+          "city_2": "",
+          "phone_2": "",
+          "address_2": "",
+          "city_3": "",
+          "phone_3": "",
+          "address_3": "",
           "instagram": "",
           "facebook": "",
           "youtube": "",
+          "news_title": "",
           "description-subscription": "Suscríbete y disfruta de ofertas y promociones especiales, además entérate de los nuevos lanzamientos antes que nadie."
         }
       }
