@@ -40,8 +40,8 @@
       "type": "product-slide",
       "settings": {
         "title": "¡Los más vendidos!",
-        "collection_1": "",
-        "range_prod_1": 2
+        "collection_1": "frontpage",
+        "range_prod_1": 12
       }
     },
     "warranty_home_UbAANw": {
