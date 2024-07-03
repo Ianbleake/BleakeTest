@@ -29,6 +29,12 @@
         "description": "Para nosotros nuestro trabajo está relacionado con la vida misma y es por eso que nos esforzamos en brindar productos de calidad para fomentar una nueva cultura para el bien social."
       }
     },
+    "collections_list_P3tWbq": {
+      "type": "collections-list",
+      "settings": {
+        "title": "Recomendaciones <strong class=\"boldtitles\">bomuca<sup>®<\/sup><\/strong>"
+      }
+    },
     "reviews_slide_pXcTL9": {
       "type": "reviews-slide",
       "settings": {
@@ -47,6 +53,7 @@
     "banners_slide_Ydhk6h",
     "product_slide_H4txFr",
     "warranty_home_UbAANw",
+    "collections_list_P3tWbq",
     "reviews_slide_pXcTL9",
     "collage_blog_UfjgB9"
   ]
