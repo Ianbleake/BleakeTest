@@ -40,7 +40,7 @@
       "type": "product-slide",
       "settings": {
         "title": "¡Los más vendidos!",
-        "collection_1": "frontpage",
+        "collection_1": "sr-paquete",
         "range_prod_1": 12
       }
     },
