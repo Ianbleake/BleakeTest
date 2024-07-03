@@ -1,39 +1,48 @@
+{% if section.blocks != blank %}
+  <div data-delay="3000" data-animation="slide" class="mainslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="4" data-duration="500" data-infinite="true">
+    <div class="w-slider-mask">
+        {% for block in section.blocks %}
+          <div class="slidehome w-slide">
+            <a href="{{ block.settings.link }}" class="linksliderhome w-inline-block">
+              <img  alt="{{ block.settings.image-desktop-version.alt }}" src="{{ block.settings.image-desktop-version |  image_url  }}"  class="imgbannerhome">
+            </a>
+          </div>
+        {% endfor %}
+    </div>
+    {% if section.blocks.size > 1 %}
+      <div class="arrowmainslider w-slider-arrow-left">
+        <div class="w-icon-slider-left"></div>
+      </div>
+      <div class="arrowmainslider w-slider-arrow-right">
+        <div class="w-icon-slider-right"></div>
+      </div>
+      <div class="navslidemain w-slider-nav w-round"></div>
+    {% endif %}
+  </div>
 
-<div data-delay="3000" data-animation="slide" class="mainslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="4" data-duration="500" data-infinite="true">
-  <div class="w-slider-mask">
-    <div class="slidehome w-slide">
-      <a href="#" class="linksliderhome w-inline-block"><img  alt="" src="{{ "banner_escritorio.jpg" | asset_url }}"   class="imgbannerhome"></a>
-    </div>
-    <div class="slidehome w-slide">
-      <a href="#" class="linksliderhome w-inline-block"><img alt="" src="{{ "banner_escritorio.jpg" | asset_url }}"   class="imgbannerhome"></a>
-    </div>
-  </div>
-  <div class="arrowmainslider w-slider-arrow-left">
-    <div class="w-icon-slider-left"></div>
-  </div>
-  <div class="arrowmainslider w-slider-arrow-right">
-    <div class="w-icon-slider-right"></div>
-  </div>
-  <div class="navslidemain w-slider-nav w-round"></div>
-</div>
+  <div data-delay="4000" data-animation="slide" class="mainslider mobile w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="4" data-duration="500" data-infinite="true">
+    <div class="w-slider-mask">
 
-<div data-delay="4000" data-animation="slide" class="mainslider mobile w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="4" data-duration="500" data-infinite="true">
-  <div class="w-slider-mask">
-    <div class="slidehome w-slide">
-      <a href="#" class="linksliderhome w-inline-block"><img alt="" src="{{ "banner_mobile.jpg" | asset_url }}"   class="imgbannerhome"></a>
+        {% for block in section.blocks %}
+          <div class="slidehome w-slide">
+            <a href="{{ block.settings.link }}" class="linksliderhome w-inline-block">
+              <img src="{%if block.settings.image-mobile-version %}{{ block.settings.image-mobile-version | img_url: 'master' }}{% else %}{{ block.settings.image-desktop-version | img_url: 'master' }}{% endif %}" alt="{{ block.settings.image-desktop-version.alt}}" class="imgbannerhome">
+            </a>
+          </div>
+        {% endfor %}    
+
     </div>
-    <div class="slidehome w-slide">
-      <a href="#" class="linksliderhome w-inline-block"><img alt="" src="{{ "banner_mobile.jpg" | asset_url }}"   class="imgbannerhome"></a>
+
+    <div class="arrowmainslider w-slider-arrow-left">
+      <div class="w-icon-slider-left"></div>
     </div>
+    <div class="arrowmainslider w-slider-arrow-right">
+      <div class="w-icon-slider-right"></div>
+    </div>
+    <div class="w-slider-nav w-round"></div>
+
   </div>
-  <div class="arrowmainslider w-slider-arrow-left">
-    <div class="w-icon-slider-left"></div>
-  </div>
-  <div class="arrowmainslider w-slider-arrow-right">
-    <div class="w-icon-slider-right"></div>
-  </div>
-  <div class="w-slider-nav w-round"></div>
-</div>
+{% endif %}
 
 {% schema %}
 {
