@@ -5,7 +5,7 @@
 }
 
 .totals *{
-  font-family: Figtree, sans-serif;
+  font-family: "Museosans 500", sans-serif;
 }
 
 .totals > * {
@@ -14,7 +14,7 @@
 }
 
 .totals > h2 {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .totals__subtotal-value {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .cart__ctas + .totals {

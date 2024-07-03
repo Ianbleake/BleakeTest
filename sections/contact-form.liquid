@@ -1,45 +1,243 @@
-<div class="custom-container">
-  <div class="container-legal">
-    <div class="formcontacto w-form">
-      <div class="titlecontainer">
-        <h2 class="secctitle">CONTACTO</h2>
-      </div>
+<div class="seccinternas">
+  <div class="custom-container">
+    <div class="formulario-contacto w-form">
+
       {%- form 'contact', id: 'ContactForm', class: 'contenidoformlog contacto' -%}
-        <div class="labelcontact-input requested"><span class="redtypo-labelform">*</span>Campos obligatorios</div>
-        <div class="contacto-form50">
-          <div class="labelcontact-input">Nombre completo <span class="redtypo-labelform">*</span> </div><input type="text" class="loginreg-field w-input" maxlength="256" name="contact[{{ 'templates.contact.form.name' | t }}]" placeholder="" id="ContactForm-name" required="">
+        <div class="titlecontainer">
+          <h1 class="mainsecctitle">¿Necesitas <strong class="boldtitles">ayuda?</strong></h1>
         </div>
-        <div class="contacto-form50">
-          <div class="labelcontact-input">E-mail* (utiliza el mismo correo que en tu pedido) <span class="redtypo-labelform">*</span> </div><input type="email" class="loginreg-field w-input" maxlength="256" id="ContactForm-email" name="contact[email]" {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="ContactForm-email-error"
-        {% endif %} placeholder="" required="">
-        </div>
-        <div class="contacto-form50">
-          <div class="labelcontact-input">Teléfono <span class="redtypo-labelform">*</span></div><input type="tel" class="loginreg-field w-input" pattern="[0-9\-]*" name="contact[{{ 'templates.contact.form.phone' | t }}]"  placeholder="" id="ContactForm-phone" required="">
-        </div>
-        <div class="contacto-form50">
-          <div class="labelcontact-input">Ciudad/Estado</div><input type="text" class="loginreg-field w-input" maxlength="256" placeholder="" id="ContactForm-ciudad" name="contact[ciudad]" required="">
-        </div>
-        <div id="w-node-_44378a10-1ddd-999d-2f1c-05a6b00a3c67-8c41c532" class="w-layout-layout quick-stack wf-layout-layout">
-          <div id="w-node-_44378a10-1ddd-999d-2f1c-05a6b00a3c68-8c41c532" class="w-layout-cell">
-            <div class="labelcontact-input"><span class="redtypo-labelform">*</span> ¿Cómo podemos ayudarte?</div><select id="ContactForm-asunto" name="contact[asunto]" class="loginreg-field selector w-select">
+        <div class="textoayuda">En <strong>bomuca</strong> nos interesa tu opinión y queremos escucharte. Si tienes alguna duda sobre nuestros productos, comentarios o sugerencias envíanos un mensajae a través del siguiente formulario y un agente de nuestro equipo le dará seguimiento a la brevedad posible.</div>
+
+        <div class="seccform">
+          <div class="fieldcont-50">
+            <label for="nombre" class="label-contactform">Nombre completo*</label>
+            <input type="text" class="fieldayuda w-input" maxlength="256" name="contact[{{ 'templates.contact.form.name' | t }}]" placeholder="" id="ContactForm-name" required="">
+          </div>
+          <div class="fieldcont-50">
+            <label for="correo" class="label-contactform">Correo electrónico* (Utilizar el mismo correo de su orden)</label>
+            <input type="email" class="fieldayuda w-input" maxlength="256" id="ContactForm-email" name="contact[email]" {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="ContactForm-email-error" {% endif %} placeholder="" required="">
+          </div>
+          <div class="fieldcont-50">
+            <label for="phonenumber" class="label-contactform">Teléfono*</label>
+            <input type="tel" class="fieldayuda w-input" pattern="[0-9\-]*" name="contact[{{ 'templates.contact.form.phone' | t }}]"  placeholder="" id="ContactForm-phone" required="">
+          </div>
+          <div class="fieldcont-50">
+            <label for="estado" class="label-contactform">Ciudad/Estado </label>
+            <input type="text" class="fieldayuda w-input" maxlength="256" placeholder="" id="ContactForm-ciudad" name="contact[ciudad]" required="">
+          </div>
+          
+          <div class="fieldcont-50">
+            <label for="tipodocumento" class="label-contactform">¿Como podemos ayudarte?</label>
+            <select id="tipodocumento" name="contact[asunto]" required="" data-name="Tipodocumento" class="fieldayuda w-select">
               <option value="">Selecciona una opción</option>
-              <option value="Status de mi pedido">Status de mi pedido</option>
-              <option value="Pago de mi pedido">Pago de mi pedido</option>
-              <option value="Cambio de un producto">Cambio de un producto</option>
-              <option value="Devolución de un producto">Devolución de un producto</option>
-              <option value="Problema con mi pedido">Problema con mi pedido</option>
+              <option value="Dudas sobre mi pedido">Dudas sobre mi pedido</option>
+              <option value="Cambio o devolución">Cambio o devolución</option>
+              <option value="No recibí mi pedido">No recibí mi pedido</option>
+              <option value="Quiero reportar una reacción de un producto">Quiero reportar una reacción de un producto</option>
+              <option value="Pedidos mayoristas">Pedidos mayoristas</option>
+              <option value="Atención al cliente">Atención al cliente</option>
+              <option value="Sugerencias">Sugerencias</option>
+              <option value="Quiero facturar mi pedido">Quiero facturar mi pedido</option>
             </select>
+            <div class="w-embed">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous">
+                <style>
+                    /************ ADD YOUR VALUES BELOW ************/
+                    :root {
+                      /* ----------- Colors ----------- */
+                      --list-bg-color: white;
+                      --list-text-color: inherit; /* Use "inherit" to take on parent text color */
+                      --list-text-color-hover: inherit; /* Add your hex code here for the hover text color on the list option/item */
+                      --current-field-text-color: inherit; /* Add hex code for selected option text color in the field itself */
+                      --select-field-arrow-color: black; /* This is the select field arrow color */
+                      --border-color-active: black; /* Active State */
+                      --border-color-hover: #dcdcdd; /* Select Field could be the same as your form field border color */
+                      --list-item-bg-color: #ededed; /* Select Field Hover/Focus State */
+                      /* ----------- Spacing ----------- */
+                      --select-field-padding-left: 12px; /* Match the padding values for your form fields */
+                      --select-field-padding-right: 12px; /* Match the padding values for your form fields */
+                      --list-padding-top-bottom: 10px; /* This is the top and bottom padding for the dropdown list */
+                      --list-max-height: 150px; /* You can set this to "Auto" as well */
+                      --list-item-padding-left: 18px; 
+                      --list-item-padding-right: 18px;
+                      --list-item-min-height: 40px; /* This is the height of each list item in the dropdown */
+                      --list-item-line-height: 40px; /* This is the height of each list item in the dropdown */
+                      /* ^^^  Make sure both "line-height" and "min-height" are the same! ^^^  */
+                    }
+                    /************ END OF CUSTOM VALUES ************/
+                    .nice-select {
+                      -webkit-tap-highlight-color: transparent;
+                      box-sizing: border-box;
+                      clear: both;
+                      padding-left: var(--select-field-padding-left);
+                      padding-right: var(--select-field-padding-right);
+                      position: relative;
+                      text-align: left !important;
+                      -webkit-transition: all 0.2s ease-in-out;
+                      transition: all 0.2s ease-in-out;
+                      -webkit-user-select: none;
+                        -moz-user-select: none;
+                          -ms-user-select: none;
+                              user-select: none;
+                      white-space: nowrap; 
+                    }
+                    .nice-select:hover {
+                      border-color: var(--border-color-hover); 
+                    }
+                    .nice-select:active, .nice-select.open, .nice-select:focus {
+                      border-color: var(--border-color-active);
+                    }
+                    .nice-select:after {
+                      border-bottom: 2px solid var(--select-field-arrow-color);
+                      border-right: 2px solid var(--select-field-arrow-color);
+                      content: '';
+                      display: block;
+                      height: 5px;
+                      margin-top: -4px;
+                      pointer-events: none;
+                      position: absolute;
+                      right: 12px;
+                      top: 50%;
+                      -webkit-transform-origin: 66% 66%;
+                      -ms-transform-origin: 66% 66%;
+                      transform-origin: 66% 66%;
+                      -webkit-transform: rotate(45deg);
+                      -ms-transform: rotate(45deg);
+                      transform: rotate(45deg);
+                      -webkit-transition: all 0.15s ease-in-out;
+                      transition: all 0.15s ease-in-out;
+                      width: 5px; 
+                    }
+                    .nice-select.open:after {
+                      -webkit-transform: rotate(-135deg);
+                      -ms-transform: rotate(-135deg);
+                      transform: rotate(-135deg); 
+                    }
+                    .nice-select.open .list {
+                      opacity: 1;
+                      pointer-events: auto;
+                      -webkit-transform: scale(1) translateY(0);
+                      -ms-transform: scale(1) translateY(0);
+                      transform: scale(1) translateY(0); 
+                    }
+                    .nice-select.disabled {
+                      border-color: #ededed;
+                      color: #999;
+                      pointer-events: none; 
+                    }
+                    .nice-select.disabled:after {
+                      border-color: #cccccc; 
+                    }
+                    .nice-select.wide {
+                      width: 100%; 
+                    }
+                    .nice-select.wide .list {
+                      left: 0 !important;
+                      right: 0 !important; 
+                    }
+                    .nice-select.right {
+                      float: right; 
+                    }
+                    .nice-select.right .list {
+                      left: auto;
+                      right: 0; 
+                    }
+                    .nice-select.small {
+                      font-size: 12px;
+                      height: 36px;
+                      line-height: 34px; 
+                    }
+                    .nice-select.small:after {
+                      height: 4px;
+                      width: 4px; 
+                    }
+                    .nice-select.small .option {
+                      line-height: 34px;
+                      min-height: 34px; 
+                    }
+                    .nice-select .list {
+                      background-color: var(--list-bg-color);
+                      color: var(--list-text-color);
+                      border-radius: 5px;
+                      box-shadow: 0 7px 20px 0px rgba(68, 68, 68, 0.11);
+                      border-color: 3px solid #ededed;
+                      box-sizing: border-box;
+                      margin-top: 4px;
+                      opacity: 0;
+                      overflow: hidden;
+                      padding: var(--list-padding-top-bottom) 0px;
+                      pointer-events: none;
+                      position: absolute;
+                      top: 100%;
+                      left: 0;
+                      overflow-y: scroll;
+                      overflow-x: hidden;
+                      max-height: var(--list-max-height);
+                      -webkit-transform-origin: 50% 0;
+                      -ms-transform-origin: 50% 0;
+                      transform-origin: 50% 0;
+                      -webkit-transform: scale(0.75) translateY(-21px);
+                      -ms-transform: scale(0.75) translateY(-21px);
+                      transform: scale(0.75) translateY(-21px);
+                      -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+                      transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+                      z-index: 9; 
+                    }
+                    .nice-select .list:hover .option:not(:hover) {
+                      background-color: transparent !important; 
+                    }
+                    .nice-select .option {
+                      cursor: pointer;
+                      font-weight: 400;
+                      line-height: var(--list-item-line-height);
+                      list-style: none;
+                      min-height: var(--list-item-min-height);
+                      outline: none;
+                      padding-left: var(--list-item-padding-left);
+                      padding-right: var(--list-item-padding-right);
+                      text-align: left;
+                      -webkit-transition: all 0.2s;
+                      transition: all 0.2s;
+                    }
+                    .nice-select .option:first-child {
+                      display: none;
+                    }
+                    span.current {
+                      color: var(--current-field-text-color);
+                    }
+                    .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+                      background-color: var(--list-item-bg-color);
+                    }
+                    .nice-select .option.selected {
+                      font-weight: bold; 
+                    }
+                    .nice-select .option:hover {
+                      color: var(--list-text-color-hover);
+                    }
+                    .nice-select .option.disabled {
+                      background-color: transparent;
+                      color: #999;
+                      cursor: default; 
+                    }
+                    .no-csspointerevents .nice-select .list {
+                    display: none; 
+                    }
+                    .no-csspointerevents .nice-select.open .list {
+                    display: block; 
+                    }
+                </style>
+            </div>
           </div>
-          <div class="w-layout-cell">
-            <div class="labelcontact-input">Número orden (sólo si aplica)</div><input type="text" class="loginreg-field w-input" maxlength="256" placeholder=""                     id="ContactForm-numeroorden"
-            name="contact[numero de orden]">
+          <div class="fieldcont-50">
+            <label for="phone" class="label-contactform">Número de pedido</label>
+            <input type="text" class="fieldayuda w-input" maxlength="256" placeholder="" id="ContactForm-numeroorden"name="contact[numero de orden]" required>
           </div>
-        </div>
-        <div class="w-layout-layout quick-stack wf-layout-layout">
-          <div class="w-layout-cell">
-            <div class="labelcontact-input">Escribe un breve mensaje explicando tu caso. (opcional)</div><textarea required="" placeholder="" maxlength="5000" id="ContactForm-body" name="contact[{{ 'templates.contact.form.comment' | t }}]"  class="txtarea-contacto w-input"></textarea>
-          </div>
-        </div><input type="submit" value="Enviar Mensaje"  class="loginpopbtn center w-button">
+          <div class="fieldcont-50 mensaje">
+              <label for="field" class="label-contactform">Deja un mensaje (opcional)</label>
+            </div>
+        </div>     
+        <textarea placeholder="" maxlength="5000" id="ContactForm-body" name="contact[{{ 'templates.contact.form.comment' | t }}]"  class="fieldayuda mensaje w-input"></textarea>
+        <input type="submit" value="Enviar Mensaje"  class="loginpopbtn contacto w-button">
         {%- if form.posted_successfully? -%}
           <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
             {% render 'icon-success' %}

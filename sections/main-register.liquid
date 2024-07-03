@@ -1,93 +1,42 @@
-<div class="containermicuenta">
-  <div class="rowaccount crear w-row">
+<div class="seccinternas">
+  <div class="custom-container">
+    <div class="formulario-contacto w-form" style="background-color: transparent;">
 
-    <div class="colizqform w-col w-col-6">
-
-      <div class="titlecontainer">
-        <h1 class="secctitle">Crear cuenta</h1>
-      </div>
-
-      <div class="loginform w-form">
-        {%- form 'create_customer', class: 'contenidoformlog' -%}
-
-        <p class="txtlogin">{{ 'customer.register.first_name' | t }}</p>
-        <input class="loginreg-field w-input" maxlength="256" name="customer[first_name]" id="RegisterForm-FirstName" {%
-          if form.first_name %}value="{{ form.first_name }}" {% endif %} placeholder="" type="text" required="">
-
-        <p class="txtlogin">{{ 'customer.register.last_name' | t }}</p>
-        <input class="loginreg-field w-input" maxlength="256" name="customer[last_name]" id="RegisterForm-LastName" {%
-          if form.last_name %}value="{{ form.last_name }}" {% endif %} placeholder="" type="text" required="">
-
-        <p class="txtlogin">{{ 'customer.register.birthday' | t }}</p>
-        <input class="loginreg-field w-input" maxlength="256" name="customer[note][Birthday]" placeholder="" type="date"
-          id="birthday" required>
-
-        <p class="txtlogin">{{ 'customer.register.email' | t }}</p>
-        <input class="loginreg-field mail w-input" maxlength="256" name="customer[email]" id="RegisterForm-email" {% if
-          form.email %} value="{{ form.email }}" {% endif %} aria-required="true" {% if form.errors contains 'email' %}
-          aria-invalid="true" aria-describedby="RegisterForm-email-error" {% endif %} placeholder="" type="email"
-          required="">
-        {%- if form.errors contains 'email' -%}
-        <span id="RegisterForm-email-error" class="form__message">
-          {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
-        </span>
-        {%- endif -%}
-
-        <p class="txtlogin">{{ 'customer.register.password' | t }}</p>
-        <input class="loginreg-field pass w-input" maxlength="256" name="customer[password]" id="RegisterForm-password"
-          aria-required="true" {% if form.errors contains 'password' %} aria-invalid="true"
-          aria-describedby="RegisterForm-password-error" {% endif %} placeholder="" type="password" required="">
-        {%- if form.errors contains 'password' -%}
-        <span id="RegisterForm-password-error" class="form__message">
-          {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
-        </span>
-        {%- endif -%}
-
-        <p class="txtlogin">*Campos requeridos</p>
-        <input type="submit" data-wait="espera..." class="loginpopbtn w-button" value="Crear cuenta">
-
-        <label class="w-checkbox accept-tyc">
-          <div class="w-checkbox-input w-checkbox-input--inputType-custom termscheckbox"></div>
-          <input id="checkbox-2" type="checkbox" name="checkbox-2" data-name="Checkbox 2" required
-            style="opacity:0;position:absolute;z-index:-1">
-          <span class="labelcheck-tyc w-form-label" for="checkbox-2">Al suscribirte a Championmexico.com.mx estás de
-            acuerdo con los <a href="/pages/terminos-y-condiciones" class="tycregister-labellink">Términos y
-              condiciones</a> y <a href="/pages/aviso-de-privacidad" class="tycregister-labellink">Aviso de
-              privacidad.</a></span>
-        </label>
-
-        {%- endform -%}
-      </div>
-    </div>
-
-
-
-    <div class="colderlogin w-col w-col-6">
-      <div class="beneficios-tienda registro">
-        <div class="contgarantia logo micuenta"><img src="{{ " logo_garantia-champion.svg" | asset_url }}"
-            loading="eager" alt="Garantías Champion" class="logogarntias"></div>
-        <div class="con4beneficios registro">
-          <div class="contgarantia registro"><img src="{{ " envios_icon.svg" | asset_url }}" loading="lazy" alt=""
-              class="icongarantias">
-            <p class="txtwarranty micuenta">Entrega el mismo día*</p>
-          </div>
-          <div class="contgarantia registro"><img src="{{ " devoluciones_icon.svg" | asset_url }}" loading="lazy" alt=""
-              class="icongarantias">
-            <p class="txtwarranty micuenta">Cambios y devoluciones GRATIS</p>
-          </div>
-          <div class="contgarantia registro"><img src="{{ " seguridad_icon.svg" | asset_url }}" loading="lazy" alt=""
-              class="icongarantias">
-            <p class="txtwarranty micuenta">Pagos 100% seguros</p>
-          </div>
-          <div class="contgarantia registro"><img src="{{ " msi_icon.svg" | asset_url }}" loading="lazy" alt=""
-              class="icongarantias">
-            <p class="txtwarranty micuenta">Tus compras Hasta en 12 MSI</p>
-          </div>
+        <div class="titlecontainer">
+          <h1 class="mainsecctitle">Crear <strong class="boldtitles">cuenta</strong></h1>
         </div>
-      </div>
+  
+        <div class="loginpopform w-form">
+          {%- form 'create_customer', class: 'contenidoformlog' -%}
+  
+          <input class="loginreg-field w-input" maxlength="256" name="customer[first_name]" id="RegisterForm-FirstName" {% if form.first_name %}value="{{ form.first_name }}" {% endif %} placeholder="{{ 'customer.register.first_name' | t }}" type="text" required="">
+          <input class="loginreg-field w-input" maxlength="256" name="customer[last_name]" id="RegisterForm-LastName" {% if form.last_name %}value="{{ form.last_name }}" {% endif %} placeholder="{{ 'customer.register.last_name' | t }}" type="text" required="">
+          <input class="loginreg-field mail w-input" maxlength="256" name="customer[email]" id="RegisterForm-email" {% if form.email %} value="{{ form.email }}" {% endif %} aria-required="true" {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="RegisterForm-email-error" {% endif %} placeholder="{{ 'customer.register.email' | t }}" type="email" required="">
+          {%- if form.errors contains 'email' -%}
+          <span id="RegisterForm-email-error" class="form__message">
+            {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
+          </span>
+          {%- endif -%}
+          <input class="loginreg-field pass w-input" maxlength="256" name="customer[password]" id="RegisterForm-password" aria-required="true" {% if form.errors contains 'password' %} aria-invalid="true" aria-describedby="RegisterForm-password-error" {% endif %} placeholder="{{ 'customer.register.password' | t }}" type="password" required="">
+          {%- if form.errors contains 'password' -%}
+          <span id="RegisterForm-password-error" class="form__message">
+            {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
+          </span>
+          {%- endif -%}
+          <input type="submit" data-wait="espera..." class="loginpopbtn w-button" value="Crear cuenta">
+  
+          <label class="w-checkbox accept-tyc">
+            <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
+            <input type="checkbox" name="checkbox-2" id="checkbox-2" data-name="Checkbox 2" required="" style="opacity:0;position:absolute;z-index:-1">
+            <span class="labelcheck-tyc w-form-label" for="checkbox-2">
+                <a href="/pages/terminos-y-condiciones" class="tycregister-labellink">Acepto términos y condiciones</a>
+            </span>
+          </label>
+  
+          {%- endform -%}
+        </div>    
+
     </div>
-
-
   </div>
 </div>
 {% schema %} { "name": "t:sections.main-register.name", "settings": [] } {% endschema %}

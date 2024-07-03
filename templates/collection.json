@@ -11,7 +11,6 @@
         "products_per_page": 50,
         "enable_quick_add": true,
         "enable_filtering": true,
-        "filter_type": "vertical",
         "enable_sorting": true
       }
     }

@@ -12,9 +12,9 @@
 {%- endif -%}
 
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
-{% assign filter_type = 'vertical'%}
+{% assign filter_type = 'horizontal'%}
 
-<div class="section-{{ section.id }}-padding custom-container {% unless collection.image %} margin-out-banner {% endunless %}" id="container-grid-product-shop">
+<div class="section-{{ section.id }}-padding custom-container secclisting {% unless collection.image %} margin-out-banner {% endunless %}" id="container-grid-product-shop">
   <div class="{% if filter_type == 'vertical' %} facets-vertical  {% endif %} ">
     {{ 'component-facets.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
@@ -26,7 +26,7 @@
     {% endif %}
     {%- endif -%}
 
-    <div class="cont-grid-producto{%if collection.filters.size == 0%} fullnofacets {%endif%} custom-container" id="ProductGridContainer">
+    <div class="cont-grid-producto{%if collection.filters.size == 0%} fullnofacets {% endif %} custom-container" id="ProductGridContainer">
       {%- if section.settings.enable_sorting and filter_type == 'vertical' -%}
           <div class="custom-container">
           <facet-filters-form class="facets facets-vertical-sort small-hide no-js-hidden">
@@ -77,27 +77,29 @@
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty custom-container" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
-            <div class="not-found-div"><img src="{{"notfound_result.png" | asset_url}}" alt="Resultados no disponibles" class="img-search">
-            <h1 class="no-reults-txt"><strong class="bold-no-reults">LO SENTIMOS</strong><br>{{ 'sections.collection_template.empty' | t }}. {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "" }}</h1>
-            <a href="{{collection.url}}" class="loginpopbtn collec center w-button">Volver al listado</a>
+            <div class="not-found-div"><img src="{{"404_icon.svg" | asset_url}}" alt="Resultados no disponibles" class="img-search">
+            <h2 class="no-reults-txt"><strong class="bold-no-reults">LO SENTIMOS</strong><br>{{ 'sections.collection_template.empty' | t }}. {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "" }}</h2>
+            <a href="{{ routes.all_products_collection_url }}" class="loginpopbtn center w-button" style="width: fit-content;" >Volver al listado</a>
             </div>
           </div>
         {%- else -%}
           <div class="collection">
             <div class="loading-overlay gradient"></div>
     
-            <ul id="product-grid" data-id="{{ section.id }}" class="contlisting">
+            <ul id="product-grid" data-id="{{ section.id }}" class="gridlistingproducto">
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
+                <div class="contitemlista">
                   {% render 'card-product',
                     card_product: product,
                     show_quick_add: true,
                     section_id: section.id,
                     grid: true
                   %}
+                </div>
               {%- endfor -%}
             </ul>
     

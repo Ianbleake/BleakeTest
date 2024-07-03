@@ -1,11 +1,11 @@
-<div class="secc-productos recommendations_pageproduct custom-container hidde">
+<div class="seccproductos recommendations_pageproduct custom-container {%if recommendations.products_count<1%}hidde{%  endif %}">
   <div class="titlecontainer">
-    <h2 class="secctitle">{{ section.settings.heading  }}</h2>
+    <h2 class="mainsecctitle">{{ section.settings.heading  }}</h2>
   </div>
     <div class="custom-container">
       <product-recommendations class="product-recommendations seccion-sugeridos" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}" id="recommendations-shopify-product">
         {% if recommendations.performed and recommendations.products_count > 0 %}
-          <div class="html-productos-owl w-embed">
+          <div class="html-embed w-embed">
             <div class="owl-carousel productosowl owl-theme" id="sync2">
               {% for recommendation in recommendations.products %}
               {% render 'card-product',
@@ -60,25 +60,31 @@
       navRewind: true,
       autoWidth:false,
       autoplay:false,
+    navText: ['<div class="productsliderarrow w-slider-arrow-left"><div class="w-icon-slider-left"></div></div>','<div class="productsliderarrow w-slider-arrow-right"><div class="w-icon-slider-right"></div></div>'],
       animateOut: 'fadeOut',
       slideSpeed: 4000,
-    navText: ['<div class="mainslider-arrow w-slider-arrow-left"><div class="w-icon-slider-left"></div></div>','<div class="mainslider-arrow w-slider-arrow-right"><div class="w-icon-slider-right"></div></div>'],
       responsiveClass:true,
       responsive:{
           0:{
               items:2,
               nav:true,
-            dots:false
+              dots:false,
+              mouseDrag: false,
+              touchDrag: false
           },
           480:{
               items:2,
               nav:true,
-              dots:false
+              dots:false,
+              mouseDrag: false,
+              touchDrag: false
           },
           767:{
               items:3,
               nav:true,
-            dots:false
+              dots:false,
+              mouseDrag: false,
+              touchDrag: false
           },
       991:{
               items:4,

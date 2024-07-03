@@ -348,19 +348,6 @@ h2,
     0 0 0.5rem 0.4rem rgba(var(--color-base-text), 0.3);
 }
 
-/* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
-.focused, .no-js *:focus {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
-}
-
-.button:focus-visible {
-  box-shadow: 0 0 0 0.1rem rgb(var(--color-base-accent-1)),
-    0 0 0 0.3rem rgb(var(--color-base-background-1)),
-    0 0 0.5rem 0.4rem rgba(var(--color-base-text), 0.3);
-}
 
 /* Negate the fallback side-effect for browsers that support :focus-visible */
 .no-js *:focus:not(:focus-visible) {
@@ -419,12 +406,12 @@ h2,
 width: auto;
 height: 45px;
 min-width: 190px;
-background-color: #ec1c24;
+background-color: #3c7630;
 color: #fff;
 border-radius: 6px;
 margin-top: 20px;
 margin-bottom: 10px;
-font-family: Figtree, sans-serif;
+font-family: "Museosans 500", sans-serif;
 font-size: 15px;
 font-weight: 400;
 line-height: 19px;
@@ -435,13 +422,13 @@ button.button.button--secondary {
 width: 100%;
 float: none;
 clear: left;
-color: #e2091e;
+color: #3c7630;
 text-align: center;
 background-color: #fff;
-border: 2px solid #e2091e;
+border: 2px solid #3c7630;
 margin: 10px 5px 10px 0;
 padding: 10px 5px;
-font-family: Figtree, sans-serif;
+font-family: "Museosans 500", sans-serif;
 font-size: 15px !important;
 font-weight: 400;
 transition: all .35s;

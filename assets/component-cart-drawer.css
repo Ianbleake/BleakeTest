@@ -385,11 +385,11 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
 }
 
 .cart-drawer * {
-font-family: Figtree, sans-serif;
+font-family: "Museosans 500", sans-serif;
 }
 
 .cart-drawer .drawer__heading {
-  color: #ec1c24;
+  color: #3c7630;
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
@@ -400,21 +400,23 @@ font-family: Figtree, sans-serif;
 }
 
 .cart-drawer .cart__checkout-button {
-  background-color: #ec1c24;
+  background-color: #3c7630;
   color: #fff;
   text-align: center;
-  border: 2px solid #e2091e;
-  border-radius: 9px;
+  border: 2px solid #3c7630;
+  border-radius: 40px;
 }
   
 .cart-drawer .cart-items th {
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 12px;    
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  color: #000;
+  text-transform: capitalize; 
 }
 
 .cart-drawer .cart-item__details>*{
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .cart-drawer .cart-item cart-remove-button{
@@ -422,7 +424,7 @@ font-family: Figtree, sans-serif;
 }
 
 .cart-drawer .cart-item__price-wrapper .price,.cart-drawer .tax-note{
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .cart-drawer .cart-item__media {
@@ -445,18 +447,32 @@ font-family: Figtree, sans-serif;
   margin-top: 0px;
 }
 
+.cart-drawer quantity-input.quantity {
+  border: 1px solid #bbbbbb;
+}
+
 .cart-drawer .quantity__button:not(:focus-visible):not(.focused),.cart-drawer .quantity__input:not(:focus-visible):not(.focused),.cart-drawer .quantity__button,.cart-drawer .quantity__input{
-  width: 25px;
+  width: 30px;
 }
 
 .cart-drawer .cart-item td.cart-item__totals.right {
   padding-right: 5px;
 }
 
-.cart-drawer .compare-price{
-  text-decoration: line-through;
+cart-drawer.drawer.is-empty .drawer__footer {
+  display: none;
 }
 
-.cart-drawer .cart-item__final-price{
-  color: #ec1c24;
+cart-drawer span.cart-item__final-price.product-option {
+  color: #ee0043;
+}
+
+cart-drawer span.cart-item__old-price.product-option.compare-price {
+  text-decoration: line-through;
+}
+@media screen and (max-width: 767px){
+
+.drawer__inner{
+  padding: 0 1rem;
+}
 }

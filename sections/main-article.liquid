@@ -1,67 +1,59 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<div class="custom-container">
-  <div class="cuerpo-blogentry">
+<div class="seccinternas">
+  <div class="custom-container">
     <article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
       {%- for block in section.blocks -%}
-      {%- case block.type -%}
-      {%- when '@app' -%}
-      {% render block %}
-      {%- when 'featured_image'-%}
-      {%- if article.image -%}
-      <div class="article-template__hero-container" style="text-align: center;">
-        <img
-          src="{{ article.image | image_url: width: 1100 }}"
+        {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'featured_image'-%}
+              {%- if article.image -%}
+                  <img src="{{ article.image | image_url: width: 1100 }}" width="{{ article.image.width }}" height="{{ article.image.height }}" alt="{{ article.image.alt | escape }}" class="picblog-entry">
+              {%- endif -%}
 
-          width="{{ article.image.width }}"
-          height="{{ article.image.height }}"
-          alt="{{ article.image.alt | escape }}" class="picblog-entry">
-      </div>
-      {%- endif -%}
+            {%- when 'title'-%}
+              <div class="titlecontainer">
+                <h1 class="mainsecctitle">{{ article.title | escape }}</h1>
+              </div>
+              <div class="cont-title-secc center">
+                {%- if block.settings.blog_show_date -%}
+                  <span class="circle-divider dateblog" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'basic' }}</span>
+                {%- endif -%}
+                {%- if block.settings.blog_show_author -%}
+                  <span class="dateblog" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">{{ article.author }}</span>
+                  </span>
+                {%- endif -%}
+              </div>
 
-      {%- when 'title'-%}
-      <div class="titlecontainer">
-        <h1 class="secctitle center">{{ article.title | escape }}</h1>
-      </div>
-      <div class="cont-title-secc">
-        {%- if block.settings.blog_show_date -%}
-        <span class="circle-divider subtitle-cuenta" itemprop="dateCreated pubdate datePublished">{{
-          article.published_at | time_tag: format: 'date' }}</span>
-        {%- endif -%}
-        {%- if block.settings.blog_show_author -%}
-        <span class="subtitle-cuenta" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name">{{ article.author }}</span>
-        </span>
-        {%- endif -%}
-      </div>
-
-      {%- when 'content'-%}
-      <div class="parrafoblog" itemprop="articleBody" {{ block.shopify_attributes }}>
-        {{ article.content }}
-      </div>
-
-      {%- when 'share' -%}
-      <div class="container-blog-listing" style="margin-top: 20px;">
-        <div class="custom-container">
-          <div class="cuerpo-blogentry">
-            <div class="contsocial-media">
-              <h1 class="titulovip-elements social">Compartir</h1>
-              <a data-network="copy" href="#" class="st-custom-button w-inline-block">
-                <img src="{{ "socialicon.svg" | asset_url }}" alt="Compartir" class="iconshare-social">
-              </a>
-              <a data-network="facebook" href="#" class="st-custom-button w-inline-block"><img src="{{ "/socialicon-copy.svg" | asset_url }}" alt="Facebook" class="iconshare-social"></a>
-              <a data-network="whatsapp" href="#" class="st-custom-button w-inline-block"><img src="{{ "/socialicon-copy-3.svg" | asset_url }}" alt="Whatsapp" class="iconshare-social"></a>
-              <a data-network="telegram" href="#" class="st-custom-button w-inline-block"><img src="{{ "/socialicon-copy-5.svg" | asset_url }}" alt="Telegram" class="iconshare-social"></a>
-              <a data-network="messenger" href="#" class="st-custom-button w-inline-block"><img src="{{ "/socialicon-copy-4.svg" | asset_url }}" alt="Messenger" class="iconshare-social"></a>
-              <a data-network="twitter" href="#" class="st-custom-button w-inline-block"><img src="{{ "/icon_twitter.svg" | asset_url }}" alt="Twitter" class="iconshare-social"></a>
+            {%- when 'content'-%}
+            <div class="parrafoblog" itemprop="articleBody" {{ block.shopify_attributes }}>
+              {{ article.content }}
             </div>
-          </div>
-        </div>
-      </div>
-      {%- endcase -%}
+
+            {%- when 'share' -%}
+            <div class="container-blog-listing" style="margin-top: 20px;">
+              <div class="custom-container">
+                <div class="cuerpo-blogentry">
+                  <div class="contsocial-media">
+                    <h2 class="titulovip-elements social">Compartir</h2>
+                    <a data-network="copy" href="#" class="st-custom-button w-inline-block">
+                      <img src="{{ "share_link.svg" | asset_url }}" alt="Compartir" class="iconshare-social">
+                    </a>
+                    <a data-network="facebook" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_facebook.svg" | asset_url }}" alt="Facebook" class="iconshare-social"></a>
+                    <a data-network="whatsapp" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_whatsapp.svg" | asset_url }}" alt="Whatsapp" class="iconshare-social"></a>
+                    <a data-network="telegram" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_telegram.svg" | asset_url }}" alt="Telegram" class="iconshare-social"></a>
+                    <a data-network="messenger" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_messenger.svg" | asset_url }}" alt="Messenger" class="iconshare-social"></a>
+                    <a data-network="twitter" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_twitter.svg" | asset_url }}" alt="Twitter" class="iconshare-social"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {%- endcase -%}
       {%- endfor -%}
 
-      <a href="{{ blog.url }}" class="ctared blogdetail w-button">
+      <a href="{{ blog.url }}" class="outlinebtn">
         {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
       </a>
     </article>

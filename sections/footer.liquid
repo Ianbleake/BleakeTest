@@ -1,70 +1,150 @@
 <footer>
+
   <div class="customfooter">
     <div class="custom-container">
-      <a href="#" class="linkfooterlogo w-inline-block"><img src="{{ " PADN-fullcolor.png" | asset_url }}"alt=""
-          class="logofooter"></a>
-      <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b65-97130b61"
-        class="w-layout-layout stackfooter wf-layout-layout">
-        <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b66-97130b61" class="w-layout-cell">
-          <h4 class="titlefooter">NEWSLETTER</h4>
-          <div class="linkfooter regular">Recibe promociones y descuentos especiales directamente en tu correo.</div>
-          <div class="formulario-news w-form">
-            <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get"
-              class="newsform w-clearfix" data-wf-page-id="6667390ff463b82d886d3909"
-              data-wf-element-id="a5f7fa89-a91d-90ee-415b-86a697130b6c"><input class="inputsuscriptor w-input"
-                maxlength="256" name="Email-2" data-name="Email 2" placeholder="Ingresa tu correo aquí" type="email"
-                id="Email-2" required=""><input type="submit" data-wait="Espera..." class="suscribir-btn w-button"
-                value="Suscribirme"></form>
-            <div class="w-form-done"></div>
-            <div class="w-form-fail"></div>
+      <div class="cont-row-footer">
+
+        <div class="colfooter small">
+          <a href="{{ routes.root_url }}" class="linklogo-footer w-inline-block">
+            <img src="{{ section.settings.logo |  image_url  }}" alt="Logo Bomuca" class="logo-footer">
+          </a>
+        </div>
+
+        <div class="colfooter">
+          <h5 data-w-id="686b8870-1a6f-a05b-1c17-3e2d0fdfe959" class="footer-titulo">{{ section.settings.menu_1.title }}
+          </h5>
+          <div class="cont-items-footer">
+            <ul role="list" class="items-footer">
+              {% for link in section.settings.menu_1.links %}
+              <li class="item-list-footer">
+                <a href="{{ link.url }}" class="footer-link">{{ link.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
-        <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b71-97130b61" class="w-layout-cell">
-          <h4 class="titlefooter">CONTACTO</h4>
-          <ul role="list" class="fotoerlist">
-            <li class="itemlista">
-              <a href="mailto:padnnutrition@contact.mx?subject=Tienda%20en%20l%C3%ADnea%20PADN"
-                class="linkfooter">padnnutrition@contact.mx</a>
-            </li>
-          </ul>
+
+        <div class="colfooter small">
+          <h5 data-w-id="686b8870-1a6f-a05b-1c17-3e2d0fdfe973" class="footer-titulo">{{ section.settings.menu_2.title }}
+          </h5>
+          <div class="cont-items-footer">
+            <ul role="list" class="items-footer">
+              {% for link in section.settings.menu_2.links %}
+              <li class="item-list-footer">
+                <a href="{{ link.url }}" class="footer-link">{{ link.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
-        <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b78-97130b61" class="w-layout-cell">
-          <h4 class="titlefooter">NOSOTROS</h4>
-          <ul role="list" class="fotoerlist">
-            <li class="itemlista">
-              <a href="#" class="linkfooter">Aviso de Privacidad</a>
-            </li>
-            <li class="itemlista">
-              <a href="#" class="linkfooter">Cambios y devoluciones</a>
-            </li>
-            <li class="itemlista">
-              <a href="#" class="linkfooter">Términos y condiciones</a>
-            </li>
-          </ul>
+
+        <div class="colfooter">
+          <h5 data-w-id="686b8870-1a6f-a05b-1c17-3e2d0fdfe984" class="footer-titulo">Contacto</h5>
+          <div class="cont-items-footer">
+            <ul role="list" class="items-footer">
+              <li class="item-list-footer">
+                <a href="mailto:info@bomuca.com?subject=Tienda%20Bomuca%20M%C3%A9xico" class="footer-link">{{
+                  section.settings.email }}</a>
+              </li>
+              <li class="item-list-footer">
+                <p class="txtfooter-about">
+                  <strong class="boldtitles">{{ section.settings.city_1 }}</strong><br>
+                  {% if section.settings.phone_1 != blank %}
+                    Tel. {{ section.settings.phone_1 }}
+                  {% endif %}<br>
+                  {{ section.settings.address_1 }}
+                </p>
+              </li>
+              <li class="item-list-footer">
+                <p class="txtfooter-about">
+                  <strong class="boldtitles">{{ section.settings.city_2 }}</strong><br>
+                  {% if section.settings.phone_2 != blank %}
+                    Tel. {{ section.settings.phone_2 }}
+                  {% endif %}<br>
+                  {{ section.settings.address_2 }}
+                </p>
+              </li>
+              <li class="item-list-footer">
+                <p class="txtfooter-about">
+                  <strong class="boldtitles">{{ section.settings.city_3 }}</strong><br>
+                  {% if section.settings.phone_3 != blank %}
+                    Tel. {{ section.settings.phone_3 }}
+                  {% endif %}<br>
+                  {{ section.settings.address_3 }}
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div id="w-node-a5f7fa89-a91d-90ee-415b-86a697130b85-97130b61" class="w-layout-cell">
-          <h4 class="titlefooter">MI CUENTA</h4>
-          <ul role="list" class="fotoerlist">
-            <li class="itemlista">
-              <a href="#" class="linkfooter">Registro</a>
-            </li>
-            <li class="itemlista">
-              <a href="#" class="linkfooter">Carrito</a>
-            </li>
-            <li class="itemlista">
-              <a href="#" class="linkfooter">Pedidos</a>
-            </li>
-            <li class="itemlista">
-              <a href="#" class="linkfooter">Direcciones</a>
-            </li>
-          </ul>
+
+
+        <div class="colfooter socialnews">
+
+          <h5 class="footer-titulo social">Síguenos</h5>
+          <div class="cont-items-footer social">
+            <ul role="list" class="items-footer">
+              <li class="item-list-footer">
+
+                {% if section.settings.instagram != blank %}
+                  <a href="{{ section.settings.instagram }}" target="_blank" class="social-link-footer w-inline-block">
+                    <img src="{{ "icon_instagram.svg" | asset_url }}" alt="Instagram Bomuca" class="social-icon">
+                  </a>
+                {% endif %}
+
+                {% if section.settings.facebook != blank %}
+                <a href="{{ section.settings.facebook }}" target="_blank" class="social-link-footer w-inline-block">
+                  <img src="{{ "icon_facebook.svg" | asset_url }}" alt="Facebook Bomuca" class="social-icon">
+                </a>
+                {% endif %}
+
+                {% if section.settings.youtube != blank %}
+                <a href="{{ section.settings.youtube }}" target="_blank" class="social-link-footer w-inline-block">
+                  <img src="{{ "icon_youtube.svg" | asset_url }}" alt="Youtube Bomuca" class="social-icon">
+                </a>
+                {% endif %}
+              </li>
+            </ul>
+          </div>
+
+          <h5 class="footer-titulo social">{{ section.settings.news_title }}</h5>
+          <p class="txtfooter-about newsfooter">{{ section.settings.description-subscription }}</p>
+          <div class="newsletterform w-form">
+            {% form 'customer', class: 'formnews' %}
+            <input class="campo-correo w-input" maxlength="256" name="contact[email]"
+              placeholder="{{ 'newsletter.label' | t }}" type="email" value="{{ form.email }}" required>
+            <input type="submit" data-wait="Espere..." class="suscribebtn-news w-button" value="Suscribirme">
+            {% endform %}
+          </div>
+
+
         </div>
-      </div><img src="{{ " logos-pagos.png" | asset_url }}"alt="" class="pagosfooter">
-      <div class="copyrightfooter">© PADN · Todos los derechos reservados · Designed &amp; Developed <a
-          href="https://www.kubodigital.mx" target="_blank" class="kdlink">Kubo Digital</a>
+
       </div>
     </div>
+
+
+    <div class="copyright-cont">
+      <div class="custom-container">
+        <div id="w-node-_686b8870-1a6f-a05b-1c17-3e2d0fdfe9b9-0fdfe952" class="w-layout-layout stackcopyright wf-layout-layout">
+          <div id="w-node-_686b8870-1a6f-a05b-1c17-3e2d0fdfe9ba-0fdfe952" class="w-layout-cell cellfooter">
+            <div class="copyright">Copyright © 2024 Bomuca S.A. DE C.V.  Designed and Developed by <a
+                href="https://www.kubodigital.com" target="_blank" class="kdlink">Kubo Digital</a>
+            </div>
+          </div>
+
+
+          <div id="w-node-_686b8870-1a6f-a05b-1c17-3e2d0fdfe9bf-0fdfe952" class="w-layout-cell cellfooter">
+            <img src="{{ section.settings.logo_payment |  image_url }}" alt="Metodos de pago" class="mediospago">
+            <img src="{{ section.settings.logo_payment_mobile |  image_url }}" alt="Metodos de pago" class="mediospago mobile">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
   </div>
+
 </footer>
 
 
@@ -94,8 +174,59 @@
 "default": "footer",
 "label": "Menu Columna 2",
 "info": "t:sections.footer.blocks.link_list.settings.menu.info"
-},
-{
+},{
+"type": "header",
+"content": "Contacto"
+},{
+"type": "text",
+"id": "email",
+"label": "Correo"
+},{
+"type": "header",
+"content": "Direccion 1"
+},{
+"type": "text",
+"id": "city_1",
+"label": "Ciudad"
+},{
+"type": "text",
+"id": "phone_1",
+"label": "Telefono"
+},{
+"type": "textarea",
+"id": "address_1",
+"label": "Direccion"
+},{
+"type": "header",
+"content": "Direccion 2"
+},{
+"type": "text",
+"id": "city_2",
+"label": "Ciudad"
+},{
+"type": "text",
+"id": "phone_2",
+"label": "Telefono"
+},{
+"type": "textarea",
+"id": "address_2",
+"label": "Direccion"
+},{
+"type": "header",
+"content": "Direccion 3"
+},{
+"type": "text",
+"id": "city_3",
+"label": "Ciudad"
+},{
+"type": "text",
+"id": "phone_3",
+"label": "Telefono"
+},{
+"type": "textarea",
+"id": "address_3",
+"label": "Direccion"
+},{
 "type": "header",
 "content": "Redes Sociales"
 }, {
@@ -114,23 +245,14 @@
 {
 "type": "header",
 "content": "Suscripción"
-}, {
+},{
+"type": "text",
+"id": "news_title",
+"label": "Titulo"
+},{
 "type": "textarea",
 "id": "description-subscription",
-"label": "Texto de descripción"
-},
-{
-"type": "header",
-"content": "Certificados de la tienda"
-}, {
-"type": "image_picker",
-"id": "img_certificado_1",
-"label": "Imagen 1"
-},
-{
-"type": "image_picker",
-"id": "img_certificado_2",
-"label": "Imagen 2"
+"label": "Descripción"
 },
 {
 "type": "header",
@@ -139,6 +261,10 @@
 "type": "image_picker",
 "id": "logo_payment",
 "label": "Imagen Metodos de Pago"
+}, {
+"type": "image_picker",
+"id": "logo_payment_mobile",
+"label": "Imagen Metodos de Pago Mobile"
 }
 ]
 }

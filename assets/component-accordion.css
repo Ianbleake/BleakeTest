@@ -3,7 +3,7 @@
   position: relative;
   line-height: 1;
   padding: 10px 0;
-  border-top: 1px solid #d5d5d5;
+  border-bottom: 1px solid #92e47f;
 }
 
 .accordion .summary__title {
@@ -31,7 +31,7 @@
 
 .accordion__title {
   font-weight:600;
-  font-family: Figtree, sans-serif;
+  font-family: "Museosans 500", sans-serif;
   font-size: 15px;
   line-height: 23px;
   display: inline-block;

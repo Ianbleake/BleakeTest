@@ -17,47 +17,35 @@
 {% endcomment %}
 
 {%- if article and article != empty -%}
-  {%- liquid
-    assign ratio = 1
-  -%}
+  <div class="miniatura-entradablog" {% if article.image != blank %} style="background-image: url({{ article.image |  image_url }});" {% endif %}></div>
+  <div class="infobloglist">
+    {% if show_date %}
+      <div class="dateblog">{{ article.published_at |  time_tag: format: 'basic' }}</div>
+    {% endif %}
 
-  <div class="article-card-wrapper card-wrapper underline-links-hover">
-    <div class="card article-card card--card card--text color-{{ settings.blog_card_color_scheme }} gradient" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
-      <div class="card__content">
-        <div class="card__information">
-          
-          <a href="{{ article.url }}"><div class="miniatura-entradablog listing" style="background-image: url({{ article.image |  image_url }});"></div></a>
+    {% if show_author %}
+      <div class="dateblog">{{ article.author  }}</div>
+    {% endif %}
+    
+    <h5 class="titulo-entryblog">{{ article.title | truncate: 50 | escape }}</h5>
 
-          <div>
-            {%- if show_date -%}
-              <span class="date-entry">{{ article.published_at | time_tag: format: 'date' }}</span>
-            {%- endif -%}
-            {%- if show_author -%}
-              <span class="date-entry">{{ article.author }}</span>
-            {%- endif -%}
-          </div>
-
-          <h2 class="titulo-entryblog">
-            <a href="{{ article.url }}" class="full-unstyled-link">{{ article.title | truncate: 50 | escape }}</a>
-          </h2>
-
-          {%- if show_excerpt -%}
-            {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
-              <p class="article-card__excerpt txtregular-internas">
-                {%- if article.excerpt.size > 0 -%}
-                  {{ article.excerpt | strip_html | truncatewords: 30 }}
-                {%- else -%}
-                  {{ article.content | strip_html | truncatewords: 30 }}
-                {%- endif -%}
-              </p>
-            {%- endif -%}
+    {%- if show_excerpt -%}
+      {% if article.excerpt.size > 0 or article.content.size > 0 %}
+        <p class="excerptblog-slider">
+          {%- if article.excerpt.size > 0 -%}
+            {{ article.excerpt | strip_html | truncatewords: 30 }}
+          {%- else -%}
+            {{ article.content | strip_html | truncatewords: 30 }}
           {%- endif -%}
+        </p>
+      {% endif %}
+    {%- endif -%}
 
-          <a href="{{ article.url }}" class="readmore-btn">Leer más</a>
-
-        </div>
-      </div>
+    <div class="vermasblog listing">
+      <div class="txtbtnblog">Concer más</div>
+      <img src="{{ 'arrow_green.svg' |  asset_url }}" class="arrowbtnblog">
     </div>
   </div>
+
 
 {%- endif -%}

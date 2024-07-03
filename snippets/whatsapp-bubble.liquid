@@ -1,3 +1,5 @@
-<a href="{{ settings.whatsapp_url }}" target="_blank" class="whatsapplink w-inline-block">
-  <img src="{{ " whatsapp_icon.png" | asset_url }}" class="image">
-</a>
+{% if settings.whatsapp_number != blank %}
+    <a href="https://api.whatsapp.com/send?phone={{ settings.whatsapp_number }}&text=%C2%A1Hola%21+Estoy+en+la+tienda+Bomuca+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n" class="whatsapplink w-inline-block" target="_blank">
+        <img src="{{ 'whatsapp_icon.png' |  asset_url }}" alt="Whatsapp" class="image">
+    </a>
+{% endif %}

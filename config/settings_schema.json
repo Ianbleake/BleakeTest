@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "PADN TEST",
+    "theme_name": "Bomuca Mexico",
     "theme_version": "1.0.0",
-    "theme_author": "BleakeDev",
+    "theme_author": "Kubo Digital",
     "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
     "theme_support_url": "https:\/\/support.shopify.com\/"
   },
@@ -123,16 +123,16 @@
     ]
   },
   {
-    "name": "Liga de Whatsapp",
+    "name": "Numero de Whatsapp",
     "settings": [
       {
         "type": "paragraph",
-        "content": "Ingrese el Url proporcionado por whatsapp para la comunicacion con clientes. "
+        "content": "Ingrese el telefono de contacto asociado a whatsapp para la comunicacion con clientes. "
       },
       {
-        "type": "url",
-        "id": "whatsapp_url",
-        "label": "Whatsapp Url"
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "Numero de Telefono"
       }
     ]
   }

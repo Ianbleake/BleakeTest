@@ -1,0 +1,67 @@
+
+<div class="seccblog">
+  <div class="custom-container">
+    <div class="titlecontainer">
+      <h5 class="mainsecctitle">{{ section.settings.title }}</h5>
+    </div>   
+    <div id="w-node-_7b1cab1b-d652-6b04-fa04-e06292b1cde0-d6642a49" class="w-layout-layout blogstack wf-layout-layout">
+
+      {% for article in section.settings.blog.articles limit: 3 %}
+        {% if forloop.first %}        
+            <div id="w-node-_7b1cab1b-d652-6b04-fa04-e06292b1cde1-d6642a49" class="w-layout-cell imgbloggrid big" {% if article.image != blank %}style="background-image: url({{ article.image | image_url }});"{% endif %}>
+              <div class="continfoblog white">
+                <div class="dateblog white">{{ article.created_at |  time_tag: format: 'basic' }}</div>
+                <h6 class="blogtitle white">{{ article.title }}</h6>
+                <a href="{{ article.url }}" class="vermasblog white w-inline-block">
+                  <div class="txtbtnblog">Conocer más</div>
+                  <img src="{{ "arrow_green.svg" | asset_url }}" class="arrowbtnblog">
+                </a>
+              </div>
+            </div>       
+        {% else %}       
+            <div id="w-node-_7b1cab1b-d652-6b04-fa04-e06292b1cde2-d6642a49" class="w-layout-cell cellblog">
+              <div id="w-node-_69182433-2b70-880e-e564-7e9fcc396954-d6642a49" class="w-layout-layout quick-stack wf-layout-layout">
+                <div id="w-node-_69182433-2b70-880e-e564-7e9fcc396955-d6642a49" class="w-layout-cell imgbloggrid" {% if article.image != blank %}style="background-image: url({{ article.image | image_url }});"{% endif %}></div>
+                <div id="w-node-_69182433-2b70-880e-e564-7e9fcc396956-d6642a49" class="w-layout-cell infocell">
+                  <div class="continfoblog">
+                    <div class="dateblog">{{ article.created_at |  time_tag: format: 'basic' }}</div>
+                    <h6 class="blogtitle">{{ article.title }}</h6>
+                    <a href="{{ article.url }}" class="vermasblog w-inline-block">
+                      <div class="txtbtnblog">Conocer más</div>
+                      <img src="{{ "arrow_green.svg" | asset_url }}" class="arrowbtnblog">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>         
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+"name": "Articulos del Blog",
+"class": "index-section",
+"settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Titulo de seccion",
+    "default": "Con bomuca <strong class='boldtitles'>#LaSaludTeSigue</strong>"
+  },{
+    "type": "blog",
+    "id": "blog",
+    "label": "Blog"
+  }
+],
+"presets": [
+{
+"name": "Articulos del Blog"
+}
+]
+}
+{% endschema %}

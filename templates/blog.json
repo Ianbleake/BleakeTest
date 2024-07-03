@@ -4,8 +4,8 @@
       "type": "main-blog",
       "settings": {
         "show_date": true,
-        "show_author": true,
-        "Blog_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet molestie ex. Proin commodo sodales lectus, ut sollicitudin est vulputate ac. Aliquam erat lorem, bibendum at augue ut"
+        "show_author": false,
+        "Blog_description": "Este espacio te brinda información y consejos destinados a cultivar un estilo de vida y hábitos más saludables, con el objetivo de ayudarte a alcanzar tu máximo potencial."
       }
     }
   },

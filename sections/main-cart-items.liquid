@@ -22,13 +22,12 @@
 
 <cart-items class="custom-container {% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link titlecontainer">
-
-    <h1 class="title title--primary secctitle">{{ 'sections.cart.title' | t }}</h1>
+    <h1 class="title title--primary mainsecctitle">{{ 'sections.cart.title' | t }}</h1>
     <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
   </div>
 
   <div class="cart__warnings titlecontainer">
-    <h1 class="cart__empty-text secctitle">{{ 'sections.cart.empty' | t }}</h1>
+    <h2 class="cart__empty-text mainsecctitle">{{ 'sections.cart.empty' | t }}</h2>
     <a href="{{ routes.all_products_collection_url }}" class="btn-vip w-button button">
       {{ 'general.continue_shopping' | t }}
     </a>
@@ -60,7 +59,7 @@
                         <div class="cart-item__image-container gradient global-media-settings">
                          
                          
-                          <img src="{% if item.image %}{{ item.image | image_url: width: 300 }}{% else %}{{ "placeholder_img.jpeg" | asset_url }}{% endif %}"
+                          <img src="{% if item.image %}{{ item.image | image_url: width: 300 }}{% else %}{{ "placeholder_bomuca.jpeg" | asset_url }}{% endif %}"
                             class="cart-item__image"
                             alt="{{ item.image.alt | escape }}"
                             width="150"

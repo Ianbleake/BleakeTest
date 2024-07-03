@@ -1,49 +1,95 @@
 <div class="seccgarantias">
   <div class="custom-container">
-    <h2 class="maintitle">Compras fáciles y seguras</h2>
-    <div data-delay="4000" data-animation="cross" class="slidergarantias w-slider" data-autoplay="true"
-      data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0"
-      data-nav-spacing="3" data-duration="500" data-infinite="true">
-      <div class="maskgarantias w-slider-mask">
-        <div class="slideg w-slide">
-          <div class="infogarantia"><img width="35" src="{{ "iconb_pagos.svg" | asset_url }}" class="img-garantia">
-            <h3 class="titlegarantia">Paga con tarjeta o efectivo</h3>
-            <div class="txtgarantia">Tenemos múltiples métodos de pago para tu comodidad.</div>
+
+
+    <div class="titlecontainer">
+      <h2 class="mainsecctitle">{{ section.settings.tittle }}</h2>
+    </div>
+
+
+
+    <p class="infobienestar"><em>{{ section.settings.description }}</em></p>
+
+
+
+    <div data-delay="4000" data-animation="slide" class="warrantyslide w-slider" data-autoplay="true" data-easing="ease-in-out" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+      <div class="mask w-slider-mask">
+
+        {% for block in section.blocks %}
+
+        <div class="garantiaslide w-slide">
+          <div class="continfowarranty"><img src="{{ block.settings.warranty_icon |  image_url  }}" class="iconwarranty">
+            <p class="infowarranty">{{ block.settings.warranty_description }}</p>
           </div>
         </div>
-        <div class="slideg w-slide">
-          <div class="infogarantia"><img width="30" src="{{ "icon_envios.svg" | asset_url }}"  class="img-garantia">
-            <h3 class="titlegarantia">Envíos gratis en productos seleccionados</h3>
-            <div class="txtgarantia">Envíos seguros a todo México hasta la puerta de tu casa.</div>
-          </div>
-        </div>
-        <div class="slideg w-slide">
-          <div class="infogarantia"><img width="35" src="{{ "icobn_seguridad.svg" | asset_url }}"  class="img-garantia">
-            <h3 class="titlegarantia">Compra protegida</h3>
-            <div class="txtgarantia">Todos tus pagos son 100% seguros.</div>
-          </div>
-        </div>
+
+        {% endfor %}
+
       </div>
-      <div class="arrowmainslider garantia w-slider-arrow-left">
+
+
+      <div class="arrowsgarantias left w-slider-arrow-left">
         <div class="w-icon-slider-left"></div>
       </div>
-      <div class="arrowmainslider garantia w-slider-arrow-right">
+      <div class="arrowsgarantias right w-slider-arrow-right">
         <div class="w-icon-slider-right"></div>
       </div>
-      <div class="navgarantias w-slider-nav w-round"></div>
+      <div class="warrantyslidenav w-slider-nav w-slider-nav-invert w-round"></div>
+
+
     </div>
+
   </div>
 </div>
 
+
 {% schema %}
 {
-"name": "Garantias",
+"name": "Garantía de calidad",
 "class": "index-section",
+"settings": [
+{
+"type": "text",
+"id": "tittle",
+"label": "Titulo de Seccion",
+"default": "¡En <strong class='boldtitles'>bomuca<sup>®</sup></strong> celebramos tu <strong class='boldtitles'>bienestar</strong>!"
+},{
+"type": "textarea",
+"id": "description",
+"label": "Descripcion de seccion",
+"default": "Para nosotros nuestro trabajo está relacionado con la vida misma y es por eso que nos esforzamos en brindar productos de calidad para fomentar una nueva cultura para el bien social."
+}
+],
+"max_blocks": 4,
+"blocks": [
+{
+"type": "warranty",
+"name": "Garantia",
+"settings": [
+{
+"type": "image_picker",
+"id": "warranty_icon",
+"label": "Icono"
+},
+{
+"type": "textarea",
+"id": "warranty_description",
+"label": "Descripcion"
+}
+
+]
+}
+],
 "presets": [
 {
-"name": "Garantias",
-"category": "info"
+"name": "Garantía de calidad"
 }
 ]
 }
 {% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

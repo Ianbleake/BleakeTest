@@ -1,25 +1,29 @@
-<div class="custom-container">
 {%  if collection.image %}
-  <a href="{% if collection.metafields.custom.banner_url %}{{- collection.metafields.custom.banner_url -}} {% else %}#{% endif %}" class="lisitnglinkbanner w-inline-block"><img src="{{ collection.image | img_url:'master' }}" alt="{{- collection.title | escape -}}" class="bannerlisitng"></a>
-  {% if collection.metafields.custom.banner_movil %}
-  <a class="lisitnglinkbanner mobile w-inline-block"><img src="{{ collection.metafields.custom.banner_movil |  img_url:'master'  }}"  alt="{{- collection.title | escape -}}" class="bannerlisitng"></a>
-  {% else  %}
-  <a class="lisitnglinkbanner mobile w-inline-block"><img src="{{ collection.image | img_url:'master' }}"  alt="{{- collection.title | escape -}}" class="bannerlisitng"></a>
-  {% endif %}
+  <div class="secclisting">
+
+    <div class="lisitnglinkbanner">
+      <img src="{{ collection.image | img_url:'master' }}" alt="{{- collection.title | escape -}}" class="bannerlisitng">
+    </div>
+
+    {% if collection.metafields.custom.banner_movil %}
+      <div class="lisitnglinkbanner mobile">
+        <img src="{{ collection.metafields.custom.banner_movil |  img_url:'master'  }}"  alt="{{- collection.title | escape -}}" class="bannerlisitng">
+      </div>
+    {% else  %}
+      <div class="lisitnglinkbanner mobile">
+        <img src="{{ collection.image | img_url:'master' }}"  alt="{{- collection.title | escape -}}" class="bannerlisitng">
+      </div>
+    {% endif %}
+  </div>
+{% else %}
+  <div class="secclisting">
+    <div class="lisitnglinkbanner default">
+      <div class="contitlelisting">
+        <h1 class="txtresults">{{ collection.title | escape }}</h1>
+      </div>
+    </div>
+  </div>
 {% endif %}
-  <ul role="list" class="arbol-navegacion">
-    <li class="list-item-arbollist-item-arbol">
-      <a href="/" class="categoria-arbol">Inicio </a>
-    </li>
-    <li class="list-item-arbollist-item-arbol">
-      <a href="#" class="categoria-arbol">&gt;</a>
-    </li>
-    <li class="list-item-arbollist-item-arbol">
-      <a href="{{- collection.url  -}}" class="categoria-arbol">{{- collection.title | escape -}}</a>
-    </li>
-  </ul>
-  <h2 class="secctitle">{{- collection.title | escape -}}</h2>
-</div>
 
 
 {% schema %}

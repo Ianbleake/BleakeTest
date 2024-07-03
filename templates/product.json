@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -8,34 +17,25 @@
           "settings": {
           }
         },
+        "brands_Fa3YMi": {
+          "type": "brands",
+          "settings": {
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
           }
         },
-        "custom_liquid_gKURXR": {
-          "type": "custom_liquid",
+        "description_4gMhFn": {
+          "type": "description",
           "settings": {
-            "custom_liquid": "<div class=\"breaker\"><\/div>"
           }
         },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button"
-          }
-        },
-        "popup_dp7Xmw": {
-          "type": "popup",
-          "settings": {
-            "page": "guia-de-tallas",
-            "iconpop": "shopify:\/\/shop_images\/tallas_icon_38f9677a-2dc5-4ca8-9ab3-2079deb99b2a.svg"
-          }
-        },
-        "custom_liquid_AAPpqm": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"breaker\"><\/div>"
           }
         },
         "quantity_selector": {
@@ -49,16 +49,10 @@
             "show_dynamic_checkout": true
           }
         },
-        "custom_liquid_K8B3dE": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"btn-sizeinfo\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0621\/7292\/1992\/files\/enviosgratis.svg?v=1710877584\" class=\"inconsiechart\">\n<div class=\"titulovip-elements\">ENVÍOS GRATIS a partir de $ 1,899.ºº<\/div>\n<\/div>"
-          }
-        },
         "166ed5ab-3b89-40a1-a401-8c97f3723a3b": {
           "type": "metodos_pago",
           "settings": {
-            "logo_payment": "shopify:\/\/shop_images\/pagoslogosvip.png"
+            "logo_payment": "shopify:\/\/shop_images\/M_de_pago.png"
           }
         },
         "0d09da6a-d4e1-482e-b038-8908678039f7": {
@@ -66,62 +60,86 @@
           "settings": {
             "heading": "Descripción"
           }
-        },
-        "share_zcjE4m": {
-          "type": "share",
-          "settings": {
-          }
         }
       },
       "block_order": [
         "title",
+        "brands_Fa3YMi",
         "price",
-        "custom_liquid_gKURXR",
+        "description_4gMhFn",
         "variant_picker",
-        "popup_dp7Xmw",
-        "custom_liquid_AAPpqm",
         "quantity_selector",
         "buy_buttons",
-        "custom_liquid_K8B3dE",
         "166ed5ab-3b89-40a1-a401-8c97f3723a3b",
-        "0d09da6a-d4e1-482e-b038-8908678039f7",
-        "share_zcjE4m"
+        "0d09da6a-d4e1-482e-b038-8908678039f7"
       ],
       "settings": {
-        "hide_variants": true,
-        "padding_top": 12,
-        "padding_bottom": 12
-      }
-    },
-    "banner_secundary_slide_DhD7ft": {
-      "type": "banner-secundary-slide",
-      "blocks": {
-        "image_UBg6Ln": {
-          "type": "image",
-          "settings": {
-            "image-desktop-version": "shopify:\/\/shop_images\/bannersmall.jpg",
-            "image-mobile-version": "shopify:\/\/shop_images\/secundario-small.jpg",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_UBg6Ln"
-      ],
-      "settings": {
+        "hide_variants": true
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "Productos Recomendados",
+        "heading": "<h2 class=\"mainsecctitle\">Productos <strong class=\"boldtitles\">recomendados<\/strong>\n<\/h2>",
         "products_to_show": 9
+      }
+    },
+    "warranty_home_UFMrMT": {
+      "type": "warranty-home",
+      "blocks": {
+        "warranty_bckU9j": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/icon1.png",
+            "warranty_description": "Años de investigación científica respaldada por laboratorios de Europa y Estados Unidos"
+          }
+        },
+        "warranty_NaUBz3": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/icon2.png",
+            "warranty_description": "Creamos productos diseñados para preservar y mejorar tu salud."
+          }
+        },
+        "warranty_CfqFhk": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/icon3.png",
+            "warranty_description": "Hacemos envíos a todo México ¡La salud hasta la puerta de tu casa!"
+          }
+        },
+        "warranty_q9HpWK": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/icon4.png",
+            "warranty_description": "Todas tus compras y pagos son 100% seguros."
+          }
+        }
+      },
+      "block_order": [
+        "warranty_bckU9j",
+        "warranty_NaUBz3",
+        "warranty_CfqFhk",
+        "warranty_q9HpWK"
+      ],
+      "settings": {
+        "tittle": "¡En <b>bomuca®<\/b> celebramos tu <b>bienestar<\/b>!",
+        "description": "Para nosotros nuestro trabajo está relacionado con la vida misma y es por eso que nos esforzamos en brindar productos de calidad para fomentar una nueva cultura para el bien social."
+      }
+    },
+    "custom_liquid_dxWXyU": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"seccreviews\">\n    <div class=\"custom-container\">\n      <div class=\"titlecontainer\">\n        <h2 class=\"mainsecctitle\">Reseñas de nuestros <strong class=\"boldtitles\">clientes<\/strong><\/h2>\n      <\/div>\n      <div class=\"divreviews w-embed\"><\/div>\n    <\/div>\n  <\/div>",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "main",
-    "banner_secundary_slide_DhD7ft",
-    "product-recommendations"
+    "product-recommendations",
+    "warranty_home_UFMrMT",
+    "custom_liquid_dxWXyU"
   ]
 }

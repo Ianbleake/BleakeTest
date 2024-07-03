@@ -1,1 +1,1 @@
-# Champion-Mexico
+# bomuca Shopify Theme by KD

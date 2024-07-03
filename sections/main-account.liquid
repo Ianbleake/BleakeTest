@@ -1,156 +1,134 @@
-<div class="containermicuenta">
-  <div class="titlecontainer">
-    <h1 class="secctitle">Mi cuenta</h1>
-  </div>
+<div class="seccinternas">
+  <div class="custom-container">
+    <div class="elementos-cuenta">
 
-  <a href="{{ routes.account_logout_url }}" class="frgtpassword" style="margin-left: 10px;">{{ 'customer.log_out' | t }}</a>
-
-  <div class="row-pedidos w-row">
-
-    <div class="w-col w-col-3">
-
-      <div class="contdetail-account">
-        <h4 class="titles-micuenta">{{ 'customer.account.details' | t }}</h4>
+      <div class="titlecontainer">
+        <h1 class="mainsecctitle">Mi <strong class="boldtitles">cuenta</strong></h1>
       </div>
-
-      <div class="cont-infodirecc w-clearfix">
-        <div class="infodireccion">
-          {% if customer.default_address %}
-            <p>MI DIRECCIÓN <br>
-                {{ customer.default_address.address1 }} <br>
-                {{ customer.default_address.zip }}, {{ customer.default_address.city }}, {{
-                customer.default_address.province }}<br>
-                {{ customer.default_address.country }}
-            </p>
-          {% endif %}
-        </div>
-        <a href="{{ routes.account_addresses_url }}" class="btndirecciones w-button">{{'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
-      </div>
-
-    </div>
-
-    <div class="w-col w-col-9">
-      {% paginate customer.orders by 20 %}
-        {% if customer.orders.size > 0 %}
-          <div class="container-list-pedido">
-
-            <h4 class="titles-micuenta">{{ 'customer.orders.title' | t }}</h4>
-
-            <div class="rowtitlepedidos w-row">
-              <div class="w-col w-col-2 w-col-small-2">
-                <h4 class="titlecol-pedido">{{ 'customer.orders.order_number' | t }}</h4>
-              </div>
-              <div class="w-col w-col-10 w-col-small-10">
-                <div class="w-row">
-                  <div class="w-col w-col-3 w-col-small-3">
-                    <h4 class="titlecol-pedido">{{ 'customer.orders.date' | t }}</h4>
-                  </div>
-                  <div class="w-col w-col-3 w-col-small-3">
-                    <h4 class="titlecol-pedido">{{ 'customer.orders.fulfillment_status' | t }}</h4>
-                  </div>
-                  <div class="w-col w-col-3 w-col-small-3">
-                    <h4 class="titlecol-pedido">{{ 'customer.orders.payment_status' | t }}</h4>
-                  </div>
-                  <div class="w-col w-col-3 w-col-small-3">
-                    <h4 class="titlecol-pedido">{{ 'customer.orders.total' | t }}</h4>
-                  </div>
-                </div>
-              </div>
+    
+      <a href="{{ routes.account_logout_url }}" class="ctared w-button back" >{{ 'customer.log_out' | t }}</a>
+    
+      <div class="row-pedidos w-row">
+    
+        <div class="w-col w-col-3">
+    
+          <div class="contdetail-account">
+            <h4 class="titles-micuenta">{{ 'customer.account.details' | t }}</h4>
+          </div>
+    
+          <div class="cont-infodirecc w-clearfix">
+            <div class="infodireccion">
+              {% if customer.default_address %}
+                <p>MI DIRECCIÓN <br>
+                    {{ customer.default_address.address1 }} <br>
+                    {{ customer.default_address.zip }}, {{ customer.default_address.city }}, {{
+                    customer.default_address.province }}<br>
+                    {{ customer.default_address.country }}
+                </p>
+              {% endif %}
             </div>
-
-            {% for order in customer.orders %}
-              <div class="rowpedido w-row">
-                <div class="w-col w-col-2 w-col-small-2">
-                  <a href="{{ order.customer_url }}" class="pedidonumero">{{ order.name }}</a>
-                </div>
-                <div class="w-col w-col-10 w-col-small-10">
-                  <div class="infopedido-datos w-row">
-                    <div class="w-col w-col-3">
-                      <h6 class="infopedido-list">{{ order.created_at | time_tag: format: 'date' }}</h6>
-                    </div>
-                    <div class="w-col w-col-3">
-                      <h6 class="infopedido-list">{{ order.fulfillment_status_label }}</h6>
-                    </div>
-                    <div class="w-col w-col-3">
-                      <h6 class="infopedido-list">{{ order.financial_status_label }}</h6>
-                    </div>
-                    <div class="w-col w-col-3">
-                      <h6 class="infopedido-list">{{ order.total_price | money_with_currency }}</h6>
+            <a href="{{ routes.account_addresses_url }}" class="btndirecciones w-button">{{'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+          </div>
+    
+        </div>
+    
+        <div class="w-col w-col-9">
+          {% paginate customer.orders by 20 %}
+            {% if customer.orders.size > 0 %}
+              <div class="container-list-pedido">
+    
+                <h4 class="titles-micuenta">{{ 'customer.orders.title' | t }}</h4>
+    
+                <div class="rowtitlepedidos w-row">
+                  <div class="w-col w-col-2 w-col-small-2">
+                    <h4 class="titlecol-pedido">{{ 'customer.orders.order_number' | t }}</h4>
+                  </div>
+                  <div class="w-col w-col-10 w-col-small-10">
+                    <div class="w-row">
+                      <div class="w-col w-col-3 w-col-small-3">
+                        <h4 class="titlecol-pedido">{{ 'customer.orders.date' | t }}</h4>
+                      </div>
+                      <div class="w-col w-col-3 w-col-small-3">
+                        <h4 class="titlecol-pedido">{{ 'customer.orders.fulfillment_status' | t }}</h4>
+                      </div>
+                      <div class="w-col w-col-3 w-col-small-3">
+                        <h4 class="titlecol-pedido">{{ 'customer.orders.payment_status' | t }}</h4>
+                      </div>
+                      <div class="w-col w-col-3 w-col-small-3">
+                        <h4 class="titlecol-pedido">{{ 'customer.orders.total' | t }}</h4>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>    
-            {% endfor %}
-
-          </div>
-        {% else %}
-
-          <div class="container-list-pedido">
-
-              <h4 class="titles-micuenta">{{ 'customer.orders.title' | t }}</h4>
-
-              <div class="rowtitlepedidos w-row">
-                <div class="w-col w-col-2 w-col-small-2">
-                  <h4 class="titlecol-pedido">{{ 'customer.orders.order_number' | t }}</h4>
-                </div>
-                <div class="w-col w-col-10 w-col-small-10">
-                  <div class="w-row">
-                    <div class="w-col w-col-3 w-col-small-3">
-                      <h4 class="titlecol-pedido">{{ 'customer.orders.date' | t }}</h4>
+    
+                {% for order in customer.orders %}
+                  <div class="rowpedido w-row">
+                    <div class="w-col w-col-2 w-col-small-2">
+                      <a href="{{ order.customer_url }}" class="pedidonumero">{{ order.name }}</a>
                     </div>
-                    <div class="w-col w-col-3 w-col-small-3">
-                      <h4 class="titlecol-pedido">{{ 'customer.orders.fulfillment_status' | t }}</h4>
+                    <div class="w-col w-col-10 w-col-small-10">
+                      <div class="infopedido-datos w-row">
+                        <div class="w-col w-col-3">
+                          <h6 class="infopedido-list">{{ order.created_at | time_tag: format: 'date' }}</h6>
+                        </div>
+                        <div class="w-col w-col-3">
+                          <h6 class="infopedido-list">{{ order.fulfillment_status_label }}</h6>
+                        </div>
+                        <div class="w-col w-col-3">
+                          <h6 class="infopedido-list">{{ order.financial_status_label }}</h6>
+                        </div>
+                        <div class="w-col w-col-3">
+                          <h6 class="infopedido-list">{{ order.total_price | money_with_currency }}</h6>
+                        </div>
+                      </div>
                     </div>
-                    <div class="w-col w-col-3 w-col-small-3">
-                      <h4 class="titlecol-pedido">{{ 'customer.orders.payment_status' | t }}</h4>
+                  </div>    
+                {% endfor %}
+    
+              </div>
+            {% else %}
+    
+              <div class="container-list-pedido">
+    
+                  <h4 class="titles-micuenta">{{ 'customer.orders.title' | t }}</h4>
+    
+                  <div class="rowtitlepedidos w-row">
+                    <div class="w-col w-col-2 w-col-small-2">
+                      <h4 class="titlecol-pedido">{{ 'customer.orders.order_number' | t }}</h4>
                     </div>
-                    <div class="w-col w-col-3 w-col-small-3">
-                      <h4 class="titlecol-pedido">{{ 'customer.orders.total' | t }}</h4>
+                    <div class="w-col w-col-10 w-col-small-10">
+                      <div class="w-row">
+                        <div class="w-col w-col-3 w-col-small-3">
+                          <h4 class="titlecol-pedido">{{ 'customer.orders.date' | t }}</h4>
+                        </div>
+                        <div class="w-col w-col-3 w-col-small-3">
+                          <h4 class="titlecol-pedido">{{ 'customer.orders.fulfillment_status' | t }}</h4>
+                        </div>
+                        <div class="w-col w-col-3 w-col-small-3">
+                          <h4 class="titlecol-pedido">{{ 'customer.orders.payment_status' | t }}</h4>
+                        </div>
+                        <div class="w-col w-col-3 w-col-small-3">
+                          <h4 class="titlecol-pedido">{{ 'customer.orders.total' | t }}</h4>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+    
+                  <div class="rowpedido w-row">
+                    <p class="notorders infopedido-list">{{ 'customer.orders.none' | t }}</p>
+                  </div>
+    
               </div>
-
-              <div class="rowpedido w-row">
-                <p class="notorders infopedido-list">{{ 'customer.orders.none' | t }}</p>
-              </div>
-
-          </div>
-        
-
-        {% endif %}
-        {%- if paginate.pages > 1 -%} 
-          {%- if paginate.parts.size > 0 -%} 
-              <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-                  <ul role="list"> 
-                      {%- if paginate.previous -%} 
-                          <li>
-                              <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
-                                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                                      <path fill-rule="evenodd" clip-rule="evenodd"
-                                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
-                                          fill="currentColor">
-                                  </svg>
-                              </a>
-                          </li>
-                      {%- endif -%} 
-
-                      {%- for part in paginate.parts -%}
-                          <li> 
-                              {%- if part.is_link -%} 
-                                  <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title}}</a>
-                                      {%- else -%} 
-                                      {%- if part.title == paginate.current_page -%} 
-                                          <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title}}</span> 
-                                          {%- else -%}
-                                              <span>{{ part.title }}</span> 
-                                      {%- endif -%}
-                              {%- endif -%} 
-                          </li>
-                      {%- endfor -%} 
-                          {%- if paginate.next -%} 
+            
+    
+            {% endif %}
+            {%- if paginate.pages > 1 -%} 
+              {%- if paginate.parts.size > 0 -%} 
+                  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                      <ul role="list"> 
+                          {%- if paginate.previous -%} 
                               <li>
-                                  <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                                  <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
                                       <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
                                           <path fill-rule="evenodd" clip-rule="evenodd"
                                               d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
@@ -159,11 +137,39 @@
                                   </a>
                               </li>
                           {%- endif -%} 
-                  </ul>
-              </nav> 
-          {%- endif -%} 
-        {%- endif -%}
-      {% endpaginate %}
+    
+                          {%- for part in paginate.parts -%}
+                              <li> 
+                                  {%- if part.is_link -%} 
+                                      <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title}}</a>
+                                          {%- else -%} 
+                                          {%- if part.title == paginate.current_page -%} 
+                                              <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title}}</span> 
+                                              {%- else -%}
+                                                  <span>{{ part.title }}</span> 
+                                          {%- endif -%}
+                                  {%- endif -%} 
+                              </li>
+                          {%- endfor -%} 
+                              {%- if paginate.next -%} 
+                                  <li>
+                                      <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                                          <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                                  fill="currentColor">
+                                          </svg>
+                                      </a>
+                                  </li>
+                              {%- endif -%} 
+                      </ul>
+                  </nav> 
+              {%- endif -%} 
+            {%- endif -%}
+          {% endpaginate %}
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

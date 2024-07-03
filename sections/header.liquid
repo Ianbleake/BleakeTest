@@ -13,106 +13,163 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
+
 {% render 'login-popup' %}
 
-<header>
-  <div class="customheader">
 
-    <div class="top-banner">
+<header>
+  
+  <div data-w-id="160138a8-3b9f-6b5f-f867-7a74e7aeb4b6" class="section-headercust">
+    <div class="topbanner">
       <div class="custom-container">
-        {% for block in section.blocks %}
-          <a href="{{ block.settings.url }}" class="texto-topbanner">{{ block.settings.title }}</a>
-        {% endfor %}
+        <div data-delay="4000" data-animation="cross" class="topbannerslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="750" data-infinite="true">
+          
+          <div class="masktop-slider w-slider-mask">
+
+            {%  for block in section.blocks  %}
+
+              <div class="topslide w-slide">
+                <div class="continfotop-flex">
+                  <a href="{{ block.settings.Anuncio_link }}" class="linktopbanner">{{ block.settings.Anuncio_title }}</a>
+                </div>
+              </div>
+
+            {% endfor %}
+
+          </div>
+
+          <div class="arrowtop-slider w-slider-arrow-left">
+            <div class="w-icon-slider-left"></div>
+          </div>
+          <div class="arrowtop-slider w-slider-arrow-right">
+            <div class="w-icon-slider-right"></div>
+          </div>
+          <div class="topslidenav w-slider-nav"></div>
+
+        </div>
       </div>
     </div>
+    
 
-    <div class="menunav-custom">
-      <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="custom-navbar w-nav">
-        <div class="custom-container navbar">
+    
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+      role="banner" class="custom-navbar w-nav">
+      <div class="custom-container navbar">
 
-          <div class="boton-menu w-nav-button">
-            <div class="w-icon-nav-menu"></div>
+        
+        <a href="{{ routes.root_url }}" class="logonav w-nav-brand">
+          <img src="{{ section.settings.logo |  image_url  }}" alt="Bomuca Logo" class="imglogo-nav">
+        </a>
+        
+
+        
+        <nav role="navigation" class="custom-navigationmenu w-nav-menu">
+          {% for link in section.settings.menu.links %}
+            {% if link.links != blank %}
+              <div data-hover="true" data-delay="0" class="customdrop-nav w-dropdown">
+                <div class="menunav-link drop w-dropdown-toggle">
+                  <div class="icondropmenu w-icon-dropdown-toggle"></div>
+                  <div>{{ link.title }}</div>
+                </div>
+                <nav class="megamenu-colecciones w-dropdown-list">
+                  <div class="containermegamenufull">
+                    <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
+                      class="menutabs w-tabs">
+                      <div class="tabnamecont w-tab-menu">
+                        {% for childlink in link.links %}
+                        <div data-w-tab="Tab {{ forloop.index }}" class="tabcustom w-inline-block w-tab-link {% if forloop.first %}w--current {% endif %} tabmenu-2ndlevel">
+                          <div class="texttab {% if forloop.first %} right {% endif %}">{{ childlink.title }}</div>
+                        </div>
+                        {% endfor %}
+                      </div>
+                      <div class="w-tab-content">
+                        {% for childlink in link.links %}
+                          <div data-w-tab="Tab {{ forloop.index }}" class="tabscontent w-tab-pane {% if forloop.first %} w--tab-active {% endif %}">
+                            <div class="contlistmegamenu">
+                              {% for grandchildlink in childlink.links %}
+                                {% if forloop.first %}
+                                <ul role="list" class="listamenunav">
+                                {% endif %}
+                                {% if grandchildlink.title contains 'FINCOLUMNA' %}
+                                </ul>
+                                <ul role="list" class="listamenunav">
+                                {% else %}
+                                  <li class="itemlistmenu">
+                                    <a href="{{ grandchildlink.url }}" class="titlecatesubmenu {%if grandchildlink.title contains '|' %} maintitle {% endif %}">{{grandchildlink.title | replace_first: "|", "" }}</a>
+                                  </li>
+                                {% endif %}
+                                {% if forloop.last %}
+                                </ul>
+                                {% endif %}
+                              {% endfor %}
+                            </div>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            {% else %}
+              <a href="{{ link.url }}" class="menunav-link w-nav-link {% if link.title contains 'Ofertas' %} ofertas {% endif %}">{{link.title | escape }}</a>
+            {% endif %}
+          {% endfor %}
+          <div class="extramenu-mobile"><img src="{{ "nav_user.svg" | asset_url }}" class="icnomenu-mobile">
+            <a href="{{ routes.account_url }}" class="menunav-link mobile nav-link w-nav-link">Mi cuenta</a>
           </div>
+        </nav>
+        
 
-          <a href="{{ routes.root_url }}" class="logonav w-nav-brand">
-            <img src="{{ section.settings.logo |  image_url }}" alt="{{ section.settings.logo.alt }}" loading="eager" class="imglogo-nav">
+        <div class="cont-cartcontact">
+
+          
+          <div class="linkicons-nav"><img src="{{ "nav_search.svg" | asset_url }}" alt="search" class="icononav" data-ix="showsearch">
+            <div class="form-buscador w-form">
+
+              <form action="{{ routes.search_url }}" method="get" role="search" class="busqueda-formcot" data-wf-page-id="65c5b2f19b30b6a7d6642a49" data-wf-element-id="160138a8-3b9f-6b5f-f867-7a74e7aeb54c">
+                <input class="input-buscador w-input" maxlength="256" name="q" placeholder="¿Qué estás buscando?" type="search" required >
+                <div class="close-buscador" data-ix="close-search">X</div><input type="submit" data-wait="Buscando..." class="buscarbtn w-button" data-ix="close-search" value="">
+              </form>
+
+            </div>
+          </div>
+          
+
+          
+          <a href="{%  if customer %} {{ routes.account_url }} {%  else %} # {% endif %}" class="linkicons-nav ocultomobile w-inline-block" {% unless customer %} data-ix="showmodalregister" {% endunless %} >
+            <img src="{{ "nav_user.svg" | asset_url }}" loading="eager" alt="user" class="icononav">
           </a>
-
-          <div class="buscador-custom w-form">
-            <form action="{{ routes.search_url }}" method="get" role="search" class="formbuscador" data-wf-page-id="6667390ff463b82d886d3909" data-wf-element-id="dbc1f7ba-4e00-327f-f8dc-751f383ffe66">
-              <input class="inputbuscador w-input" maxlength="256" name="q"  placeholder="Encuentra tu producto" type="search" required >
-              <input type="submit" data-wait="Buscando.." class="btn-buscar w-button" value="Buscar">
-            </form>
-          </div>
-
-          <div class="cont-contacto">
-            <a href="{%  if customer %} {{ routes.account_url }} {%  else %} # {% endif %}" class="linknavicon hiddenmobile w-inline-block">
-              <img src=" {{ " account_icon.svg" | asset_url }} " alt="Usuario" class=" iconnavbar" {% unless customer %} data-ix="showloginmodal" {% endunless %}>
-            </a>
-            <a href="/pages/contact" class="linknavicon hiddenmobile w-inline-block">
-              <img src="{{ "mail_icon.svg" | asset_url}} " alt="Contacto" class=" iconnavbar">
-            </a>
-            <a href="#" class="linknavicon w-inline-block" id="cart-icon-btn" >
-              <img src="{{ " cart-icon.svg" | asset_url }}" alt="Carrito" class="iconnavbar">
-              <div class="qtycart" id="cart-icon-bubble">{{cart.item_count}}</div>
-            </a>
-          </div>
+          
+          <a href="#" class="linkicons-nav" id="cart-icon-btn">
+            <img src="{{ "nav_cart.svg" | asset_url }}" alt="cart" class="icononav">
+            <div class="qtynumber" id="cart-icon-bubble">{{ cart.item_count }}</div>
+          </a>
+          
         </div>
 
-        <nav role="navigation" class="custom-navigationmenu w-nav-menu">
+        
+        <div class="menu-button w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+        
 
-          <div class="buscador-custom mobile w-form">
-            <form action="{{ routes.search_url }}" method="get" role="search" class="formbuscador" data-wf-page-id="6667390ff463b82d886d3909" data-wf-element-id="dbc1f7ba-4e00-327f-f8dc-751f383ffe66">
-              <input class="inputbuscador w-input" maxlength="256" name="q"  placeholder="Encuentra tu producto" type="search" required >
-              <input type="submit" data-wait="Buscando.." class="btn-buscar w-button" value="Buscar">
-            </form>
-          </div>
-
-          {% if section.settings.menu != blank %}
-            {% for link in section.settings.menu.links %}
-              {% if link.links != blank %}
-                <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-                  <div class="menunav-link drop w-dropdown-toggle">
-                    <div class="icondropmenu w-icon-dropdown-toggle"></div>
-                    <div class="nombremenu">{{ link.title }}</div>
-                  </div>
-                  <nav class="megamenu-colecciones w-dropdown-list">
-                    {% for childlink in link.links %}
-                      {% if childlink.links != blank %}
-                        <div data-hover="true" data-delay="0" class="dropsub w-dropdown">
-                          <div class="droptoglgesub w-dropdown-toggle">
-                            <div class="icondropsub w-icon-dropdown-toggle"></div>
-                            <div>{{ childlink.title}}</div>
-                          </div>
-                          <nav class="thirdleveldrop w-dropdown-list">
-                            {% for thirdchild in childlink.links %}
-                              <a href="{{ thirdchild.url }}" class="sublinkmenudrop">{{ thirdchild.title }}</a>
-                            {% endfor %}
-                          </nav>
-                        </div>
-                      {% else %}                        
-                        <a href="{{ childlink.url }}" class="sublinkmenudrop">{{ childlink.title }}</a>
-                      {% endif %}
-                    {% endfor %}
-                  </nav>
-                </div>
-              {% else %}
-              <a href="{{ link.url }}" class="menunav-link {% if link.title contains 'OFERTAS'  %} ofertas {% endif %} w-nav-link">{{ link.title }}</a>
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-
-          <a href="{{ routes.account_url }}" class="menunav-link hiddendesk micuenta w-nav-link">Mi cuenta</a>
-          <a href="/pages/contact" class="menunav-link hiddendesk contacto w-nav-link">Contacto</a>
-        </nav>
       </div>
     </div>
+    
   </div>
+  
 </header>
 
+<script>
+ $('.tabmenu-2ndlevel').hover(function() {
+    $(this).click();
+  });
+</script>
+
+
 {%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
-  <script type="application/ld+json">
+{% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
+<script type="application/ld+json">
     {
     "@context": "http://schema.org",
         "@type": "WebSite",
@@ -136,39 +193,40 @@
           }
         }
       }
-  </script>
+</script>
 {%- endif -%}
 {% schema %}
 {
-  "name": "t:sections.header.name",
-  "class": "section-header",
-  "max_blocks": 1,
-  "blocks": [
-    {
-      "type": "text",
-      "name": "Anuncio",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "default": "Conoce nuestras novedades",
-          "label": "Anuncio Encabezado"
-        },
-        {
-          "type": "url",
-          "id": "url",
-          "label": "Link del Anuncio"
-        }
-      ]
-    }
-  ],
+"name": "t:sections.header.name",
+"class": "section-header",
+"max_blocks": 5,
+"blocks": [
+  {
+  "type": "text",
+  "name": "Anuncio",
   "settings": [
+      {
+      "type": "text",
+      "id": "Anuncio_title",
+      "default": "Conoce nuestras novedades",
+      "label": "Encabezado"
+      },
+      {
+      "type": "url",
+      "id": "Anuncio_link",
+      "label": "Url"
+      }
+    ]
+  }
+],
+"settings": [
     {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo de la marca"
+    "type": "image_picker",
+    "id": "logo",
+    "label": "Logo de la marca"
     },
     { "type": "link_list", "id": "menu", "default": "main-menu", "label": "Menu Principal" }
+
   ]
 }
 {% endschema %}
