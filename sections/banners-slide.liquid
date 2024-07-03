@@ -26,7 +26,7 @@
         {% for block in section.blocks %}
           <div class="slidehome w-slide">
             <a href="{{ block.settings.link }}" class="linksliderhome w-inline-block">
-              <img src="{%if block.settings.image-mobile-version %}{{ block.settings.image-mobile-version | img_url: 'master' }}{% else %}{{ block.settings.image-desktop-version | img_url: 'master' }}{% endif %}" alt="{{ block.settings.image-desktop-version.alt}}" class="imgbannerhome">
+              <img src="{%if block.settings.image-mobile-version %}{{ block.settings.image-mobile-version |  image_url  }}{% else %}{{ block.settings.image-desktop-version |  image_url }}{% endif %}" alt="{{ block.settings.image-desktop-version.alt}}" class="imgbannerhome">
             </a>
           </div>
         {% endfor %}    
@@ -48,7 +48,7 @@
 {
 "name": "Carrusel de Banners",
 "class": "index-section",
-"max_blocks": 10,
+"max_blocks": 1,
 "blocks": [
 {
 "type": "image",
