@@ -11,13 +11,35 @@
   "sections": {
     "banners_slide_Ydhk6h": {
       "type": "banners-slide",
+      "blocks": {
+        "image_hQbtdR": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/banner_escritorio.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/banner_mobile.jpg",
+            "link": "shopify:\/\/collections"
+          }
+        },
+        "image_VrfyEH": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/banner_escritorio.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/banner_mobile.jpg",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "image_hQbtdR",
+        "image_VrfyEH"
+      ],
       "settings": {
       }
     },
     "product_slide_H4txFr": {
       "type": "product-slide",
       "settings": {
-        "title": "¡Los más vendidos",
+        "title": "¡Los más vendidos!",
         "collection_1": "",
         "range_prod_1": 2
       }
