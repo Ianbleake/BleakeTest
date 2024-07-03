@@ -1,149 +1,99 @@
 <footer>
 
-  <div class="customfooter">
-    <div class="custom-container">
-      <div class="cont-row-footer">
-
-        <div class="colfooter small">
-          <a href="{{ routes.root_url }}" class="linklogo-footer w-inline-block">
-            <img src="{{ section.settings.logo |  image_url  }}" alt="Logo Bomuca" class="logo-footer">
-          </a>
+<div class="customfooter">
+  <div class="custom-container">
+    <div class="cont-row-footer">
+      <div id="w-node-c18c572d-e228-f39f-6623-73a11b18f80d-9ad7c4e7" class="w-layout-layout stackfooter wf-layout-layout">
+        <div id="w-node-c18c572d-e228-f39f-6623-73a11b18f80e-9ad7c4e7" class="w-layout-cell">
+          <a href="#" class="linklogo-footer w-inline-block"><img   src="{{ "logo_fondo_color.svg" | asset_url }}" alt="" class="logo-footer"></a>
         </div>
-
-        <div class="colfooter">
-          <h5 data-w-id="686b8870-1a6f-a05b-1c17-3e2d0fdfe959" class="footer-titulo">{{ section.settings.menu_1.title }}
-          </h5>
-          <div class="cont-items-footer">
-            <ul role="list" class="items-footer">
-              {% for link in section.settings.menu_1.links %}
-              <li class="item-list-footer">
-                <a href="{{ link.url }}" class="footer-link">{{ link.title }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-
-        <div class="colfooter small">
-          <h5 data-w-id="686b8870-1a6f-a05b-1c17-3e2d0fdfe973" class="footer-titulo">{{ section.settings.menu_2.title }}
-          </h5>
-          <div class="cont-items-footer">
-            <ul role="list" class="items-footer">
-              {% for link in section.settings.menu_2.links %}
-              <li class="item-list-footer">
-                <a href="{{ link.url }}" class="footer-link">{{ link.title }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-
-        <div class="colfooter">
-          <h5 data-w-id="686b8870-1a6f-a05b-1c17-3e2d0fdfe984" class="footer-titulo">Contacto</h5>
-          <div class="cont-items-footer">
-            <ul role="list" class="items-footer">
-              <li class="item-list-footer">
-                <a href="mailto:info@bomuca.com?subject=Tienda%20Bomuca%20M%C3%A9xico" class="footer-link">{{
-                  section.settings.email }}</a>
-              </li>
-              <li class="item-list-footer">
-                <p class="txtfooter-about">
-                  <strong class="boldtitles">{{ section.settings.city_1 }}</strong><br>
-                  {% if section.settings.phone_1 != blank %}
-                    Tel. {{ section.settings.phone_1 }}
-                  {% endif %}<br>
-                  {{ section.settings.address_1 }}
-                </p>
-              </li>
-              <li class="item-list-footer">
-                <p class="txtfooter-about">
-                  <strong class="boldtitles">{{ section.settings.city_2 }}</strong><br>
-                  {% if section.settings.phone_2 != blank %}
-                    Tel. {{ section.settings.phone_2 }}
-                  {% endif %}<br>
-                  {{ section.settings.address_2 }}
-                </p>
-              </li>
-              <li class="item-list-footer">
-                <p class="txtfooter-about">
-                  <strong class="boldtitles">{{ section.settings.city_3 }}</strong><br>
-                  {% if section.settings.phone_3 != blank %}
-                    Tel. {{ section.settings.phone_3 }}
-                  {% endif %}<br>
-                  {{ section.settings.address_3 }}
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-
-        <div class="colfooter socialnews">
-
-          <h5 class="footer-titulo social">Síguenos</h5>
-          <div class="cont-items-footer social">
-            <ul role="list" class="items-footer">
-              <li class="item-list-footer">
-
-                {% if section.settings.instagram != blank %}
-                  <a href="{{ section.settings.instagram }}" target="_blank" class="social-link-footer w-inline-block">
-                    <img src="{{ "icon_instagram.svg" | asset_url }}" alt="Instagram Bomuca" class="social-icon">
-                  </a>
-                {% endif %}
-
-                {% if section.settings.facebook != blank %}
-                <a href="{{ section.settings.facebook }}" target="_blank" class="social-link-footer w-inline-block">
-                  <img src="{{ "icon_facebook.svg" | asset_url }}" alt="Facebook Bomuca" class="social-icon">
-                </a>
-                {% endif %}
-
-                {% if section.settings.youtube != blank %}
-                <a href="{{ section.settings.youtube }}" target="_blank" class="social-link-footer w-inline-block">
-                  <img src="{{ "icon_youtube.svg" | asset_url }}" alt="Youtube Bomuca" class="social-icon">
-                </a>
-                {% endif %}
-              </li>
-            </ul>
-          </div>
-
-          <h5 class="footer-titulo social">{{ section.settings.news_title }}</h5>
-          <p class="txtfooter-about newsfooter">{{ section.settings.description-subscription }}</p>
-          <div class="newsletterform w-form">
-            {% form 'customer', class: 'formnews' %}
-            <input class="campo-correo w-input" maxlength="256" name="contact[email]"
-              placeholder="{{ 'newsletter.label' | t }}" type="email" value="{{ form.email }}" required>
-            <input type="submit" data-wait="Espere..." class="suscribebtn-news w-button" value="Suscribirme">
-            {% endform %}
-          </div>
-
-
-        </div>
-
-      </div>
-    </div>
-
-
-    <div class="copyright-cont">
-      <div class="custom-container">
-        <div id="w-node-_686b8870-1a6f-a05b-1c17-3e2d0fdfe9b9-0fdfe952" class="w-layout-layout stackcopyright wf-layout-layout">
-          <div id="w-node-_686b8870-1a6f-a05b-1c17-3e2d0fdfe9ba-0fdfe952" class="w-layout-cell cellfooter">
-            <div class="copyright">Copyright © 2024 Bomuca S.A. DE C.V.  Designed and Developed by <a
-                href="https://www.kubodigital.com" target="_blank" class="kdlink">Kubo Digital</a>
+        <div id="w-node-c18c572d-e228-f39f-6623-73a11b18f80f-9ad7c4e7" class="w-layout-cell cell">
+          <div class="colfooter">
+            <h5 class="footer-titulo">Nosotros</h5>
+            <div class="cont-items-footer">
+              <ul role="list" class="items-footer">
+                <li class="item-list-footer">
+                  <a href="#" class="footer-link">Aviso de Privacidad</a>
+                </li>
+                <li class="item-list-footer">
+                  <a href="#" class="footer-link">Política de envío, entrega y devolución</a>
+                </li>
+                <li class="item-list-footer">
+                  <a href="#" class="footer-link">Términos y Condiciones</a>
+                </li>
+                <li class="item-list-footer">
+                  <a href="#" class="footer-link">FAQ</a>
+                </li>
+              </ul>
             </div>
           </div>
-
-
-          <div id="w-node-_686b8870-1a6f-a05b-1c17-3e2d0fdfe9bf-0fdfe952" class="w-layout-cell cellfooter">
-            <img src="{{ section.settings.logo_payment |  image_url }}" alt="Metodos de pago" class="mediospago">
-            <img src="{{ section.settings.logo_payment_mobile |  image_url }}" alt="Metodos de pago" class="mediospago mobile">
+          <div class="colfooter">
+            <h5 class="footer-titulo">Tienda</h5>
+            <div class="cont-items-footer">
+              <ul role="list" class="items-footer">
+                <li class="item-list-footer">
+                  <a href="#" class="footer-link">Registro</a>
+                </li>
+                <li class="item-list-footer">
+                  <a href="#" class="footer-link">Carrito</a>
+                </li>
+                <li class="item-list-footer">
+                  <a href="#" class="footer-link">Pedidos</a>
+                </li>
+                <li class="item-list-footer">
+                  <a href="#" class="footer-link">Direcciones</a>
+                </li>
+              </ul>
+            </div>
           </div>
-
+          <div class="colfooter">
+            <h5 class="footer-titulo">Contacto</h5>
+            <div class="cont-items-footer">
+              <ul role="list" class="items-footer">
+                <li class="item-list-footer">
+                  <a href="mailto:info@bomuca.com?subject=Tienda%20Bomuca%20M%C3%A9xico" class="footer-link">contacto@srpaquete.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="colfooter socialnews">
+            <h5 class="footer-titulo social">Síguenos</h5>
+            <div class="cont-items-footer social">
+              <ul role="list" class="items-footer">
+                <li class="item-list-footer">
+                  <a href="https://www.instagram.com/bomucamx/" target="_blank" class="social-link-footer w-inline-block"><img   src="{{ "icon_instagram.svg" | asset_url }}" alt="" class="social-icon"></a>
+                  <a href="https://www.facebook.com/bomucamx" target="_blank" class="social-link-footer w-inline-block"><img   src="{{ "icon_facebook.svg" | asset_url }}" alt="" class="social-icon"></a>
+                  <a href="https://www.youtube.com/channel/UCXhh5eJ8rZdiExnejaMvCRQ" target="_blank" class="social-link-footer w-inline-block"><img   src="{{ "icon_youtube.svg" | asset_url }}" alt="" class="social-icon"></a>
+                </li>
+              </ul>
+            </div>
+            <h5 class="footer-titulo social">Suscríbete</h5>
+            <div class="newsletterform w-form">
+              <form id="email-form-3" name="email-form-3" data-name="Email Form 3" method="get" class="formnews" data-wf-page-id="667c5aedfac71ab99ad7c4e7" data-wf-element-id="f160ee3e-fde1-01ac-823b-301e19ce3fde"><input class="campo-correo w-input" maxlength="256" name="mail-2" data-name="Mail 2" placeholder="Ingresa aquí tu email" type="email" id="mail-2"><input type="submit" data-wait="Espere..." class="suscribebtn-news w-button" value="Suscribirme"></form>
+              <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-
   </div>
+  <div class="copyright-cont">
+    <div class="custom-container">
+      <div id="w-node-f160ee3e-fde1-01ac-823b-301e19ce3fe9-9ad7c4e7" class="w-layout-layout stackcopyright wf-layout-layout">
+        <div id="w-node-f160ee3e-fde1-01ac-823b-301e19ce3fea-9ad7c4e7" class="w-layout-cell cellfooter">
+          <div class="copyright">Copyright © 2024 SR. PAQUETE Designed and Developed by <a href="https://www.kubodigital.com" target="_blank" class="kdlink">Kubo Digital</a>
+          </div>
+        </div>
+        <div id="w-node-f160ee3e-fde1-01ac-823b-301e19ce3fef-9ad7c4e7" class="w-layout-cell cellfooter"><img alt="" src="{{ "logos_escritorio.png" | asset_url }}"   class="mediospago"><img alt="" src="{{ "pagos-mobile.png" | asset_url }}"   class="mediospago mobile"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </footer>
 
