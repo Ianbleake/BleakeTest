@@ -12,7 +12,7 @@
 {%- endif -%}
 <a href="{{card_product.url }}" class="linkproducto w-inline-block">
   <div class="imgback"
-    style="background-image:url({% if card_product.images[1] %}{{ card_product.images[1] | img_url: 'large' }}{% else %}{{ "place_holder.jpeg" | asset_url }}{% endif %})"></div>
+    style="background-image:url({% if card_product.images[1] %}{{ card_product.images[1] | img_url: 'large' }}{% else %}{{ "placeholder.jpg" | asset_url }}{% endif %})"></div>
   <div class="imgfront {% unless card_product.images[1] %}hoveroff{% endunless %}" style="background-image:url({% if card_product.featured_media %}{{ card_product.featured_media | img_url: 'large' }}{% else %}{{ "place_holder.jpeg" | asset_url }}{% endif %})"></div>
 </a>
 <div class="container-titleandtags">
@@ -26,17 +26,14 @@
 
   <product-form class="form-block w-form">
     {%- assign product_form_id = 'product-form-' | append: section.id -%}
-    {%- form 'product', card_product, id: product_form_id, class: 'vip-variacinqty-selection miniatura', novalidate:
-    'novalidate', data-type: 'add-to-cart-form' -%}
+    {%- form 'product', card_product, id: product_form_id, class: 'vip-variacinqty-selection formcantminiatura', novalidate:'novalidate', data-type: 'add-to-cart-form' -%}
 
 
     <div class="cont-variacion miniatura w-clearfix"
       {{ block.shopify_attributes }}>
-      <quantity-input {% if card_product.available==false or card_product.variants.size> 1 %} style="display: none;" {%
-        endif %}>
+      <quantity-input {% if card_product.available==false or card_product.variants.size> 1 %} style="display: none;" {% endif %}>
         <button class="boton_cant miniatura w-button" name="minus" type="button">-</button>
-        <input class="cantidad-input miniatura w-input quantity__input" type="number" name="quantity"
-          id="Quantity-{{ card_product.variants.first.id }}" min="1" value="1">
+        <input class="cantidad-input w-input quantity__input" type="number" name="quantity" id="Quantity-{{ card_product.variants.first.id }}" min="1" value="1">
         <button class="boton_cant mas miniatura w-button" name="plus" type="button">+</button>
       </quantity-input>
     </div>
@@ -44,11 +41,9 @@
 
 
     <input type="hidden" name="id" value="{{ card_product.variants.first.id }}" />
-    <button type="submit" name="add" class="btn-vip agregar miniatura w-button" {% if card_product.available==false or
-      card_product.variants.size> 1 %} style="display: none;" {% endif %} >
+    <button type="submit" name="add" class="btn-vip agregar miniatura w-button" {% if card_product.available==false or card_product.variants.size> 1 %} style="display: none;" {% endif %} >
       <div class="loading-overlay__spinner hidden">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66"
-          xmlns="http://www.w3.org/2000/svg">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
           <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
         </svg>
       </div>
