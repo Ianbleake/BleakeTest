@@ -104,10 +104,20 @@
             "review_date": "15 de enero de 2024",
             "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
           }
+        },
+        "comment_Bt63hB": {
+          "type": "comment",
+          "settings": {
+            "autor": "Ivan Rangel",
+            "review_title": "Test",
+            "review_date": "9 de julio 2024",
+            "comment": "test"
+          }
         }
       },
       "block_order": [
-        "comment_HM6RtU"
+        "comment_HM6RtU",
+        "comment_Bt63hB"
       ],
       "settings": {
         "title": "Clientes satisfechos"
