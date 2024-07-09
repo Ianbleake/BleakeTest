@@ -1,25 +1,29 @@
 <div class="seccgarantias">
   <div class="custom-container">
-    <p class="infobienestar">Queremos clientes satisfechos por eso todos nuestros productos cuentan con la garantía de Sr. Paquete</p>
+    <p class="infobienestar">{{ section.settings.title }}</p>
     <div data-delay="4000" data-animation="slide" class="warrantyslide w-slider" data-autoplay="true" data-easing="ease-in-out" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="6" data-duration="500" data-infinite="true">
       <div class="warrantymask w-slider-mask">
         <div class="garantiaslide w-slide">
-          <div class="continfowarranty"><img   src="{{ "icon_envios.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
+          <div class="continfowarranty">
+            <img   src="{{ "icon_envios.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
             <p class="infowarranty">Entregas seguras y confiables a toda la República Mexicana</p>
           </div>
         </div>
         <div class="garantiaslide w-slide">
-          <div class="continfowarranty"><img   src="{{ "icon_calidad.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
+          <div class="continfowarranty">
+            <img   src="{{ "icon_calidad.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
             <p class="infowarranty">La calidad de todos nuestros productos está garantizada.</p>
           </div>
         </div>
         <div class="garantiaslide w-slide">
-          <div class="continfowarranty"><img   src="{{ "icon_pagos_Seguros.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
+          <div class="continfowarranty">
+            <img   src="{{ "icon_pagos_Seguros.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
             <p class="infowarranty">Diferentes formas de pago para tu comodidad.</p>
           </div>
         </div>
         <div class="garantiaslide w-slide">
-          <div class="continfowarranty"><img   src="{{ "icon_seguridad.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
+          <div class="continfowarranty">
+            <img   src="{{ "icon_seguridad.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
             <p class="infowarranty">Tus compras on 100% seguras</p>
           </div>
         </div>
@@ -37,46 +41,21 @@
 
 {% schema %}
 {
-"name": "Garantías",
-"class": "index-section",
-"settings": [
-{
-"type": "text",
-"id": "tittle",
-"label": "Titulo de Seccion",
-"default": "¡En <strong class='boldtitles'>bomuca<sup>®</sup></strong> celebramos tu <strong class='boldtitles'>bienestar</strong>!"
-},{
-"type": "textarea",
-"id": "description",
-"label": "Descripcion de seccion",
-"default": "Para nosotros nuestro trabajo está relacionado con la vida misma y es por eso que nos esforzamos en brindar productos de calidad para fomentar una nueva cultura para el bien social."
-}
-],
-"max_blocks": 4,
-"blocks": [
-{
-"type": "warranty",
-"name": "Garantia",
-"settings": [
-{
-"type": "image_picker",
-"id": "warranty_icon",
-"label": "Icono"
-},
-{
-"type": "textarea",
-"id": "warranty_description",
-"label": "Descripcion"
-}
-
-]
-}
-],
-"presets": [
-{
-"name": "Garantias"
-}
-]
+  "name": "Garantías",
+  "class": "index-section",
+  "settings": [
+    {
+    "type": "text",
+    "id": "title",
+    "label": "Titulo de Seccion",
+    "default": "Queremos clientes satisfechos por eso todos nuestros productos cuentan con la garantía de Sr. Paquete"
+    }
+  ],
+  "presets": [
+  {
+  "name": "Garantias"
+  }
+  ]
 }
 {% endschema %}
 
