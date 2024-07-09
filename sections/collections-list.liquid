@@ -1,36 +1,25 @@
 <div class="recomendaciones">
   <div class="custom-container">
+
     <div class="titlecontainer">
-      <h4 class="mainsecctitle">Productos destacados</h4>
+      <h4 class="mainsecctitle">{{ section.settings.title }}</h4>
     </div>
+
     <div id="w-node-_0f2a6437-48b6-9ae9-b35f-e45985d36452-9ad7c4e7" class="w-layout-layout stackrecomendaciones wf-layout-layout">
-      <div id="w-node-_0f2a6437-48b6-9ae9-b35f-e45985d36453-9ad7c4e7" class="w-layout-cell cellrecomendacion">
-        <a href="#" class="contrecomendacion w-inline-block"><img alt="" src="{{ "destacado_flejes.png" | asset_url }}"   class="imgrecomendacion">
-          <div class="contindorec">
-            <h5 class="subrecomend">De poliuretano de alta resistencia</h5>
-            <h4 class="titlerecomend">Fleje</h4>
-            <div class="outlinebtn">Ver productos</div>
-          </div>
-        </a>
-      </div>
-      <div id="w-node-_0f2a6437-48b6-9ae9-b35f-e45985d3645d-9ad7c4e7" class="w-layout-cell cellrecomendacion">
-        <a href="#" class="contrecomendacion w-inline-block"><img alt="" src="{{ "destacado_cintas.png" | asset_url }}"   class="imgrecomendacion">
-          <div class="contindorec">
-            <h5 class="subrecomend">Adhesivas de alta calidad para embalaje.</h5>
-            <h4 class="titlerecomend">Cintas</h4>
-            <div class="outlinebtn">Ver productos</div>
-          </div>
-        </a>
-      </div>
-      <div id="w-node-_0f2a6437-48b6-9ae9-b35f-e45985d36467-9ad7c4e7" class="w-layout-cell cellrecomendacion">
-        <a href="#" class="contrecomendacion w-inline-block"><img alt="" src="{{ "destacado_rollos.png" | asset_url }}"   class="imgrecomendacion">
-          <div class="contindorec">
-            <h5 class="subrecomend">Película para too tipo de embalaje</h5>
-            <h4 class="titlerecomend">Rollos</h4>
-            <div class="outlinebtn">Ver productos</div>
-          </div>
-        </a>
-      </div>
+
+      {% for block in section.blocks %}
+        <div id="w-node-_0f2a6437-48b6-9ae9-b35f-e45985d36453-9ad7c4e7" class="w-layout-cell cellrecomendacion">
+          <a href="{{ block.settings.card_collection.url }}" class="contrecomendacion w-inline-block" style="background: {{ block.settings.bg_color }};">
+            <img src="{{ block.settings.card_image |  image_url }}" class="imgrecomendacion">
+            <div class="contindorec">
+              <h5 class="subrecomend">{{ block.settings.card_description }}</h5>
+              <h4 class="titlerecomend">{{ block.settings.card_title }}</h4>
+              <div class="outlinebtn">Ver productos</div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+
     </div>
   </div>
 </div>
@@ -46,7 +35,7 @@
 "type": "text",
 "id": "title",
 "label": "Titulo de seccion",
-"default": "Recomendaciones <strong class='boldtitles'>bomuca<sup>®</sup></strong>"
+"default": "Productos destacados"
 }
 ],
 "max_blocks": 3,
@@ -59,8 +48,8 @@
   "type": "color_background",
   "id": "bg_color",
   "label": "Color de fondo",
-  "info": "Ingresar aqui soló el codigo Hex,RGB ó RGBA",
-  "default": "#ebfce2"
+  "info": "Ingresar aqui soló el codigo HEX ,RGB ó RGBA",
+  "default": "##fcede2"
 },{
 "type": "image_picker",
 "id": "card_image",
@@ -74,9 +63,9 @@
 "id": "card_title",
 "label": "Título"
 },{
-"type": "url",
-"id": "card_link",
-"label": "Coleccion Url"
+"type": "collection",
+"id": "card_collection",
+"label": "Colección"
 }
 ]
 }
