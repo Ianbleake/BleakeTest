@@ -62,10 +62,32 @@
             "card_title": "Fleje",
             "card_collection": "sr-paquete"
           }
+        },
+        "card_YRPtg7": {
+          "type": "card",
+          "settings": {
+            "bg_color": "##fcede2",
+            "card_image": "shopify:\/\/shop_images\/destacado_cintas.png",
+            "card_description": "Adhesivas de alta calidad para embalaje.",
+            "card_title": "Cintas",
+            "card_collection": "sr-paquete"
+          }
+        },
+        "card_YUFBDh": {
+          "type": "card",
+          "settings": {
+            "bg_color": "",
+            "card_image": "shopify:\/\/shop_images\/destacado_rollos.png",
+            "card_description": "Película para too tipo de embalaje",
+            "card_title": "Rollos",
+            "card_collection": "sr-paquete"
+          }
         }
       },
       "block_order": [
-        "card_M6WNXf"
+        "card_M6WNXf",
+        "card_YRPtg7",
+        "card_YUFBDh"
       ],
       "settings": {
         "title": "Productos destacados"
