@@ -26,13 +26,15 @@
 
       </div>
 
-      <div class="arrowmainslider w-slider-arrow-left">
-        <div class="w-icon-slider-left"></div>
-      </div>
-      <div class="arrowmainslider w-slider-arrow-right">
-        <div class="w-icon-slider-right"></div>
-      </div>
-      <div class="mainslidenav garantias w-slider-nav w-slider-nav-invert w-round"></div>
+      {% if section.blocks.size > 1 %}
+        <div class="arrowmainslider w-slider-arrow-left">
+          <div class="w-icon-slider-left"></div>
+        </div>
+        <div class="arrowmainslider w-slider-arrow-right">
+          <div class="w-icon-slider-right"></div>
+        </div>
+        <div class="mainslidenav garantias w-slider-nav w-slider-nav-invert w-round"></div>
+      {% endif %}
     </div>
   </div>
 </div>
