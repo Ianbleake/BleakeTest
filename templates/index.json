@@ -107,6 +107,7 @@
         },
         "comment_Bt63hB": {
           "type": "comment",
+          "disabled": true,
           "settings": {
             "autor": "Ivan Rangel",
             "review_title": "Test",
@@ -116,6 +117,7 @@
         },
         "comment_kLUebc": {
           "type": "comment",
+          "disabled": true,
           "settings": {
             "autor": "Ivan",
             "review_title": "TEST",
@@ -125,6 +127,7 @@
         },
         "comment_Pge6na": {
           "type": "comment",
+          "disabled": true,
           "settings": {
             "autor": "",
             "review_title": "",
@@ -134,6 +137,7 @@
         },
         "comment_gkBqbh": {
           "type": "comment",
+          "disabled": true,
           "settings": {
             "autor": "",
             "review_title": "",
@@ -143,6 +147,7 @@
         },
         "comment_xtXXFF": {
           "type": "comment",
+          "disabled": true,
           "settings": {
             "autor": "",
             "review_title": "",
