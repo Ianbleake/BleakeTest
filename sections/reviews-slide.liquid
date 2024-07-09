@@ -10,7 +10,7 @@
       <div class="maskreviews w-slider-mask">
         
         {% for block in section.blocks %}
-          {% if block.settings.comment %}
+          {% if block.settings.comment != blank %}
 
             <div class="slidereview w-slide">
               <div class="continforeview">
@@ -20,7 +20,7 @@
                 <img   src="{{ "stars-reviews.svg" | asset_url }}" alt="" class="starsreviewslider">
               </div>
             </div>
-            
+
           {% endif %}
         {% endfor %}
 
