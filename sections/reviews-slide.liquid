@@ -10,16 +10,18 @@
       <div class="maskreviews w-slider-mask">
         
         {% for block in section.blocks %}
+          {% if block.settings.comment %}
 
-          <div class="slidereview w-slide">
-            <div class="continforeview">
-              <div class="namereviewclient"><em>{{ block.settings.autor }}</em></div>
-              <div class="datereview"> {{ block.settings.review_title }} | {{ block.settings.review_date }} </div>
-              <p class="clientreviewshome">{{ block.settings.comment }}</p>
-              <img   src="{{ "stars-reviews.svg" | asset_url }}" alt="" class="starsreviewslider">
+            <div class="slidereview w-slide">
+              <div class="continforeview">
+                <div class="namereviewclient"><em>{{ block.settings.autor }}</em></div>
+                <div class="datereview"> {{ block.settings.review_title }} | {{ block.settings.review_date }} </div>
+                <p class="clientreviewshome">{{ block.settings.comment }}</p>
+                <img   src="{{ "stars-reviews.svg" | asset_url }}" alt="" class="starsreviewslider">
+              </div>
             </div>
-          </div>
-
+            
+          {% endif %}
         {% endfor %}
 
       </div>
