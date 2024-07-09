@@ -1,18 +1,29 @@
 <div class="seccreviewandproduct">
   <div class="custom-container">
+
     <div class="revslidertitle">
       <h3 class="reviewstitle">Clientes satisfechos</h3>
     </div>
+
     <div data-delay="4000" data-animation="cross" class="reviewslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+      
       <div class="maskreviews w-slider-mask">
-        <div class="slidereview w-slide">
-          <div class="continforeview">
-            <div class="namereviewclient"><em>Eduardo Rodríguez F.</em></div>
-            <div class="datereview">Excelente calidad | 15 de enero de 2024 </div>
-            <p class="clientreviewshome">Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente.</p><img   src="{{ "stars-reviews.svg" | asset_url }}" alt="" class="starsreviewslider">
+        
+        {% for block in section.blocks %}
+
+          <div class="slidereview w-slide">
+            <div class="continforeview">
+              <div class="namereviewclient"><em>{{ block.settings.autor }}</em></div>
+              <div class="datereview"> {{ block.settings.review_title }} | {{ block.settings.review_date }} </div>
+              <p class="clientreviewshome">{{ block.settings.comment }}</p>
+              <img   src="{{ "stars-reviews.svg" | asset_url }}" alt="" class="starsreviewslider">
+            </div>
           </div>
-        </div>
+
+        {% endfor %}
+
       </div>
+
       <div class="arrowmainslider w-slider-arrow-left">
         <div class="w-icon-slider-left"></div>
       </div>
@@ -33,7 +44,7 @@
     "type": "text",
     "id": "title",
     "label": "Titulo",
-    "default": "Clientes <strong class='boldtitles'>satisfechos</strong>"
+    "default": "Clientes satisfechos"
   }
 ],
 "max_blocks": 6,
@@ -58,37 +69,6 @@
         "type": "textarea",
         "id": "comment",
         "label": "Review"
-      },{
-        "type": "select",
-        "id": "starscount",
-        "label": "Calificacion",
-        "options": [
-          {
-            "value": "FourStars",
-            "label": "4 Estrellas"
-          },
-          {
-            "value": "FourHalfStars",
-            "label": "4.5 Estrellas"
-          },
-          {
-            "value": "FiveStars",
-            "label": "5 Estrellas"
-          }
-             
-        ]
-      },{
-        "type": "image_picker",
-        "id": "product_image",
-        "label": "Imagen de producto"
-      },{
-        "type": "text",
-        "id": "banner_text",
-        "label": "Texto Url"
-      },{
-        "type": "url",
-        "id": "banner_url",
-        "label": "Url"
       }
     ]
   }
