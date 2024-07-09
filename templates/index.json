@@ -47,48 +47,50 @@
     "warranty_home_UbAANw": {
       "type": "warranty-home",
       "settings": {
-        "tittle": "¡En <strong class=\"boldtitles\">bomuca<sup>®<\/sup><\/strong> celebramos tu <strong class=\"boldtitles\">bienestar<\/strong>!",
-        "description": "Para nosotros nuestro trabajo está relacionado con la vida misma y es por eso que nos esforzamos en brindar productos de calidad para fomentar una nueva cultura para el bien social."
+        "title": "Queremos clientes satisfechos por eso todos nuestros productos cuentan con la garantía de Sr. Paquete"
       }
     },
     "collections_list_P3tWbq": {
       "type": "collections-list",
       "blocks": {
-        "card_hijibr": {
+        "card_M6WNXf": {
           "type": "card",
           "settings": {
-            "bg_color": "#ebfce2",
-            "card_description": "",
-            "card_title": "",
-            "card_link": ""
+            "bg_color": "##fcede2",
+            "card_image": "shopify:\/\/shop_images\/destacado_flejes.png",
+            "card_description": "De poliuretano de alta resistencia",
+            "card_title": "Fleje",
+            "card_collection": "sr-paquete"
           }
         },
-        "card_79WdxR": {
+        "card_YRPtg7": {
           "type": "card",
           "settings": {
-            "bg_color": "#fcede2",
-            "card_description": "",
-            "card_title": "",
-            "card_link": ""
+            "bg_color": "##fcede2",
+            "card_image": "shopify:\/\/shop_images\/destacado_cintas.png",
+            "card_description": "Adhesivas de alta calidad para embalaje.",
+            "card_title": "Cintas",
+            "card_collection": "sr-paquete"
           }
         },
-        "card_6HqDiE": {
+        "card_YUFBDh": {
           "type": "card",
           "settings": {
-            "bg_color": "#ebfce2",
-            "card_description": "",
-            "card_title": "",
-            "card_link": ""
+            "bg_color": "",
+            "card_image": "shopify:\/\/shop_images\/destacado_rollos.png",
+            "card_description": "Película para too tipo de embalaje",
+            "card_title": "Rollos",
+            "card_collection": "sr-paquete"
           }
         }
       },
       "block_order": [
-        "card_hijibr",
-        "card_79WdxR",
-        "card_6HqDiE"
+        "card_M6WNXf",
+        "card_YRPtg7",
+        "card_YUFBDh"
       ],
       "settings": {
-        "title": "Recomendaciones <strong class=\"boldtitles\">bomuca<sup>®<\/sup><\/strong>"
+        "title": "Productos destacados"
       }
     },
     "reviews_slide_pXcTL9": {
