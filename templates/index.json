@@ -53,6 +53,40 @@
     },
     "collections_list_P3tWbq": {
       "type": "collections-list",
+      "blocks": {
+        "card_hijibr": {
+          "type": "card",
+          "settings": {
+            "bg_color": "#ebfce2",
+            "card_description": "",
+            "card_title": "",
+            "card_link": ""
+          }
+        },
+        "card_79WdxR": {
+          "type": "card",
+          "settings": {
+            "bg_color": "#fcede2",
+            "card_description": "",
+            "card_title": "",
+            "card_link": ""
+          }
+        },
+        "card_6HqDiE": {
+          "type": "card",
+          "settings": {
+            "bg_color": "#ebfce2",
+            "card_description": "",
+            "card_title": "",
+            "card_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_hijibr",
+        "card_79WdxR",
+        "card_6HqDiE"
+      ],
       "settings": {
         "title": "Recomendaciones <strong class=\"boldtitles\">bomuca<sup>®<\/sup><\/strong>"
       }
