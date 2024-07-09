@@ -113,11 +113,51 @@
             "review_date": "9 de julio 2024",
             "comment": "test"
           }
+        },
+        "comment_kLUebc": {
+          "type": "comment",
+          "settings": {
+            "autor": "Ivan",
+            "review_title": "TEST",
+            "review_date": "",
+            "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
+          }
+        },
+        "comment_Pge6na": {
+          "type": "comment",
+          "settings": {
+            "autor": "",
+            "review_title": "",
+            "review_date": "",
+            "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
+          }
+        },
+        "comment_gkBqbh": {
+          "type": "comment",
+          "settings": {
+            "autor": "",
+            "review_title": "",
+            "review_date": "",
+            "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
+          }
+        },
+        "comment_xtXXFF": {
+          "type": "comment",
+          "settings": {
+            "autor": "",
+            "review_title": "",
+            "review_date": "",
+            "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
+          }
         }
       },
       "block_order": [
         "comment_HM6RtU",
-        "comment_Bt63hB"
+        "comment_Bt63hB",
+        "comment_kLUebc",
+        "comment_Pge6na",
+        "comment_gkBqbh",
+        "comment_xtXXFF"
       ],
       "settings": {
         "title": "Clientes satisfechos"
