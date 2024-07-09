@@ -2573,7 +2573,7 @@ textarea.w-select {
   display: block;
 }
 
-.navbar-logo-center {
+.navbar-logo-center, div#shopify-section-header {
   z-index: 99999;
   background-color: var(--white);
   width: 100%;
@@ -5537,6 +5537,12 @@ button.frgtpassword {
 }
 
 /**Buttons*/
+
+div#shopify-section-header {
+  box-shadow: none;
+  background-color: transparent;
+}
+
 
 
 /**Fix Responsive*/
