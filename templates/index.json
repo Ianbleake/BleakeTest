@@ -95,6 +95,20 @@
     },
     "reviews_slide_pXcTL9": {
       "type": "reviews-slide",
+      "blocks": {
+        "comment_HM6RtU": {
+          "type": "comment",
+          "settings": {
+            "autor": "Eduardo Rodríguez F.",
+            "review_title": "Excelente calidad",
+            "review_date": "15 de enero de 2024",
+            "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
+          }
+        }
+      },
+      "block_order": [
+        "comment_HM6RtU"
+      ],
       "settings": {
         "title": "Clientes satisfechos"
       }
