@@ -5760,3 +5760,180 @@ textarea.w-select {
   font-style: normal;
   font-display: swap;
 }
+
+/**Shopify Fixes*/
+
+#forget_pass_them,
+#login_them {
+  display: none;
+}
+
+#forget_pass_them.visible,
+#login_them.visible {
+  display: flex; /*! Cambiar al display original*/
+}
+
+.hide.show {
+  display: grid;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.cont-labelinput.deffault {
+  display:flex;
+  justify-content:center 
+}
+
+.cont-labelinput.deffault > input[type="checkbox"] {
+    height: 22px;
+    width: 22px;
+}
+
+.loginreg-field{
+  width: 100%;
+}
+
+.form-status-list.form-status.form__message,.form__message.recover-success {
+  background: #e0f4e0;
+  margin: 20px auto;
+  width: fit-content;
+  padding: 5px 30px;
+  color: black;
+  height: fit-content;
+  border-radius: 8px;
+  text-align: justify;
+}
+
+.rowaccount .form__message svg {
+  height: 4rem;
+  width: 4rem;
+  margin-right: 1rem;
+}
+
+.form__message .icon, .customer .form__message svg {
+  flex-shrink: 0;
+  height: 2.3rem;
+  margin-right: 1rem;
+  width: 2.3rem;
+}
+
+.form-status-list.form-status.form__message {
+  text-align: center;
+}
+
+.form-status {
+  font-size: 1rem;
+}
+
+.form-error-customer {
+  background: #f7d4d4;
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+.form-error-customer .form__message svg {
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
+
+.form-error-customer h2.form__message {
+  color: #370808;
+  font-size: 15px;
+}
+
+.form-error-customer  a {
+  color: #370808;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.errors li, .form-error-customer li {
+  font-size: 12px;
+}
+
+.errors ul, .form-error-customer ul {
+  list-style: none;
+  padding-left: 12px;
+  padding-right: 4px;
+}
+
+.form__message > svg {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 10px;
+}
+
+small.form__message {
+    color: crimson;
+}
+
+.formin {
+  margin: auto;
+  width: 35%;
+  margin-top: 20px;
+}
+
+button.frgtpassword {
+  background: transparent;
+}
+
+.ctared.w-button.back {
+  background-color: var(--pink); /*! Cambiar color*/
+  border-radius: 70px;
+  width: fit-content;
+  min-width: 150px;
+  margin: auto ; /*! Adecuar al estilo de la */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px; /*! Igualar a la clase .loginpopbtn*/
+  font-weight: 500;
+  line-height: 14px;
+  display: block;
+  text-align: center;
+}
+
+.ctared.w-button.back:hover{ /*? Solo si .loginpopbtn tiene hover si no borrar*/
+  background-color: var(--black)
+}
+
+.cbuttons {
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+  gap: 20px;
+  margin: auto;
+}
+
+.imgfront.hoveroff:hover {opacity: 1;}
+
+/**Fix CSS*/
+
+/**Fix Responsive*/
+
+@media screen and (max-width: 991px){
+  .formin {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 479px){
+  .formin {
+    width: 70%;
+  }
+  
+  .loginpopform>.contenidoformlog>.cont-labelinput, #AddAddress>.loginpopform>.contenidoformlog>.cont-labelinput, .editaddress>.loginpopform>.contenidoformlog>.cont-labelinput {
+    min-width: 45vh;
+	}
+}
