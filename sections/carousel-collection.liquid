@@ -1,38 +1,40 @@
   
   <div class="seccproductos">
     <div class="custom-container">
-
+      
       <div class="titlecontainer">
         <h1 class="mainsecctitle">{{ section.settings.title }}</h1>
       </div>
-
-      <div class="code-embed w-embed">
+      
+      <div class="html-embed w-embed">
         <div class="owl-carousel productosowl owl-theme" id="sync2">
 
-        {%- assign collection_tab = collections[section.settings.collection_1] -%}
-        {% for product in collection_tab.products limit: section.settings.range_prod_1 %}
-          {% render 'card-product',
-            card_product: product,
-            show_quick_add: true,
-            section_id: section.id
-          %}
-        {% endfor %}
+          {%- assign collection_tab = collections[section.settings.collection_1] -%}
+          {% for product in collection_tab.products limit: section.settings.range_prod_1 %}
+            {% render 'card-product',
+              card_product: product,
+              show_quick_add: true,
+              section_id: section.id
+            %}
+          {% endfor %}
 
         </div>
       </div>
+      
+
     </div>
   </div>
 
 {% schema %}
 {
-"name": "Carrusel de productos",
+"name": "Carrusel de colecciones",
 "class": "index-section",
 "settings": [
 {
 "type": "text",
 "id": "title",
 "label": "Titulo de seccion",
-"default": "¡Los más vendidos!"
+"default": "¡Los más <strong class='boldtitles'>vendidos</strong>"
 },
 {
 "id": "collection_1",
@@ -50,7 +52,7 @@
 }
 ],
 "presets":[{
-"name":"Carrusel de productos"
+"name":"Carrusel de colecciones"
 }]
 }
 {% endschema %}
