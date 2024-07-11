@@ -9,108 +9,62 @@
 */
 {
   "current": {
-    "type_header_font": "montserrat_n4",
-    "type_body_font": "montserrat_n4",
-    "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
     "currency_code_enabled": false,
-    "shipping_free": 699,
-    "whatsapp_number": "526643867605",
-    "checkout_logo_image": "shopify:\/\/shop_images\/bomuca_logo.jpg",
-    "checkout_logo_position": "center",
-    "checkout_accent_color": "#92e47f",
-    "checkout_button_color": "#3c7630",
+    "shipping_free": 1899,
+    "checkout_logo_image": "shopify:\/\/shop_images\/champion_red.png",
+    "checkout_logo_position": "left",
+    "checkout_accent_color": "#212442",
+    "checkout_button_color": "#ec1c24",
     "sections": {
       "header": {
         "type": "header",
         "blocks": {
-          "text_8QpafG": {
+          "text_HWqVkf": {
             "type": "text",
             "settings": {
-              "Anuncio_title": "ENVÍOS GRATIS EN COMPRAS MAYORES A $599",
-              "Anuncio_link": ""
             }
           },
-          "text_Mmbmdt": {
+          "text_ef9nC3": {
             "type": "text",
-            "disabled": true,
             "settings": {
-              "Anuncio_title": "Conoce nuestras novedades",
-              "Anuncio_link": ""
-            }
-          },
-          "text_Um9Pay": {
-            "type": "text",
-            "disabled": true,
-            "settings": {
-              "Anuncio_title": "ENVÍOS GRATIS en compras mayores a $699",
-              "Anuncio_link": "shopify:\/\/collections\/all"
-            }
-          },
-          "text_TFkmMf": {
-            "type": "text",
-            "disabled": true,
-            "settings": {
-              "Anuncio_title": "Conoce nuestras novedades",
-              "Anuncio_link": ""
-            }
-          },
-          "text_hNYc9e": {
-            "type": "text",
-            "disabled": true,
-            "settings": {
-              "Anuncio_title": "Conoce toda la familia Evervital",
-              "Anuncio_link": "shopify:\/\/collections\/all"
             }
           }
         },
         "block_order": [
-          "text_8QpafG",
-          "text_Mmbmdt",
-          "text_Um9Pay",
-          "text_TFkmMf",
-          "text_hNYc9e"
+          "text_HWqVkf",
+          "text_ef9nC3"
         ],
         "settings": {
-          "logo": "shopify:\/\/shop_images\/Logo_Bomuca.png",
+          "logo": "shopify:\/\/shop_images\/logo_sr_paquete.svg",
           "menu": "main-menu"
         }
       },
       "footer": {
         "type": "footer",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/Logo_Bomuca_fb9d4785-e448-42f7-889c-bb2fb579a1ff.png",
           "menu_1": "footer",
-          "menu_2": "tienda",
-          "email": "info@bomuca.com",
-          "city_1": "Tijuana",
-          "phone_1": "(800) 026-6266 ext. 117",
-          "address_1": "Av. De los Charros #17611, Col. José Sandoval, C.P. 22105 Tijuana B.C.",
-          "city_2": "CDMX",
-          "phone_2": "(55) 5740-0165",
-          "address_2": "Carretera Federal Cuernavaca #7016, Pueblo San Andrés Totoltepec C.P. 14400 Tlalpan, CDMX",
-          "city_3": "San Diego",
-          "phone_3": "+1 (619) 869-7046",
-          "address_3": "9375 Customhouse Plz Ste F1, C.P. 92154 San Diego, CA. EUA.",
-          "instagram": "https:\/\/www.instagram.com\/bomucamx\/",
-          "facebook": "https:\/\/www.facebook.com\/bomucamx",
-          "youtube": "https:\/\/www.youtube.com\/channel\/UCXhh5eJ8rZdiExnejaMvCRQ",
-          "news_title": "Únete a la familia Bomuca®",
-          "description-subscription": "Logra la mejor versión de ti; con más energía, mejores hábitos y más consciente de tu salud. ¡Suscríbete!",
-          "logo_payment": "shopify:\/\/shop_images\/Metodos_de_pago-2.png",
-          "logo_payment_mobile": "shopify:\/\/shop_images\/Metodos_de_pago_movil.png"
+          "menu_2": "",
+          "email": "",
+          "city_1": "",
+          "phone_1": "",
+          "address_1": "",
+          "city_2": "",
+          "phone_2": "",
+          "address_2": "",
+          "city_3": "",
+          "phone_3": "",
+          "address_3": "",
+          "instagram": "",
+          "facebook": "",
+          "youtube": "",
+          "news_title": "",
+          "description-subscription": "Suscríbete y disfruta de ofertas y promociones especiales, además entérate de los nuevos lanzamientos antes que nadie."
         }
       }
     },
     "content_for_index": [
 
-    ],
-    "blocks": {
-      "11532412952436166569": {
-        "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-inject\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    }
+    ]
   }
 }
