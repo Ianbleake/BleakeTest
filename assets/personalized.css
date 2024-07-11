@@ -5897,7 +5897,7 @@ button.frgtpassword {
   padding-top: 15px;
   padding-bottom: 15px;
   font-family: Agdasima,sans-serif;
-  font-size: 27px; /*! Igualar a la clase .loginpopbtn*/
+  font-size: 27px;
   font-weight: 500;
   line-height: 14px;
   display: block;
