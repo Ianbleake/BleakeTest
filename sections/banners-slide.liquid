@@ -1,47 +1,38 @@
 {% assign bannerscount = section.blocks| size %}
 
-<div data-delay="4000" data-animation="slide" class="mainslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="4" data-duration="500" data-infinite="true">
+<div data-delay="4000" data-animation="slide" class="mainslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
   <div class="w-slider-mask">
-    {% for block in section.blocks %}
-    <div class="slidehome w-slide">
-      <a href="{{ block.settings.link }}" class="linksliderhome w-inline-block">
-        <img src="{{ block.settings.image-desktop-version | img_url: 'master' }}" alt="{{ block.settings.image-desktop-version.alt}}" class="imgbannerhome">
-      </a>
+    <div class="element-slide w-slide">
+      <a href="#" class="linkmainbanner w-inline-block"><img alt="" src="{{ "banner-desktop.jpeg" | asset_url }}"   class="bannerimg"></a>
     </div>
-    {% endfor %}
+    <div class="element-slide w-slide">
+      <a href="#" class="linkmainbanner w-inline-block"><img alt="" src="{{ "banner-escritorio.jpeg" | asset_url }}"   class="bannerimg"></a>
+    </div>
   </div>
-  {% if bannerscount > 1 %}
-    <div class="arrowmainslider w-slider-arrow-left">
-      <div class="w-icon-slider-left"></div>
-    </div>
-    <div class="arrowmainslider right w-slider-arrow-right">
-      <div class="w-icon-slider-right"></div>
-    </div>
-    <div class="mainslidenav w-slider-nav w-round"></div>
-  {% endif %}
+  <div class="arrowmainslider w-slider-arrow-left">
+    <div class="w-icon-slider-left"></div>
+  </div>
+  <div class="arrowmainslider w-slider-arrow-right">
+    <div class="w-icon-slider-right"></div>
+  </div>
+  <div class="navigationdots w-slider-nav w-round"></div>
 </div>
-
-
-
-<div data-delay="4000" data-animation="slide" class="mainslider mobile w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="4" data-duration="500" data-infinite="true">
+<div data-delay="4000" data-animation="cross" class="mainslider mobile w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="true" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
   <div class="w-slider-mask">
-    {% for block in section.blocks %}
-    <div class="slidehome w-slide">
-      <a href="{{ block.settings.link }}" class="linksliderhome w-inline-block">
-        <img src="{%if block.settings.image-mobile-version %}{{ block.settings.image-mobile-version | img_url: 'master' }}{% else %}{{ block.settings.image-desktop-version | img_url: 'master' }}{% endif %}" alt="{{ block.settings.image-desktop-version.alt}}" class="imgbannerhome">
-      </a>
+    <div class="element-slide w-slide">
+      <a href="#" class="linkmainbanner w-inline-block"><img src="{{ "banner-mobile.jpeg" | asset_url }}"   alt="" class="bannerimg"></a>
     </div>
-    {% endfor %}
+    <div class="element-slide w-slide">
+      <a href="#" class="linkmainbanner w-inline-block"><img src="{{ "banner-mobile.jpeg" | asset_url }}"   alt="" class="bannerimg"></a>
+    </div>
   </div>
-  {% if bannerscount > 1 %}
-    <div class="arrowmainslider w-slider-arrow-left">
-      <div class="w-icon-slider-left"></div>
-    </div>
-    <div class="arrowmainslider right w-slider-arrow-right">
-      <div class="w-icon-slider-right"></div>
-    </div>
-    <div class="mainslidenav w-slider-nav w-round"></div>
-  {% endif %}
+  <div class="arrowmainslider w-slider-arrow-left">
+    <div class="w-icon-slider-left"></div>
+  </div>
+  <div class="arrowmainslider w-slider-arrow-right">
+    <div class="w-icon-slider-right"></div>
+  </div>
+  <div class="navigationdots w-slider-nav"></div>
 </div>
 
 

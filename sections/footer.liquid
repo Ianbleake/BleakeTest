@@ -1,149 +1,94 @@
 <footer>
 
-  <div class="customfooter">
-    <div class="custom-container">
-      <div class="cont-row-footer">
-
-        <div class="colfooter small">
-          <a href="{{ routes.root_url }}" class="linklogo-footer w-inline-block">
-            <img src="{{ section.settings.logo |  image_url  }}" alt="Logo Bomuca" class="logo-footer">
-          </a>
+<div class="customfooter">
+  <a href="#" class="logofooter w-inline-block"><img src="{{ "escudo-circular.svg" | asset_url }}"   alt="" class="escudofooter"></a>
+  <div class="custom-container">
+    <div id="w-node-abf9476f-c460-dfd6-4453-3f0845eb2446-45eb2442" class="w-layout-layout footerstack wf-layout-layout">
+      <div id="w-node-abf9476f-c460-dfd6-4453-3f0845eb2447-45eb2442" class="w-layout-cell">
+        <div class="infocolfooter">
+          <h5 class="footertitle">NOSOTROS</h5>
+          <ul role="list" class="listitemsfooter">
+            <li class="footeritemlist">
+              <a href="#" class="footerlinktxt">Aviso de privacidad</a>
+            </li>
+            <li class="footeritemlist">
+              <a href="#" class="footerlinktxt">Política de cambios y devoluciones</a>
+            </li>
+            <li class="footeritemlist">
+              <a href="#" class="footerlinktxt">Términos y condiciones</a>
+            </li>
+            <li class="footeritemlist">
+              <a href="#" class="footerlinktxt">FAQ</a>
+            </li>
+          </ul>
         </div>
-
-        <div class="colfooter">
-          <h5 data-w-id="686b8870-1a6f-a05b-1c17-3e2d0fdfe959" class="footer-titulo">{{ section.settings.menu_1.title }}
-          </h5>
-          <div class="cont-items-footer">
-            <ul role="list" class="items-footer">
-              {% for link in section.settings.menu_1.links %}
-              <li class="item-list-footer">
-                <a href="{{ link.url }}" class="footer-link">{{ link.title }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-
-        <div class="colfooter small">
-          <h5 data-w-id="686b8870-1a6f-a05b-1c17-3e2d0fdfe973" class="footer-titulo">{{ section.settings.menu_2.title }}
-          </h5>
-          <div class="cont-items-footer">
-            <ul role="list" class="items-footer">
-              {% for link in section.settings.menu_2.links %}
-              <li class="item-list-footer">
-                <a href="{{ link.url }}" class="footer-link">{{ link.title }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-
-        <div class="colfooter">
-          <h5 data-w-id="686b8870-1a6f-a05b-1c17-3e2d0fdfe984" class="footer-titulo">Contacto</h5>
-          <div class="cont-items-footer">
-            <ul role="list" class="items-footer">
-              <li class="item-list-footer">
-                <a href="mailto:info@bomuca.com?subject=Tienda%20Bomuca%20M%C3%A9xico" class="footer-link">{{
-                  section.settings.email }}</a>
-              </li>
-              <li class="item-list-footer">
-                <p class="txtfooter-about">
-                  <strong class="boldtitles">{{ section.settings.city_1 }}</strong><br>
-                  {% if section.settings.phone_1 != blank %}
-                    Tel. {{ section.settings.phone_1 }}
-                  {% endif %}<br>
-                  {{ section.settings.address_1 }}
-                </p>
-              </li>
-              <li class="item-list-footer">
-                <p class="txtfooter-about">
-                  <strong class="boldtitles">{{ section.settings.city_2 }}</strong><br>
-                  {% if section.settings.phone_2 != blank %}
-                    Tel. {{ section.settings.phone_2 }}
-                  {% endif %}<br>
-                  {{ section.settings.address_2 }}
-                </p>
-              </li>
-              <li class="item-list-footer">
-                <p class="txtfooter-about">
-                  <strong class="boldtitles">{{ section.settings.city_3 }}</strong><br>
-                  {% if section.settings.phone_3 != blank %}
-                    Tel. {{ section.settings.phone_3 }}
-                  {% endif %}<br>
-                  {{ section.settings.address_3 }}
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-
-        <div class="colfooter socialnews">
-
-          <h5 class="footer-titulo social">Síguenos</h5>
-          <div class="cont-items-footer social">
-            <ul role="list" class="items-footer">
-              <li class="item-list-footer">
-
-                {% if section.settings.instagram != blank %}
-                  <a href="{{ section.settings.instagram }}" target="_blank" class="social-link-footer w-inline-block">
-                    <img src="{{ "icon_instagram.svg" | asset_url }}" alt="Instagram Bomuca" class="social-icon">
-                  </a>
-                {% endif %}
-
-                {% if section.settings.facebook != blank %}
-                <a href="{{ section.settings.facebook }}" target="_blank" class="social-link-footer w-inline-block">
-                  <img src="{{ "icon_facebook.svg" | asset_url }}" alt="Facebook Bomuca" class="social-icon">
-                </a>
-                {% endif %}
-
-                {% if section.settings.youtube != blank %}
-                <a href="{{ section.settings.youtube }}" target="_blank" class="social-link-footer w-inline-block">
-                  <img src="{{ "icon_youtube.svg" | asset_url }}" alt="Youtube Bomuca" class="social-icon">
-                </a>
-                {% endif %}
-              </li>
-            </ul>
-          </div>
-
-          <h5 class="footer-titulo social">{{ section.settings.news_title }}</h5>
-          <p class="txtfooter-about newsfooter">{{ section.settings.description-subscription }}</p>
-          <div class="newsletterform w-form">
-            {% form 'customer', class: 'formnews' %}
-            <input class="campo-correo w-input" maxlength="256" name="contact[email]"
-              placeholder="{{ 'newsletter.label' | t }}" type="email" value="{{ form.email }}" required>
-            <input type="submit" data-wait="Espere..." class="suscribebtn-news w-button" value="Suscribirme">
-            {% endform %}
-          </div>
-
-
-        </div>
-
       </div>
-    </div>
-
-
-    <div class="copyright-cont">
-      <div class="custom-container">
-        <div id="w-node-_686b8870-1a6f-a05b-1c17-3e2d0fdfe9b9-0fdfe952" class="w-layout-layout stackcopyright wf-layout-layout">
-          <div id="w-node-_686b8870-1a6f-a05b-1c17-3e2d0fdfe9ba-0fdfe952" class="w-layout-cell cellfooter">
-            <div class="copyright">Copyright © 2024 Bomuca S.A. DE C.V.  Designed and Developed by <a
-                href="https://www.kubodigital.mx" target="_blank" class="kdlink">Kubo Digital</a>
+      <div id="w-node-abf9476f-c460-dfd6-4453-3f0845eb2458-45eb2442" class="w-layout-cell">
+        <div class="infocolfooter">
+          <h5 class="footertitle">TIENDA</h5>
+          <ul role="list" class="listitemsfooter">
+            <li class="footeritemlist">
+              <a href="#" class="footerlinktxt">Mi cuenta / Registro</a>
+            </li>
+            <li class="footeritemlist">
+              <a href="#" class="footerlinktxt">Carrito</a>
+            </li>
+            <li class="footeritemlist">
+              <a href="#" class="footerlinktxt">Pedidos</a>
+            </li>
+            <li class="footeritemlist">
+              <a href="#" class="footerlinktxt">Direcciones</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="w-node-abf9476f-c460-dfd6-4453-3f0845eb2469-45eb2442" class="w-layout-cell">
+        <div class="infocolfooter">
+          <h5 class="footertitle">SÍGUENOS</h5>
+          <ul role="list" class="listitemsfooter">
+            <li class="footeritemlist">
+              <a href="https://www.instagram.com/tolucafc/" target="_blank" class="linksocial w-inline-block"><img src="{{ "icon_instagram.svg" | asset_url }}"   alt="" class="socialicon"></a>
+              <a href="https://x.com/TolucaFC" target="_blank" class="linksocial w-inline-block"><img src="{{ "icon_twitter.svg" | asset_url }}"   alt="" class="socialicon"></a>
+              <a href="https://www.facebook.com/tolucafc" class="linksocial w-inline-block"><img src="{{ "icon_meta.svg" | asset_url }}"   alt="" class="socialicon"></a>
+              <a href="https://www.youtube.com/@Deportivotolucafcoficial" target="_blank" class="linksocial w-inline-block"><img src="{{ "icon_youtube.svg" | asset_url }}"   alt="" class="socialicon"></a>
+              <a href="https://www.tiktok.com/@tolucafc?lang=es" target="_blank" class="linksocial w-inline-block"><img src="{{ "icon_tiktok.svg" | asset_url }}"   alt="" class="socialicon"></a>
+            </li>
+          </ul>
+        </div>
+        <div class="infocolfooter">
+          <h5 class="footertitle">CONTACTO</h5>
+          <ul role="list" class="listitemsfooter">
+            <li class="footeritemlist">
+              <a href="#" class="footerlinktxt">tiendaenlinea@tolucafc.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="w-node-abf9476f-c460-dfd6-4453-3f0845eb2480-45eb2442" class="w-layout-cell">
+        <div class="infocolfooter">
+          <h5 class="footertitle"><strong>¡SIEMPRE DIABLOS! SUSCRÍBETE</strong></h5>
+          <div class="subscriptionform w-form">
+            <form id="email-form" name="email-form" data-name="Email Form" method="get" data-wf-page-id="6675e23e3a59380aba5351bb" data-wf-element-id="abf9476f-c460-dfd6-4453-3f0845eb2486">
+              <p class="txtregularfooter">Entérate antes que nadie de los nuevos lanzamientos y recibe promociones y descuentos especiales.</p>
+              <div class="inputcontnews"><input type="submit" data-wait="Please wait..." class="suscribebtn w-button" value=""><input class="inputsuscription w-input" maxlength="256" name="newsinput-2" data-name="Newsinput 2" placeholder="Ingresa aquí tu email" type="email" id="newsinput-2" required=""></div>
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
-
-
-          <div id="w-node-_686b8870-1a6f-a05b-1c17-3e2d0fdfe9bf-0fdfe952" class="w-layout-cell cellfooter">
-            <img src="{{ section.settings.logo_payment |  image_url }}" alt="Metodos de pago" class="mediospago">
-            <img src="{{ section.settings.logo_payment_mobile |  image_url }}" alt="Metodos de pago" class="mediospago mobile">
-          </div>
-
+          <ul role="list" class="listitemsfooter"></ul>
         </div>
       </div>
     </div>
-
-
+    <div class="paymentinfocont">
+      <h5 class="footertitle center">PAGOS SEGUROS</h5><img src="{{ "paymentmethods.png" | asset_url }}"   alt="" class="paymentlogos">
+    </div>
+    <div class="copyright">Copyright © 2024 Toluca Fútbol Club - Tienda Oficial · Designed and Developed by Kubo Digital</div>
   </div>
+</div>
 
 </footer>
 
