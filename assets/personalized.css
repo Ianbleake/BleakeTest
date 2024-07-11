@@ -5770,7 +5770,7 @@ textarea.w-select {
 
 #forget_pass_them.visible,
 #login_them.visible {
-  display: flex; /*! Cambiar al display original*/
+  display: flex; 
 }
 
 .hide.show {
@@ -5889,22 +5889,22 @@ button.frgtpassword {
 }
 
 .ctared.w-button.back {
-  background-color: var(--pink); /*! Cambiar color*/
+  background-color: var(--toluca-red);
   border-radius: 70px;
   width: fit-content;
   min-width: 150px;
-  margin: auto ; /*! Adecuar al estilo de la */
+  margin: 10px auto 0;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-family: Montserrat, sans-serif;
-  font-size: 16px; /*! Igualar a la clase .loginpopbtn*/
+  font-family: Agdasima,sans-serif;
+  font-size: 27px; /*! Igualar a la clase .loginpopbtn*/
   font-weight: 500;
   line-height: 14px;
   display: block;
   text-align: center;
 }
 
-.ctared.w-button.back:hover{ /*? Solo si .loginpopbtn tiene hover si no borrar*/
+.ctared.w-button.back:hover{ 
   background-color: var(--black)
 }
 
