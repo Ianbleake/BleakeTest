@@ -245,12 +245,60 @@
             "card_title": "Evervital®",
             "card_link": "shopify:\/\/collections\/evervital"
           }
+        },
+        "comment_Bt63hB": {
+          "type": "comment",
+          "disabled": true,
+          "settings": {
+            "autor": "Ivan Rangel",
+            "review_title": "Test",
+            "review_date": "9 de julio 2024",
+            "comment": "test"
+          }
+        },
+        "comment_kLUebc": {
+          "type": "comment",
+          "disabled": true,
+          "settings": {
+            "autor": "Ivan",
+            "review_title": "TEST",
+            "review_date": "",
+            "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
+          }
+        },
+        "comment_Pge6na": {
+          "type": "comment",
+          "disabled": true,
+          "settings": {
+            "autor": "",
+            "review_title": "",
+            "review_date": "",
+            "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
+          }
+        },
+        "comment_gkBqbh": {
+          "type": "comment",
+          "disabled": true,
+          "settings": {
+            "autor": "",
+            "review_title": "",
+            "review_date": "",
+            "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
+          }
+        },
+        "comment_xtXXFF": {
+          "type": "comment",
+          "disabled": true,
+          "settings": {
+            "autor": "",
+            "review_title": "",
+            "review_date": "",
+            "comment": "Compré el paquete de 3 rollos de plástico para envolver mis cajas para envío y salió súper resistente, lo recomiendo ampliamente."
+          }
         }
       },
       "block_order": [
-        "card_wVkAjG",
-        "card_xTzE4w",
-        "card_Rtc8ja"
+        "comment_HM6RtU"
       ],
       "settings": {
         "title": "Recomendaciones <strong class=\"boldtitles\">bomuca<\/strong>"
