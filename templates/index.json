@@ -13,9 +13,55 @@
       "type": "banners-slide",
       "settings": {
       }
+    },
+    "video_KMj6d6": {
+      "type": "video",
+      "settings": {
+        "video-chanel": "youtubevideo",
+        "Video_link": ""
+      }
+    },
+    "collections_list_af7fdb": {
+      "type": "collections-list",
+      "settings": {
+      }
+    },
+    "products_carrousel_axTKMr": {
+      "type": "products-carrousel",
+      "settings": {
+      }
+    },
+    "banner_secundary_BrTrMy": {
+      "type": "banner-secundary",
+      "settings": {
+      }
+    },
+    "maps_7Gbytp": {
+      "type": "maps",
+      "settings": {
+      }
+    },
+    "warranty_home_gDKWJq": {
+      "type": "warranty-home",
+      "settings": {
+        "tittle": "¡En <strong class=\"boldtitles\">bomuca<sup>®<\/sup><\/strong> celebramos tu <strong class=\"boldtitles\">bienestar<\/strong>!",
+        "description": "Para nosotros nuestro trabajo está relacionado con la vida misma y es por eso que nos esforzamos en brindar productos de calidad para fomentar una nueva cultura para el bien social."
+      }
+    },
+    "brands_wbhCXG": {
+      "type": "brands",
+      "settings": {
+      }
     }
   },
   "order": [
-    "banners_slide_YJFjMJ"
+    "banners_slide_YJFjMJ",
+    "video_KMj6d6",
+    "collections_list_af7fdb",
+    "products_carrousel_axTKMr",
+    "banner_secundary_BrTrMy",
+    "maps_7Gbytp",
+    "warranty_home_gDKWJq",
+    "brands_wbhCXG"
   ]
 }
