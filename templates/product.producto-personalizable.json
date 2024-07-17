@@ -28,13 +28,13 @@
             "picker_type": "button"
           }
         },
-        "customform_EEHBGJ": {
-          "type": "customform",
+        "quantity_selector": {
+          "type": "quantity_selector",
           "settings": {
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
+        "customform_EEHBGJ": {
+          "type": "customform",
           "settings": {
           }
         },
@@ -49,8 +49,8 @@
         "title",
         "price",
         "variant_picker",
-        "customform_EEHBGJ",
         "quantity_selector",
+        "customform_EEHBGJ",
         "buy_buttons"
       ],
       "settings": {
