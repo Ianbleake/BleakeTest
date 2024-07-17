@@ -421,6 +421,9 @@
                   </button>
                 </quantity-input>
               </div>
+
+            {%- when 'customform' -%}
+              {% render 'product-custom' %}
             {%- when 'variant_picker' -%}
               {%- unless product.has_only_default_variant -%}
                 {%- if block.settings.picker_type == 'button' -%}
@@ -924,6 +927,11 @@
       "name": "Compartir en redes",
       "limit": 1
 
+    },
+    {
+      "type": "customform",
+      "name": "Producto personalizable",
+      "limit": 1
     }
 
   ],

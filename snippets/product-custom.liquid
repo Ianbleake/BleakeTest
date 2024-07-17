@@ -1,0 +1,26 @@
+<div class="customizebtn">  
+  <img src="{{ "icon_editar.png" | asset_url }}" class="cusomizeicon">
+  <div>PERSONALIZAR</div>
+</div>
+
+<div>
+  <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="w-tabs">
+    <div class="w-tab-menu">
+      <a data-w-tab="Tab 1" class="customiztab w-inline-block w-tab-link w--current">
+        <div>Jugador</div>
+      </a>
+      <a data-w-tab="Tab 2" class="customiztab w-inline-block w-tab-link">
+        <div>Nombre y número</div>
+      </a>
+    </div>
+    <div class="w-tab-content">
+      <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active"><select id="field-3" name="field-3" data-name="Field 3" class="palyerselector w-select">
+          <option value="">Select one...</option>
+          <option value="First">First choice</option>
+          <option value="Second">Second choice</option>
+          <option value="Third">Third choice</option>
+        </select></div>
+      <div data-w-tab="Tab 2" class="w-tab-pane"></div>
+    </div>
+  </div>
+</div>
