@@ -23,15 +23,11 @@
           "text_LWjJpB": {
             "type": "text",
             "settings": {
-              "title": "CONOCE LA NUEVA COLECCIÓN DE GORRAS | NEW ERA",
-              "url": "shopify:\/\/collections\/all"
             }
           },
           "text_NfkpKf": {
             "type": "text",
             "settings": {
-              "title": "PERSONALIZA TU JERSEY OFICIAL CON TU NOMBRE",
-              "url": "shopify:\/\/collections\/local"
             }
           }
         },
@@ -51,12 +47,9 @@
           "menu_1": "footer",
           "menu_2": "tienda",
           "email": "tiendaenlinea@tolucafc.com",
-          "email_url": "#",
           "instagram": "https:\/\/www.instagram.com\/tolucafc\/",
-          "twitter": "https:\/\/x.com\/TolucaFC",
           "facebook": "https:\/\/www.facebook.com\/tolucafc",
           "youtube": "https:\/\/www.youtube.com\/@Deportivotolucafcoficial",
-          "tiktok": "https:\/\/www.tiktok.com\/@tolucafc?lang=es",
           "news_title": "¡SIEMPRE DIABLOS! SUSCRÍBETE",
           "description-subscription": "Entérate antes que nadie de los nuevos lanzamientos y recibe promociones y descuentos especiales.",
           "logo_payment": "shopify:\/\/shop_images\/pagostienda_logos.png"
