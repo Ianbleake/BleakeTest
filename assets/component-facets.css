@@ -7,7 +7,7 @@
 }
 
 .facets__form-vertical, .mobile-facets *, facet-filters-form * {
-  font-family: "Museosans 500", sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 .active-facets-mobile {
@@ -195,7 +195,7 @@ a.facets__reset.link.underlined-link {
 }
 
 .facets__heading {
-  color: #3c7630;
+  color: #000;
   font-size: 14px;
   padding: 0 1rem 0 0;
   margin-top: 0rem;
@@ -210,14 +210,14 @@ a.facets__reset.link.underlined-link {
 
 .facets__disclosure {
   margin-right: 15px;
-  border: 2px solid var(--green);
+  border: 1px solid var(--black);
   border-radius: 80px;
   padding: 5px 7px;
 }
 
 .facets__summary {
   color: #000;
-  font-family: "Museosans 500", sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 11px;
@@ -500,10 +500,10 @@ span.active-facets__button-inner:after {
 }
 
 .active-facets__button--light .active-facets__button-inner {
-  border: 2px solid #3c7630 !important;
+  border: 2px solid #000 !important;
   border-radius: 80px;
   box-shadow: none;
-  background-color: #3c7630;
+  background-color: #000;
 }
 
 .active-facets__button--light:hover .active-facets__button-inner {
@@ -1162,7 +1162,7 @@ input.mobile-facets__checkbox {
 
 @media screen and (max-width: 767px) {
   .mobile-facets__open>*+*,.product-count__text {
-      font-family:"Museosans 500", sans-serif;
+      font-family:Roboto, sans-serif;
       font-size: 12px !important;
       font-weight: 600;
       line-height: 11px !important;
@@ -1186,7 +1186,7 @@ input.mobile-facets__checkbox {
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
-    color: #3c7630;
+    color: #000;
   }
 
   .mobile-facets__count {
@@ -1202,7 +1202,7 @@ input.mobile-facets__checkbox {
   .mobile-facets__close-button,
   .mobile-facets__info {
     color: #000!important;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     line-height: 11px;
   }
@@ -1260,10 +1260,10 @@ input.mobile-facets__checkbox {
   }
 
   .mobile-facets__footer button {
-      background-color: #3c7630;
+      background-color: #000;
       -webkit-transition: all .3s ease;
       transition: all .3s ease;
-      font-family: "Museosans 500", sans-serif;
+      font-family: Roboto, sans-serif;
       font-size: 16px;
       font-weight: 400;
       line-height: 11px;  
@@ -1271,7 +1271,7 @@ input.mobile-facets__checkbox {
       text-align: center;
       padding: 10px;
       margin-top: 0;
-      border: 2px solid #3c7630;
+      border: 2px solid #000;
       border-radius: 40px;
   }
 
@@ -1418,13 +1418,13 @@ a.mobile-facets__clear.underlined-link.w--current{
 }
 
 .facet-filters__field .select {
-  border: 2px solid var(--green);
+  border: 1px solid var(--black);
   border-radius: 80px;
   padding: 5px 7px;
   }
   
   .facet-filters__sort{
-  font-family: "Museosans 500", sans-serif;
+  font-family: Roboto, sans-serif;
   font-size:12px;
   font-weight:600;
   line-height: 11px;
@@ -1487,7 +1487,7 @@ form#FacetFiltersForm {
 }
 
 .facets-container>* {
-  flex: 1 1 165px;
+  flex: 1 1 160px;
 }
 
 .facet-filters {

@@ -1,20 +1,14 @@
 <div class="seccsociosc">
   <div class="custom-container">
     <div class="maintitle-cont">
-      <h2 class="maintitle">SOCIOS <span class="redtxttitle">COMERCIALES</span></h2>
+      <h2 class="maintitle">{{ section.settings.title }}</h2>
     </div>
     <div class="contsocioslogos">
-      <div class="contlogo"><img src="{{ "roshfrans.jpg" | asset_url }}"   alt="" class="logosocio"></div>
-      <div class="contlogo"><img src="{{ "corona.jpg" | asset_url }}"   alt="" class="logosocio"></div>
-      <div class="contlogo"><img src="{{ "new-balance.jpg" | asset_url }}"   alt="" class="logosocio"></div>
-      <div class="contlogo"><img src="{{ "arabela.jpg" | asset_url }}"   alt="" class="logosocio"></div>
-    </div>
-    <div class="contsocioslogos">
-      <div class="contlogo"><img src="{{ "caliente.jpg" | asset_url }}"   alt="" class="logosocio"></div>
-      <div class="contlogo"><img src="{{ "mercedes-Benz.jpg" | asset_url }}"   alt="" class="logosocio"></div>
-      <div class="contlogo"><img src="{{ "aeromexico.jpg" | asset_url }}"   alt="" class="logosocio"></div>
-      <div class="contlogo"><img src="{{ "electrolit.jpg" | asset_url }}"   alt="" class="logosocio"></div>
-      <div class="contlogo"><img src="{{ "red-cola.jpg" | asset_url }}"   alt="" class="logosocio"></div>
+
+    {% for block in section.blocks %}
+      <div class="contlogo"><img src="{{ block.settings.image |  image_url }}"   alt="{{ block.settings.image.alt }}" class="logosocio"></div>
+    {% endfor %}
+      
     </div>
   </div>
 </div>
@@ -22,13 +16,26 @@
 {% schema  %}
 {
   "name": "Asociados",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titulo de seccion",
+      "default": "SOCIOS <span class='redtxttitle'>COMERCIALES</span>"
+    }
+  ],
   "max_blocks": 9,
   "blocks": [
      {
       "type": "image",
       "name": "Socio",
-      "settings": []
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo de Asociado"
+        }
+      ]
      }
    ],
   "presets": [

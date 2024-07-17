@@ -343,7 +343,7 @@ quick-add-modal .media>*:not(.zoom):not(.deferred-media__poster-button),quick-ad
 
 
 .owl-item .quick-add__submit, .quick-add__submit {
-  color: #3c7630!important;
+  color: #000!important;
   font-family: "Museosans 700", sans-serif;
   text-decoration: underline;
   transition: all .35s;

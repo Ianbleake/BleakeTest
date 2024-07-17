@@ -20,46 +20,46 @@
       "header": {
         "type": "header",
         "blocks": {
-          "text_HWqVkf": {
+          "text_LWjJpB": {
             "type": "text",
             "settings": {
+              "title": "CONOCE LA NUEVA COLECCIÓN DE GORRAS | NEW ERA",
+              "url": "shopify:\/\/collections\/all"
             }
           },
-          "text_ef9nC3": {
+          "text_NfkpKf": {
             "type": "text",
             "settings": {
+              "title": "PERSONALIZA TU JERSEY OFICIAL CON TU NOMBRE",
+              "url": "shopify:\/\/collections\/local"
             }
           }
         },
         "block_order": [
-          "text_HWqVkf",
-          "text_ef9nC3"
+          "text_LWjJpB",
+          "text_NfkpKf"
         ],
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo_sr_paquete.svg",
+          "logo": "shopify:\/\/shop_images\/logo_blanco_Toluca_Tienda_oficial.png",
           "menu": "main-menu"
         }
       },
       "footer": {
         "type": "footer",
         "settings": {
+          "logo": "shopify:\/\/shop_images\/escudo-circular.svg",
           "menu_1": "footer",
-          "menu_2": "",
-          "email": "",
-          "city_1": "",
-          "phone_1": "",
-          "address_1": "",
-          "city_2": "",
-          "phone_2": "",
-          "address_2": "",
-          "city_3": "",
-          "phone_3": "",
-          "address_3": "",
-          "instagram": "",
-          "facebook": "",
-          "youtube": "",
-          "news_title": "",
-          "description-subscription": "Suscríbete y disfruta de ofertas y promociones especiales, además entérate de los nuevos lanzamientos antes que nadie."
+          "menu_2": "tienda",
+          "email": "tiendaenlinea@tolucafc.com",
+          "email_url": "#",
+          "instagram": "https:\/\/www.instagram.com\/tolucafc\/",
+          "twitter": "https:\/\/x.com\/TolucaFC",
+          "facebook": "https:\/\/www.facebook.com\/tolucafc",
+          "youtube": "https:\/\/www.youtube.com\/@Deportivotolucafcoficial",
+          "tiktok": "https:\/\/www.tiktok.com\/@tolucafc?lang=es",
+          "news_title": "¡SIEMPRE DIABLOS! SUSCRÍBETE",
+          "description-subscription": "Entérate antes que nadie de los nuevos lanzamientos y recibe promociones y descuentos especiales.",
+          "logo_payment": "shopify:\/\/shop_images\/pagostienda_logos.png"
         }
       }
     },

@@ -13,8 +13,8 @@
               {%- endif -%}
 
             {%- when 'title'-%}
-              <div class="titlecontainer">
-                <h1 class="mainsecctitle">{{ article.title | escape }}</h1>
+              <div class="maintitle-cont">
+                <h1 class="maintitle">{{ article.title | escape }}</h1>
               </div>
               <div class="cont-title-secc center">
                 {%- if block.settings.blog_show_date -%}
@@ -37,15 +37,13 @@
               <div class="custom-container">
                 <div class="cuerpo-blogentry">
                   <div class="contsocial-media">
-                    <h2 class="titulovip-elements social">Compartir</h2>
-                    <a data-network="copy" href="#" class="st-custom-button w-inline-block">
-                      <img src="{{ "share_link.svg" | asset_url }}" alt="Compartir" class="iconshare-social">
-                    </a>
-                    <a data-network="facebook" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_facebook.svg" | asset_url }}" alt="Facebook" class="iconshare-social"></a>
-                    <a data-network="whatsapp" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_whatsapp.svg" | asset_url }}" alt="Whatsapp" class="iconshare-social"></a>
-                    <a data-network="telegram" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_telegram.svg" | asset_url }}" alt="Telegram" class="iconshare-social"></a>
-                    <a data-network="messenger" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_messenger.svg" | asset_url }}" alt="Messenger" class="iconshare-social"></a>
-                    <a data-network="twitter" href="#" class="st-custom-button w-inline-block"><img src="{{ "/share_twitter.svg" | asset_url }}" alt="Twitter" class="iconshare-social"></a>
+                    <div class="titulovip-elements social">Compartir</div>
+                    <a data-network="copy" href="#" class="st-custom-button w-inline-block"><img src="{{"socialicon.svg"| asset_url}}" class="iconshare-social"></a>
+                    <a data-network="facebook" href="#" class="st-custom-button w-inline-block"><img alt="Facebook" src="{{"socialicon-copy.svg"| asset_url}}" class="iconshare-social"></a>
+                    <a data-network="whatsapp" href="#" class="st-custom-button w-inline-block"><img alt="Whatsapp" src="{{"socialicon-copy-3.svg"| asset_url}}" class="iconshare-social"></a>
+                    <a data-network="telegram" href="#" class="st-custom-button w-inline-block"><img alt="Telegram" src="{{"socialicon-copy-5.svg"| asset_url}}" class="iconshare-social"></a>
+                    <a data-network="messenger" href="#" class="st-custom-button w-inline-block"><img alt="Messenger" src="{{"socialicon-copy-4.svg"| asset_url}}" class="iconshare-social"></a>
+                    <a data-network="twitter" href="#" class="st-custom-button w-inline-block"><img alt="Twitter" src="{{"icon_twitter_1.svg"| asset_url}}" class="iconshare-social"></a>
                   </div>
                 </div>
               </div>
@@ -53,7 +51,7 @@
         {%- endcase -%}
       {%- endfor -%}
 
-      <a href="{{ blog.url }}" class="outlinebtn">
+      <a href="{{ blog.url }}" class="ctared w-button back">
         {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
       </a>
     </article>

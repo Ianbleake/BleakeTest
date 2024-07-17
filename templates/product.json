@@ -17,33 +17,8 @@
           "settings": {
           }
         },
-        "brands_Fa3YMi": {
-          "type": "brands",
-          "settings": {
-          }
-        },
         "price": {
           "type": "price",
-          "settings": {
-          }
-        },
-        "loox_reviews_loox_rating_FCYaMY": {
-          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-rating\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "settings": {
-            "contentSize": 14,
-            "pattern": "",
-            "hideText": false,
-            "alignment": "",
-            "layout": "",
-            "textColor": "",
-            "starColor": "#ffcf03",
-            "showAllReviews": false,
-            "looxOpenFloatingWidget": false,
-            "emptyRatingWidget": true
-          }
-        },
-        "description_4gMhFn": {
-          "type": "description",
           "settings": {
           }
         },
@@ -51,6 +26,13 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button"
+          }
+        },
+        "popup_EPefP8": {
+          "type": "popup",
+          "settings": {
+            "page": "guia-de-tallas",
+            "iconpop": "shopify:\/\/shop_images\/sizes_icon_594ce7e1-9127-46e7-9501-e0c8c99b7576.png"
           }
         },
         "quantity_selector": {
@@ -64,10 +46,16 @@
             "show_dynamic_checkout": true
           }
         },
+        "custom_liquid_PxVTVn": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"btn-sizeinfo\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0578\/9237\/2593\/files\/icon_envios_61b38a1c-a72f-4fc3-8c27-02db29262256.svg?v=1721154544\"class=\"inconsiechart\">\n  <div class=\"titulovip-elements\"><strong>ENVÍOS GRATIS <\/strong>en compras mayores a<strong> $ 999.ºº<\/strong><\/div>\n<\/div>"
+          }
+        },
         "166ed5ab-3b89-40a1-a401-8c97f3723a3b": {
           "type": "metodos_pago",
           "settings": {
-            "logo_payment": "shopify:\/\/shop_images\/M_de_pago.png"
+            "logo_payment": "shopify:\/\/shop_images\/pagoslogosvip.png"
           }
         },
         "0d09da6a-d4e1-482e-b038-8908678039f7": {
@@ -75,19 +63,24 @@
           "settings": {
             "heading": "Descripción"
           }
+        },
+        "redes_arw3aM": {
+          "type": "redes",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "title",
-        "brands_Fa3YMi",
         "price",
-        "loox_reviews_loox_rating_FCYaMY",
-        "description_4gMhFn",
         "variant_picker",
+        "popup_EPefP8",
         "quantity_selector",
         "buy_buttons",
+        "custom_liquid_PxVTVn",
         "166ed5ab-3b89-40a1-a401-8c97f3723a3b",
-        "0d09da6a-d4e1-482e-b038-8908678039f7"
+        "0d09da6a-d4e1-482e-b038-8908678039f7",
+        "redes_arw3aM"
       ],
       "settings": {
         "hide_variants": true
@@ -96,7 +89,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "<h2 class=\"mainsecctitle\">Productos <strong class=\"boldtitles\">recomendados<\/strong>\n<\/h2>",
+        "heading": "<h2 class=\"maintitle\">PRODUCTOS <span class=\"redtxttitle\">RECOMENDADOS<\/span>\n<\/h2>",
         "products_to_show": 9
       }
     },
@@ -106,71 +99,43 @@
         "warranty_bckU9j": {
           "type": "warranty",
           "settings": {
-            "warranty_icon": "shopify:\/\/shop_images\/icon1.png",
-            "warranty_description": "Años de investigación científica respaldada por laboratorios de Europa y Estados Unidos"
+            "warranty_icon": "shopify:\/\/shop_images\/icon_envios.svg",
+            "warranty_title": "ENVÍOS SEGUROS",
+            "warranty_description": "Todos nuestros envíos son seguros, recibe hasta la puerta de tu casa todos tus productos oficiales."
           }
         },
         "warranty_NaUBz3": {
           "type": "warranty",
           "settings": {
-            "warranty_icon": "shopify:\/\/shop_images\/icon2.png",
-            "warranty_description": "Creamos productos diseñados para preservar y mejorar tu salud."
+            "warranty_icon": "shopify:\/\/shop_images\/icon_devoluciones.svg",
+            "warranty_title": "CAMBIOS Y DEVOLUCIONES",
+            "warranty_description": "Si el producto que elegiste no te quedó puedes cambiarlo, tienes hasta 30 días."
           }
         },
         "warranty_CfqFhk": {
           "type": "warranty",
           "settings": {
-            "warranty_icon": "shopify:\/\/shop_images\/icon3.png",
-            "warranty_description": "Hacemos envíos a todo México ¡La salud hasta la puerta de tu casa!"
-          }
-        },
-        "warranty_q9HpWK": {
-          "type": "warranty",
-          "settings": {
-            "warranty_icon": "shopify:\/\/shop_images\/icon4.png",
-            "warranty_description": "Todas tus compras y pagos son 100% seguros."
+            "warranty_icon": "shopify:\/\/shop_images\/icon_pagos.svg",
+            "warranty_title": "PAGOS 100% SEGUROS",
+            "warranty_description": "Múltiples formas de pago 100% seguras para que compres fácil y rápido dentro de la tienda."
           }
         }
       },
       "block_order": [
         "warranty_bckU9j",
         "warranty_NaUBz3",
-        "warranty_CfqFhk",
-        "warranty_q9HpWK"
+        "warranty_CfqFhk"
       ],
       "settings": {
-        "tittle": "¡En <b>bomuca®<\/b> celebramos tu <b>bienestar<\/b>!",
-        "description": "Para nosotros nuestro trabajo está relacionado con la vida misma y es por eso que nos esforzamos en brindar productos de calidad para fomentar una nueva cultura para el bien social."
+        "tittle": "COMPRAS <span class=\"redtxttitle\">100% SEGURAS<\/span>"
       }
     },
     "custom_liquid_dxWXyU": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"seccreviews\">\n    <div class=\"custom-container\">\n      <div class=\"titlecontainer\">\n        <h2 class=\"mainsecctitle\">Reseñas de nuestros <strong class=\"boldtitles\">clientes<\/strong><\/h2>\n      <\/div>\n      <div class=\"divreviews w-embed\"><\/div>\n    <\/div>\n  <\/div>",
+        "custom_liquid": "<div class=\"seccreviews\">\n      <div class=\"custom-container\">\n        <div class=\"maintitle-cont\">\n          <h2 class=\"maintitle\">RESEÑAS DE <span class=\"redtxttitle\">LA AFICIÓN<\/span><\/h2>\n        <\/div>\n      <\/div>\n    <\/div>",
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "1720561252c9310ef0": {
-      "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_dynamic_section_QVtMV4": {
-          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "settings": {
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": true,
-            "maxwidth": 1920,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": [
-        "loox_reviews_loox_dynamic_section_QVtMV4"
-      ],
-      "settings": {
-        "include_margins": true
       }
     }
   },
@@ -178,7 +143,6 @@
     "main",
     "product-recommendations",
     "warranty_home_UFMrMT",
-    "custom_liquid_dxWXyU",
-    "1720561252c9310ef0"
+    "custom_liquid_dxWXyU"
   ]
 }

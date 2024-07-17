@@ -5,8 +5,8 @@
   <div class="custom-container">
     <div class="elementos-cuenta">
 
-      <div class="titlecontainer">
-        <h1 class="mainsecctitle">Mis <strong class="boldtitles">direcciones</strong></h1>
+      <div class="maintitle-cont">
+        <h1 class="maintitle">Mis direcciones</h1>
       </div>
 
       <p class="txtlogin center">Estas son las direcciones que has dado de alta para envíos o facturación.</p>
@@ -24,12 +24,12 @@
       </div>
 
       <div class="w-layout-cell accountcell hide" id="AddAddress">
-        <div class="titlecontainer">
-          <h2 class="mainsecctitle" id="AddressNewHeading">Nueva dirección</h2>
+        <div class="maintitle-cont">
+          <h2 class="maintitle" id="AddressNewHeading">Nueva dirección</h2>
         </div>
 
         <div class="loginpopform w-form"> 
-        {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading', class: 'contenidoformlog' -%}
+        {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading', class: 'contenidoformlog micuenta' -%}
           <label class="txtlogin" for="AddressFirstNameNew"></label>
             <input type="text" class="loginreg-field w-input" id="AddressFirstNameNew" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t}}" required>            
           <label class="txtlogin" for="AddressLastNameNew"></label>
@@ -63,7 +63,7 @@
               <label class="labelcheck-tyc w-form-label  checkbox_address" for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
             </div>
             <input type="submit" value="{{ 'customer.addresses.add' | t }}" data-wait="" class="btn-heroslider loginpopbtn w-button">
-            <div class="cont-labelinput" style="margin-top:0px;width:fit-content;">
+            <div class="cont-labelinput" style="margin: auto; width:fit-content;">
               <button class="canceladdre frgtpassword action_new_addres" data-form="AddAddress"  type="reset" style="margin: 10px auto; ">{{ 'customer.addresses.cancel' | t }}</button>
             </div> {%- endform -%} 
           </div>
@@ -92,11 +92,11 @@
         {%- for address in customer.addresses -%} 
           <div class=" hide editaddress" id="EditAddress_{{ address.id }}">
             
-            <div class="titlecontainer">
-              <h2 class="mainsecctitle" id="AddressHeading">{{ 'customer.addresses.edit_address' | t }}</h2>
+            <div class="maintitle-cont">
+              <h2 class="maintitle" id="AddressHeading">{{ 'customer.addresses.edit_address' | t }}</h2>
             </div>
             <div class="loginpopform paginterna w-form"> 
-              {%- form 'customer_address', address, class: 'contenidoformlog' -%} 
+              {%- form 'customer_address', address, class: 'contenidoformlog micuenta' -%} 
                 <div class="cont-labelinput">
                   <label class="txtlogin" for="AddressFirstName_{{ form.id }}"></label>
                   <input type="text" class="loginreg-field w-input" id="AddressFirstName_{{ form.id }}" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}" required>

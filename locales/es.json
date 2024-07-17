@@ -90,7 +90,7 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "Agregar al carrito",
+      "add_to_cart": "AGREGAR AL CARRITO",
       "description": "Descripción",
       "on_sale": "Oferta",
       "product_variants": "Variantes de producto",
@@ -326,7 +326,7 @@
     },
     "account_fallback": "Cuenta",
     "activate_account": {
-      "title": "Activar cuenta",
+      "title": "ACTIVAR CUENTA",
       "subtext": "Crea tu contraseña para activar tu cuenta.",
       "password": "Contraseña",
       "password_confirm": "Confirmar contraseña",
@@ -395,7 +395,7 @@
       "submit": "Crear"
     },
     "reset_password": {
-      "title": "Restablecer contraseña",
+      "title": "RESTABLECER CONTRASEÑA:",
       "subtext": "Introduce una nueva contraseña.",
       "password": "Contraseña",
       "password_confirm": "Confirmar contraseña",

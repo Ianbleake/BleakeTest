@@ -1,1 +1,1 @@
-# bomuca Shopify Theme by KD
+# tolucafc

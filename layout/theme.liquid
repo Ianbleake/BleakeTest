@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="{{ request.locale.iso_code }}" data-wf-page="65c5b2f19b30b6a7d6642a49" data-wf-site="65c5b2f19b30b6a7d6642a35" >
+<html class="no-js" lang="{{ request.locale.iso_code }}" data-wf-page="6675e23e3a59380aba5351bb" data-wf-site="6675e23e3a59380aba5351ac" >
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -306,42 +306,46 @@
         navRewind: true,
         autoWidth:false,
         autoplay:false,
-      navText: ['<div class="productsliderarrow w-slider-arrow-left"><div class="w-icon-slider-left"></div></div>','<div class="productsliderarrow w-slider-arrow-right"><div class="w-icon-slider-right"></div></div>'],
+        navText: ['<div class="productsliderarrow w-slider-arrow-left"><div class="w-icon-slider-left"></div></div>','<div class="productsliderarrow w-slider-arrow-right"><div class="w-icon-slider-right"></div></div>'],
         animateOut: 'fadeOut',
         slideSpeed: 4000,
         responsiveClass:true,
         responsive:{
             0:{
                 items:1,
-                nav:true,
+                nav:false,
                 dots:false,
-                mouseDrag: false,
-                touchDrag: false
+                mouseDrag: true,
+                touchDrag: true
             },
             480:{
-                items:2,
-                nav:true,
+                items:1,
+                nav:false,
                 dots:false,
-                mouseDrag: false,
-                touchDrag: false
+                mouseDrag: true,
+                touchDrag: true
             },
             767:{
                 items:3,
                 nav:true,
                 dots:false,
                 mouseDrag: false,
-                touchDrag: false
+                touchDrag: true
             },
         991:{
                 items:4,
                 nav:true,
-              dots:false
+                dots:false
             }
         }
     });
     });  
     </script>
-
+    <script>
+      $('.tabcustom').hover(function() {
+        $(this).click();
+      });
+    </script>
 <style>
   #sync2.owl-theme {
   position: relative;

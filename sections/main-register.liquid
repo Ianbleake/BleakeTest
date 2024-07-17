@@ -1,14 +1,14 @@
 <div class="seccinternas">
   <div class="custom-container">
-    <div class="formulario-contacto w-form" style="background-color: transparent;">
-
-        <div class="titlecontainer">
-          <h1 class="mainsecctitle">Crear <strong class="boldtitles">cuenta</strong></h1>
-        </div>
+    <div class="formin">
   
         <div class="loginpopform w-form">
-          {%- form 'create_customer', class: 'contenidoformlog' -%}
-  
+          {%- form 'create_customer', class: 'contenidoformlog micuenta' -%}
+            
+          <div class="maintitle-cont">
+            <h1 class="maintitle left">CREAR CUENTA</h1>
+          </div>
+
           <input class="loginreg-field w-input" maxlength="256" name="customer[first_name]" id="RegisterForm-FirstName" {% if form.first_name %}value="{{ form.first_name }}" {% endif %} placeholder="{{ 'customer.register.first_name' | t }}" type="text" required="">
           <input class="loginreg-field w-input" maxlength="256" name="customer[last_name]" id="RegisterForm-LastName" {% if form.last_name %}value="{{ form.last_name }}" {% endif %} placeholder="{{ 'customer.register.last_name' | t }}" type="text" required="">
           <input class="loginreg-field mail w-input" maxlength="256" name="customer[email]" id="RegisterForm-email" {% if form.email %} value="{{ form.email }}" {% endif %} aria-required="true" {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="RegisterForm-email-error" {% endif %} placeholder="{{ 'customer.register.email' | t }}" type="email" required="">

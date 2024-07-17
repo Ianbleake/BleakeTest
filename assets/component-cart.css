@@ -194,8 +194,9 @@ cart-items {
 .cart__checkout-button {
   max-width: 26rem;
   margin-right: 0;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 400;
+  text-transform: uppercase;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -211,7 +212,7 @@ cart-items {
 }
 
 .cart__empty-text {
-  color: #3c7630;
+  color: #000;
   padding: 5px 10px;
   font-size: 25px;
   font-weight: 400;
@@ -221,14 +222,15 @@ cart-items {
 
 .cart-drawer__empty-content a.button {
   height: 45px;
-  background-color: #3c7630;
+  background-color: #000;
   color: #fff;
   text-align: center;
-  border-radius: 7px;
+  border-radius: 70px;
   padding: 10px 25px;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 21px;
+  font-family: Agdasima, sans-serif;
+  font-size: 22px;
+  line-height: 22px;
+  text-transform: uppercase;
 }
 
 

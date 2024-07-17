@@ -17,35 +17,37 @@
 {% endcomment %}
 
 {%- if article and article != empty -%}
-  <div class="miniatura-entradablog" {% if article.image != blank %} style="background-image: url({{ article.image |  image_url }});" {% endif %}></div>
-  <div class="infobloglist">
-    {% if show_date %}
-      <div class="dateblog">{{ article.published_at |  time_tag: format: 'basic' }}</div>
-    {% endif %}
+<div id="w-node-_816f1933-fad3-6620-0547-f4856f97cb1d-2d7a1a08" class="w-layout-layout stackblog wf-layout-layout">
 
-    {% if show_author %}
-      <div class="dateblog">{{ article.author  }}</div>
-    {% endif %}
-    
-    <h5 class="titulo-entryblog">{{ article.title | truncate: 50 | escape }}</h5>
-
-    {%- if show_excerpt -%}
-      {% if article.excerpt.size > 0 or article.content.size > 0 %}
-        <p class="excerptblog-slider">
-          {%- if article.excerpt.size > 0 -%}
-            {{ article.excerpt | strip_html | truncatewords: 30 }}
-          {%- else -%}
-            {{ article.content | strip_html | truncatewords: 30 }}
-          {%- endif -%}
-        </p>
-      {% endif %}
-    {%- endif -%}
-
-    <div class="vermasblog listing">
-      <div class="txtbtnblog">Concer más</div>
-      <img src="{{ 'arrow_green.svg' |  asset_url }}" class="arrowbtnblog">
-    </div>
+  <div id="w-node-_816f1933-fad3-6620-0547-f4856f97cb1e-2d7a1a08" class="w-layout-cell">
+    <a href="{{ article.url }}" class="linkimg-blog w-inline-block" {% if article.image != blank %} style="background-image: url({{ article.image |  image_url }});" {% endif %} ></a>
   </div>
 
+  <div id="w-node-_816f1933-fad3-6620-0547-f4856f97cb1f-2d7a1a08" class="w-layout-cell">
+    <a href="{{ article.url }}" class="infopost-blog w-inline-block">
+      <h5 class="titulo-entryblog">{{ article.title | truncate: 50 | escape }}</h5>
+      <div>
+        {% if show_author %}
+          <div class="dateblogpost">{{ article.author }}</div>
+        {% endif %}
+        {% if show_date %}
+          <div class="dateblogpost">{{ article.published_at |  time_tag: format: 'basic' }}</div>
+        {% endif %}
+      </div>
+      {% if show_excerpt %}
+        {% if article.excerpt.size > 0 or article.content.size > 0 %}
+          <p class="post-excerpt">
+            {%- if article.excerpt.size > 0 -%}
+              {{ article.excerpt | strip_html | truncatewords: 30 }}
+            {%- else -%}
+              {{ article.content | strip_html | truncatewords: 30 }}
+            {%- endif -%}
+          </p>
+        {% endif %}
+      {% endif %}
+      <div class="readmore-blogpost">Leer más</div>
+    </a>
+  </div>
 
+</div>
 {%- endif -%}

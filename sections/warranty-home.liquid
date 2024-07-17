@@ -1,34 +1,25 @@
 <div class="seccgarantias">
   <div class="custom-container">
+
     <div class="maintitle-cont">
-      <h2 class="maintitle">COMPRAS <span class="redtxttitle">100% SEGURAS</span></h2>
+      <h2 class="maintitle">{{ section.settings.tittle }}</h2>
     </div>
+
     <div data-delay="4000" data-animation="cross" class="warrantyslide w-slider" data-autoplay="true" data-easing="ease-in-out" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
       <div class="maskgarantias w-slider-mask">
-        <div class="garantiaslide w-slide">
-          <div class="continfowarranty"><img   src="{{ "icon_envios.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
-            <div class="infow">
-              <h5 class="subtitlewarrt">ENVÍOS SEGUROS</h5>
-              <p class="infowarranty">Todos nuestros envíos son seguros, recibe hasta la puerta de tu casa todos tus productos oficiales.</p>
+
+        {% for block in section.blocks %}
+          <div class="garantiaslide w-slide">
+            <div class="continfowarranty">
+              <img src="{{ block.settings.warranty_icon |  image_url  }}" class="iconwarranty">
+              <div class="infow">
+                <h5 class="subtitlewarrt">{{ block.settings.warranty_title }}</h5>
+                <p class="infowarranty">{{ block.settings.warranty_description }}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="garantiaslide w-slide">
-          <div class="continfowarranty"><img   src="{{ "icon_devoluciones.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
-            <div class="infow">
-              <h5 class="subtitlewarrt">CAMBIOS Y DEVOLUCIONES</h5>
-              <p class="infowarranty">Si el producto que elegiste no te quedó puedes cambiarlo, tienes hasta 30 días.</p>
-            </div>
-          </div>
-        </div>
-        <div class="garantiaslide w-slide">
-          <div class="continfowarranty"><img   src="{{ "icon_pagos.svg" | asset_url }}" alt="icon autenticidad" class="iconwarranty">
-            <div class="infow">
-              <h5 class="subtitlewarrt">PAGOS 100% SEGUROS</h5>
-              <p class="infowarranty">Múltiples formas de pago 100% seguras para que compres fácil y rápido dentro de la tienda.</p>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+
       </div>
       <div class="arrowsgarantias w-slider-arrow-left">
         <div class="w-icon-slider-left"></div>
@@ -50,15 +41,10 @@
 "type": "text",
 "id": "tittle",
 "label": "Titulo de Seccion",
-"default": "¡En <strong class='boldtitles'>bomuca<sup>®</sup></strong> celebramos tu <strong class='boldtitles'>bienestar</strong>!"
-},{
-"type": "textarea",
-"id": "description",
-"label": "Descripcion de seccion",
-"default": "Para nosotros nuestro trabajo está relacionado con la vida misma y es por eso que nos esforzamos en brindar productos de calidad para fomentar una nueva cultura para el bien social."
+"default": "COMPRAS <span class='redtxttitle'>100% SEGURAS</span>"
 }
 ],
-"max_blocks": 4,
+"max_blocks": 3,
 "blocks": [
 {
 "type": "warranty",
@@ -68,6 +54,10 @@
 "type": "image_picker",
 "id": "warranty_icon",
 "label": "Icono"
+},{
+  "type": "text",
+  "id": "warranty_title",
+  "label": "Titulo de Garantia"
 },
 {
 "type": "textarea",

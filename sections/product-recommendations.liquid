@@ -1,23 +1,21 @@
-<div class="seccproductos recommendations_pageproduct custom-container {%if recommendations.products_count<1%}hidde{%  endif %}">
-  <div class="titlecontainer">
-    <h2 class="mainsecctitle">{{ section.settings.heading  }}</h2>
+<div class="seccrecomendados recommendations_pageproduct custom-container {%if recommendations.products_count<1%}hidde{%  endif %}">
+  <div class="maintitle-cont">
+    <h2 class="maintitle">{{ section.settings.heading  }}</h2>
   </div>
-    <div class="custom-container">
-      <product-recommendations class="product-recommendations seccion-sugeridos" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}" id="recommendations-shopify-product">
-        {% if recommendations.performed and recommendations.products_count > 0 %}
-          <div class="html-embed w-embed">
-            <div class="owl-carousel productosowl owl-theme" id="sync2">
-              {% for recommendation in recommendations.products %}
-              {% render 'card-product',
-              card_product: recommendation,
-              show_quick_add: true
-              %}
-              {% endfor %}
-            </div>
+    <product-recommendations class="product-recommendations seccion-sugeridos" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}" id="recommendations-shopify-product">
+      {% if recommendations.performed and recommendations.products_count > 0 %}
+        <div class="code-embed w-embed">
+          <div class="owl-carousel productosowl owl-theme" id="sync2">
+            {% for recommendation in recommendations.products %}
+            {% render 'card-product',
+            card_product: recommendation,
+            show_quick_add: true
+            %}
+            {% endfor %}
           </div>
-        {% endif %}
-      </product-recommendations>
-    </div>
+        </div>
+      {% endif %}
+    </product-recommendations>
 </div>
 
 {% schema %}
@@ -55,43 +53,43 @@
   const observer = new MutationObserver(function(mutationsList, observer) {
     $(".recommendations_pageproduct").removeClass("hidde");
     $(".productosowl").owlCarousel({
-      loop:false,
-      margin:3,    
-      navRewind: true,
-      autoWidth:false,
-      autoplay:false,
-    navText: ['<div class="productsliderarrow w-slider-arrow-left"><div class="w-icon-slider-left"></div></div>','<div class="productsliderarrow w-slider-arrow-right"><div class="w-icon-slider-right"></div></div>'],
-      animateOut: 'fadeOut',
-      slideSpeed: 4000,
-      responsiveClass:true,
-      responsive:{
-          0:{
-              items:2,
-              nav:true,
-              dots:false,
-              mouseDrag: false,
-              touchDrag: false
-          },
-          480:{
-              items:2,
-              nav:true,
-              dots:false,
-              mouseDrag: false,
-              touchDrag: false
-          },
-          767:{
-              items:3,
-              nav:true,
-              dots:false,
-              mouseDrag: false,
-              touchDrag: false
-          },
-      991:{
-              items:4,
-              nav:true,
-            dots:false
-          }
-      }
+      loop:true,
+    margin:3,    
+    navRewind: true,
+    autoWidth:false,
+    autoplay:false,
+	navText: ['<div class="productsliderarrow w-slider-arrow-left"><div class="w-icon-slider-left"></div></div>','<div class="productsliderarrow w-slider-arrow-right"><div class="w-icon-slider-right"></div></div>'],
+    animateOut: 'fadeOut',
+    slideSpeed: 4000,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true,
+            dots:false,
+            mouseDrag: false,
+            touchDrag: false
+        },
+        480:{
+            items:2,
+            nav:true,
+          	dots:false,
+            mouseDrag: false,
+            touchDrag: false
+        },
+      	767:{
+            items:3,
+            nav:true,
+            dots:false,
+            mouseDrag: false,
+            touchDrag: false
+        },
+		991:{
+            items:4,
+            nav:true,
+          dots:false
+        }
+    }
   });
   });
   const config = { childList: true, characterData: true, subtree: true };

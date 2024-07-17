@@ -1,24 +1,20 @@
 <div class="seccmasbuscados">
   <div class="custom-container">
     <div class="maintitle-cont">
-      <h2 class="maintitle">LOS MÁS <span class="redtxttitle">BUSCADOS</span></h2>
+      <h2 class="maintitle">{{ section.settings.title }}</h2>
     </div>
+
     <div id="w-node-_1ff1a483-2fd9-964c-e61a-a7541d17a537-ba5351bb" class="w-layout-layout stack-masbuscados wf-layout-layout">
-      <div id="w-node-_1ff1a483-2fd9-964c-e61a-a7541d17a538-ba5351bb" class="w-layout-cell cardimg-coleccion">
-        <a href="#" class="cardlink w-inline-block"><img src="{{ "categoria_hombre.png" | asset_url }}"   alt="" class="cardimg">
-          <h3 class="titlecard"><strong>HOMBRE</strong></h3>
-        </a>
-      </div>
-      <div id="w-node-_1ff1a483-2fd9-964c-e61a-a7541d17a539-ba5351bb" class="w-layout-cell cardimg-coleccion">
-        <a href="#" class="cardlink w-inline-block"><img src="{{ "categoria_jersey.png" | asset_url }}"   alt="" class="cardimg">
-          <h3 class="titlecard"><strong>JERSEYS</strong></h3>
-        </a>
-      </div>
-      <div id="w-node-ca82464e-95dd-529e-cb63-c99b90b22cef-ba5351bb" class="w-layout-cell cardimg-coleccion">
-        <a href="#" class="cardlink w-inline-block"><img src="{{ "categoria_mujer.png" | asset_url }}"   alt="" class="cardimg">
-          <h3 class="titlecard"><strong>MUJER</strong></h3>
-        </a>
-      </div>
+
+      {% for block in section.blocks %}
+        <div id="w-node-_1ff1a483-2fd9-964c-e61a-a7541d17a538-ba5351bb" class="w-layout-cell cardimg-coleccion">
+          <a href="{{ block.settings.coleccion.url  }}" class="cardlink w-inline-block">
+            <img src="{{ block.settings.image |  image_url }}"   alt="{{ block.settings.coleccion.title }}" class="cardimg">
+            <h3 class="titlecard"><strong>{{ block.settings.coleccion.title }}</strong></h3>
+          </a>
+        </div>
+      {% endfor %}
+
     </div>
   </div>
 </div>
@@ -26,13 +22,31 @@
 {% schema  %}
 {
   "name": "Lista de colecciones",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titulo de la seccion",
+      "default":"LOS MÁS <span class=\"redtxttitle\">BUSCADOS</span>"
+    }
+  ],
   "max_blocks": 3,
   "blocks": [
      {
       "type": "collection",
       "name": "Coleccion",
-      "settings": []
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "collection",
+          "id": "coleccion",
+          "label": "Coleccion"
+        }
+      ]
      }
    ],
   "presets": [

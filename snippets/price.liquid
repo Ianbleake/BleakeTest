@@ -4,7 +4,6 @@
   Accepts:
   - product: {Object} Product Liquid object (optional)
   - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
-  - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
   - price_class: {String} Adds a price class to the price element (optional)
 
   Usage:
@@ -44,9 +43,7 @@
     price--on-sale
   {% endif -%}
   {%- if product.price_varies == false and product.compare_at_price_varies %}
-    price--no-compare{% endif -%}
-  {%- if show_badges %}
-    price--show-badge{% endif -%}">
+    price--no-compare{% endif -%}">
   <div class="price__container">
     {%- comment -%}
       Explanation of description list:
@@ -92,13 +89,4 @@
       </span>
     </small>
   </div>
-  {%- if show_badges -%}
-    <div class=" badge price__badge-sale tagsvip discount  detalle ">
-      -{{porcentaje | round }}%
-    </div>
-
-    <span class="badge price__badge-sold-out agotado detalle ">
-      {{ 'products.product.sold_out' | t }}
-    </span>
-  {%- endif -%}
 </div>

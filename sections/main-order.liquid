@@ -2,9 +2,9 @@
  <div class="custom-container">
   <div class="elementos-cuenta" >
     
-      <div class="titlecontainer">
-        <h1 class="mainsecctitle"><strong class="boldtitles" >{{ 'customer.order.title' | t: name: order.name }}</strong></h1>
-        <div class="pleca-maintitle"></div>
+      <div class="maintitle-cont">
+        <h1 class="maintitle">MIS PEDIDOS</h1>
+        
       </div>
 
       {%- assign order_date = order.created_at | time_tag: format: "date_at_time" -%}

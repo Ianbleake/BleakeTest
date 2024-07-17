@@ -102,7 +102,7 @@
       >
         <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
         {% if product.media.size == 0 %}
-        <img src="{{"placeholder_bomuca.jpeg" | asset_url }}" alt="Imagen no disponible" >
+        <img src="{{"placeholder.jpeg" | asset_url }}" alt="Imagen no disponible" >
         {% endif %}
         <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
           <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
@@ -341,16 +341,6 @@
             </button>
           </slider-component>
         {%- endif -%}
-
-        <div class="contsocial-media">
-          <div class="titulovip-elements social">Compartir</div>
-          <a data-network="copy" href="#" class="st-custom-button w-inline-block"><img src="{{"share_link.svg" | asset_url}}" alt="Compartir" class="iconshare-social"></a>
-          <a data-network="facebook" href="#" class="st-custom-button w-inline-block"><img src="{{"share_facebook.svg" | asset_url}}" alt="Compartir Facebook" class="iconshare-social"></a>
-          <a data-network="whatsapp" href="#" class="st-custom-button w-inline-block"><img src="{{"share_whatsapp.svg" | asset_url}}" alt="Compartir Whatsapp" class="iconshare-social"></a>
-          <a data-network="telegram" href="#" class="st-custom-button w-inline-block"><img src="{{"share_telegram.svg" | asset_url}}" alt="Compartir Telegram" class="iconshare-social"></a>
-          <a data-network="messenger" href="#" class="st-custom-button w-inline-block"><img src="{{"share_messenger.svg" | asset_url}}" alt="Compartir Messenger" class="iconshare-social"></a>
-          <a data-network="twitter" href="#" class="st-custom-button w-inline-block"><img src="{{"share_twitter.svg" | asset_url}}" alt="Compartir Twitter" class="iconshare-social"></a>
-        </div>
       </media-gallery>
     </div>
 
@@ -368,6 +358,7 @@
             {%- when '@app' -%}
               {% render block %}
             {%- when 'title' -%}
+              {%- render 'badges_product', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
               <div class="product__title cont-infovip" {{ block.shopify_attributes }}>
                 <h1 class="titulovip-producto">{{ product.title | escape }}</h1>
                 <a href="{{ product.url }}" class="product__title">
@@ -375,22 +366,11 @@
                     {{ product.title | escape }}
                   </h2>
                 </a>
-                <div class="titulovip-elements" id="sku-variant-product">SKU: {{ product.selected_or_first_available_variant.sku }}</div>
+                <div class="titulovip-elements fabricante">FABRICANTE {{ product.vendor | upcase}}</div>
               </div>
-            {%- when 'brands' -%}
-              {% for marcaimg in shop.metaobjects.marcas.values %}
-                {% assign marcacollection = marcaimg.coleccion_de_la_marca.value %}
-                 {%for collection in  product.collections%}
-                    {% if collection.handle == marcacollection.handle %}
-                      <a href="{{ marcacollection.url }}" class="linkbrandvip w-inline-block">
-                        <img src="{{marcaimg.imagen_de_la_marca |  image_url  }}" class="vipbrandlogo">
-                      </a>
-                    {% endif %}
-                 {% endfor %}
-              {% endfor%}
             {%- when 'price' -%}
               <div class="no-js-hidden" class="cont-infovip" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} >
-                {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+                {%- render 'price', product: product, use_variant: true, price_class: 'price--large' -%}
               </div>
               {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
                 <div class="product__tax caption rte">
@@ -408,11 +388,7 @@
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                   {{ form | payment_terms }}
                 {%- endform -%}
-              </div>
-            {%- when 'description' -%}
-              {% if product.metafields.custom.descripcion_corta != blank %}
-                <div class="txtdescription">{{ product.metafields.custom.descripcion_corta |  escape }}</div>
-              {% endif %}           
+              </div> 
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
             {%- when 'quantity_selector' -%}
@@ -617,11 +593,13 @@
                       disabled
                     >
                     <div class="product-form__buttons ctavip-cont">
-
+                      {%- if block.settings.show_dynamic_checkout -%}
+                        {{ form | payment_button }}
+                      {%- endif -%}
                       <button
                         type="submit"
                         name="add"
-                        class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %} btn-vip  w-button"
+                        class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %} btn-vip agregar"
                         {% if product.selected_or_first_available_variant.available == false %}
                           disabled
                         {% endif %}
@@ -647,9 +625,7 @@
                           </svg>
                         </div>
                       </button>
-                      {%- if block.settings.show_dynamic_checkout -%}
-                        {{ form | payment_button }}
-                      {%- endif -%}
+
                     </div>
                   {%- endform -%}
                 </product-form>
@@ -659,6 +635,16 @@
             {%- when 'metodos_pago' -%}
               <img src="{{ block.settings.logo_payment | img_url: 'master' }}" alt="Metodos de Pago" class="pagosvip">
                 </div>
+            {%- when 'redes' -%}
+              <div class="contsocial-media">
+                <div class="titulovip-elements social">Compartir</div>
+                <a data-network="copy" href="#" class="st-custom-button w-inline-block"><img src="{{"socialicon.svg"| asset_url}}" class="iconshare-social"></a>
+                <a data-network="facebook" href="#" class="st-custom-button w-inline-block"><img alt="Facebook" src="{{"socialicon-copy.svg"| asset_url}}" class="iconshare-social"></a>
+                <a data-network="whatsapp" href="#" class="st-custom-button w-inline-block"><img alt="Whatsapp" src="{{"socialicon-copy-3.svg"| asset_url}}" class="iconshare-social"></a>
+                <a data-network="telegram" href="#" class="st-custom-button w-inline-block"><img alt="Telegram" src="{{"socialicon-copy-5.svg"| asset_url}}" class="iconshare-social"></a>
+                <a data-network="messenger" href="#" class="st-custom-button w-inline-block"><img alt="Messenger" src="{{"socialicon-copy-4.svg"| asset_url}}" class="iconshare-social"></a>
+                <a data-network="twitter" href="#" class="st-custom-button w-inline-block"><img alt="Twitter" src="{{"icon_twitter_1.svg"| asset_url}}" class="iconshare-social"></a>
+              </div>
           {%- endcase -%}
         {%- endfor -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -670,16 +656,6 @@
   </div>
 
 
-  {% if product.metafields.custom.banner_de_producto != blank %}
-    <div class="product-metabanner" style="margin-top: 20px;">
-      <img src="{{ product.metafields.custom.banner_de_producto |  image_url  }}" class="imgdesccripcion">
-      {% if product.metafields.custom.banner_de_producto_mobile  %}
-        <img src="{{ product.metafields.custom.banner_de_producto_mobile |  image_url  }}" class="imgdesccripcion mobile">
-      {% else %}
-      <img src="{{ product.metafields.custom.banner_de_producto |  image_url  }}" class="imgdesccripcion mobile">
-      {% endif %}
-    </div>
-  {% endif %}
 
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
     <div
@@ -731,7 +707,7 @@
           {% render 'icon-close' %}
         </button>
         <div class="product-popup-modal__content-info">
-          <h1 class="h2">{{ block.settings.page.title }}</h1>
+          <h2 class="h2">{{ block.settings.page.title }}</h2>
           {{ block.settings.page.content }}
         </div>
       </div>
@@ -844,19 +820,8 @@
       "limit": 1
     },
     {
-      "type": "brands",
-      "name": "Marca",
-      "limit": 1
-
-    },
-    {
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
-      "limit": 1
-    },
-    {
-      "type":"description",
-      "name": "Descripción Corta",
       "limit": 1
     },
     {
@@ -948,18 +913,19 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Descripción Larga",
+          "default": "Descripción",
           "info": "Incluye un título que explique el contenido.",
           "label": "Título"
         }
       ]
     },
     {
-      "type": "banner",
-      "name": "Banner del producto",
+      "type": "redes",
+      "name": "Compartir en redes",
       "limit": 1
 
     }
+
   ],
   "settings": [
     {

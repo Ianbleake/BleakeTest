@@ -1381,21 +1381,21 @@ button.shopify-payment-button__button--unbranded {
   line-height: calc(1 + 0.2 / var(--font-body-scale));
 }
 
-.shopify-challenge__button{
-  background-color: var(--green);
+.shopify-challenge__button {
+  background-color: var(--toluca-red);
   border-radius: 70px;
   width: fit-content;
   min-width: 150px;
-  margin: 10px auto 0 !important;
+  margin: 10px auto 0!important;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-family: "Museosans 500", sans-serif;
-  font-size: 16px;
+  font-size: 27px;
   font-weight: 400;
   line-height: 18px;
   display: block;
   text-align: center;
-
+  font-family: Agdasima, sans-serif;
+  letter-spacing: 1px;
 }
 
 .button--tertiary {
@@ -1891,7 +1891,7 @@ display: flex;
 justify-content: center;
 line-height: 1;
 padding-bottom: 5px;
-font-family: "Museosans 500", sans-serif;
+font-family: Roboto, sans-serif;
 font-size: 13px;
 font-weight: 500;
 margin-top: 5px;
@@ -1947,7 +1947,7 @@ color: #19391a;
 
 /* component-quantity */
 .quantity {
-    border: 2px solid #3c7630;
+    border: 2px solid #000;
     color: #000;
     position: relative;
     width: fit-content;

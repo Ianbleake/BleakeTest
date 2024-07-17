@@ -20,218 +20,129 @@
 <header>
   
   <div data-w-id="c1b5472a-4ad2-6980-3f36-69c20c478485" class="section-headercust">
-    <div class="topbanner">
-      <div class="custom-container navbar">
-        <div data-delay="4000" data-animation="cross" class="topbannerslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="750" data-infinite="true">
-          <div class="masktop-slider w-slider-mask">
-            <div class="topslide w-slide">
-              <div class="continfotop-flex">
-                <a href="#" class="linktopbanner">CONOCE LA NUEVA COLECCIÓN DE GORRAS | NEW ERA</a>
-              </div>
+
+    {% if section.blocks != blank %}
+      <div class="topbanner">
+        <div class="custom-container navbar">
+          <div data-delay="4000" data-animation="cross" class="topbannerslider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="750" data-infinite="true">
+            <div class="masktop-slider w-slider-mask">
+
+              {% for block in section.blocks %}
+                <div class="topslide w-slide">
+                  <div class="continfotop-flex">
+                    <a href="{{ block.settings.url }}" class="linktopbanner">{{ block.settings.title }}</a>
+                  </div>
+                </div>
+              {% endfor %}
+  
             </div>
-            <div class="topslide w-slide">
-              <div class="continfotop-flex">
-                <a href="#" class="linktopbanner">PERSONALIZA TU JERSEY OFICIAL CON TU NOMBRE</a>
-              </div>
-            </div>
+  
+              {% if section.blocks.size > 1 %}
+                <div class="arrowtop-slider w-slider-arrow-left">
+                  <div class="w-icon-slider-left"></div>
+                </div>
+                <div class="arrowtop-slider w-slider-arrow-right">
+                  <div class="w-icon-slider-right"></div>
+                </div>
+                <div class="topslidenav w-slider-nav"></div>
+              {% endif %}
+  
           </div>
-          <div class="arrowtop-slider w-slider-arrow-left">
-            <div class="w-icon-slider-left"></div>
-          </div>
-          <div class="arrowtop-slider w-slider-arrow-right">
-            <div class="w-icon-slider-right"></div>
-          </div>
-          <div class="topslidenav w-slider-nav"></div>
         </div>
       </div>
-    </div>
+    {% endif %}
+
     <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="custom-navbar w-nav">
+
       <div class="custom-container navbar">
-        <a href="#" class="logonav w-nav-brand"><img   src="{{ "logo_bco_toluca_tienda_online.svg" | asset_url }}" alt="" class="imglogo-nav"></a>
-        <nav role="navigation" id="barritavar" class="custom-navigationmenu w-nav-menu">
-          <a href="#" class="menunav-link w-nav-link">New Balance</a>
-          <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-            <div class="menunav-link drop w-dropdown-toggle">
-              <div class="icondropmenu w-icon-dropdown-toggle"></div>
-              <div>New Era</div>
-            </div>
-            <nav class="megamenu-colecciones w-dropdown-list">
-              <div class="containermegamenufull">
-                <div class="contlistmegamenu">
-                  <ul role="list" class="listamenunav">
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu maintitle">SILUETA</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">9Forty</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">59Fifty</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">39Thirty</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Gorritos</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">9Fifty</a>
-                    </li>
-                  </ul>
-                  <ul id="w-node-c1b5472a-4ad2-6980-3f36-69c20c4784b9-0c478485" role="list" class="listamenunav">
-                    <li class="itemlistmenu"></li>
-                  </ul>
-                  <ul id="w-node-c1b5472a-4ad2-6980-3f36-69c20c4784bb-0c478485" role="list" class="listamenunav"></ul>
-                  <a id="w-node-c1b5472a-4ad2-6980-3f36-69c20c4784bc-0c478485" href="#" class="imglinkmegam w-inline-block"><img src="{{ "_MG_8328.jpg" | asset_url }}"   alt="" class="imgmegamenu">
-                    <h5 class="namefoto-megamenu">Gorra Negra New Balance</h5>
-                  </a>
-                  <a id="w-node-c1b5472a-4ad2-6980-3f36-69c20c4784c0-0c478485" href="#" class="imglinkmegam w-inline-block"><img src="{{ "IMG_0519.jpg" | asset_url }}"   alt="" class="imgmegamenu">
-                    <h5 class="namefoto-megamenu">Beanie Negro New Balance</h5>
-                  </a>
+
+        <a href="{{ routes.root_url }}" class="logonav w-nav-brand">
+          <img src="{{ section.settings.logo |  image_url }}" alt="Logo Toluca FC" class="imglogo-nav">
+        </a>
+
+        {% if section.settings.menu != blank %}
+          <nav role="navigation" id="barritavar" class="custom-navigationmenu w-nav-menu">
+
+            {% for link in section.settings.menu.links %}
+              {% if link.links != blank %}
+                <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
+
+                  <div class="menunav-link drop w-dropdown-toggle">
+                    <div class="icondropmenu w-icon-dropdown-toggle"></div>
+                    <div>{{ link.title }}</div>
+                  </div>
+
+                  <nav class="megamenu-colecciones w-dropdown-list">
+                    <div class="containermegamenufull">
+                      <div class="contlistmegamenu">
+                        {% for childlink in link.links limit: 5 %}
+                          {% unless childlink.title contains '[BANNER]' or childlink.title contains '[void]' %}
+                            <ul role="list" class="listamenunav">
+                              <li class="itemlistmenu">
+                                <a href="#" class="titlecatesubmenu maintitle">{{ childlink.title }}</a>
+                              </li>
+                              {% for thirdchild in childlink.links %}
+                                <li class="itemlistmenu">
+                                  <a href="{{ thirdchild.links }}" class="titlecatesubmenu">{{ thirdchild.title }}</a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          {% endunless %}
+
+                          {% if childlink.title contains '[void]' %}
+                            <ul role="list" class="listamenunav"></ul>
+                          {% endif %}
+
+                          {% if childlink.title contains '[BANNER]' %}
+                            <a href="#" class="imglinkmegam w-inline-block">
+                              <img src="{{ childlink.url }}"   alt="{{ childlink.title | remove:'[BANNER]' }}" class="imgmegamenu">
+                              <h5 class="namefoto-megamenu">{{ childlink.title | remove:'[BANNER]' }}</h5>
+                            </a>
+                          {% endif %}
+
+                        {% endfor %}
+
+                      </div>
+                    </div>
+                  </nav>
                 </div>
-              </div>
-            </nav>
-          </div>
-          <div data-delay="0" data-hover="true" class="customdrop-nav w-dropdown">
-            <div class="menunav-link drop w-dropdown-toggle">
-              <div class="icondropmenu w-icon-dropdown-toggle"></div>
-              <div>Moda</div>
+              {% else %}
+                <a href="{{ link.url }}" class="menunav-link {%  if link.title contains 'Ofertas' %} ofertas {% endif %} w-nav-link">{{ link.title }}</a>
+              {% endif %}
+            {% endfor %}
+
+            <div class="extramenu-mobile">
+              <img   src="{{ "nav_user.svg" | asset_url }}" class="icnomenu-mobile">
+              <a href="{{ routes.account_url }}" class="menunav-link mobile nav-link w-nav-link">Mi cuenta</a>
             </div>
-            <nav class="megamenu-colecciones w-dropdown-list">
-              <div class="containermegamenufull">
-                <div class="contlistmegamenu">
-                  <ul role="list" class="listamenunav">
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu maintitle">HOMBRE</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Jerseys</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Pants</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Hoodies</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Chamarras</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Rompe Vientos</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Playeras casuales</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Playeras tipo polo</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Gorras</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Shorts</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Ropa de compresión</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Beanies</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Suéter (Navideño)</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Bufandas</a>
-                    </li>
-                  </ul>
-                  <ul id="w-node-c1b5472a-4ad2-6980-3f36-69c20c4784f7-0c478485" role="list" class="listamenunav">
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu maintitle">MUJER</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Jerseys</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Pants</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Hoodies</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Rompe Vientos</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Playeras casuales</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Playeras tipo polo</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Gorras</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Beanies</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Suéter (Navideño)</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Bufandas</a>
-                    </li>
-                  </ul>
-                  <ul id="w-node-c1b5472a-4ad2-6980-3f36-69c20c478519-0c478485" role="list" class="listamenunav">
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu maintitle">NIÑOS</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Jerseys</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Pants</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Hoodies</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Chamarras</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Playeras casuales</a>
-                    </li>
-                    <li class="itemlistmenu">
-                      <a href="#" class="titlecatesubmenu">Playeras tipo polo</a>
-                    </li>
-                  </ul>
-                  <a id="w-node-c1b5472a-4ad2-6980-3f36-69c20c47852f-0c478485" href="#" class="imglinkmegam w-inline-block"><img src="{{ "3.jpg" | asset_url }}"   alt="" class="imgmegamenu">
-                    <h5 class="namefoto-megamenu">Jersey blanco hombre</h5>
-                  </a>
-                  <a id="w-node-c1b5472a-4ad2-6980-3f36-69c20c478533-0c478485" href="#" class="imglinkmegam w-inline-block"><img src="{{ "jersey-roja-mujer.jpg" | asset_url }}"   alt="" class="imgmegamenu">
-                    <h5 class="namefoto-megamenu">Jersey rojo mujer</h5>
-                  </a>
-                </div>
-              </div>
-            </nav>
-          </div>
-          <a href="#" class="menunav-link w-nav-link">Accesorios</a>
-          <a href="#" class="menunav-link w-nav-link">Diablitos</a>
-          <a href="#" class="menunav-link ofertas w-nav-link">Ofertas</a>
-          <div class="extramenu-mobile"><img   src="{{ "nav_user.svg" | asset_url }}" alt="" class="icnomenu-mobile">
-            <a href="#" class="menunav-link mobile nav-link w-nav-link">Mi cuenta</a>
-          </div>
-        </nav>
+            <div class="extramenu-mobile">
+              <img  src="{{  'icon_contact.svg' |  asset_url }}" class="icnomenu-mobile">
+              <a href="/pages/contact" class="menunav-link mobile nav-link w-nav-link">Contacto</a>
+            </div>
+
+          </nav>
+        {% endif %}
+
         <div class="cont-cartcontact">
-          <div class="linkicons-nav"><img   src="{{ "nav_search.svg" | asset_url }}" alt="" class="icononav" data-ix="show-buscador">
+          <div class="linkicons-nav">
+            <img src="{{ "nav_search.svg" | asset_url }}" alt="Buscar" class="icononav" data-ix="show-buscador">
             <div class="formbuscador w-form">
-              <form id="wf-form-" name="wf-form-" data-name="" method="get" class="busqueda-formcot" data-wf-page-id="6675e23e3a59380aba5351bb" data-wf-element-id="c1b5472a-4ad2-6980-3f36-69c20c478545">
-                <div class="close-buscador" data-ix="close-buscador">X</div><input class="input-buscador w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="¿Qué estás buscando?" type="text" id="email-2"><input type="submit" data-wait="Buscando..." class="buscarbtn w-button" value="BUSCAR">
+              <form class="busqueda-formcot" action="{{ routes.search_url }}" method="get" role="search" >
+                <div class="close-buscador" data-ix="close-buscador">X</div>
+                <input class="input-buscador w-input" placeholder="¿Qué estás buscando?" name="q" type="search" required="" >
+                <input type="submit" data-wait="Buscando..." class="buscarbtn w-button" value="BUSCAR">
               </form>
-              <div class="w-form-done"></div>
-              <div class="w-form-fail"></div>
             </div>
           </div>
-          <a href="#" class="linkicons-nav ocultomobile w-inline-block"><img loading="eager" src="{{ "nav_user.svg" | asset_url }}" alt="" class="icononav" data-ix="showpoplogin"></a>
-          <div class="linkicons-nav"><img   src="{{ "nav_cart.svg" | asset_url }}" alt="" class="icononav">
-            <div class="qtynumber">12</div>
+          <a href="/pages/contact" class="linkicons-nav ocultomobile w-inline-block">
+            <img loading="eager" src="{{'icon_contact.svg' |  asset_url }}" alt="Contacto" class="icononav">
+          </a>
+          <a href="{%  if customer %} {{ routes.account_url }} {%  else %} # {% endif %}" class="linkicons-nav ocultomobile w-inline-block">
+            <img loading="eager" src="{{ "nav_user.svg" | asset_url }}" alt="Cuenta" class="icononav" {%  unless customer %} data-ix="showpoplogin" {% endunless %}>
+          </a>
+          <div class="linkicons-nav" id="cart-icon-btn">
+            <img   src="{{ "nav_cart.svg" | asset_url }}" alt="carrito" class="icononav">
+            <div class="qtynumber" id="cart-icon-bubble" >{{cart.item_count}}</div>
           </div>
         </div>
         <div class="menu-button w-nav-button">
@@ -239,6 +150,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
 </header>
@@ -290,13 +202,13 @@
   "settings": [
       {
       "type": "text",
-      "id": "Anuncio_title",
-      "default": "Conoce nuestras novedades",
+      "id": "title",
+      "default": "CONOCE LA NUEVA COLECCIÓN DE GORRAS | NEW ERA",
       "label": "Encabezado"
       },
       {
       "type": "url",
-      "id": "Anuncio_link",
+      "id": "url",
       "label": "Url"
       }
     ]
@@ -309,7 +221,6 @@
     "label": "Logo de la marca"
     },
     { "type": "link_list", "id": "menu", "default": "main-menu", "label": "Menu Principal" }
-
   ]
 }
 {% endschema %}
