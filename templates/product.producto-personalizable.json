@@ -17,11 +17,6 @@
           "settings": {
           }
         },
-        "customform_EEHBGJ": {
-          "type": "customform",
-          "settings": {
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
@@ -38,6 +33,11 @@
           "settings": {
           }
         },
+        "customform_EEHBGJ": {
+          "type": "customform",
+          "settings": {
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -47,10 +47,10 @@
       },
       "block_order": [
         "title",
-        "customform_EEHBGJ",
         "price",
         "variant_picker",
         "quantity_selector",
+        "customform_EEHBGJ",
         "buy_buttons"
       ],
       "settings": {
