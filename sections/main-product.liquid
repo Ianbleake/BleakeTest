@@ -421,9 +421,12 @@
                   </button>
                 </quantity-input>
               </div>
-
+            <!--Aqui--->
             {%- when 'customform' -%}
-              {% render 'product-custom' %}
+              {% if template == 'producto-personalizable' %}
+                {% render 'product-custom' %}
+              {% endif %}
+            <!--Aqui--->
             {%- when 'variant_picker' -%}
               {%- unless product.has_only_default_variant -%}
                 {%- if block.settings.picker_type == 'button' -%}
