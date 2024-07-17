@@ -423,10 +423,9 @@
               </div>
             <!--Aqui--->
             {%- when 'customform' -%}
-              {{ template }}<div>Test</div>
-              {% if template == 'producto-personalizable' %}
+
                 {% render 'product-custom' %}
-              {% endif %}
+
             <!--Aqui--->
             {%- when 'variant_picker' -%}
               {%- unless product.has_only_default_variant -%}
