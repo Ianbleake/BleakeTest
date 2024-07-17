@@ -9,12 +9,6 @@
 */
 {
   "sections": {
-    "brands_wbhCXG": {
-      "type": "brands",
-      "settings": {
-        "title": "SOCIOS <span class=\"redtxttitle\">COMERCIALES<\/span>"
-      }
-    },
     "banners_slide_fRcJXr": {
       "type": "banners-slide",
       "settings": {
@@ -24,7 +18,7 @@
       "type": "video",
       "settings": {
         "title": "#SOMOS DIABLOS <span class=\"redtxttitle\">SOMOS ROJOS<\/span>",
-        "video-chanel": "youtubevideo",
+        "video-chanel": "bgvideo",
         "Video_link": ""
       }
     },
@@ -78,7 +72,6 @@
     }
   },
   "order": [
-    "brands_wbhCXG",
     "banners_slide_fRcJXr",
     "video_eYN9L4",
     "video_kJjCMc",
