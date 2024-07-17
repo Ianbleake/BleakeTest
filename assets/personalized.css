@@ -4700,6 +4700,20 @@ div#shopify-section-header, .section-headercust {
   line-height: 21px;
 }
 
+#playerselector {
+  width: 100%;
+  padding: 4px;
+  border: 2px solid #000;
+  border-radius: 0px;
+  background-color: #fff0;
+  font-size: 14px;
+  appearance: none;
+  background-image: url('https://uploads-ssl.webflow.com/6675e23e3a59380aba5351ac/6690357bb33f9924e04f4152_iconslectorplayer.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
 .palyerselector:active, .palyerselector:focus {
   border: 1px solid #000;
 }
