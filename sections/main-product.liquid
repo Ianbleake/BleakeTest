@@ -423,7 +423,7 @@
               </div>
             <!--Aqui--->
             {%- when 'customform' -%}
-              {{ template }}
+              {{ template }}<div>Test</div>
               {% if template == 'producto-personalizable' %}
                 {% render 'product-custom' %}
               {% endif %}
