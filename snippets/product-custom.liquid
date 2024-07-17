@@ -14,13 +14,21 @@
       </a>
     </div>
     <div class="w-tab-content">
-      <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active"><select id="field-3" name="field-3" data-name="Field 3" class="palyerselector w-select">
-          <option value="">Select one...</option>
-          <option value="First">First choice</option>
-          <option value="Second">Second choice</option>
-          <option value="Third">Third choice</option>
+      <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+        <select name="properties[Jugador]" form="product-form-{{ section.id }}" class="palyerselector w-select">
+          <option value="" selected >Seleccione una opcion</option>
+          {% for valor in shop.metaobjects.jugadores.values %}
+            <option value="{{ valor.nombre }}">{{ valor.nombre }}-{{ valor.numero }}</option>
+          {% else %}
+            <option value="">No hay valores en la lista.</option>
+          {% endfor %}
         </select></div>
-      <div data-w-tab="Tab 2" class="w-tab-pane"></div>
+      <div data-w-tab="Tab 2" class="w-tab-pane">
+        <label class="labelcustopmization" for="nombreplayera">Escribe el nombre que quieres impreso en tu playera. Máximo 15 caracteres. Los espacios se consiedrean como una letra.</label>
+        <input class="customizationinput w-input" id="nombreplayera" maxlength="6" type="text" name="properties[Nombre]" form="product-form-{{ section.id }}">
+        <label class="labelcustopmization" for="numeroplayera">Número de jugador, máximo 2 dígitos</label>
+        <input class="customizationinput w-input" id="numeroplayera" maxlength="2" type="text" name="properties[Numero]" form="product-form-{{ section.id }}">
+      </div>
     </div>
   </div>
 </div>
