@@ -421,7 +421,7 @@
                   </button>
                 </quantity-input>
             <!--Aqui--->
-              {% if template == 'producto_personalizable' %}
+              {% if template == 'product.producto_personalizable' %}
                 <div class="customizebtn" data-ix="show-personalizer">
                   <img src="{{'icon_editar.png' |  asset_url }}" alt="" class="cusomizeicon">
                   <div>PERSONALIZAR</div>
@@ -429,7 +429,7 @@
               {% endif %}
               </div>
             {%- when 'customform' -%}
-              {% if template == 'producto_personalizable' %}
+              {% if template == 'product.producto_personalizable' %}
                 {% render 'product-custom' %}
               {% endif %}
             <!--Aqui fin--->
