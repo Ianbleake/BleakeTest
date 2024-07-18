@@ -421,9 +421,12 @@
                   </button>
                 </quantity-input>
             <!--Aqui--->
+            {% if template == 'producto_personalizable' %}
+              
+            {% endif %}
                 <div class="customizebtn" data-ix="show-personalizer">
                   <img src="{{'icon_editar.png' |  asset_url }}" alt="" class="cusomizeicon">
-                  <div>PERSONALIZAR</div>
+                  <div>PERSONALIZAR-({{ template }})</div>
                 </div>
               </div>
             {%- when 'customform' -%}
