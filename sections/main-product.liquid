@@ -426,11 +426,11 @@
             {% endif %}
                 <div class="customizebtn" data-ix="show-personalizer">
                   <img src="{{'icon_editar.png' |  asset_url }}" alt="" class="cusomizeicon">
-                  <div>PERSONALIZAR-({{ template }})</div>
+                  <div>PERSONALIZAR</div>
                 </div>
               </div>
             {%- when 'customform' -%}
-
+              ({{ template }})
                 {% render 'product-custom' %}
 
             <!--Aqui fin--->
