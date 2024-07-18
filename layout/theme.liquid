@@ -346,41 +346,73 @@
         $(this).click();
       });
     </script>
-<style>
-  #sync2.owl-theme {
-  position: relative;
-}
-#sync2.owl-theme .owl-next.disabled .arrow-carrusel, #sync2.owl-theme .owl-prev.disabled .arrow-carrusel {
-    color: transparent !important;
-    background-color: transparent !important;
-} 
-#sync2.owl-theme .owl-next.disabled:hover, #sync2.owl-theme .owl-prev.disabled:hover {
-    color: transparent !important;
-    background-color: transparent !important;
-}   
-  #sync2.owl-theme .owl-next, #sync2.owl-theme .owl-prev {
-    width: auto;
-    height: 40px;
-    margin-top: -20px;
-    position: absolute;
-    top: 50%;
-    color: #fff;
-    font-size: 25px;
-    border-radius: 0px;
- }
-    #sync2.owl-theme .owl-prev {
-    left: -40px;
+  <style>
+    #sync2.owl-theme {
+    position: relative;
   }
-  #sync2.owl-theme .owl-next {
-    right: -40px;
+  #sync2.owl-theme .owl-next.disabled .arrow-carrusel, #sync2.owl-theme .owl-prev.disabled .arrow-carrusel {
+      color: transparent !important;
+      background-color: transparent !important;
   } 
-.owl-theme .owl-nav [class*=owl-]:hover {
-    background: #9d9d9d;
+  #sync2.owl-theme .owl-next.disabled:hover, #sync2.owl-theme .owl-prev.disabled:hover {
+      color: transparent !important;
+      background-color: white !important;
+  }   
+    #sync2.owl-theme .owl-next, #sync2.owl-theme .owl-prev {
+      width: auto;
+      height: 40px;
+      margin-top: -20px;
+      position: absolute;
+      top: 50%;
+      color: #fff;
+      font-size: 25px;
+      border-radius: 0px;
+   }
+      #sync2.owl-theme .owl-prev {
+      left: -40px;
+    }
+    #sync2.owl-theme .owl-next {
+      right: -40px;
+    } 
+  .owl-theme .owl-nav [class*=owl-]:hover {
+      background: #9d9d9d;
+    }
+    img.iconquickshop {
+      width: 30px !important;
   }
-  img.iconquickshop {
-    width: 30px !important;
-}
-</style>
+    /*ESTILO SELECTOR PLAYERA*/
+  #playerselector {
+      width: 100%;
+      padding: 4px;
+      border: 2px solid #000;
+      border-radius: 0px;
+      background-color: #fff0;
+      font-size: 14px;
+      appearance: none; /* Oculta la flecha por defecto del navegador */
+      background-image: url('https://uploads-ssl.webflow.com/6675e23e3a59380aba5351ac/6690357bb33f9924e04f4152_iconslectorplayer.svg');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 10px;
+  }
+  #playerselector:hover {
+      border-color: #000;
+  }
+  #playerselector:focus {
+      outline: none;
+      border-color: #000;
+      box-shadow: none;
+  }
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }  
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
   <script src="{{ 'core.js' | asset_url }}" defer="defer"></script>
