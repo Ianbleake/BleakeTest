@@ -18,7 +18,7 @@
       </div>
 
       <div data-w-tab="Tab2" class="contabs w-tab-pane w--tab-active">
-        <select id="playerselector" name="playerselector" data-name="playerselector" class="palyerselector w-select">
+        <select id="playerselector" name="properties[Jugador]" form="product-form-{{ section.id }}" class="palyerselector w-select">
           <option value="">Selecciona un jugador</option>
           {% for valor in shop.metaobjects.jugadores.values %}
             <option value="{{ valor.nombre }}">{{ valor.numero }}-{{ valor.nombre }}</option>
