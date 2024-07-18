@@ -421,18 +421,17 @@
                   </button>
                 </quantity-input>
             <!--Aqui--->
-            {% if template == 'producto_personalizable' %}
-              
-            {% endif %}
+              {% if template == 'producto_personalizable' %}
                 <div class="customizebtn" data-ix="show-personalizer">
                   <img src="{{'icon_editar.png' |  asset_url }}" alt="" class="cusomizeicon">
                   <div>PERSONALIZAR</div>
                 </div>
+              {% endif %}
               </div>
             {%- when 'customform' -%}
-              {{ template }}
+              {% if template == 'producto_personalizable' %}
                 {% render 'product-custom' %}
-
+              {% endif %}
             <!--Aqui fin--->
             {%- when 'variant_picker' -%}
               {%- unless product.has_only_default_variant -%}
