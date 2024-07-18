@@ -420,13 +420,12 @@
                     {% render 'icon-plus' %}
                   </button>
                 </quantity-input>
-
-                <div class="customizebtn">  
-                  <img src="{{ "icon_editar.png" | asset_url }}" class="cusomizeicon">
+            <!--Aqui--->
+                <div class="customizebtn" data-ix="show-personalizer">
+                  <img src="images/icon_editar.png" alt="" class="cusomizeicon">
                   <div>PERSONALIZAR</div>
                 </div>
               </div>
-            <!--Aqui--->
             {%- when 'customform' -%}
 
                 {% render 'product-custom' %}
