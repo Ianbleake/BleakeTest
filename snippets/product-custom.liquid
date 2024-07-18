@@ -1,10 +1,10 @@
 <div class="cont-personalizador">
   <div data-current="Tab2" data-easing="ease" data-duration-in="300" data-duration-out="100" class="w-tabs">
     <div class="w-tab-menu">
-      <a data-w-tab="Tab1" class="customiztab w-inline-block w-tab-link">
+      <a data-w-tab="Tab1" class="customiztab w-inline-block w-tab-link" id="Tab1">
         <div>Nombre y número</div>
       </a>
-      <a data-w-tab="Tab2" class="customiztab w-inline-block w-tab-link w--current">
+      <a data-w-tab="Tab2" class="customiztab w-inline-block w-tab-link w--current" id="Tab2">
         <div>Jugador</div>
       </a>
     </div>
@@ -30,3 +30,22 @@
     </div>
   </div>
 </div>
+
+<script>
+  const btn1 = document.getElementById('Tab1');
+  const btn2 = document.getElementById('Tab2');
+  const players = document.getElementById('playerselector');
+  const inpt1 = document.getElementById('nombreplayera');
+  const inpt2 = document.getElementById('numeroplayera');
+
+  // Limpiar Select
+  btn1.addEventListener('click', ()=>{
+    players.selectedIndex = 0;
+  })
+
+  //Limpiar Inputs
+  btn2.addEventListener('click', ()=>{
+    inpt1.value = '';
+    inpt2.value = '';
+  })
+</script>
