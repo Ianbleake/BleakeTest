@@ -14,7 +14,7 @@
         <label for="nombreplayera" class="labelcustopmization">Escribe el nombre que quieres impreso en tu playera. Máximo 15 caracteres. Los espacios se consiedrean como una letra.</label>
         <input class="customizationinput w-input" maxlength="15" name="properties[Nombre]" form="product-form-{{ section.id }}" placeholder="Nombre" type="text" id="nombreplayera">
         <label for="numeroplayera" class="labelcustopmization">Número de jugador, máximo 2 dígitos</label>
-        <input class="customizationinput w-input" maxlength="2" name="properties[Numero]" form="product-form-{{ section.id }}" placeholder="Número" type="number" id="numeroplayera">
+        <input class="customizationinput w-input" maxlength="2" name="properties[Numero]" form="product-form-{{ section.id }}" placeholder="Número" type="number" id="numeroplayera" oninput="validateNumberInput(this)" >
       </div>
 
       <div data-w-tab="Tab2" class="contabs w-tab-pane w--tab-active">
@@ -48,4 +48,12 @@
     inpt1.value = '';
     inpt2.value = '';
   })
+
+  // Validar entrada de número
+  function validateNumberInput(input) {
+    const maxLength = 2;
+    if (input.value.length > maxLength) {
+      input.value = input.value.slice(0, maxLength);
+    }
+  }
 </script>
