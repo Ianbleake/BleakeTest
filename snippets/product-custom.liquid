@@ -1,4 +1,5 @@
 <div class="cont-personalizador">
+  <div class="titulovip-elements personalizar">IMPORTANTE: La personalización tiene un costo adicional de $100 MXN que se verá reflejado en la pantalla de pago.</div>
   <div data-current="Tab2" data-easing="ease" data-duration-in="300" data-duration-out="100" class="w-tabs">
     <div class="w-tab-menu">
       <a data-w-tab="Tab1" class="customiztab w-inline-block w-tab-link" id="Tab1">
@@ -9,19 +10,19 @@
       </a>
     </div>
     <div class="w-tab-content">
-
+      
       <div data-w-tab="Tab1" class="contabs w-tab-pane">
-        <label for="nombreplayera" class="labelcustopmization">Escribe el nombre que quieres impreso en tu playera. Máximo 15 caracteres. Los espacios se consiedrean como una letra.</label>
+        <label for="nombreplayera" class="labelcustopmization">Escribe el nombre que quieres impreso en tu playera. Máximo 15 caracteres. Los espacios se consiedcran como una letra.</label>
         <input class="customizationinput w-input" maxlength="15" name="properties[Nombre]" form="product-form-{{ section.id }}" placeholder="Nombre" type="text" id="nombreplayera">
         <label for="numeroplayera" class="labelcustopmization">Número de jugador, máximo 2 dígitos</label>
-        <input class="customizationinput w-input" maxlength="2" name="properties[Numero]" form="product-form-{{ section.id }}" placeholder="Número" type="number" id="numeroplayera" oninput="validateNumberInput(this)" >
+        <input class="customizationinput w-input" maxlength="2" name="properties[Numero]" form="product-form-{{ section.id }}" placeholder="Número" type="number" id="numeroplayera" >
       </div>
 
       <div data-w-tab="Tab2" class="contabs w-tab-pane w--tab-active">
         <select id="playerselector" name="properties[Jugador]" form="product-form-{{ section.id }}" class="palyerselector w-select">
           <option value="">Selecciona un jugador</option>
           {% for valor in shop.metaobjects.jugadores.values %}
-            <option value="{{ valor.nombre }}">{{ valor.numero }}-{{ valor.nombre }}</option>
+            <option value="{{ valor.nombre }}">{{ valor.nombre }}</option>
           {% else %}
             <option value="">No hay valores en la lista.</option>
           {% endfor %}
@@ -32,30 +33,140 @@
 </div>
 
 <script>
-  const btn1 = document.getElementById('Tab1');
-  const btn2 = document.getElementById('Tab2');
-  const players = document.getElementById('playerselector');
-  const inpt1 = document.getElementById('nombreplayera');
-  const inpt2 = document.getElementById('numeroplayera');
+  window.addEventListener('load', ()=>{
+    
+    const btn1 = document.getElementById('Tab1');
+    const btn2 = document.getElementById('Tab2');
+    const mainBtn = document.getElementById('mainbutton');
+    const form = document.querySelector('#product-form-{{ section.id }}');
+    const players = document.getElementById('playerselector');
+    const inpt1 = document.getElementById('nombreplayera');
+    const inpt2 = document.getElementById('numeroplayera');
+    //let cartForm = document.getElementById('CartDrawer-Form'); /*PC*/
+    let buynow = document.querySelector('button[data-testid="Checkout-button"]');
+    addBuyNowElement()
 
-  // Limpiar Select
-  btn1.addEventListener('click', ()=>{
-    players.selectedIndex = 0;
-  })
+    btn1.addEventListener('click', () => {
+      players.selectedIndex = 0;
+    });
 
-  //Limpiar Inputs
-  btn2.addEventListener('click', ()=>{
-    inpt1.value = '';
-    inpt2.value = '';
-  })
+    btn2.addEventListener('click', () => {
+      inpt1.value = '';
+      inpt2.value = '';
+    });
 
-  // Validar entrada de número
-  function validateNumberInput(input) {
-    const maxLength = 2;
-    if (input.value.length > maxLength) {
-      input.value = input.value.slice(0, maxLength);
+    mainBtn.addEventListener('click', () => {
+      players.selectedIndex = 0;
+      inpt1.value = '';
+      inpt2.value = '';
+      if (buynow.hasAttribute('disabled')) {
+          buynow.removeAttribute('disabled');
+      } else {
+          buynow.setAttribute('disabled', 'disabled');
+      }
+    });
+
+    inpt2.addEventListener('input', () => validateNumberInput(inpt2));
+
+    //addCartFormListener(); /*PC*/
+
+    const observerButton = new MutationObserver(() => {
+      // addCartFormListener(); /*PC*/
+      addBuyNowElement();
+    });
+
+    const configButton = { childList: true, subtree: true };
+
+    observerButton.observe(document.body, configButton);
+
+    function addBuyNowElement() {
+      buynow = document.querySelector('button[data-testid="Checkout-button"]');
+      console.log(buynow);
     }
-  }
+    
+    /*PC
+    function addCartFormListener() {
+      cartForm = document.getElementById('CartDrawer-Form');
+      if (cartForm) {
+        cartForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          processCartPersonalization();
+        });
+      }
+    }
+    */
+   
 
-  
+    function validateNumberInput(input) {
+        const maxLength = 2;
+        if (input.value.length > maxLength) {
+          input.value = input.value.slice(0, maxLength);
+        }
+    }
+
+    /*PC
+    async function processCartPersonalization() {
+      const personalizationProductId = 41249014022257;
+      
+      try {
+        
+        const cartContents = await fetch('/cart.js')
+          .then(response => response.json())
+          .then(cart => cart.items)
+          .catch(error => {
+            console.error('Error al obtener el carrito:', error);
+            return [];
+          });
+        
+        const personalizationDataArray = [];
+        
+        
+        for (const item of cartContents) {
+          let needCost = false;
+          const productData = { id: personalizationProductId, quantity: item.quantity, properties: {} };
+          
+          if (item.properties.Nombre && item.properties.Numero) {
+            needCost = true;
+            productData.properties.Nombre = item.properties.Nombre;
+            productData.properties.Numero = item.properties.Numero;
+          } else if (item.properties.Jugador) {
+            needCost = true;
+            productData.properties.Jugador = item.properties.Jugador;
+          }
+          
+          if (needCost) {
+            personalizationDataArray.push(productData);
+          }
+        }
+
+        
+        if (personalizationDataArray.length > 0) {
+          await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items: personalizationDataArray })
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Personalization products added successfully:', data);
+          })
+          .catch(error => {
+            console.error('Error al añadir los productos de personalización:', error);
+          });
+        } else {
+          console.log('No personalization products needed to be added.');
+        }
+        
+      } catch (error) {
+        console.error('Error en el proceso de personalización del carrito:', error);
+      }
+
+      window.location.href = '/checkout'
+
+    }
+    */
+    
+
+  });
 </script>
+

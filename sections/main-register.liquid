@@ -11,6 +11,9 @@
 
           <input class="loginreg-field w-input" maxlength="256" name="customer[first_name]" id="RegisterForm-FirstName" {% if form.first_name %}value="{{ form.first_name }}" {% endif %} placeholder="{{ 'customer.register.first_name' | t }}" type="text" required="">
           <input class="loginreg-field w-input" maxlength="256" name="customer[last_name]" id="RegisterForm-LastName" {% if form.last_name %}value="{{ form.last_name }}" {% endif %} placeholder="{{ 'customer.register.last_name' | t }}" type="text" required="">
+          {% comment %}
+            <input class="loginreg-field w-input" placeholder="Número de abono" name="customer[note][Abono]" type="tel" maxlength="256" >
+          {% endcomment %}
           <input class="loginreg-field mail w-input" maxlength="256" name="customer[email]" id="RegisterForm-email" {% if form.email %} value="{{ form.email }}" {% endif %} aria-required="true" {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="RegisterForm-email-error" {% endif %} placeholder="{{ 'customer.register.email' | t }}" type="email" required="">
           {%- if form.errors contains 'email' -%}
           <span id="RegisterForm-email-error" class="form__message">

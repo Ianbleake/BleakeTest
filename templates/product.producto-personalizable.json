@@ -28,12 +28,19 @@
             "picker_type": "button"
           }
         },
+        "popup_EPefP8": {
+          "type": "popup",
+          "settings": {
+            "page": "guia-de-tallas",
+            "iconpop": "shopify:\/\/shop_images\/sizes_icon_594ce7e1-9127-46e7-9501-e0c8c99b7576.png"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
           }
         },
-        "customform_HAigDV": {
+        "customform_JYHxNr": {
           "type": "customform",
           "settings": {
           }
@@ -43,41 +50,109 @@
           "settings": {
             "show_dynamic_checkout": true
           }
+        },
+        "custom_liquid_PxVTVn": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"btn-sizeinfo\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0578\/9237\/2593\/files\/icon_envios_61b38a1c-a72f-4fc3-8c27-02db29262256.svg?v=1721154544\"class=\"inconsiechart\">\n  <div class=\"titulovip-elements\"><strong>ENVÍOS GRATIS <\/strong>en compras mayores a<strong> $ 999.ºº<\/strong><\/div>\n<\/div>"
+          }
+        },
+        "166ed5ab-3b89-40a1-a401-8c97f3723a3b": {
+          "type": "metodos_pago",
+          "settings": {
+            "payment_1": "shopify:\/\/shop_images\/Artboard.png",
+            "payment_2": "shopify:\/\/shop_images\/Artboard-Copy-5.png",
+            "payment_3": "shopify:\/\/shop_images\/Artboard-Copy-18.png",
+            "payment_4": "shopify:\/\/shop_images\/Artboard-Copy-19.png"
+          }
+        },
+        "0d09da6a-d4e1-482e-b038-8908678039f7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Descripción"
+          }
+        },
+        "redes_arw3aM": {
+          "type": "redes",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "title",
         "price",
         "variant_picker",
+        "popup_EPefP8",
         "quantity_selector",
-        "customform_HAigDV",
-        "buy_buttons"
+        "customform_JYHxNr",
+        "buy_buttons",
+        "custom_liquid_PxVTVn",
+        "166ed5ab-3b89-40a1-a401-8c97f3723a3b",
+        "0d09da6a-d4e1-482e-b038-8908678039f7",
+        "redes_arw3aM"
       ],
       "settings": {
         "hide_variants": true
       }
     },
-    "related-products": {
-      "type": "related-products",
+    "product-recommendations": {
+      "type": "product-recommendations",
       "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "heading": "<h2 class=\"maintitle\">PRODUCTOS <span class=\"redtxttitle\">RECOMENDADOS<\/span>\n<\/h2>",
+        "products_to_show": 9
+      }
+    },
+    "warranty_home_UFMrMT": {
+      "type": "warranty-home",
+      "blocks": {
+        "warranty_bckU9j": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/icon_envios.svg",
+            "warranty_title": "ENVÍOS SEGUROS",
+            "warranty_description": "Todos nuestros envíos son seguros, recibe hasta la puerta de tu casa todos tus productos oficiales."
+          }
+        },
+        "warranty_NaUBz3": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/STORE_ICON_ecac2521-d8a7-4a9a-a9cb-eb43fb8d568b.svg",
+            "warranty_title": "RECOGE EN TIENDA",
+            "warranty_description": "Puedes hacer tus compras en línea y recoger en tu tienda mas cercana."
+          }
+        },
+        "warranty_CfqFhk": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/icon_pagos.svg",
+            "warranty_title": "PAGOS 100% SEGUROS",
+            "warranty_description": "Múltiples formas de pago 100% seguras para que compres fácil y rápido dentro de la tienda."
+          }
+        }
+      },
+      "block_order": [
+        "warranty_bckU9j",
+        "warranty_NaUBz3",
+        "warranty_CfqFhk"
+      ],
+      "settings": {
+        "tittle": "COMPRAS 100% SEGURAS"
+      }
+    },
+    "custom_liquid_dxWXyU": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div class=\"seccreviews\">\n      <div class=\"custom-container\">\n        <div class=\"maintitle-cont\">\n          <h2 class=\"maintitle\">RESEÑAS DE <span class=\"redtxttitle\">LA AFICIÓN<\/span><\/h2>\n        <\/div>\n      <\/div>\n    <\/div>",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "product-recommendations",
+    "warranty_home_UFMrMT",
+    "custom_liquid_dxWXyU"
   ]
 }

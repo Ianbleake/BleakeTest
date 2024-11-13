@@ -9,9 +9,12 @@
 */
 {
   "current": {
+    "type_header_font": "roboto_n4",
+    "type_body_font": "roboto_n4",
     "favicon": "shopify:\/\/shop_images\/favicon.png",
     "currency_code_enabled": false,
-    "shipping_free": 1899,
+    "new_product": 0,
+    "shipping_free": 3000,
     "checkout_logo_image": "shopify:\/\/shop_images\/champion_red.png",
     "checkout_logo_position": "left",
     "checkout_accent_color": "#212442",
@@ -22,31 +25,77 @@
         "blocks": {
           "text_LWjJpB": {
             "type": "text",
+            "disabled": true,
             "settings": {
               "title": "CONOCE LA NUEVA COLECCIÓN DE GORRAS | NEW ERA",
-              "url": "shopify:\/\/products\/jersey-local-new-balance"
+              "url": "shopify:\/\/collections\/gorras"
+            }
+          },
+          "text_NfkpKf": {
+            "type": "text",
+            "settings": {
+              "title": "ENVÍO GRATIS A PARTIR DE $3,000.00 MXN",
+              "url": "shopify:\/\/collections"
             }
           }
         },
         "block_order": [
-          "text_LWjJpB"
+          "text_LWjJpB",
+          "text_NfkpKf"
         ],
         "settings": {
+          "logo": "shopify:\/\/shop_images\/logo_blanco_Toluca_Tienda_oficial.png",
           "menu": "main-menu"
         }
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "image_Yimx7i": {
+            "type": "image",
+            "settings": {
+              "payment": "shopify:\/\/shop_images\/openpaywhite.png"
+            }
+          },
+          "image_qJtKic": {
+            "type": "image",
+            "settings": {
+              "payment": "shopify:\/\/shop_images\/visa_white.png"
+            }
+          },
+          "image_DRqRTx": {
+            "type": "image",
+            "settings": {
+              "payment": "shopify:\/\/shop_images\/mastercard_white.png"
+            }
+          },
+          "image_zgdrcz": {
+            "type": "image",
+            "settings": {
+              "payment": "shopify:\/\/shop_images\/american_express_white.png"
+            }
+          }
+        },
+        "block_order": [
+          "image_Yimx7i",
+          "image_qJtKic",
+          "image_DRqRTx",
+          "image_zgdrcz"
+        ],
         "settings": {
+          "logo": "shopify:\/\/shop_images\/escudo-circular.svg",
           "menu_1": "footer",
-          "menu_2": "",
+          "menu_2": "tienda",
           "email": "tiendaenlinea@tolucafc.com",
-          "email_url": "",
+          "email_url": "mailto:tiendaenlinea@tolucafc.com",
+          "phone": "‎+52 722 914 6090\nextensión 510",
+          "address": "Felipe Villanueva 300 2º piso\nColonia San Bernardino,\nToluca Estado de México, CP 50080",
+          "address_link": "",
           "instagram": "https:\/\/www.instagram.com\/tolucafc\/",
-          "twitter": "",
+          "twitter": "https:\/\/x.com\/TolucaFC",
           "facebook": "https:\/\/www.facebook.com\/tolucafc",
           "youtube": "https:\/\/www.youtube.com\/@Deportivotolucafcoficial",
-          "tiktok": "",
+          "tiktok": "https:\/\/www.tiktok.com\/@tolucafc?lang=es",
           "news_title": "¡SIEMPRE DIABLOS! SUSCRÍBETE",
           "description-subscription": "Entérate antes que nadie de los nuevos lanzamientos y recibe promociones y descuentos especiales."
         }
@@ -54,6 +103,20 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "4981902369724952902": {
+        "type": "shopify:\/\/apps\/vo-product-options\/blocks\/embed-block\/430cbd7b-bd20-4c16-ba41-db6f4c645164",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "316487575649303945": {
+        "type": "shopify:\/\/apps\/easify-options\/blocks\/app-embed-block\/d2288b18-c1ba-42f5-b3b3-26c75c8820bf",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   }
 }

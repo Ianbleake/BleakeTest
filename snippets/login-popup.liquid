@@ -23,7 +23,9 @@
               <p class="txtlogin">Regístrate y disfruta de recompensas y muchos otros beneficios</p>
               <input class="loginreg-field w-input" placeholder="Nombre (s)*" maxlength="256" name="customer[first_name]" type="text" required="" >
               <input class="loginreg-field w-input" placeholder="Apellido*" maxlength="256" name="customer[last_name]"  type="text" required="" >
-              <input class="loginreg-field w-input" placeholder="Número de abono" name="customer[note][Abono]" type="tel" maxlength="256" required >
+              {% comment %}
+                <input class="loginreg-field w-input" placeholder="Número de abono" name="customer[note][Abono]" type="tel" maxlength="256" >
+              {% endcomment %}
               <input class="loginreg-field mail w-input" placeholder="Correo electrónico*" maxlength="256" name="customer[email]" type="email" required="" {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="RegisterForm-email-error" {% endif %} >
                 {%- if form.errors contains 'email' -%}
                   <span id="RegisterForm-email-error" class="form__message">

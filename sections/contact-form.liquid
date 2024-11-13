@@ -2,7 +2,7 @@
   <div class="custom-container">
     <div id="w-node-_5bab357d-2bfc-668a-dbc6-ac12a54b01b7-175a39ff" class="w-layout-layout contactostack wf-layout-layout">
 
-      <div id="w-node-_5bab357d-2bfc-668a-dbc6-ac12a54b01b8-175a39ff" class="w-layout-cell imgcontform"></div>
+      <div id="w-node-_5bab357d-2bfc-668a-dbc6-ac12a54b01b8-175a39ff" class="w-layout-cell imgcontform" style="background-image: url({{ section.settings.image |  image_url }});"></div>
 
       <div id="w-node-_5bab357d-2bfc-668a-dbc6-ac12a54b01b9-175a39ff" class="w-layout-cell cell">
 
@@ -12,7 +12,6 @@
 
         <div class="loginpopform w-form">
           {%- form 'contact', id: 'ContactForm', class: 'contenidoformlog contacto' -%}
-            {{ form.errors | default_errors }}
 
             <p class="txtlogin contacto">Si tienes alguna duda sobre tus productos, pedido, comentarios o sugerencias escríbenos a través del siguiente formulario.</p>
             <div id="w-node-ce49663a-fd02-0835-a529-5453f7eba3e2-175a39ff" class="w-layout-layout quick-stack wf-layout-layout">
@@ -72,3 +71,22 @@
     </div>
   </div>
 </div>
+
+
+{% schema  %}
+{
+  "name": "Contacto",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contacto"
+    }
+  ]
+}
+{% endschema %}

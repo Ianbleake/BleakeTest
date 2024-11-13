@@ -1,9 +1,10 @@
-<div class="seccrecomendados recommendations_pageproduct related custom-container {%if recommendations.products_count<1%}hidde{%  endif %}">
+
+<div class="seccrecomendados recommendations_pageproduct custom-container hidde complementary">
   <div class="custom-container">
     <div class="maintitle-cont">
       <h2 class="maintitle">{{ section.settings.heading  }}</h2>
     </div>
-    <product-recommendations class="product-recommendations seccion-sugeridos" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}&intent=related" id="recommendations-shopify-product">
+    <product-recommendations class="product-recommendations seccion-sugeridos" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}&intent=complementary" id="recommendations-shopify-product-2">
       {% if recommendations.performed and recommendations.products_count > 0 %}
         <div class="code-embed w-embed">
           <div class="owl-carousel productosowl owl-theme" id="sync2">
@@ -22,19 +23,17 @@
 
 {% schema %}
 {
-  "name": "t:sections.product-recommendations.name",
-  "tag": "section",
-  "class": "section",
+  "name": "Complementarios",
   "settings": [
     {
       "type": "paragraph",
-      "content": "t:sections.product-recommendations.settings.paragraph__1.content"
+      "content": "Productos Complementarios"
     },
     {
       "type": "textarea",
       "id": "heading",
       "default": "Titulo de sección",
-      "label": "t:sections.product-recommendations.settings.heading.label"
+      "label": "Titulo de la sección"
     },
     {
       "type": "range",
@@ -43,7 +42,7 @@
       "max": 10,
       "step": 1,
       "default": 4,
-      "label": "t:sections.product-recommendations.settings.products_to_show.label"
+      "label": "Numero de productos del carrusel"
     }
   ]
 }
@@ -51,9 +50,9 @@
 
 
 <script>
-  const targetDiv = document.getElementById("recommendations-shopify-product");
-  const observer = new MutationObserver(function(mutationsList, observer) {
-    $(".recommendations_pageproduct.related").removeClass("hidde");
+  const targetDiv2 = document.getElementById("recommendations-shopify-product-2");
+  const observer2 = new MutationObserver(function(mutationsList, observer) {
+    $(".recommendations_pageproduct.complementary").removeClass("hidde");    
     $(".productosowl").owlCarousel({
       loop:false,
     margin:3,    
@@ -94,7 +93,7 @@
     }
   });
   });
-  const config = { childList: true, characterData: true, subtree: true };
-  observer.observe(targetDiv, config);
+  const config2 = { childList: true, characterData: true, subtree: true };
+  observer2.observe(targetDiv2, config2);
   </script>
 

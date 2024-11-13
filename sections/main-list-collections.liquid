@@ -27,8 +27,8 @@
       {%- paginate collections by paginate_by -%}
       {%- for collection in collections -%}
         <div class="custom-container">
-          <div class="titlecontainer">
-            <a href="{{ collection.url }}" class="mainsecctitle">{{- collection.title | escape -}}</a>
+          <div class="maintitle-cont">
+            <a href="{{ collection.url }}" class="maintitle" style="color:black">{{- collection.title | escape -}}</a>
           </div>
           <div class="html-embed w-embed">
             <div class="owl-carousel productosowl owl-theme" id="sync2">

@@ -79,14 +79,26 @@
           </div>
 
           <div class="infocolfooter">
-            {% if section.settings.email != blank %}
+            {% unless section.settings.email == blank and section.settings.address == blank and section.settings.phone == blank %}
               <h5 class="footertitle">CONTACTO</h5>
               <ul role="list" class="listitemsfooter">
-                <li class="footeritemlist">
-                  <a href="{{ section.settings.email_url }}" class="footerlinktxt">{{ section.settings.email }}</a>
-                </li>
+                {% if section.settings.email != blank %}
+                  <li class="footeritemlist">
+                    <a href="{{ section.settings.email_url }}" class="footerlinktxt">{{ section.settings.email }}</a>
+                  </li>
+                {% endif %}
+                {% if section.settings.phone != blank %}
+                  <li class="footeritemlist">
+                    <a href="#" class="footerlinktxt nolink">{{ section.settings.phone | newline_to_br }}</a>
+                  </li>
+                {% endif %}
+                {% if section.settings.address != blank %}
+                  <li class="footeritemlist">
+                    <a href="{% if section.settings.address_link != blank %}{{ section.settings.address_link }}{% else %}#{% endif %}" class="footerlinktxt {% if section.settings.address_link == blank %}nolink{% endif %}">{{ section.settings.address | newline_to_br }}</a>
+                  </li>
+                {% endif %}
               </ul>
-            {% endif %}
+            {% endunless %}
           </div>
 
         </div>
@@ -101,7 +113,13 @@
                   <input type="submit" data-wait="Please wait..." class="suscribebtn w-button" value="">
                   <input class="inputsuscription w-input" placeholder="Ingresa aquí tu email" maxlength="256" name="contact[email]" value="{{ form.email }}" type="email"  required >
                 </div>
-              {% endform %}
+                {%- if form.posted_successfully? -%}
+                  <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+                    {% render 'icon-success' %}
+                    {{ 'newsletter.success' | t }}
+                  </h2>
+                {% endif %}
+              {%- endform -%}
             </div>
             <ul role="list" class="listitemsfooter"></ul>
           </div>
@@ -111,7 +129,11 @@
 
       <div class="paymentinfocont">
         <h5 class="footertitle center">PAGOS SEGUROS</h5>
-        <img src="{{ section.settings.logo_payment |  image_url }}"  alt="Metodos de pago" class="paymentlogos">
+        <div class="contlogospay">
+          {% for block in section.blocks %}
+            <img src="{{ block.settings.payment |  image_url }}"  alt="{{ block.settings.payment.alt }}" class="paymentlogos">
+          {% endfor %}
+        </div>
       </div>
 
       <div class="copyright">Copyright © 2024 Toluca Fútbol Club - Tienda Oficial · Designed and Developed by <a href="https://www.kubodigital.mx" target="_blank" class="kdlink">Kubo Digital</a></div>
@@ -125,85 +147,107 @@
 {
 "name": "t:sections.footer.name",
 "settings": [
-{
-"type": "image_picker",
-"id": "logo",
-"label": "Logo del footer"
-},
-{
-"type": "header",
-"content": "Menus"
-},
-{
-"type": "link_list",
-"id": "menu_1",
-"default": "footer",
-"label": "Menu Columna 1",
-"info": "t:sections.footer.blocks.link_list.settings.menu.info"
-},
-{
-"type": "link_list",
-"id": "menu_2",
-"default": "footer",
-"label": "Menu Columna 2",
-"info": "t:sections.footer.blocks.link_list.settings.menu.info"
-},{
-"type": "header",
-"content": "Contacto"
-},{
-"type": "text",
-"id": "email",
-"label": "Correo electronico"
-},{
+  {
+  "type": "image_picker",
+  "id": "logo",
+  "label": "Logo del footer"
+  },
+  {
+  "type": "header",
+  "content": "Menus"
+  },
+  {
+  "type": "link_list",
+  "id": "menu_1",
+  "default": "footer",
+  "label": "Menu Columna 1",
+  "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+  },
+  {
+  "type": "link_list",
+  "id": "menu_2",
+  "default": "footer",
+  "label": "Menu Columna 2",
+  "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+  },{
+  "type": "header",
+  "content": "Contacto"
+  },{
   "type": "text",
-  "id": "email_url",
-  "label": "URL Correo electronico",
-  "info": "El url debe contener 'mailto:' al inicio"
-},{
-"type": "header",
-"content": "Redes Sociales"
-}, 
-{
+  "id": "email",
+  "label": "Correo electronico"
+  },{
+    "type": "text",
+    "id": "email_url",
+    "label": "URL Correo electronico",
+    "info": "El url debe contener 'mailto:' al inicio"
+  },{
+    "type": "textarea",
+    "id": "phone",
+    "label": "Telefono de contacto:"
+  },{
+    "type": "textarea",
+    "id": "address",
+    "label": "Direccion"
+  },{
+    "type": "url",
+    "id": "address_link",
+    "label": "Url de Google Maps"
+  },{
+  "type": "header",
+  "content": "Redes Sociales"
+  }, 
+  {
+    "type": "text",
+    "id": "instagram",
+    "label": "Instagram"
+  },{
+    "type": "text",
+    "id": "twitter",
+    "label": "Twitter"
+  },{
+    "type": "text",
+    "id": "facebook",
+    "label": "Facebook"
+  },{
+    "type": "text",
+    "id": "youtube",
+    "label": "Youtube"
+  },{
+    "type": "text",
+    "id": "tiktok",
+    "label": "TikTok"
+  },
+  {
+  "type": "header",
+  "content": "Suscripción"
+  },{
   "type": "text",
-  "id": "instagram",
-  "label": "Instagram"
-},{
-  "type": "text",
-  "id": "twitter",
-  "label": "Twitter"
-},{
-  "type": "text",
-  "id": "facebook",
-  "label": "Facebook"
-},{
-  "type": "text",
-  "id": "youtube",
-  "label": "Youtube"
-},{
-  "type": "text",
-  "id": "tiktok",
-  "label": "TikTok"
-},
-{
-"type": "header",
-"content": "Suscripción"
-},{
-"type": "text",
-"id": "news_title",
-"label": "Titulo"
-},{
-"type": "textarea",
-"id": "description-subscription",
-"label": "Descripción"
-},
-{
-"type": "header",
-"content": "Metodos de Pago"
-}, {
-"type": "image_picker",
-"id": "logo_payment",
-"label": "Imagen Metodos de Pago"
-}
+  "id": "news_title",
+  "label": "Titulo"
+  },{
+  "type": "textarea",
+  "id": "description-subscription",
+  "label": "Descripción"
+  },
+  {
+  "type": "header",
+  "content": "Metodos de Pago"
+  }
+],
+"blocks": [
+  {
+    "type": "image",
+    "limit": 5,
+    "name": "Metodo de pago",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "payment",
+        "label": "Logo de metodo de pago"
+      }
+    ]
+  }
 ]
 }
 {% endschema %}

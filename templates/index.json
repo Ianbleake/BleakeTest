@@ -9,48 +9,148 @@
 */
 {
   "sections": {
-    "banners_slide_fRcJXr": {
+    "banners_slide_fWLHjh": {
       "type": "banners-slide",
+      "blocks": {
+        "image_Rpwk8R": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/Banner_Escritorio.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/Banner_Movil.jpg",
+            "link": "shopify:\/\/collections\/jerseys"
+          }
+        },
+        "image_8U7pKY": {
+          "type": "image",
+          "settings": {
+            "image-desktop-version": "shopify:\/\/shop_images\/Banner_Escritorio.jpg",
+            "image-mobile-version": "shopify:\/\/shop_images\/banner-mobile.jpg",
+            "link": "shopify:\/\/collections\/ofertas"
+          }
+        }
+      },
+      "block_order": [
+        "image_Rpwk8R",
+        "image_8U7pKY"
+      ],
       "settings": {
       }
     },
-    "video_eYN9L4": {
+    "video_Tdc69G": {
       "type": "video",
       "settings": {
         "title": "#SOMOS DIABLOS <span class=\"redtxttitle\">SOMOS ROJOS<\/span>",
         "video-chanel": "bgvideo",
-        "Video_link": ""
+        "Video_link": "",
+        "Video_link-2": "shopify:\/\/files\/videos\/video_Demo_toluca_small.mov",
+        "video_link-3": "shopify:\/\/files\/videos\/video_Demo_toluca_small.mov"
       }
     },
-    "video_kJjCMc": {
+    "video_36URRj": {
       "type": "video",
+      "disabled": true,
       "settings": {
         "title": "#SOMOS DIABLOS <span class=\"redtxttitle\">SOMOS ROJOS<\/span>",
         "video-chanel": "youtubevideo",
-        "Video_link": ""
+        "Video_link": "https:\/\/www.youtube-nocookie.com\/embed\/U7y8qw2TmHk?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0"
       }
     },
-    "collections_list_kyHDaW": {
+    "collections_list_YKkNDe": {
       "type": "collections-list",
+      "blocks": {
+        "collection_73aNVN": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/categoria_hombre.png",
+            "coleccion": "hombre"
+          }
+        },
+        "collection_4MdCLF": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mas_Buscados_ACCESORIOS.jpg",
+            "coleccion": "accesorios"
+          }
+        },
+        "collection_h9giqa": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/categoria_mujer.png",
+            "coleccion": "mujer"
+          }
+        }
+      },
+      "block_order": [
+        "collection_73aNVN",
+        "collection_4MdCLF",
+        "collection_h9giqa"
+      ],
       "settings": {
         "title": "LOS MÁS <span class=\"redtxttitle\">BUSCADOS<\/span>"
       }
     },
-    "products_slide_T6eDmU": {
+    "products_slide_hz34a7": {
       "type": "products-slide",
       "settings": {
         "title": "PRODUCTOS DESTACADOS",
-        "collection_1": "",
-        "range_prod_1": 2
+        "collection_1": "all",
+        "range_prod_1": 12
       }
     },
-    "banner_secundary_gBtNbt": {
+    "banner_secundary_WxUCJ6": {
       "type": "banner-secundary",
+      "blocks": {
+        "banner_zrLGpy": {
+          "type": "banner",
+          "settings": {
+            "desktop": "shopify:\/\/shop_images\/Banner_Escritorio_2_5b9ff2a0-f06b-4f59-a548-32b07aa21344.jpg",
+            "mobile": "shopify:\/\/shop_images\/Banner_Movil_2.jpg",
+            "url": "shopify:\/\/collections\/jerseys"
+          }
+        }
+      },
+      "block_order": [
+        "banner_zrLGpy"
+      ],
       "settings": {
       }
     },
-    "maps_e3gMYE": {
+    "maps_D896NE": {
       "type": "maps",
+      "blocks": {
+        "map_UWMNTR": {
+          "type": "map",
+          "settings": {
+            "StoreName": "TIENDA ESTADIO",
+            "address": "Felipe Villanueva 300, San Bernandino, 50080 De la Merced, Méx.",
+            "map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m8!1m3!1d830.2283110970689!2d-99.66608739080729!3d19.28703834294985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd89b87130c845%3A0x22a4111f0af40e6d!2sTienda%20Oficial%20Deportivo%20Toluca%20F.C.!5e0!3m2!1ses-419!2smx!4v1721239783761!5m2!1ses-419!2smx\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+            "url": "https:\/\/maps.app.goo.gl\/Cji2PXTHaT65E1AbA"
+          }
+        },
+        "map_nNyrBE": {
+          "type": "map",
+          "settings": {
+            "StoreName": "TIENDA CENTRO TOLZÚ",
+            "address": "Av. Miguel Hidalgo Ote. 203, Barrio de Sta Clara, 50090 Toluca de Lerdo, Méx.",
+            "map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m8!1m3!1d1882.906370680801!2d-99.6528149!3d19.2905079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd89eb15bb9281%3A0xe54e18b35e2e35ad!2sCentro%20Tolz%C3%BA!5e0!3m2!1ses!2smx!4v1721240334996!5m2!1ses!2smx\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+            "url": "https:\/\/maps.app.goo.gl\/UTThkjxPLhMZpYnb7"
+          }
+        },
+        "map_dDPViP": {
+          "type": "map",
+          "settings": {
+            "StoreName": "TIENDA AEROPUERTO",
+            "address": "San Pedro Totoltepec, 50226 Toluca de Lerdo, Méx.",
+            "map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m8!1m3!1d5192.03141946459!2d-99.57180671792882!3d19.33844357222327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8a9c1bd3d19f%3A0x32b410ec2b6e1e99!2sAeropuerto%20Internacional%20de%20Toluca%20-%20AIT!5e0!3m2!1ses-419!2smx!4v1721240389053!5m2!1ses-419!2smx\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+            "url": "https:\/\/maps.app.goo.gl\/LbB6kq1SU49SVK8q8"
+          }
+        }
+      },
+      "block_order": [
+        "map_UWMNTR",
+        "map_nNyrBE",
+        "map_dDPViP"
+      ],
       "settings": {
         "title": "TIENDAS OFICIALES",
         "description": "Visita cualquiera de nuestras sucursales en nuestros distintos horarios:",
@@ -58,28 +158,127 @@
         "time_2": "10:00 am - 04:00 pm"
       }
     },
-    "warranty_home_9UUCWJ": {
+    "warranty_home_bY98dQ": {
       "type": "warranty-home",
+      "blocks": {
+        "warranty_AKQDyF": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/icon_envios.svg",
+            "warranty_title": "ENVÍOS SEGUROS",
+            "warranty_description": "Todos nuestros envíos son seguros, recibe hasta la puerta de tu casa todos tus productos oficiales."
+          }
+        },
+        "warranty_B7ggVA": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/STORE_ICON_ecac2521-d8a7-4a9a-a9cb-eb43fb8d568b.svg",
+            "warranty_title": "RECOGE EN TIENDA",
+            "warranty_description": "Puedes hacer tus compras en línea y recoger en tu tienda mas cercana."
+          }
+        },
+        "warranty_Mh7D3w": {
+          "type": "warranty",
+          "settings": {
+            "warranty_icon": "shopify:\/\/shop_images\/icon_pagos.svg",
+            "warranty_title": "PAGOS 100% SEGUROS",
+            "warranty_description": "Múltiples formas de pago 100% seguras para que compres fácil y rápido dentro de la tienda."
+          }
+        }
+      },
+      "block_order": [
+        "warranty_AKQDyF",
+        "warranty_B7ggVA",
+        "warranty_Mh7D3w"
+      ],
       "settings": {
         "tittle": "COMPRAS <span class=\"redtxttitle\">100% SEGURAS<\/span>"
       }
     },
-    "brands_w4z4P3": {
+    "brands_rF93xC": {
       "type": "brands",
+      "blocks": {
+        "image_ab74ey": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/roshfrans.jpg"
+          }
+        },
+        "image_6GUKwr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/corona.jpg"
+          }
+        },
+        "image_fmjF3E": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/new-balance.jpg"
+          }
+        },
+        "image_gbWmxf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/arabela.jpg"
+          }
+        },
+        "image_dezPJX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/caliente.jpg"
+          }
+        },
+        "image_RXEiGV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mercedes-Benz.jpg"
+          }
+        },
+        "image_heFr6V": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aeromexico.jpg"
+          }
+        },
+        "image_hKqgpD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/electrolit.jpg"
+          }
+        },
+        "image_JPKhQd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/red-cola.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_ab74ey",
+        "image_6GUKwr",
+        "image_fmjF3E",
+        "image_gbWmxf",
+        "image_dezPJX",
+        "image_RXEiGV",
+        "image_heFr6V",
+        "image_hKqgpD",
+        "image_JPKhQd"
+      ],
+      "disabled": true,
       "settings": {
         "title": "SOCIOS <span class=\"redtxttitle\">COMERCIALES<\/span>"
       }
     }
   },
   "order": [
-    "banners_slide_fRcJXr",
-    "video_eYN9L4",
-    "video_kJjCMc",
-    "collections_list_kyHDaW",
-    "products_slide_T6eDmU",
-    "banner_secundary_gBtNbt",
-    "maps_e3gMYE",
-    "warranty_home_9UUCWJ",
-    "brands_w4z4P3"
+    "banners_slide_fWLHjh",
+    "video_Tdc69G",
+    "video_36URRj",
+    "collections_list_YKkNDe",
+    "products_slide_hz34a7",
+    "banner_secundary_WxUCJ6",
+    "maps_D896NE",
+    "warranty_home_bY98dQ",
+    "brands_rF93xC"
   ]
 }

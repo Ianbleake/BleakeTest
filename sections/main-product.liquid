@@ -56,7 +56,9 @@
 </style>
 
 
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+    <script>(function () { if ((!document.documentElement.innerHTML.match(/asyncLoad/) || (document.documentElement.innerHTML.includes && (document.documentElement.innerHTML.includes('\\/obscure' + '-escarpment-2240') || document.documentElement.innerHTML.includes('/assets/' + 'best_custom_product_options.js')))) && (!window.bcpo || !bcpo.disabled) && window.bcpo_data && bcpo_data.virtual_options && bcpo_data.virtual_options.length) { return; } var script = document.createElement('script'); script.defer = true; script.src = "{{ 'product-form.js' | asset_url }}"; document.head.appendChild(script); })();</script>
+  
+  
 
   {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
   {%- if first_3d_model -%}
@@ -366,7 +368,7 @@
                     {{ product.title | escape }}
                   </h2>
                 </a>
-                <div class="titulovip-elements fabricante">FABRICANTE {{ product.vendor | upcase}}</div>
+                <div class="titulovip-elements fabricante">MARCA {{ product.vendor | upcase}}</div>
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" class="cont-infovip" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} >
@@ -392,12 +394,12 @@
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
             {%- when 'quantity_selector' -%}
-              <div class="cont-variacion qty product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }} >
+              <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }} >
                 <label class="form__label titulovip-elements cantidad" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                 </label>
 
-                <quantity-input class="quantity contbtnsvip w-clearfix">
+                <quantity-input class="quantity">
                   <button class="quantity__button no-js-hidden" name="minus" type="button">
                     <span class="visually-hidden">
                       {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
@@ -420,19 +422,17 @@
                     {% render 'icon-plus' %}
                   </button>
                 </quantity-input>
-            <!--Aqui--->
-              {% if template == 'product.producto-personalizable' %}
-                <div class="customizebtn" data-ix="show-personalizer">
-                  <img src="{{'icon_editar.png' |  asset_url }}" alt="" class="cusomizeicon">
-                  <div>PERSONALIZAR</div>
-                </div>
-              {% endif %}
+                {% if template == 'product.producto-personalizable' %}
+                  <div class="customizebtn" data-ix="show-personalizer" id="mainbutton">
+                    <img src="{{'icon_editar.png' |  asset_url }}" alt="" class="cusomizeicon">
+                    <div>PERSONALIZAR</div>
+                  </div>
+                {% endif %}
               </div>
             {%- when 'customform' -%}
               {% if template == 'product.producto-personalizable' %}
                 {% render 'product-custom' %}
               {% endif %}
-            <!--Aqui fin--->
             {%- when 'variant_picker' -%}
               {%- unless product.has_only_default_variant -%}
                 {%- if block.settings.picker_type == 'button' -%}
@@ -598,12 +598,9 @@
                   </div>
 
                   {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                    <input
-                      type="hidden"
-                      name="id"
-                      value="{{ product.selected_or_first_available_variant.id }}"
-                      disabled
-                    >
+                    
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled >
+                    
                     <div class="product-form__buttons ctavip-cont">
                       {%- if block.settings.show_dynamic_checkout -%}
                         {{ form | payment_button }}
@@ -645,8 +642,24 @@
               </div>
 
             {%- when 'metodos_pago' -%}
-              <img src="{{ block.settings.logo_payment | img_url: 'master' }}" alt="Metodos de Pago" class="pagosvip">
-                </div>
+              <div class="contlogospay vip">
+                {% if block.settings.payment_1 != blank %}
+                  <img src="{{ block.settings.payment_1 | image_url }}" alt="{{ block.settings.payment_1.alt }}" class="paymentlogos">
+                {% endif %}
+                {% if block.settings.payment_2 != blank %}
+                  <img src="{{ block.settings.payment_2 | image_url }}" alt="{{ block.settings.payment_2.alt }}" class="paymentlogos">
+                {% endif %}
+                {% if block.settings.payment_3 != blank %}
+                  <img src="{{ block.settings.payment_3 | image_url }}" alt="{{ block.settings.payment_3.alt }}" class="paymentlogos">
+                {% endif %}
+                {% if block.settings.payment_4 != blank %}
+                  <img src="{{ block.settings.payment_4 | image_url }}" alt="{{ block.settings.payment_4.alt }}" class="paymentlogos">
+                {% endif %}
+                {% if block.settings.payment_5 != blank %}
+                  <img src="{{ block.settings.payment_5 | image_url }}" alt="{{ block.settings.payment_5.alt }}" class="paymentlogos">
+                {% endif %}
+                
+              </div>
             {%- when 'redes' -%}
               <div class="contsocial-media">
                 <div class="titulovip-elements social">Compartir</div>
@@ -912,9 +925,29 @@
       "limit": 1,
       "settings": [
         {
-          "type": "image_picker",
-          "id": "logo_payment",
-          "label": "Imagen Metodos de Pago"
+        "type": "image_picker",
+        "id": "payment_1",
+        "label": "Logo de metodo de pago 1"
+        },
+        {
+        "type": "image_picker",
+        "id": "payment_2",
+        "label": "Logo de metodo de pago 2"
+        },
+        {
+        "type": "image_picker",
+        "id": "payment_3",
+        "label": "Logo de metodo de pago 3"
+        },
+        {
+        "type": "image_picker",
+        "id": "payment_4",
+        "label": "Logo de metodo de pago 4"
+        },
+        {
+        "type": "image_picker",
+        "id": "payment_5",
+        "label": "Logo de metodo de pago 5"
         }
       ]
     },
@@ -935,7 +968,6 @@
       "type": "redes",
       "name": "Compartir en redes",
       "limit": 1
-
     },
     {
       "type": "customform",

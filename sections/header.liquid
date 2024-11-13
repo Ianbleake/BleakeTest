@@ -79,11 +79,11 @@
                           {% unless childlink.title contains '[BANNER]' or childlink.title contains '[void]' %}
                             <ul role="list" class="listamenunav">
                               <li class="itemlistmenu">
-                                <a href="#" class="titlecatesubmenu maintitle">{{ childlink.title }}</a>
+                                <a href="{{ childlink.url }}" class="titlecatesubmenu maintitle">{{ childlink.title }}</a>
                               </li>
                               {% for thirdchild in childlink.links %}
                                 <li class="itemlistmenu">
-                                  <a href="{{ thirdchild.links }}" class="titlecatesubmenu">{{ thirdchild.title }}</a>
+                                  <a href="{{ thirdchild.url }}" class="titlecatesubmenu">{{ thirdchild.title }}</a>
                                 </li>
                               {% endfor %}
                             </ul>
@@ -93,8 +93,10 @@
                             <ul role="list" class="listamenunav"></ul>
                           {% endif %}
 
+
+
                           {% if childlink.title contains '[BANNER]' %}
-                            <a href="#" class="imglinkmegam w-inline-block">
+                            <a href="{%  if childlink.links != blank  %} {{ childlink.links.first.url }} {% else %} # {% endif %}" class="imglinkmegam w-inline-block">
                               <img src="{{ childlink.url }}"   alt="{{ childlink.title | remove:'[BANNER]' }}" class="imgmegamenu">
                               <h5 class="namefoto-megamenu">{{ childlink.title | remove:'[BANNER]' }}</h5>
                             </a>
@@ -128,7 +130,7 @@
             <img src="{{ "nav_search.svg" | asset_url }}" alt="Buscar" class="icononav" data-ix="show-buscador">
             <div class="formbuscador w-form">
               <form class="busqueda-formcot" action="{{ routes.search_url }}" method="get" role="search" >
-                <div class="close-buscador" data-ix="close-buscador">X</div>
+                <div class="close-buscador" id="closesearch" data-ix="close-buscador">X</div>
                 <input class="input-buscador w-input" placeholder="¿Qué estás buscando?" name="q" type="search" required="" >
                 <input type="submit" data-wait="Buscando..." class="buscarbtn w-button" value="BUSCAR">
               </form>
@@ -158,6 +160,13 @@
 <script>
  $('.tabmenu-2ndlevel').hover(function() {
     $(this).click();
+  });
+
+  const myButton = document.getElementById('closesearch');
+  document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' || event.key === 'Esc') {
+          myButton.click();
+      }
   });
 </script>
 

@@ -2109,6 +2109,7 @@ textarea.w-select {
 }
 .w-tab-menu {
   position: relative;
+  margin-top: 10px;
 }
 .w-tab-link {
   position: relative;
@@ -2589,6 +2590,7 @@ div#shopify-section-header, .section-headercust {
   max-width: 100%;
   padding: 0;
   position: fixed;
+  box-shadow: 0 11px 6px rgba(0, 0, 0, .2);
 }
 
 .icononav {
@@ -2670,7 +2672,7 @@ div#shopify-section-header, .section-headercust {
   z-index: 99999;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, .85);
+  background-color: rgba(255, 255, 255, .95);
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -2787,6 +2789,7 @@ div#shopify-section-header, .section-headercust {
   font-size: 30px;
   font-weight: 400;
   line-height: 33px;
+  text-decoration: none;
 }
 
 .maintitle.white {
@@ -2828,7 +2831,7 @@ div#shopify-section-header, .section-headercust {
 .background-video {
   justify-content: center;
   align-items: center;
-  height: 800px;
+  height: 650px;
 }
 
 .titlecard {
@@ -3158,10 +3161,11 @@ div#shopify-section-header, .section-headercust {
 
 .paymentlogos {
   width: auto;
-  max-width: 190px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  display: inline-flex;
 }
 
 .paymentinfocont {
@@ -3847,7 +3851,7 @@ div#shopify-section-header, .section-headercust {
 
 .code-embed {
   text-align: center;
-  width: 98%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4072,7 +4076,7 @@ div#shopify-section-header, .section-headercust {
 }
 
 .lisitnglinkbanner {
-  background-image: linear-gradient(#ebebeb, #b1b1b1);
+  background-image: linear-gradient(#f7f7f7, #f7f7f7);
   display: block;
 }
 
@@ -4134,6 +4138,7 @@ div#shopify-section-header, .section-headercust {
   text-align: center;
   width: 25%;
   display: inline-block;
+  margin-bottom: 20px;
 }
 
 .paginador {
@@ -4276,6 +4281,15 @@ div#shopify-section-header, .section-headercust {
   display: inline-block;
 }
 
+.titulovip-elements.personalizar {
+  color: var(--toluca-red);
+  margin-bottom: 15px;
+  font-family: Robotocondensed Variablefont Wght, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
 .tagsvip {
   background-color: var(--black);
   color: #fff;
@@ -4305,7 +4319,6 @@ div#shopify-section-header, .section-headercust {
 }
 
 .pagosvip {
-  filter: brightness(0%);
   width: 100%;
   max-width: 380px;
   margin-top: 10px;
@@ -4700,20 +4713,6 @@ div#shopify-section-header, .section-headercust {
   line-height: 21px;
 }
 
-#playerselector {
-  width: 100%;
-  padding: 4px;
-  border: 2px solid #000;
-  border-radius: 0px;
-  background-color: #fff0;
-  font-size: 14px;
-  appearance: none;
-  background-image: url('https://uploads-ssl.webflow.com/6675e23e3a59380aba5351ac/6690357bb33f9924e04f4152_iconslectorplayer.svg');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 10px;
-}
-
 .palyerselector:active, .palyerselector:focus {
   border: 1px solid #000;
 }
@@ -5007,6 +5006,34 @@ div#shopify-section-header, .section-headercust {
   padding-bottom: 40px;
 }
 
+
+.tablatallas {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;  
+}
+  
+.sizetitle {
+  border-bottom: 3px solid #000;  
+  max-width: 450px;
+  margin: 25px auto 15px;
+  font-family: Agdasima, sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.contlogospay {
+  justify-content: center;
+  align-items: center;
+  display: flex;  
+}  
+  
+.contlogospay.vip {  
+  justify-content: flex-start;
+  align-items: center;
+}
+
 @media screen and (max-width: 991px) {
   .logonav {
     margin-left: 10px;
@@ -5145,6 +5172,10 @@ div#shopify-section-header, .section-headercust {
     align-items: center;
   }
 
+  .background-video {
+    height: 400px;  
+  }
+
   .storesarrow {
     color: var(--toluca-red);
     display: block;
@@ -5271,6 +5302,11 @@ div#shopify-section-header, .section-headercust {
     padding-left: 0;
     padding-right: 0;
   }
+
+
+  .contlogospay.vip {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -5376,6 +5412,11 @@ div#shopify-section-header, .section-headercust {
   .stack-masbuscados {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+
+  .background-video {
+    height: 300px;
   }
 
   .titlecard {
@@ -5525,6 +5566,15 @@ div#shopify-section-header, .section-headercust {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+
+  .tablatallas {
+    height: auto;
+    margin-bottom: 19px;  
+  }
+      
+  .sizetitle {  
+    margin-top: 5px;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -5593,6 +5643,11 @@ div#shopify-section-header, .section-headercust {
 
   .topbannerslider {
     height: auto;
+  }
+
+
+  .background-video {
+    height: 200px;
   }
 
   .secctiendasoficiales {
@@ -5764,6 +5819,19 @@ div#shopify-section-header, .section-headercust {
 
   .contactostack {
     padding-top: 0;
+  }
+
+  .tablatallas, .sizetitle {
+    width: 90%;
+  }
+
+  .contlogospay {
+    text-align: center;
+    display: block;
+  }  
+  
+  .contlogospay.vip {
+    text-align: left;
   }
 }
 
@@ -6159,6 +6227,42 @@ img.picblog-entry {
   height: 245.72px;
 }
 
+.grecaptcha-badge { visibility: hidden; }
+
+.loginreg-field.w-select {
+  background-image: url('https://uploads-ssl.webflow.com/6675e23e3a59380aba5351ac/6690357bb33f9924e04f4152_iconslectorplayer.svg');
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+.seccrecomendados {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.price__sale > .precio-regular {
+  text-decoration: line-through;
+}
+
+.cont-personalizador .w-tab-menu {
+  font-size: 0;
+}
+
+.shopify-payment-button__button[disabled]:hover {
+  text-decoration: none;
+}
+
+.footerlinktxt.nolink{
+ cursor: auto;
+ color: var(--white) !important;
+}
+
+.lisitnglinkbanner.mobile{
+  display: none;
+}
+
 /**Fix Responsive*/
 
 @media screen and (max-width: 991px){
@@ -6181,6 +6285,46 @@ img.picblog-entry {
   .shopify-payment-button {
     width: 100% !important;
   }
+
+  .formbuscador {
+    top: 100px;
+  }
+
+  .code-embed {
+    max-width: 90%;
+}
+
+  .background-video {
+    height: 400px;
+  }
+  
+  .thumbnail__badge {
+    height: 2rem !important;
+    width: 2rem !important;
+    left: calc(1.5rem + var(--media-border-width)) !important;
+    top: calc(1.5rem + var(--media-border-width)) !important;
+  }
+
+}
+
+@media screen and (max-width: 767px){
+  .formbuscador {
+  top: 97px;
+  }
+
+  .background-video {
+    height: 300px;
+  }
+
+  .lisitnglinkbanner {
+    display: none;
+  }
+
+  .lisitnglinkbanner.mobile {
+    display: block;
+  }
+
+
 }
 
 @media screen and (max-width: 479px){
@@ -6214,4 +6358,16 @@ img.picblog-entry {
   .code-embed {
     max-width: 80%;
   }
+
+  .background-video {
+    height: 200px;
+  }
+
+  .thumbnail__badge {
+    height: 2rem !important;
+    width: 2rem !important;
+    left: calc(1.2rem + var(--media-border-width)) !important;
+    top: calc(1rem + var(--media-border-width)) !important;
+  }
+
 }

@@ -137,9 +137,6 @@ h2,
   background-color: rgba(var(--color-base-solid-button-labels), 0.3);
 }
 
-.button:hover {
-  box-shadow: 0 0 0 0.2rem rgb(var(--color-base-accent-1));
-}
 
 .button--secondary {
   color: rgb(var(--color-base-outline-button-labels));
@@ -355,11 +352,6 @@ h2,
   box-shadow: none;
 }
 
-.button:focus {
-  box-shadow: 0 0 0 0.1rem rgb(var(--color-base-accent-1)),
-    0 0 0 0.3rem rgb(var(--color-base-background-1)),
-    0 0 0.5rem 0.4rem rgba(var(--color-base-text), 0.3);
-}
 
 .button--secondary:focus-visible {
   box-shadow: 0 0 0 0.1rem rgb(var(--color-base-outline-button-labels)),
@@ -438,7 +430,7 @@ box-shadow: none;
 }
 
 img.imglogo-nav {
-  width: 40%;
+  width: 150px;
   margin: auto;
   display: block;
 }
